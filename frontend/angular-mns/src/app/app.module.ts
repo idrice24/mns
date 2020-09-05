@@ -7,15 +7,16 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { ActivityModule } from './activity/activity.module';
 
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule, // CLI adds AppRoutingModule to the AppModule's imports array
     SharedModule,
     CoreModule,
-    AppRoutingModule,
     ActivityModule
   ],
   providers: [],
