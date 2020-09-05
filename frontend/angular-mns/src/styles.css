@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~simple-line-icons/css/simple-line-icons.css";
 
 body,
 p {
@@ -53,9 +54,4 @@ nav.navbar.navbar-dark .nav-link:hover {
   bottom: 25px;
   padding-right: .5em;
   padding-left: .5em;
-}
-
-.navbar-nav .icon-basket {
-  line-height: 0.8;
-  font-size: 1.5em;
 }
