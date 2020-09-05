@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body,
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-alt {
+  font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+
+/* Button */
+
+.btn-round {
+  border-radius: 30px;
+}
+
+
+/* Section */
+
+section {
+  padding: 140px 0;
+}
+
+
+/* Hilfsklassen */
+
+.d-relative {
+  position: relative;
+}
+
+
+/* === Navigation ===*/
+
+nav.navbar.navbar-dark button:hover,
+nav.navbar.navbar-dark button:focus,
+nav.navbar.navbar-dark .nav-link:hover {
+  color: #0a0dec;
+}
+
+.navbar-nav .badge {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  padding-right: .5em;
+  padding-left: .5em;
+}
+
+.navbar-nav .icon-basket {
+  line-height: 0.8;
+  font-size: 1.5em;
+}
