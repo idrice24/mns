@@ -1,0 +1,7 @@
+/* === Newsletter ===*/
+
+.newsletter-bg {
+  background: url('/assets/imgs/aboutus.jpg') 50% 0 fixed no-repeat;
+  height: 100%;
+  background-size: cover;
+}

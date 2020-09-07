@@ -9,6 +9,9 @@ When a task has done please add a  lin to refer !!!  this allows to keep our thi
 1.  Create Angular project using Command Line (done )
 1.  Document your Angular folder and file structure   (done)
 1.  Authentication and Authorization
-1.  Create Core Module 
-1.  Create Shared Module 
-1.  Create Admin Module 
+1.  Create Core Module  (done)
+1.  Create Shared Module  (done)
+1.  Create Admin Module  (done)
+1.  Add dependency Bootstrap (done)
+1.  Add dependency Simple-line-icons   (done)
+
