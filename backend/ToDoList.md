@@ -1,6 +1,6 @@
 # Deveploment Process
 ## Info
-- When a task has done please add a  lin to refer !!!  this allows to keep our thing on track.
+- When a task has done please add a  link to refer !!!  this will allows us to keep our thing on track.
 
 ##  Global Tasks are ( BackEnd ): 
 1. Setting Up the Development Environment (IntelliJ IDEA Community Edition)  		( done ) 	(https://www.jetbrains.com/idea/)
