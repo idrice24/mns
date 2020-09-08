@@ -5,7 +5,7 @@
 ##  Global Tasks are ( BackEnd ): 
 1. Setting Up the Development Environment (IntelliJ IDEA Community Edition)  		( done ) 	(https://www.jetbrains.com/idea/)
 1. Setting Up The Java Version SE 14 		( done )		( https://www.oracle.com/java/technologies/javase-jdk14-downloads.html )
-1. Installing Postgres on machine
+1. Installing Postgres on machine https://get.enterprisedb.com/postgresql/postgresql-13.0-beta3-windows-x64.exe
 1. Authentication and Authorization of web site
 1. create modul Loading page
 1. CMS page
