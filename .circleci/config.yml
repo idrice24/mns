@@ -1,1 +1,24 @@
 version: 2.0
+# Ref: https://learnxinyminutes.com/docs/yaml/
+jobs:
+  # Ref: https://circleci.com/docs/2.0/language-java-maven/
+  build:
+    #Set the root directory for the nwe files
+    working_directory: ~/MNS
+    docker: # Set PC-Machine properties where the build should run
+    - image: circleci/openjdk:16-ea-12-jdk-buster 
+  steps: 
+    - checkout
+    - restore_cache
+      key:
+        idrice-spring-{{ checksum "pom.xml"}}
+    - run: mvn dependency:go-offline
+    - save_cache:
+      paths:
+        - ~/.m2
+        key: idrice-spring{{checksum "pom.xml"}}
+    - run:
+      name: Running a Maven COMPILE Goal (TODO)
+      command: |
+      mvn -version
+      mvn -version
