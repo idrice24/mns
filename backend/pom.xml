@@ -4,7 +4,7 @@
          <modelVersion>4.0.0</modelVersion>
          <groupId>com.idrice24</groupId>
          <artifactId>spring-boot-web</artifactId>
-    	 <version>4.0.0-SNAPSHOT</version>
+    	 <version>0.0.1-SNAPSHOT</version>
     	 <packaging>jar</packaging>
     	 <name>MNS</name>
     	 <description>Demo project for MNS</description>
@@ -103,7 +103,7 @@
 		</dependencies>
 
    	<properties>
-        <java.version>1.8</java.version>
+        <java.version>14</java.version>
     </properties>
 
     <build>
