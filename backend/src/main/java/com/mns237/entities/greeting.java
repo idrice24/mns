@@ -9,7 +9,7 @@ public class greeting{
 		this.id = id;
 		this.content = content;
 	} 
-	//get Method
+	//get Method+
 	public long getId(){
 		return id;
 	}
