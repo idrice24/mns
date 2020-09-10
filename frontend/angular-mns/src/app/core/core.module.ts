@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { NewsletterService } from './components/newsletter/newsletter.service';
 
 
 @NgModule({
@@ -16,8 +17,9 @@ import { ContactComponent } from './components/contact/contact.component';
     NewsletterComponent,
     ContactComponent],
   imports: [
-    CommonModule
+    CommonModule, BrowserModule, HttpModule
   ],
+  providers: [NewsletterService],
   exports: [
 
     HomeComponent,

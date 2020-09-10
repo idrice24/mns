@@ -15,60 +15,22 @@
 	    <!-- row -->
 	  </div>
 	  <!-- container -->
-
-
-	  <!--Page contain-->
-	  <h3>Create Customer</h3>
-<div [hidden]= "submintted" style="width:300px;">
-<form (ngSubmit)="onSubmit()">
-	<div class="form-group">
-		<label for="name">Name</label>
-		<input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name">
-</div>
-
-<div class="form-group">
-		<label for="age">Age</label>
-		<input type="text" class="form-control" id="age" required [(ngModel)]="customer.age" name="age">
-</div>
-<button type="submit" class="btn btn-success">Submit</button>
-</form>
-</div>
-<div [hidden]="submitted">
-	<h4>You submitted successfully!</h4>
-	<button class="btn btn-success" (click)="newCusstomer()">Add</button>
-</div>
-
-------------------------------------------------------------------
-<h1>Customers</h1>
- 
-<div *ngFor="let customer of customers | async" style="width: 300px;">
-  <customer-details [customer]='customer'></customer-details>
-</div>
- 
-<div>
-  <button type="button" class="button btn-danger" (click)='deleteCustomers()'>Delete All</button>
-</div>
-
-<!--Customer Details -->
-<h3>Customer Details</h3>
-<div *ngIf="customer">
-  <div>
-    <label>Name: </label> {{customer.name}}
-  </div>
-  <div>
-    <label>Age: </label> {{customer.age}}
-  </div>
-  <div>
-    <label>Active: </label> {{customer.active}}
-  </div>
- 
-  <span class="button is-small btn-primary" *ngIf='customer.active' (click)='updateActive(false)'>Inactive</span>
- 
-  <span class="button is-small btn-primary" *ngIf='!customer.active' (click)='updateActive(true)'>Active</span>
- 
-  <span class="button is-small btn-danger" (click)='deleteCustomer()'>Delete</span>
- 
-  <hr/>
-</div>
+	  <div>
+	  	<table border="1">
+	  		<tr>
+	  			<th>ID</th>
+	  			<th>Customer NAME</th>
+	  			<th>Customer Age</th>
+	  			<th>Customer Phone</th>
+	  		</tr>
+	  		<tr *ngFor="Let Customer">
+	  			<th>{{Customer.id}}</th>
+	  			<th>{{Customer.name}}</th>
+	  			<th>{{Customer.age}}</th>
+	  			<th>{{Customer.phone}}</th>
+	  		</tr>
+	  	</table>
+	  </div>
+ <hr/>
 	</section>
 	<!-- Ende Newsletter -->
