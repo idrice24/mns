@@ -46,6 +46,12 @@
 					<artifactId>spring-boot-starter-hateoas</artifactId>
 				</dependency>
 
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<scope>runtime</scope>
+			</dependency>
+
 			<!--TODO@Idrice suitable comments
 				<dependency>
 					<groupId>com.h2database</groupId>
