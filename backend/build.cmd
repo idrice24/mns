@@ -6,7 +6,7 @@
 @ECHO         ##      ##         ## ##         ##
 @ECHO ***********************************************************************
 @ECHO OFF
-timeout /t 20 /nobreak > NUL
+timeout /t 10 /nobreak > NUL
 call mvn clean
 call mvn package
 call mvn spring-boot:run -X
