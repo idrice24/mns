@@ -1,4 +1,4 @@
-package com.mns237;
+package org.mns237;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

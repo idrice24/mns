@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
          <modelVersion>4.0.0</modelVersion>
-         <groupId>com.idrice24</groupId>
+         <groupId>org.mns237</groupId>
          <artifactId>spring-boot-web</artifactId>
     	 <version>0.0.1-SNAPSHOT</version>
     	 <packaging>jar</packaging>
@@ -26,9 +26,6 @@
     	</parent>
 
     	<dependencies>
-
-
-
 			<!-- Provide compatible for web development and auto configuration-->
 			<!-- Its transitively depends on tomcat, validation, databind, web and webmvc ... -->
 				<dependency>
@@ -36,38 +33,46 @@
 					<artifactId>spring-boot-starter-web</artifactId>
 				</dependency>
 
+			<!--TODO@Idrice suitable comments -->
+			<!-- i.e. CrudRepository is member for this dependency -->
 				<dependency>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-data-jpa</artifactId>
 				</dependency>
 
-				<!-- tag::spring-hateoas[] -->
+			<!--TODO@Idrice suitable comments-->
 				<dependency>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-hateoas</artifactId>
 				</dependency>
-				<!-- end::spring-hateoas[] -->
 
+			<!--TODO@Idrice suitable comments
 				<dependency>
 					<groupId>com.h2database</groupId>
 					<artifactId>h2</artifactId>
 					<scope>runtime</scope>
-				</dependency>
+				</dependency> -->
 
-
+			<!--Provides utilities for single tests in project-->
 			<dependency>
 				<groupId>org.junit.jupiter</groupId>
 				<artifactId>junit-jupiter</artifactId>
 				<version>5.6.2</version>
 				<scope>test</scope>
 			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-test</artifactId>
+				<version>2.4.0-SNAPSHOT</version>
+				<scope>test</scope>
+			</dependency>
 
 		</dependencies>
 
    	<properties>
-		<!-- Ref: https://dev.to/techgirl1908/intellij-error-java-release-version-5-not-supported-376 -->
-		<maven.compiler.source>1.14</maven.compiler.source>
-		<maven.compiler.target>1.14</maven.compiler.target>
+
+		<maven.compiler.source>14</maven.compiler.source>
+		<maven.compiler.target>14</maven.compiler.target>
 		<java.version>14</java.version>
     </properties>
 
