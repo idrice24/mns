@@ -1,4 +1,4 @@
-package com.idrice24.MNS;
+package org.mns237;
 
 import static org.junit.jupiter.api.Assertions.*;
 
