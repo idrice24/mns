@@ -15,5 +15,26 @@
 	    <!-- row -->
 	  </div>
 	  <!-- container -->
+
+
+	  <!--Page contain-->
+	  <div class="container">
+	  	<div *ngIf="customer">
+	  		<div>
+	  			<label>Name: </label>{{custer.name}}
+	  		</div>
+
+	  		<div>
+	  			<label>Age: </label>{{custer.age}}
+	  		</div>
+
+	  		<div>
+	  			<label>Active: </label>{{custer.active}}
+	  		</div>
+	  		<span class="button is-small btn-outline-primary" *ngIf='customer.active' (click)='updateActive(false'>Inactive</span>
+	  		<span class="button is-small btn-outline-primary" *ngIf='!customer.active' (click)='updateActive(true'>Active</span>
+	  		<span class="button is-small btn-outline-ganger" (click)='delectCustomer()'>Delect</span>
+	  	</div>
+	  </div>
 	</section>
 	<!-- Ende Newsletter -->
