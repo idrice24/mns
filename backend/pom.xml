@@ -8,7 +8,17 @@
     	 <packaging>jar</packaging>
     	 <name>MNS</name>
     	 <description>Demo project for MNS</description>
+         <url>htpp://somecompany.com</url>
 
+         <!--https://maven.apache.org/scm/maven-scm-plugin/examples/bootstrapping-with-pom.html-->
+         <scm>
+            <connection>scm:svn:https://127.0.0.1/webpr/mns237/<connection>
+            <developerConnection>scm:svn:https://somerepository.com/svn_repo/trunk</developerConnection>
+            <url>http://127.0.0.1//webpr/mns237</url>
+        </scm>
+
+
+         <!--https://spring.io/projects/spring-boot-->
     	<parent>
         	<groupId>org.springframework.boot</groupId>
         	<artifactId>spring-boot-starter-parent</artifactId>
@@ -17,6 +27,7 @@
 
     	<dependencies>
 
+        <!--https://spring.io/projects/spring-boot-->
     	<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -33,23 +44,30 @@
 		</dependency>
 
 		<!-- DB Connection -->
+
+       <!-- https://mvnrepository.com/artifact/com.h2database/h2-->
 		<dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <!--https://jdbc.postgresql.org/-->
         <dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 
+       <!-- https://mvnrepository.com/artifact/org.projectlombok-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
 
+
+         <!--https://spring.io/projects/spring-boot-->
 		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -66,7 +84,7 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+<!-- 
 		<dependency>
    			<groupId>org.springframework.boot</groupId>
    			<artifactId>spring-boot-starter-mail</artifactId>
@@ -81,7 +99,7 @@
 		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+        </dependency> 
 
 		<dependency>
 			<groupId>org.springframework.data</groupId>
@@ -92,7 +110,7 @@
 			<groupId>org.springframework.session</groupId>
 			<artifactId>spring-session-core</artifactId>
 		</dependency>
-
+-->
 			<dependency>
 				<groupId>org.junit.jupiter</groupId>
 				<artifactId>junit-jupiter</artifactId>
@@ -115,6 +133,16 @@
                 <!-- Spring Boot Maven -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+<!--https://maven.apache.org/scm/maven-scm-plugin/examples/bootstrapping-with-pom.html-->
+            <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-plugin</artifactId>
+                    <version>1.11.2</version>
+                    <configuration>
+                    <goals>install</goals>
+                    </configuration>
             </plugin>
         </plugins>
     </build>

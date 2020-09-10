@@ -7,7 +7,6 @@ import { NewsletterComponent } from './components/newsletter/newsletter.componen
 import { ContactComponent } from './components/contact/contact.component';
 
 
-
 @NgModule({
   declarations: [
 
