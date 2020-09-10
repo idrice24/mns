@@ -4,8 +4,8 @@ import { Customer } from '../custer';
 import { CustomerService } from '../customer.service';
 @Component({
   selector: 'create-customer',
-  templateUrl: './create-customer.component.html',
-  styleUrls: ['./create-customer.component.css']
+  templateUrl: './newsletter.component.html',
+  styleUrls: ['./newsletter.component.css']
 })
 export class CreateCustomerComponent implements OnInit {
  
