@@ -11,19 +11,17 @@ import { ContactComponent } from './core/components/contact/contact.component';
 
 // sets up routes constant where you define your routes
 const routes: Routes = [
-
-  { path: '', component: AppComponent, pathMatch: 'full' },
-  { path: 'app-home', component: HomeComponent },
-  { path: 'app-activity-center', component: ActivityCenterComponent },
-  { path: 'app-about', component: AboutComponent },
-  { path: 'app-contact', component: ContactComponent },
-  { path: 'app-newsletter', component: NewsletterComponent },
-  { path: '**', redirectTo: 'app-home' }
+  { path: 'home', component: HomeComponent },
+  { path: 'activity-center', component: ActivityCenterComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'newsletter', component: NewsletterComponent },
+  { path: '**', redirectTo: 'home' }
 ];
 // configures NgModule imports and exports
 @NgModule({
-  imports: [RouterModule.forRoot(routes,
-    { enableTracing: true } // <-- debugging purposes only
+  imports: [RouterModule.forRoot(routes
+    , { enableTracing: true } // <-- debugging purposes only
   )],
   exports: [RouterModule]
 })
