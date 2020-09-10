@@ -1,4 +1,4 @@
-package com.idrice24.MNS.controllers;
+package com.mns237.controllers;
 
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;

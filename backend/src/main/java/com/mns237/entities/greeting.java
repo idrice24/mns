@@ -1,4 +1,4 @@
-package com.idrice24.MNS.entities;
+package com.mns237.entities;
 
 public class greeting{
 	private final long id;

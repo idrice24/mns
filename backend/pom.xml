@@ -12,7 +12,7 @@
 
          <!--https://maven.apache.org/scm/maven-scm-plugin/examples/bootstrapping-with-pom.html-->
          <scm>
-            <connection>scm:svn:https://127.0.0.1/webpr/mns237/<connection>
+            <connection>scm:svn:https://127.0.0.1/webpr/mns237/</connection>
             <developerConnection>scm:svn:https://somerepository.com/svn_repo/trunk</developerConnection>
             <url>http://127.0.0.1//webpr/mns237</url>
         </scm>
