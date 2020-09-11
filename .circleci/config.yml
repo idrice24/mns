@@ -7,12 +7,19 @@ jobs:
       - image: circleci/openjdk:stretch
     steps:
       - checkout # check out source code to working directory
+      - run :
+         name: Just to test current directory
+         command: dir
       - restore_cache: # restore the saved cache after the first run or if `pom.xml` has changed
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
           key: MNS-{{ checksum "pom.xml" }} 
       - run: 
          name: Gets the project dependencies  
-         command: mvn dependency:go-offline           
+         command: mvn dependency:go-offline  
+      - save_cache: # saves the project dependencies
+          paths:
+            - ~/.m2
+          key: MNS-{{ checksum "pom.xml" }}         
       - run:
          name: Change the current directory to backend
          command : echo "A Command in CircleCI "
