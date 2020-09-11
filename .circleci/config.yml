@@ -8,8 +8,11 @@ jobs:
     steps:
       - checkout
       - run :
-         name: Just to test current directorry
+         name: Just to test current directory
          command: dir
+      - run:
+         name: Change the current directory to backend
+         command : cd backend
       - run: 
           name: Package Command 
-          command : backend/mvnw package
+          command : ./mvnw package
