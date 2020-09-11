@@ -82,6 +82,25 @@
 		<java.version>14</java.version>
     </properties>
 
+<!--  https://maven.apache.org/plugins/maven-checkstyle-plugin/usage.html-->
+<!-- To generate the Checkstyle report as part of the Project Reports -->
+	 <reporting>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>3.1.1</version>
+          <reportSets>
+            <reportSet>
+              <reports>
+                <report>checkstyle</report>
+              </reports>
+            </reportSet>
+          </reportSets>
+        </plugin>
+      </plugins>
+    </reporting>
+
     <build>
         <plugins>
             <plugin>
