@@ -15,4 +15,4 @@ jobs:
          command: dir
       - run: 
           name: Package Command 
-          command : mvnw package
+          command : mvn clean package
