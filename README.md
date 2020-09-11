@@ -1,6 +1,5 @@
 # MNS
-[Demo Live](https://idrice24.github.io/mns/)  
-[Demo Live](https://idrice24.github.io/mns/) -- Server (TODO)
+Click here to seee the [Demo Live](https://idrice24.github.io/MNS/)  
 
 # Coding
 ## Precondition
