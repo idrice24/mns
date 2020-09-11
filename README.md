@@ -1,6 +1,6 @@
 # MNS
-Click here to see the [Demo Live](https://localhost:8080/api/) for developers.
-Click here to seee the [Demo Live](https://idrice24.github.io/MNS/)  for client
+ For developers. Click here to see the [Demo Live](https://localhost:8080/api/)
+for client. Click here to seee the [Demo Live](https://idrice24.github.io/MNS/)  
 
 # Coding
 ## Precondition
