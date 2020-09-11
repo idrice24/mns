@@ -16,3 +16,8 @@
 1. Username is postgress
 1. Passwort no idea?
 1. Version of postgresSQL is 12
+
+
+# Troubles
+1. This job has been blocked because Docker Layer Caching is not available on your plan. Please upgrade to continue building.
+    * We have to pay  and  upgrade  Plan on circleCI!!

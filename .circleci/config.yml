@@ -1,44 +1,9 @@
 version: 2.1
-jobs:
-  build:
-    working_directory: ~/MNS
-    machine:
-      image: ubuntu-1604:202004-01
-      docker_layer_caching: true
-    steps:
-      - checkout
-      - run:
-          name: Update to OpenJDK 14
-          command: |
-            sudo apt-get install openjdk-14-jre
-            sudo update-alternatives --set java /usr/lib/jvm/java-14-openjdk-amd64/bin/java
-            java -version
-      - run:
-          name: Generate cumulative pom.xml checksum
-          command: |
-            find . -type f -name "pom.xml" -exec sh -c "sha256sum {} >> ~/pom-checksum.tmp" \;
-            sort -o ~/pom-checksum ~/pom-checksum.tmp
-          when: always
-      - restore_cache:
-          key: MNS-{{ checksum "~/pom-checksum" }}
-      - run: ./mvnw --batch-mode dependency:go-offline  
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: MNS-{{ checksum "~/pom-checksum" }}
-      - run:
-          name: Run all tests on Docker
-          command: |
-            docker-compose -f docker-compose-it.yaml up -d objectstore
-            docker-compose -f docker-compose-it.yaml up -d create-bucket
-            docker-compose -f docker-compose-it.yaml run run-tests
-      - run:
-          name: Save test results
-          command: |
-            mkdir -p ~/test-results/junit/
-            find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/junit/ \;
-          when: always
-      - store_test_results:
-          path: ~/test-results
-      - store_artifacts:
-          path: ~/test-results/junit
+
+orbs:
+  maven: circleci/maven@0.0.12
+
+workflows:
+  maven_test:
+    jobs:
+      - maven/test # checkout, build, test, and upload test results
