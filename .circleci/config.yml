@@ -6,13 +6,13 @@ jobs:
     docker:
       - image: circleci/openjdk:stretch
     steps:
-      - checkout
-      - run :
-         name: Just to test current directory
-         command: dir
+      - checkout     
       - run:
          name: Change the current directory to backend
          command : cd backend
+      - run :
+         name: Just to test current directory
+         command: dir
       - run: 
           name: Package Command 
-          command : ./mvnw package
+          command : mvnw package
