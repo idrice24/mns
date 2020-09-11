@@ -1,24 +1,44 @@
-version: 2.0
-# Ref: https://learnxinyminutes.com/docs/yaml/
+version: 2.1
 jobs:
-  # Ref: https://circleci.com/docs/2.0/language-java-maven/
   build:
-    #Set the root directory for the nwe files
     working_directory: ~/MNS
-    docker: # Set PC-Machine properties where the build should run
-    - image: circleci/openjdk:16-ea-12-jdk-buster 
-  steps: 
-    - checkout
-    - restore_cache
-      #key: idrice-spring-{{ checksum "pom.xml"}}
-
-    - run: mvn dependency:go-offline
-    - save_cache:
-      paths:
-         ~/.m2
-       # key: idrice-spring{{checksum "pom.xml"}}
-       
-      name: Running a Maven COMPILE Goal (TODO)
-      command: |
-      mvn: version
-      mvn: version
+    machine:
+      image: ubuntu-1604:202004-01
+      docker_layer_caching: true
+    steps:
+      - checkout
+      - run:
+          name: Update to OpenJDK 14
+          command: |
+            sudo apt-get install openjdk-14-jre
+            sudo update-alternatives --set java /usr/lib/jvm/java-14-openjdk-amd64/bin/java
+            java -version
+      - run:
+          name: Generate cumulative pom.xml checksum
+          command: |
+            find . -type f -name "pom.xml" -exec sh -c "sha256sum {} >> ~/pom-checksum.tmp" \;
+            sort -o ~/pom-checksum ~/pom-checksum.tmp
+          when: always
+      - restore_cache:
+          key: MNS-{{ checksum "~/pom-checksum" }}
+      - run: ./mvnw --batch-mode dependency:go-offline  
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: MNS-{{ checksum "~/pom-checksum" }}
+      - run:
+          name: Run all tests on Docker
+          command: |
+            docker-compose -f docker-compose-it.yaml up -d objectstore
+            docker-compose -f docker-compose-it.yaml up -d create-bucket
+            docker-compose -f docker-compose-it.yaml run run-tests
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/test-results/junit/
+            find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/junit/ \;
+          when: always
+      - store_test_results:
+          path: ~/test-results
+      - store_artifacts:
+          path: ~/test-results/junit
