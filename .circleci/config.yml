@@ -21,4 +21,3 @@ jobs:
       name: Running a Maven COMPILE Goal (TODO)
       command: |
       mvn: version
-      mvn: version
