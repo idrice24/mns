@@ -2,8 +2,9 @@ version: 2.0
 
 jobs:
   build:
+    working_directory: ~/MNS
     docker:
       - image: circleci/openjdk:stretch
     steps:
       - checkout
-      - run: ./mvnw package
+      - run: ./backend/mvnw package
