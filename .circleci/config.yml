@@ -6,7 +6,13 @@ jobs:
     docker:
       - image: circleci/openjdk:stretch
     steps:
-      - checkout     
+      - checkout # check out source code to working directory
+      - restore_cache: # restore the saved cache after the first run or if `pom.xml` has changed
+          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          key: MNS-{{ checksum "pom.xml" }} 
+      - run: 
+         name: Gets the project dependencies  
+         command: mvn dependency:go-offline           
       - run:
          name: Change the current directory to backend
          command : echo "A Command in CircleCI "
@@ -14,5 +20,8 @@ jobs:
          name: Just to test current directory
          command: dir
       - run: 
-          name: Package Command 
-          command : mvn clean package
+         name: CLEAN   
+         command : mvn clean  
+      - run: 
+         name: PACKAGIN (Run all test) 
+         command : mvn   package
