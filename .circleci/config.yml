@@ -7,4 +7,9 @@ jobs:
       - image: circleci/openjdk:stretch
     steps:
       - checkout
-      - run: ./backend/mvnw package
+      - run :
+         name: Just to test current directorry
+         command: dir
+      - run: 
+          name: Package Command 
+          command : backend/mvnw package
