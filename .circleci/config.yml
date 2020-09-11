@@ -15,4 +15,4 @@ jobs:
          command: dir
       - run: 
           name: Package Command 
-          command : ~/backend/mvnw package
+          command : backend/mvnw package
