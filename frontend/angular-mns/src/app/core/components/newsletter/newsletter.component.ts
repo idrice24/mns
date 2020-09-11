@@ -13,12 +13,12 @@ import { Customer } from './newsletter';
 })
 export class NewsletterComponent implements OnInit {
   Customer: Customer[];
-  _customerService: any;
-  constructor(_customerService : CustomerService ) { }
+  customerService: any;
+  constructor( customerService: CustomerService ) { }
  getCustomers(): void{
-   this._customerService.getAllCustomers()
-   .subscribe( ( customerData ) => {this.Customer = customerData, console.log( customerData );}, Error, ( error ) =>{
-     console.log( onmessage, error);
+   this.customerService.getAllCustomers()
+   .subscribe( ( customerData ) => {this.Customer = customerData, console.log( customerData ); }, ( error: any ) => {
+     console.log(error);
     });
  }
 

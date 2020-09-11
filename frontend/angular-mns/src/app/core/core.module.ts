@@ -27,4 +27,4 @@ import { NewsletterService } from './components/newsletter/newsletter.service';
     AboutComponent,
     ContactComponent]
 })
-export class CoreModule { }
+ export class CoreModule { }
