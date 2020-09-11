@@ -1,23 +1,41 @@
 version: 2.0
-# Ref: https://learnxinyminutes.com/docs/yaml/
-jobs:
-  # Ref: https://circleci.com/docs/2.0/language-java-maven/
-  build:
-    #Set the root directory for the nwe files
-    working_directory: ~/MNS
-    docker: # Set PC-Machine properties where the build should run
-    - image: circleci/openjdk:16-ea-12-jdk-buster 
-  steps: 
-    - checkout
-    - restore_cache
-      #key: idrice-spring-{{ checksum "pom.xml"}}
 
-    - run: mvn dependency:go-offline
-    - save_cache:
-      paths:
-         ~/.m2
-       # key: idrice-spring{{checksum "pom.xml"}}
-       
-      name: Running a Maven COMPILE Goal (TODO)
-      command: |
-      mvn: version
+
+jobs:
+   build:
+      working_directory: ~/MNS/backend
+      docker:
+         - image: cimg/openjdk:14.0
+      steps:
+         - checkout: # check out source code to working directory
+              path: ~/MNS
+         - run:
+              name: CURRENT JAVA version
+              command: java --version
+         - run:
+              name: Just to test current directory
+              command: ls ~/MNS/backend
+         - restore_cache: # restore the saved cache after the first run or if `pom.xml` has changed
+              # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+              key: MNS-{{ checksum "pom.xml" }}
+         - run:
+              name: Gets the project dependencies
+              command: mvn dependency:go-offline
+         - save_cache: # saves the project dependencies
+              paths:
+                 - ~/.m2
+              key: MNS-{{ checksum "pom.xml" }}
+         - run:
+              name: Change the current directory to backend
+              command: echo "A Command in CircleCI "
+         - run:
+              name: Just to test current directory
+              command: dir
+         - run:
+              name: CLEAN
+              command: mvn clean
+         - run:
+              name: PACKAGIN (Run all test)
+              command: mvn   package
+
+
