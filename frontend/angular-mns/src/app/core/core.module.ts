@@ -17,7 +17,7 @@ import { NewsletterService } from './components/newsletter/newsletter.service';
     NewsletterComponent,
     ContactComponent],
   imports: [
-    CommonModule, BrowserModule, HttpModule
+    CommonModule
   ],
   providers: [NewsletterService],
   exports: [

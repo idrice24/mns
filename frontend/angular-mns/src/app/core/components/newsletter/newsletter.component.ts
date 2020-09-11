@@ -12,25 +12,19 @@ import { Customer } from './newsletter';
   styleUrls: ['./newsletter.component.css']
 })
 export class NewsletterComponent implements OnInit {
-
-  constructor() { }
+  Customer: Customer[];
+  _customerService: any;
+  constructor(_customerService : CustomerService ) { }
+ getCustomers(): void{
+   this._customerService.getAllCustomers()
+   .subscribe( ( customerData ) => {this.Customer = customerData, console.log( customerData );}, Error, ( error ) =>{
+     console.log( onmessage, error);
+    });
+ }
 
   ngOnInit(): void {
-  		getCustomers();
+    this.getCustomers();
   }
 
 
-}
-
-export class CustomerComponent {
-	
-	customers: Customer[];
-	constructor(private _customerService: CustomerService){}
-
-	getCustomers(): void{
-	this._customerService.getAllCustomers()
-	.subscribe((customerData) => { this.customers = customerData, console.log(customerData)}, (error) => {
-		console.log(error);
-	});
-	}
 }
