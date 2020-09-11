@@ -9,10 +9,10 @@ jobs:
       - checkout     
       - run:
          name: Change the current directory to backend
-         command : cd backend
+         command : echo "A Command in CircleCI "
       - run :
          name: Just to test current directory
          command: dir
       - run: 
           name: Package Command 
-          command : mvnw package
+          command : ~/backend/mvnw package
