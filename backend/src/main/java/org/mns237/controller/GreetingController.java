@@ -22,7 +22,7 @@ public class GreetingController {
     @Autowired
     GreetingRepository greetingRepository;
 
-    @GetMapping("/employees/{id}")
+    @GetMapping("/greetings/{id}")
     EntityModel<Greeting> one(@PathVariable Long id) {
 
         Greeting greeting = greetingRepository.findById(id).get(); //
@@ -35,9 +35,6 @@ public class GreetingController {
 
     @GetMapping("/")
     public CollectionModel<EntityModel<Greeting>> all() {
-
-
-
         List<EntityModel<Greeting>> greetings = greetingRepository.findAll().stream()
                 .map(employee -> EntityModel.of(employee,
                         linkTo(methodOn(GreetingController.class).one(employee.getId())).withSelfRel(),
