@@ -8,6 +8,7 @@ import { AboutComponent } from './core/components/about/about.component';
 import { NewsletterComponent } from './core/components/newsletter/newsletter.component';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './core/components/contact/contact.component';
+import { CmsComponent } from './core/components/cms/cms.component';
 
 // sets up routes constant where you define your routes
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'newsletter', component: NewsletterComponent },
+  { path: 'cms' , component: CmsComponent },
   { path: '**', redirectTo: 'home' }
 ];
 // configures NgModule imports and exports

@@ -23,6 +23,33 @@
                         <li class="nav-item">
                             <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
                         </li>
+                        
+                        <li class="dropdown nav-item" dropdown>
+                            <a
+                                class="dropdown-toggle nav-link dropdown-toggle"
+                                    data-toggle="dropdown" dropdownToggle href="javascript:void(0)">
+                                <i class="fa fa-cogs d-lg-none d-xl-none"> </i> CMS
+                            </a>
+                            <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
+                                <ul>
+                                    <li>
+                            <a class="dropdown-item" [routerLink]="['/login']">
+                            <i class="tim-icons icon-single-02"> </i> Se connecter a
+                                        l'administrateur
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="tim-icons icon-heart" routerLink="/galeries">GALERY</a>
+                                </li>
+                            </ul>
+
+                             </div>
+
+
+                        </li>
+
+
+
                         <li class="nav-item">
                             <a class="nav-link" routerLink="/newsletter">Newsletter </a>
                         </li>

@@ -6,6 +6,7 @@ import { AboutComponent } from './components/about/about.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NewsletterService } from './components/newsletter/newsletter.service';
+import { CmsComponent } from './components/cms/cms.component';
 
 
 @NgModule({
@@ -14,8 +15,10 @@ import { NewsletterService } from './components/newsletter/newsletter.service';
     HomeComponent,
     LoginComponent,
     AboutComponent,
-    NewsletterComponent,
-    ContactComponent],
+    ContactComponent,
+    CmsComponent
+    ],
+
   imports: [
     CommonModule
   ],
@@ -25,6 +28,7 @@ import { NewsletterService } from './components/newsletter/newsletter.service';
     HomeComponent,
     LoginComponent,
     AboutComponent,
-    ContactComponent]
+    ContactComponent,
+    CmsComponent]
 })
  export class CoreModule { }

@@ -6,7 +6,7 @@ body,
 p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
-  background-image: cover;
+  background-size: cover;
 }
 
 h1,
@@ -23,14 +23,15 @@ h6,
 /* Button */
 
 .btn-round {
-  border-radius: 30px;
+  border-radius: 35px;
+  background-color: green;
 }
 
 
 /* Section */
 
 section {
-  padding: 140px 0;
+  padding: 80px 0;
 }
 
 
@@ -55,4 +56,12 @@ nav.navbar.navbar-dark .nav-link:hover {
   bottom: 25px;
   padding-right: .5em;
   padding-left: .5em;
+}
+.form{
+  background-color: skyblue;
+  border-style: solid;
+}
+ .form-group .form-control{
+  border-style: solid block green;
+  background-color: #eee;
 }
