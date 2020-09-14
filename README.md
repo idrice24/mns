@@ -1,4 +1,20 @@
 # MNS
+<p align="center">
+    <a href="https://github.com/idrice24/School-Management-Software/issues/" title="Open Issues"><img src="https://img.shields.io/github/issues/idrice24/School-Management-Software?style=flat-square "></a>
+<a href="https://app.circleci.com/pipelines/github/idrice24/School-Management-Software.svg" title="Circleci"><img src="https://img.shields.io/circleci/build/github/idrice24/School-Management-Software?color=green&logo=red&style=flat-square?style=flat-square"></a>
+	<a href="https://github.com/idrice24/School-Management-Software/" title="License"><img src="https://img.shields.io/github/license/idrice24/School-Management-Software?style=flat-square"></a>
+</p>
+. 
+<p align="center">
+	<a href="#service-apis">Service APIs</a>.
+	<a href="#documentation">Documentation</a>.
+	<a href="#support-and-feedback">Support</a>.
+	<a href="#how-to-contribute">Contribute</a>.
+	<a href="#contributors">Contributors</a>.
+	<a href="#repositories">Repositories</a>.
+	<a href="#liecensing">Licensing</a>
+</p>
+
 - For server. Click here to see the [Demo Live](https://localhost:8080/api/)
 - For client. Click here to seee the [Demo Live](https://idrice24.github.io/MNS/)  
 
