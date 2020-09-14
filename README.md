@@ -2,7 +2,6 @@
 <p align="center">
     <a href="https://github.com/idrice24/MNS/issues/" title="Open Issues"><img src="https://img.shields.io/github/issues/idrice24/MNS?style=flat-square "></a>
 <a href="https://app.circleci.com/pipelines/github/idrice24/MNS.svg" title="Circleci"><img src="https://img.shields.io/circleci/build/github/idrice24/MNS?color=green&logo=red&style=flat-square?style=flat-square"></a>
-	<a href="https://github.com/idrice24/MNS/" title="License"><img src="https://img.shields.io/github/license/idrice24/MNS?style=flat-square"></a>
 </p>
 . 
 <p align="center">
