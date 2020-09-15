@@ -20,10 +20,8 @@
 # Coding
 ## Precondition
 1.  Angular CLI version 9.1.0 or higher
-1.  Maven
-1.  Postgres
-1.  JetBrains IntelliJ IDEA (Community Edition) 2020.2 oder higher
-1.  OpenJDK 14.0.2 14.0.2  (JavaSE 14)
+1.  Understand scripting for Automation
+1.  Understand Markdown  for documentation
 
 ## Development process for client
 1. Clone the code
@@ -36,6 +34,8 @@
 1. Push it
 1. Test your change on cloud
 
+# Sample
+1. [Angular 10 starter](https://github.com/ganatan/angular-example-starter)
 # Howtos
 ## Package script
 ## How to store and run script on angular project
