@@ -20,10 +20,8 @@
 # Coding
 ## Precondition
 1.  Angular CLI version 9.1.0 or higher
-1.  Maven
-1.  Postgres
-1.  JetBrains IntelliJ IDEA (Community Edition) 2020.2 oder higher
-1.  OpenJDK 14.0.2 14.0.2  (JavaSE 14)
+1.  Understand scripting for Automation
+1.  Understand Markdown  for documentation
 
 ## Development process for client
 1. Clone the code
@@ -36,42 +34,15 @@
 1. Push it
 1. Test your change on cloud
 
-## Development process for server
-1. Clone the code
-1. Prepare your machine to use PostgresSQL 
-1. Goto folder backend
-1. Run batch file build.cmd -- should be successfull
-1. Make your change
-1. Test it
-1. Run batch file build.cmd -- should be successfull 
-1. Commit with issue number
-1. Push all
+# Sample
+1. [Angular 10 starter](https://github.com/ganatan/angular-example-starter)
+# Howtos
+## Package script
+## How to store and run script on angular project
+1. Open package.json file
+1. Go to node "script" and add your command e.g startME
+1. Open CMD Window and run npm run startME
 
-## Preparation of machine to use PostgresSql
-1. [Download PostgresSql at] (https://www.postgresql.org/download/)
-1. Add the PostgreSql bin directory path to the PATH enviromenttal variable
-1. Open the psql command-line too..
-1. Run a CREATE DATABASE command to create a database..
-1. Connect to the new database using the cmd: \c databaseName.
-Run the postgres. script provided in the Media Server installation directory.
-1. \i 'path/postgres.sql'
-where path is the script file path.
-1. Grant privileges to the user that Media Server will connect as.
-1. Open the Data Sources (ODBC) program:
-	- In the Windows Control Panel, click System and Security.
-	- click Administrative Tools
-	- after Data Sources(ODBC)
-1. In the User DNS tab Add....
-	- Create New Data Source dialog box opens.
-1. Select the PostgreSQL Unicode driver from the list and click Finish.
-1. Complete the data sources information fields:
-1. click datasource
-1. (Optional) Micro Focus recommends that you select the Use Declare/Fetch check box, to reduce memory use.
-1. click page 2
-1. Select the bytea as LO check box
-1. Click Apply and then ok
-1. test the connection
-1. if successfull click ok
-1. click save
-1. click ok
-1. You can now configure Media Servers to connect to the db 
+ 
+
+ 
