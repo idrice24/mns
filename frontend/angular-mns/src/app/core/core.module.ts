@@ -5,7 +5,6 @@ import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { NewsletterService } from './components/newsletter/newsletter.service';
 import { CmsComponent } from './components/cms/cms.component';
 
 
@@ -22,7 +21,6 @@ import { CmsComponent } from './components/cms/cms.component';
   imports: [
     CommonModule
   ],
-  providers: [NewsletterService],
   exports: [
 
     HomeComponent,
