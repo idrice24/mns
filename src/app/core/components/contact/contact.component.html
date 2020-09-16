@@ -1,49 +1,40 @@
-<div>
-    <div class="panel">
-        <h2>Contact</h2>
-        <div class="panel-heading">Send a mail to admin</div>
-
-        <section>
-            <div class="form">
-                <div class="form-group">
-                    <label for="comment">Message us:</label>
-                    <textarea class="form-control" rows="5" id="comment"></textarea>
-                </div>
-                <button type="submit" class="btn btn-round">Submit</button>
-            </div><br><br>
-
-
-
-
-
-
-            To write to <a href="mailto:infos@mns237.org">
-         Deitel & Associates, Inc.</a>, click the link and your default email client will open an email message and address it to us.
-            <p></p><label>For more information </label>
-            <ul class="navbar-nav">
-                <li class="nav-item p-0">
-                    <a class="nav-link" href="https://twitter.com/" placement="bottom" target="_blank" tooltip="Follow us on Twitter">
-                        <i class="fab fa-twitter"> </i>
-                        <p>Twitter</p>
-                    </a>
-                </li>
-                <li class="nav-item p-0">
-                    <a class="nav link" href="https://facebook.com/" placement="bottom" target="_blank" tooltip="follow us on facebook">
-                        <i class="fab fa-facebook"></i>
-                        <p>FaceBook</p>
-                    </a>
-                </li>
-                <li class="nav-item p-0">
-                    <a class="nav-link" href="https://www.linkedin.com/" placement="bottom" target="_blank" tooltip="follow us on Instagram">
-                        <i class="fab fa-linkedin"></i>
-                        <p>Linkin</p>
-                    </a>
-                </li>
-
-            </ul>
-        </section>
-
-
+<!-- Start Kontakt -->
+<section>
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-12 text-center">
+        <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Laisser un commentaire</h1>
+        <h6>Votre adresse de messagerie ne sera pas publiée. Les champs obligatoires sont indiqués avec * </h6>
+      </div>
+      <!-- col -->
     </div>
-    <hr/>
-</div>
+    <!-- row -->
+    <form>
+      <div class="row">
+        <div data-aos="fade-right" class="col-md-6 mb-4 pr-md-4 pl-md-5">
+          <div class="input-group input-group-lg">
+            <textarea name="nachricht" class="form-control" rows="6" placeholder="Nachricht"></textarea>
+          </div>
+        </div>
+        <div data-aos="fade-left" class="col-md-6 pr-md-5 pl-md-4">
+          <div class="input-group input-group-lg mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text icon-user bg-primary text-white"></span>
+            </div>
+            <input type="text" name="name" class="form-control" placeholder="Vollständiger Name">
+          </div>
+          <div class="input-group input-group-lg mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text icon-paper-plane bg-primary text-white"></span>
+            </div>
+            <input type="email" name="email" class="form-control" placeholder="E-Mail">
+          </div>
+          <button type="submit" class="btn btn-outline-primary btn-lg btn-block btn-round">Senden</button>
+        </div>
+      </div>
+      <!-- row -->
+    </form>
+  </div>
+  <!-- container -->
+</section>
+<!-- Ende Kontakt -->

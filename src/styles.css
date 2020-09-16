@@ -24,7 +24,6 @@ h6,
 
 .btn-round {
   border-radius: 35px;
-  background-color: green;
 }
 
 
@@ -57,11 +56,13 @@ nav.navbar.navbar-dark .nav-link:hover {
   padding-right: .5em;
   padding-left: .5em;
 }
-.form{
+
+.form {
   background-color: skyblue;
   border-style: solid;
 }
- .form-group .form-control{
+
+.form-group .form-control {
   border-style: solid block green;
   background-color: #eee;
 }
