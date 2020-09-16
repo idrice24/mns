@@ -37,7 +37,7 @@
 # Sample
 1. [Angular 10 starter](https://github.com/ganatan/angular-example-starter)
 # Howtos
-## Package script
+## Scripting
 ## How to store and run script on angular project
 1. Open package.json file
 1. Go to node "script" and add your command e.g startME
