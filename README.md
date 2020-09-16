@@ -14,8 +14,9 @@
 	<a href="#liecensing">Licensing</a>
 </p>
 
-- For server. Click here to see the [Demo Live](https://localhost:8080/api/)
-- For client. Click here to seee the [Demo Live](https://idrice24.github.io/MNS/)  
+
+- Client. Click here to see  [Live APP](https://idrice24.github.io/mns/)  
+- Web server api:Click here to see [Live RESTFul API](https://mns237-serverapi.herokuapp.com/api/)
 
 # Coding
 ## Precondition
