@@ -1,11 +1,11 @@
 {
-  "name": "angular-mns",
-  "version": "0.0.0",
+  "name": "mns237",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test --watch=true --progress=true ",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "ng build --prod --output-path ./docs --base-href ./",
