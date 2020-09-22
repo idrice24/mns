@@ -20,23 +20,23 @@
 
 # Coding
 ## Precondition
-1.  Angular CLI version 9.1.0 or higher
-1.  Understand scripting for Automation
-1.  Understand Markdown  for documentation
+1.  Angular CLI **version 10 or higher**
+1.  Understand scripting for Automation ?@Idrice ask question
+1.  Understand Markdown for documentation ?@Idrice ask question
 
 ## Development process for client
-1. Clone the code
-1. Goto folder angular-mns
+1. Create new branch or fork 
+1. Clone the Code or pull all*
+1. Switch to your branch from 1.
+1. Run script  start [see](#precondition)
 1. Make your change
-1. Run script  start (on port 4200)
-1. Test your change
-1. Run the script deploy (update automatically docs folder)
-1. Commit mit Issue number (Create a new one if number not exists)
+1. Run the batch file **deploy.cmd** sucess?
+1. Commit with Issue number (Create a new one if number not exists)
 1. Push it
-1. Test your change on cloud
+1. Merge only with review!
 
 # Sample
-1. [Angular 10 starter](https://github.com/ganatan/angular-example-starter)
+Some sample has been listed [here](https://github.com/idrice24/mns/wiki/Samples) be free to add more..
 # Howtos
 ## Scripting
 ## How to store and run script on angular project

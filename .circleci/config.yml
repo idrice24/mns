@@ -14,8 +14,8 @@ jobs:
           key: mns-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - "node_modules"
-      - run: xvfb-run -a npm run test
-      - run: xvfb-run -a npm run e2e
+      #  - run: xvfb-run -a npm run test TODO@Idrice
+      #  - run: xvfb-run -a npm run e2e
       - run:
           name: Change the current directory to backend
           command: echo "A Command in CircleCI "
