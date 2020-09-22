@@ -20,5 +20,8 @@ jobs:
           name: Compiles the app into an output directory named dist/
           command: npm run build
       - run:
+          name: TODO@Idrice  See issue#104
+          command: dir
+      - run:
           name: Deploy the app into an output directory named docs for real app
           command: npm run deploy

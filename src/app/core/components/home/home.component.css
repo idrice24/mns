@@ -1,0 +1,11 @@
+/* === Services ===*/
+
+.services-bg {
+  background: url('/assets/imgs/s.jpg') 50% 0 fixed no-repeat;
+  height: 100%;
+  background-size: cover;
+}
+
+#services .rounded-circle {
+  border: 8px solid #FFF;
+}
