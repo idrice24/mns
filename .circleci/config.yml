@@ -17,8 +17,8 @@ jobs:
       #  - run: xvfb-run -a npm run test TODO@Idrice
       #  - run: xvfb-run -a npm run e2e
       - run:
-          name: Change the current directory to backend
-          command: echo "A Command in CircleCI "
+          name: Compiles the app into an output directory named dist/
+          command: npm run build
       - run:
-          name: Just to test current directory
-          command: dir
+          name: Deploy the app into an output directory named docs for real app
+          command: npm run deploy
