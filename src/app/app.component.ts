@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ export class AppComponent {
 
 
   constructor(private router: Router) {
+    AOS.init();
     console.log('##########> configured routes: ', this.router.config);
   }
 }

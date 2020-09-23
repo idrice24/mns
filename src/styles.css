@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~aos/dist/aos.css';
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~simple-line-icons/css/simple-line-icons.css";
 
@@ -40,6 +41,43 @@ section {
   position: relative;
 }
 
+/* === Start ===*/
+
+.start-bg {
+  background: url('/assets/imgs/aboutus.jpg') 50% 0 fixed no-repeat;
+  height: 100vh;
+  background-size: cover;
+}
+
+#home .container {
+  height: 100%;
+}
+
+#home .row {
+  height: 80%;
+}
+
+/* Farben */
+
+.bg-overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(51, 51, 51, 0.9);
+  position: absolute;
+  top: 0;
+}
+
+a .text-white:hover,
+a.text-white:hover {
+  color: #dc3545 !important;
+  text-decoration: none;
+}
+
+nav {
+  -webkit-transition: 0.7s ease-in-out;
+  -o-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
+}
 
 /* === Navigation ===*/
 
@@ -65,4 +103,32 @@ nav.navbar.navbar-dark .nav-link:hover {
 .form-group .form-control {
   border-style: solid block green;
   background-color: #eee;
+}
+
+/* === Services ===*/
+.services-bg {
+  background: url('/assets/imgs/s.jpg') 50% 0 fixed no-repeat;
+  height: 100%;
+  background-size: cover;
+}
+
+#services .rounded-circle {
+  border: 8px solid #FFF;
+}
+
+
+/* === about-us ===*/
+.img-bg {
+  position: absolute;
+  overflow: hidden;
+  right: 0px;
+  bottom: 0;
+  width: 40vw;
+}
+
+/* === Newsletter ===*/
+.newsletter-bg {
+  background: url('/assets/imgs/aboutus.jpg') 50% 0 fixed no-repeat;
+  height: 100%;
+  background-size: cover;
 }
