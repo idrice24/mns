@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-import { ActivityModule } from './activity/activity.module';
+import { BlogModule } from './blog/blog.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,10 +15,11 @@ import { ActivityModule } from './activity/activity.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule, // CLI adds AppRoutingModule to the AppModule's imports array
     SharedModule,
     CoreModule,
-    ActivityModule
+    BlogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

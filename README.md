@@ -30,7 +30,7 @@
 1. Switch to your branch from 1.
 1. Run script  start [see](#precondition)
 1. Make your change
-1. Run the batch file **deploy.cmd** sucess?
+1. **Run the batch file deploy.cmd ** __No error?__
 1. Commit with Issue number (Create a new one if number not exists)
 1. Push it
 1. Merge only with review!
