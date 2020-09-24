@@ -1,17 +1,19 @@
-[{
-    "content": "hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.",
-    "createdDate": "2013-03-02T15:35:28Z",
-    "id": 1,
-    "publishedDate": "2013-03-02T15:35:00Z",
-    "title": "first blog",
-    "updatedDate": "2013-03-02T15:35:28Z"
-  },
-  {
-    "content": "hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...",
-    "createdDate": "2013-03-02T16:41:45Z",
-    "id": 2,
-    "publishedDate": "2013-03-02T16:41:00Z",
-    "title": "second blog",
-    "updatedDate": "2013-03-02T16:41:45Z"
+{
+  "_embedded": {
+    "blogs": [{
+      "content": "hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.",
+      "createdDate": "2013-03-02T15:35:28Z",
+      "id": 1,
+      "publishedDate": "2013-03-02T15:35:00Z",
+      "title": "first blog",
+      "updatedDate": "2013-03-02T15:35:28Z"
+    }, {
+      "content": "hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...",
+      "createdDate": "2013-03-02T16:41:45Z",
+      "id": 2,
+      "publishedDate": "2013-03-02T16:41:00Z",
+      "title": "second blog",
+      "updatedDate": "2013-03-02T16:41:45Z"
+    }]
   }
-]
+}
