@@ -6,6 +6,7 @@ import { AboutComponent } from './components/about/about.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -20,14 +21,15 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   ],
 
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule // Links will not works important!!
   ],
   exports: [
-
     HomeComponent,
     LoginComponent,
     AboutComponent,
     ContactComponent,
+    PageNotFoundComponent
   ]
 })
 export class CoreModule { }
