@@ -8,6 +8,7 @@ import { NewsletterComponent } from './core/components/newsletter/newsletter.com
 
 import { ContactComponent } from './core/components/contact/contact.component';
 import { BlogListComponent } from './blog/components/blog-list/blog-list.component';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 
 // sets up routes constant where you define your routes
@@ -17,8 +18,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'newsletter', component: NewsletterComponent },
-
-  { path: '**', redirectTo: 'home' }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
 ];
 // configures NgModule imports and exports
 @NgModule({
