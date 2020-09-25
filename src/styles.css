@@ -44,7 +44,7 @@ section {
 /* === Start ===*/
 
 .start-bg {
-  background: url('/assets/imgs/aboutus.jpg') 50% 0 fixed no-repeat;
+  background: url('assets/imgs/aboutus.jpg') 50% 0 fixed no-repeat;
   height: 100vh;
   background-size: cover;
 }
@@ -131,4 +131,17 @@ nav.navbar.navbar-dark .nav-link:hover {
   background: url('/assets/imgs/aboutus.jpg') 50% 0 fixed no-repeat;
   height: 100%;
   background-size: cover;
+}
+
+/* === Gallery ===*/
+
+.card-columns {
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  column-gap: 0;
+}
+
+.card-columns .card {
+  margin-bottom: -1px;
+  border: 0;
 }
