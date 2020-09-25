@@ -22,10 +22,9 @@ const routes: Routes = [
   { path: '**', component: PageNotFoundComponent }
 ];
 // configures NgModule imports and exports
+// ,  { enableTracing: true } // <-- debugging purposes only
 @NgModule({
-  imports: [RouterModule.forRoot(routes
-    , { enableTracing: true } // <-- debugging purposes only
-  )],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
