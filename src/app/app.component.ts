@@ -9,9 +9,10 @@ import * as AOS from 'aos';
 })
 export class AppComponent {
   title = 'mns237';
-
+  location: Location;
 
   constructor(private router: Router) {
+    window.location.href.replace('http', 'https');
     AOS.init();
     console.log('##########> configured routes: ', this.router.config);
   }
