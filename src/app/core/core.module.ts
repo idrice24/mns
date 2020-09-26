@@ -7,6 +7,7 @@ import { NewsletterComponent } from './components/newsletter/newsletter.componen
 import { ContactComponent } from './components/contact/contact.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -22,7 +23,9 @@ import { RouterModule } from '@angular/router';
 
   imports: [
     CommonModule,
-    RouterModule // Links will not works important!!
+    RouterModule, // Links will not works important!!
+    FormsModule, // Form will not works important!!
+    ReactiveFormsModule// Form will not works important!!
   ],
   exports: [
     HomeComponent,
