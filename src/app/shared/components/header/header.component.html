@@ -25,23 +25,20 @@
          <li class="nav-item">
            <a class="nav-link smooth" href="#contact">Contact</a>
          </li>
-         <li class="dropdown nav-item" dropdown>
-           <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" dropdownToggle
-             href="javascript:void(0)">
-             <i class="fa fa-cogs d-lg-none d-xl-none"> </i> CMS
-           </a>
-           <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
-             <ul>
-               <li>
-                 <a class="dropdown-item">
-                   <i class="tim-icons icon-single-02"> </i> Se connecter a
-                   l'administrateur
-                 </a>
-               </li>
-               <li>
-                 <a class="tim-icons icon-heart" routerLink="/galeries">GALERY</a>
-               </li>
-             </ul>
+
+         <!-- REF: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+         <li class="nav-item">
+           <div class="dropdown">
+             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fa fa-cogs d-lg-none d-xl-none"> </i> CMS
+             </button>
+             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+               <a class="dropdown-item" href="#">
+                 <i class="tim-icons icon-single-02"> </i> Administrateur</a>
+               <a class="dropdown-item" href="#">Another action</a>
+
+             </div>
            </div>
          </li>
          <li class="nav-item">

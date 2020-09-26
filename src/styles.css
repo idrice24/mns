@@ -105,14 +105,14 @@ nav.navbar.navbar-dark .nav-link:hover {
   background-color: #eee;
 }
 
-/* === Services ===*/
-.services-bg {
-  background: url('/assets/img/bg3.jpg') 50% 0 fixed no-repeat;
+/* === News  ===*/
+.news-bg {
+  background: url('assets/img/bg11.jpg') 50% 0 fixed no-repeat;
   height: 100%;
   background-size: cover;
 }
 
-#services .rounded-circle {
+#news .rounded-circle {
   border: 8px solid #FFF;
 }
 
@@ -173,7 +173,7 @@ a {
 
 /* Bild Hover */
 #blog .card img,
-#services img {
+#news img {
   filter: grayscale(60%);
   -webkit-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
@@ -181,6 +181,6 @@ a {
 }
 
 #blog .card:hover img,
-#services img:hover {
+#news img:hover {
   filter: none;
 }

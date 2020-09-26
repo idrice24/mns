@@ -4,7 +4,7 @@
       "content": "hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.",
       "createdDate": "2020-03-02T15:35:28Z",
       "id": 1,
-      "imageUrl": "/assets/img/bg1.jpg",
+      "imageUrl": "assets/img/bg1.jpg",
       "publishedDate": "2013-03-02T15:35:00Z",
       "title": "first topic",
       "updatedDate": "2020-03-02T15:35:28Z",
