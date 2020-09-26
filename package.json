@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "ng build --prod --output-path ./docs --base-href ./",
-    "compodoc": "npx compodoc -p tsconfig.json -o -s"
+    "compodoc": "npx compodoc -p tsconfig.json -o -s",
+    "dev": "npm run deploy && ng serve --open"
   },
   "private": true,
   "dependencies": {
