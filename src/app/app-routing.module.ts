@@ -10,12 +10,14 @@ import { ContactComponent } from './core/components/contact/contact.component';
 import { BlogListComponent } from './blog/components/blog-list/blog-list.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { GalleryComponent } from './gallery/components/gallery/gallery.component';
+import { TopicDetailComponent } from './blog/components/topic-detail/topic-detail.component';
 
 
 // sets up routes constant where you define your routes
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'blog', component: BlogListComponent },
+  { path: 'topic/:id', component: TopicDetailComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'newsletter', component: NewsletterComponent },

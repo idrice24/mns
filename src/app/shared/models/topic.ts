@@ -1,4 +1,4 @@
-export class Blog {
+export class Topic {
   content: string;
   createdDate: string;
   id: number;
