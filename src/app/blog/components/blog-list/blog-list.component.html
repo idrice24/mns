@@ -9,6 +9,7 @@
     </div>
     <!-- row -->
     <div class="row">
+ 
       <div *ngFor="let blog of blogs" class="card-deck mb-4 mx-4 mx-sm-auto">
         <!-- Start Card -->
         <div data-aos="fade-up" class="card mb-5 mb-sm-2">
@@ -22,13 +23,16 @@
           <div class="card-footer">
             <button [routerLink]="['/topic', blog.id]" class="btn btn-outline-primary btn-round"
               type="button">Detail</button>
+ 
           </div>
         </div>
 
       </div>
 
     </div>
+ 
 
   </div>
 
+ 
 </section>
