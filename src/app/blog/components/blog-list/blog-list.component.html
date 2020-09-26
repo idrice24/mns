@@ -9,102 +9,26 @@
     </div>
     <!-- row -->
     <div class="row">
-      <div class="card-deck mb-4 mx-4 mx-sm-auto">
+      <div *ngFor="let blog of blogs" class="card-deck mb-4 mx-4 mx-sm-auto">
         <!-- Start Card -->
         <div data-aos="fade-up" class="card mb-5 mb-sm-2">
-          <img class="card-img-top" src="assets/img/bg8.jpg" alt="Premium 3">
+          <img class="card-img-top" [src]="blog.imageUrl" alt="Premium 3">
           <div class="card-body">
-            <h3 class="card-title text-primary">Premium <span class="icon-star h5 pr-1"></span><span
+            <h3 class="card-title text-primary">{{blog.title}} <span class="icon-star h5 pr-1"></span><span
                 class="icon-star h5 pr-1"></span><span class="icon-star h5 pr-1"></span></h3>
-            <p class="card-text">Genau zu diesem Zwecke erschaffen, immer im Schatten meines großen Bruders »Lorem
-              Ipsum«, freue ich mich jedes Mal, wenn Sie ein paar Zeilen lesen. Denn esse est percipi.</p>
-            <p class="card-text lead text-primary">TODO</p>
+            <p class="card-text"> {{blog.content}}</p>
+            <p class="card-text lead text-primary">Read more..</p>
           </div>
           <div class="card-footer">
-            <button class="btn btn-outline-primary btn-round" type="button">Add a comment</button>
-          </div>
-        </div>
-        <!-- Ende Card -->
-        <!-- Start Card -->
-        <div data-aos="fade-up" class="card mb-5 mb-sm-2">
-          <img class="card-img-top" src="assets/img/bg6.jpg" alt="Premium 2">
-          <div class="card-body">
-            <h3 class="card-title text-primary">Premium <span class="icon-star h5 pr-1"></span><span
-                class="icon-star h5 pr-1"></span></h3>
-            <p class="card-text">Er konnte die Aufforderung stehen zu bleiben schon hören. Gehetzt sah er sich um.
-              Plötzlich erblickte er den schmalen Durchgang. </p>
-            <p class="card-text lead text-primary">Read more...</p>
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-outline-primary btn-round" type="button">Add a comment</button>
-          </div>
-        </div>
-        <!-- Ende Card -->
-        <!-- Start Card -->
-        <div data-aos="fade-up" class="card mb-5 mb-sm-2">
-          <img class="card-img-top" src="assets/img/bg4.jpg" alt="Premium 1">
-          <div class="card-body">
-            <h3 class="card-title text-primary">Premium <span class="icon-star h5 pr-1"></span></h3>
-            <p class="card-text">Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und
-              abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm
-              zu einem der unzähligen Gesetzeshüter dieser Stadt!</p>
-            <p class="card-text lead text-primary">Read more...</p>
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-outline-primary btn-round" type="button">Add a comment</button>
-          </div>
-        </div>
-        <!-- Ende Card -->
-      </div>
-      <!-- card-deck -->
-      <div class="card-deck mb-4 mx-4 mx-sm-auto">
-        <!-- Start Card -->
-        <div data-aos="fade-up" class="card mb-5 mb-sm-2">
-          <img class="card-img-top" src="assets/img/bg3.jpg" alt="Gold Kaffee">
-          <div class="card-body">
-            <h3 class="card-title text-primary">Gold</h3>
-            <p class="card-text">Er konnte die Aufforderung stehen zu bleiben schon hören. Gehetzt sah er sich um.
-              Plötzlich erblickte er den schmalen Durchgang.</p>
-            <p class="card-text lead text-primary">Read more...</p>
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-outline-primary btn-round" type="button">Add a comment</button>
-          </div>
-        </div>
-        <!-- Ende Card -->
-        <!-- Start Card -->
-        <div data-aos="fade-up" class="card mb-5 mb-sm-2">
-          <img class="card-img-top" src="assets/img/bg11.jpg" alt="Silber Kaffee">
-          <div class="card-body">
-            <h3 class="card-title text-primary">Silber</h3>
-            <p class="card-text">Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und
-              abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm
-              zu einem der unzähligen Gesetzeshüter dieser Stadt!</p>
-            <p class="card-text lead text-primary">Read more...</p>
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-outline-primary btn-round" type="button">Add a comment</button>
-          </div>
-        </div>
-        <!-- Ende Card -->
-        <!-- Start Card -->
-        <div data-aos="fade-up" class="card mb-5 mb-sm-2">
-          <img class="card-img-top" src="assets/img/bg7.jpg" alt="Bronze Kaffee">
-          <div class="card-body">
-            <h3 class="card-title text-primary">Bronze</h3>
-            <p class="card-text">Genau zu diesem Zwecke erschaffen, immer im Schatten meines großen Bruders »Lorem
-              Ipsum«, freue ich mich jedes Mal, wenn Sie ein paar Zeilen lesen. Denn esse est percipi.</p>
-            <p class="card-text lead text-primary">Read more...</p>
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-outline-primary btn-round" type="button">Add a comment</button>
+            <button [routerLink]="['/topic', blog.id]" class="btn btn-outline-primary btn-round"
+              type="button">Detail</button>
           </div>
         </div>
 
       </div>
 
     </div>
-    <!-- row -->
+
   </div>
-  <!-- container -->
+
 </section>
