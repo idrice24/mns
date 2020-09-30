@@ -11,7 +11,8 @@
 	<a href="#how-to-contribute">Contribute</a>.
 	<a href="#contributors">Contributors</a>.
 	<a href="#repositories">Repositories</a>.
-	<a href="#liecensing">Licensing</a>
+	<a href="#liecensing">Licensing</a>.
+  <a href="#more_info">More info</a>
 </p>
 
 # Table of contents
@@ -44,6 +45,16 @@ Some sample has been listed [here](https://github.com/idrice24/mns/wiki/Samples)
 1. Go to node "script" and add your command e.g startME
 1. Open CMD Window and run npm run startME
 
- 
+## liecensing
+## service-apis
+## support-and-feedback 
+## how-to-contribute
+## contributors
+ - @Idrice24
+ - @Gishlain1
+## repositories
+## liecensing
+
+## More_info
 
  [Back to top](#table-of-contents)
