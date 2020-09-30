@@ -1,41 +1,27 @@
 version: 2.0
 
-
 jobs:
-   build:
-      working_directory: ~/MNS/backend
-      docker:
-         - image: cimg/openjdk:14.0
-      steps:
-         - checkout: # check out source code to working directory
-              path: ~/MNS
-         - run:
-              name: CURRENT JAVA version
-              command: java --version
-         - run:
-              name: Just to test current directory
-              command: ls ~/MNS/backend
-         - restore_cache: # restore the saved cache after the first run or if `pom.xml` has changed
-              # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
-              key: MNS-{{ checksum "pom.xml" }}
-         - run:
-              name: Gets the project dependencies
-              command: mvn dependency:go-offline
-         - save_cache: # saves the project dependencies
-              paths:
-                 - ~/.m2
-              key: MNS-{{ checksum "pom.xml" }}
-         - run:
-              name: Change the current directory to backend
-              command: echo "A Command in CircleCI "
-         - run:
-              name: Just to test current directory
-              command: dir
-         - run:
-              name: CLEAN
-              command: mvn clean
-         - run:
-              name: PACKAGIN (Run all test)
-              command: mvn   package
-
-
+  build:
+    working_directory: ~/mns
+    docker:
+      - image: circleci/node:10-browsers-legacy
+    steps:
+      - checkout
+      - restore_cache:
+          key: mns-{{ .Branch }}-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          key: mns-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - "node_modules"
+      #  - run: xvfb-run -a npm run test TODO@Idrice
+      #  - run: xvfb-run -a npm run e2e
+      - run:
+          name: Compiles the app into an output directory named dist/
+          command: npm run build
+      - run:
+          name: TODO@Idrice  See issue#104
+          command: dir
+      - run:
+          name: Deploy the app into an output directory named docs for real app
+          command: npm run deploy

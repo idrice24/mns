@@ -1,0 +1,50 @@
+ <!-- Start Navigation -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-0">
+   <div class="container">
+     <a class="navbar-brand font-alt" routerLink="/home" routerLinkActive="active">
+       <img class="mr-2 mb-3" src="assets/img/logo.svg" height="40"> MNS237
+     </a>
+     <button class="navbar-toggler btn-round" type="button" data-toggle="collapse" data-target="#navbar-toggle"
+       aria-controls="navbar-toggle">
+       <span class="icon-menu"></span>
+     </button>
+     <div class="collapse navbar-collapse justify-content-end text-uppercase" id="navbar-toggle">
+       <ul class="navbar-nav">
+         <li class="nav-item">
+           <a class="nav-link smooth" routerLink="/home">Home</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link smooth" routerLink="/blog">Blog</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link smooth" href="#about-us">About us</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link smooth" href="#newsletter">Newsletter </a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link smooth" href="#contact">Contact</a>
+         </li>
+
+         <!-- REF: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+         <li class="nav-item">
+           <div class="dropdown">
+             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fa fa-cogs d-lg-none d-xl-none"> </i> CMS
+             </button>
+             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+               <a class="dropdown-item" routerLink="admin">
+                 <i class="icon-settings"> </i> Administrateur</a>
+               <a class="dropdown-item" href="#">Another action</a>
+             </div>
+           </div>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link smooth" href="#gallery">Gallery</a>
+         </li>
+
+       </ul>
+     </div>
+   </div>
+ </nav>

@@ -1,0 +1,38 @@
+<!-- Start Produkte -->
+<section id="blog">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-12 text-center">
+        <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Notre Blog</h1>
+      </div>
+      <!-- col -->
+    </div>
+    <!-- row -->
+    <div class="row">
+ 
+      <div *ngFor="let blog of blogs" class="card-deck mb-4 mx-4 mx-sm-auto">
+        <!-- Start Card -->
+        <div data-aos="fade-up" class="card mb-5 mb-sm-2">
+          <img class="card-img-top" [src]="blog.imageUrl" alt="Premium 3">
+          <div class="card-body">
+            <h3 class="card-title text-primary">{{blog.title}} <span class="icon-star h5 pr-1"></span><span
+                class="icon-star h5 pr-1"></span><span class="icon-star h5 pr-1"></span></h3>
+            <p class="card-text"> {{blog.content}}</p>
+            <p class="card-text lead text-primary">Read more..</p>
+          </div>
+          <div class="card-footer">
+            <button [routerLink]="['/topic', blog.id]" class="btn btn-outline-primary btn-round"
+              type="button">Detail</button>
+ 
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+ 
+
+  </div>
+
+ 
+</section>

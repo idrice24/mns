@@ -1,0 +1,32 @@
+<!-- REF: https://bootsnipp.com/snippets/E1gVl -->
+<section id="login">
+  <div class="card-body">
+    <div class="col-md-12 text-center">
+      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Login</h1>
+    </div>
+    <div class="col-md-12 align-center">
+
+      <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+        <div class=" row">
+          <div data-aos="fade-left" class="col-md-6 pr-md-5 pl-md-4">
+            <div class="input-group input-group-lg mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text icon-user bg-primary text-white"></span>
+              </div>
+              <input type="text" name="username" class="form-control" formControlName="username" placeholder="Username">
+            </div>
+            <div class="input-group input-group-lg mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text icon-key bg-primary text-white"></span>
+              </div>
+              <input type="password" name="password" class="form-control" formControlName="password"
+                placeholder="Pasword">
+            </div>
+            <button type="submit" class="btn btn-outline-primary btn-lg btn-block btn-round">Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</section>
