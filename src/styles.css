@@ -36,13 +36,11 @@ section {
 
 
 /* Hilfsklassen */
-
 .d-relative {
   position: relative;
 }
 
 /* === Start ===*/
-
 .start-bg {
   background: url('/assets/img/aboutus.jpg') 50% 0 fixed no-repeat;
   height: 100vh;
@@ -58,7 +56,6 @@ section {
 }
 
 /* Farben */
-
 .bg-overlay {
   height: 100%;
   width: 100%;
