@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod --output-path ./docs --base-href ./",
+    "deploy": "ng build --prod --output-path docs --base-href /mns/",
     "compodoc": "npx compodoc -p tsconfig.json -o -s",
     "dev": "npm run deploy && ng serve --open"
   },
