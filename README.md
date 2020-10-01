@@ -5,6 +5,8 @@
   <a href="https://github.com/idrice24/mns/" title="License"><img src="https://img.shields.io/github/license/idrice24/mns?style=flat-square"></a>
   <a href="https://github.com/idrice24/mns/" title="Languages"><img src="https://img.shields.io/github/languages/count/idrice24/mns?style=flat-square"></a>
   <a href="https://github.com/idrice24/mns/" title="Version"><img src="https://img.shields.io/github/package-json/v/idrice24/mns?style=flat-square"></a>
+  <img src="https://img.shields.io/github/commit-activity/w/idrice24/mns?style=flat-square">
+  
 </p>
 . 
 <p align="center">
