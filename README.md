@@ -4,6 +4,7 @@
 <a href="https://app.circleci.com/pipelines/github/idrice24/mns" title="Circleci"><img src="https://img.shields.io/circleci/build/github/idrice24/mns?color=green&logo=red&style=flat-square?style=flat-square"></a>
   <a href="https://github.com/idrice24/mns/" title="License"><img src="https://img.shields.io/github/license/idrice24/mns?style=flat-square"></a>
   <a href="https://github.com/idrice24/mns/" title="Languages"><img src="https://img.shields.io/github/languages/count/idrice24/mns?style=flat-square"></a>
+  <a href="https://github.com/idrice24/mns/" title="Version"><img src="https://img.shields.io/github/package-json/v/idrice24/mns?style=flat-square"></a>
 </p>
 . 
 <p align="center">
