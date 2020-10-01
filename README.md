@@ -40,6 +40,7 @@
 
 # Sample
 Some sample has been listed [here](https://github.com/idrice24/mns/wiki/Samples) be free to add more..
+- [Ref1](https://www.truecodex.com/)
 # Howtos
 ## Scripting
 ## How to store and run script on angular project
