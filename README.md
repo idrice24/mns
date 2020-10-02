@@ -34,9 +34,10 @@
 1. Create new branch or fork 
 1. Clone the Code or pull all*
 1. Switch to your branch from 1.
-1. Run script  start [see](#precondition)
+1. Run script  start --> **npm run start** to start angular app No error?
 1. Make your change
-1. **Run the batch file deploy.cmd ** __No error?__
+1. Run the script deploy--> **npm run deploy** to generate gh-page __No error?__
+1. Go to docs folder  copy&paste index.hml  and rename it to 404.html
 1. Commit with Issue number (Create a new one if number not exists)
 1. Push it
 1. Merge only with review!
