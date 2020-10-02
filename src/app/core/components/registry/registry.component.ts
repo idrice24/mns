@@ -13,7 +13,7 @@ export class RegistryComponent implements OnInit {
 
   registryForm;
   appUser: AppUser;
-  editName: string;
+  message: string;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -37,9 +37,17 @@ export class RegistryComponent implements OnInit {
   }
 
   onSubmit(userAppData) {
-    this.gotoHome();
-    console.warn('Your user has been submitted', userAppData);
+
+    // Ref: https://angular.io/start/start-forms
+    this.registryForm.reset();
+    this.message = 'Your user has been submitted';
+    console.warn(this.message, userAppData);
+
+    // Just wait 3 s
+    this.delay(3000);
+
   }
+
   gotoHome() {
     const appUserId = this.appUser ? this.appUser.id : null;
     // Pass along the user id if available
@@ -49,5 +57,7 @@ export class RegistryComponent implements OnInit {
     // this.router.navigate(['./', { id: appUserId, foo: 'foo' }], { relativeTo: this.route });
     this.router.navigate(['/home']);
   }
-
+  async delay(ms: number) {
+    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => this.gotoHome());
+  }
 }
