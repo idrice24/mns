@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { tap, delay, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class AuthService {
 
   login(username, password): Observable<boolean> {
     // logic to check password
-    const isOkay = username === 'admin' && password === 'idrice';
+    const isOkay = username === 'admin' && password === 'admin';
     return of(isOkay).pipe(
       delay(1000),
       tap(val => this.isLoggedIn = isOkay)

@@ -17,6 +17,15 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
+  /** GET User by id. Will 404 if id not found */
+  getUser(id: number): Observable<AppUser> {
+    const url = `${this.usersUrl}/${id}`;
+    return this.httpClient.get<AppUser>(url).pipe(
+      tap(_ => this.log(`fetched User id=${id}`)),
+      catchError(this.handleError<AppUser>(`getUser id=${id}`))
+    );
+  }
+
   /** GET Users from the server */
   getUsers(): Observable<AppUser[]> {
     return this.httpClient.get<AppUser[]>(this.usersUrl).pipe(
