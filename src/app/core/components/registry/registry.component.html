@@ -12,7 +12,17 @@
           <div class="input-group-prepend">
             <span class="input-group-text icon-pin bg-primary text-white"></span>
           </div>
-          <input type="text" name="fName" class="form-control" formControlName="fName" placeholder="First Name">
+          <input type="text" name="fName" class="form-control" formControlName="fName" placeholder="First Name"
+            required>
+          <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="alert alert-danger">
+
+            <div *ngIf="fName.errors.required">
+              Name is required.
+            </div>
+            <div *ngIf="fName.errors.minlength">
+              Name must be at least 4 characters long.
+            </div>
+          </div>
         </div>
 
         <!-- Last Name-->
@@ -20,7 +30,8 @@
           <div class="input-group-prepend">
             <span class="input-group-text icon-wallet bg-primary text-white"></span>
           </div>
-          <input type="text" name="lName" class="form-control" formControlName="lName" placeholder="Last Name">
+          <input required type="text" name="lName" class="form-control" formControlName="lName" placeholder="Last Name">
+
         </div>
 
         <!-- Text EMAIL-->

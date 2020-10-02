@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AppUser } from 'src/app/shared/models/app-user';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DialogService } from 'src/app/shared/services/dialog.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user.service';
+
+
 
 @Component({
   selector: 'app-registry',
@@ -11,13 +13,11 @@ import { UserService } from 'src/app/shared/services/user.service';
   styleUrls: ['./registry.component.css']
 })
 export class RegistryComponent implements OnInit {
-
   registryForm;
   appUser: AppUser;
   users: AppUser[];
   message: string;
   numberOfUsers: number;
-
 
   constructor(
     private route: ActivatedRoute,
@@ -27,13 +27,14 @@ export class RegistryComponent implements OnInit {
     public dialogService: DialogService) {
 
     this.registryForm = this.formBuilder.group({
-      fName: '',
+      fName: new FormControl(this.fName, [Validators.required, Validators.minLength(4)]),
       lName: '',
       email: '',
       password: ''
     });
-
   }
+
+
 
   ngOnInit() {
     this.route.data
@@ -86,4 +87,7 @@ export class RegistryComponent implements OnInit {
   getNumberOfUsers() {
     return this.userService.getUsers().subscribe(i => this.numberOfUsers = i.length);
   }
+
+  get fName() { return this.registryForm.get('fName'); }
 }
+

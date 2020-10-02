@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { Router, NavigationExtras } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UserService } from 'src/app/shared/services/user.service';
 // REF: https://angular.io/start/start-forms
 @Component({
   selector: 'app-login',
@@ -26,8 +27,8 @@ export class LoginComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
 
-  login(data) {
-    console.warn('Your order has been submitted', data);
+  login(userData) {
+    console.warn('Your order has been submitted', userData);
 
     // TODO@Idrice logs this messae better way
     this.message = 'Trying to log in ...';
