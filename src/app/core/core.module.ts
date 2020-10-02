@@ -9,6 +9,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistryComponent } from './components/registry/registry.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from '../in-memory-data.service';
 
 
 
@@ -27,7 +29,8 @@ import { RegistryComponent } from './components/registry/registry.component';
     CommonModule,
     RouterModule, // Links will not works important!!
     FormsModule, // Form will not works important!!
-    ReactiveFormsModule// Form will not works important!!
+    ReactiveFormsModule, // Form will not works important!!
+
   ],
   exports: [
     HomeComponent,
