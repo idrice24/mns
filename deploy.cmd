@@ -3,7 +3,7 @@ ECHO on
 ECHO   "######## Deploy  Starting #############"
 
 REM Run Deploy in a new window and until finish
-REM Start  /WAIT  npm run deploy
+Start  /WAIT  npm run deploy
 
 
 REM Copy and paste commad

@@ -3,6 +3,7 @@ import { AppUser } from 'src/app/shared/models/app-user';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { FormBuilder } from '@angular/forms';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-registry',
@@ -13,10 +14,15 @@ export class RegistryComponent implements OnInit {
 
   registryForm;
   appUser: AppUser;
+  users: AppUser[];
   message: string;
+  numberOfUsers: number;
+
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private userService: UserService,
     private formBuilder: FormBuilder,
     public dialogService: DialogService) {
 
@@ -34,17 +40,22 @@ export class RegistryComponent implements OnInit {
       .subscribe((data: { appUser: AppUser }) => {
         this.appUser = data.appUser;
       });
+
+    this.getNumberOfUsers();
+    this.getUsers();
   }
 
   onSubmit(userAppData) {
-
+    if (!userAppData) {
+      return;
+    }
+    this.userService.addUser(userAppData).subscribe();
     // Ref: https://angular.io/start/start-forms
     this.registryForm.reset();
     this.message = 'Your user has been submitted';
     console.warn(this.message, userAppData);
-
-    // Just wait 3 s
-    this.delay(3000);
+    // Just wait 2 s
+    this.delay(2000);
 
   }
 
@@ -57,7 +68,22 @@ export class RegistryComponent implements OnInit {
     // this.router.navigate(['./', { id: appUserId, foo: 'foo' }], { relativeTo: this.route });
     this.router.navigate(['/home']);
   }
+
+  getUsers(): void {
+    this.userService.getUsers()
+      .subscribe(users => this.users = users);
+  }
+
+  delete(appUser: AppUser): void {
+    this.users = this.users.filter(user => user !== appUser);
+    this.userService.deleteUser(appUser).subscribe();
+  }
+
   async delay(ms: number) {
-    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => this.gotoHome());
+    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => this.getNumberOfUsers());
+  }
+
+  getNumberOfUsers() {
+    return this.userService.getUsers().subscribe(i => this.numberOfUsers = i.length);
   }
 }

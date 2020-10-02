@@ -10,18 +10,18 @@ import { Observable } from 'rxjs';
 })
 export class BlogService {
 
-  private baseUrl = './assets/data/blogs.json';
+  // private baseUrl = '/assets/data/blogs.json';
+  private blogUrl = 'api/blog';
 
-  constructor(private httpClient: HttpClient) {
-
-  }
+  constructor(private httpClient: HttpClient) { }
 
   getBlogList() {
-    return this.httpClient.get<GetResponse>(this.baseUrl).pipe(map(res => res._embedded.blogs));
+    // TODO@Idrice find out best way to  call  without [0]
+    return this.httpClient.get<GetResponse>(this.blogUrl).pipe(map(res => res[0]._embedded.blogs));
   }
 
   getTopicList(): Observable<Topic[]> {
-    return this.httpClient.get<GetResponse>(this.baseUrl).pipe(map(res => res._embedded.blogs));
+    return this.httpClient.get<GetResponse>(this.blogUrl).pipe(map(res => res._embedded.blogs));
 
   }
   getTopic(id: number | string) {

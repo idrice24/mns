@@ -2,6 +2,7 @@
   <div class="card-body">
     <div class="col-md-12 text-center">
       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Registry</h1>
+      <h2> Number of users: {{numberOfUsers}}</h2>
     </div>
     <div class="col-md-12 align-center">
 
@@ -50,3 +51,12 @@
     </div>
   </div>
 </section>
+
+<ul>
+  <li *ngFor="let appUser of users">
+    <a routerLink="/detail/{{appUser.id}}">
+      <span class="badge">{{appUser.id}}</span> {{appUser.fName}}
+    </a>
+    <button class="delete" title="delete appUser" (click)="delete(appUser)">x</button>
+  </li>
+</ul>
