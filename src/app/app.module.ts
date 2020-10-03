@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InMemoryDataService } from './in-memory-data.service';
+import { GalleryModule } from './gallery/gallery.module';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { InMemoryDataService } from './in-memory-data.service';
     SharedModule,
     CoreModule,
     BlogModule,
+    GalleryModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

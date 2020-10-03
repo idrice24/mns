@@ -27,7 +27,7 @@ const adminRoutes: Routes = [
   }
 ];
 @NgModule({
-  declarations: [AdminComponent],
+  declarations: [AdminComponent, AdminDashboardComponent, ManageGalleryComponent, ManageBlogComponent],
   imports: [
     CommonModule,
     RouterModule,

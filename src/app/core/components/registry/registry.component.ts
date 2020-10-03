@@ -27,7 +27,7 @@ export class RegistryComponent implements OnInit {
     public dialogService: DialogService) {
 
     this.registryForm = this.formBuilder.group({
-      fName: new FormControl(this.fName, [Validators.required, Validators.minLength(4)]),
+      fName: '',
       lName: '',
       email: '',
       password: ''
@@ -88,6 +88,6 @@ export class RegistryComponent implements OnInit {
     return this.userService.getUsers().subscribe(i => this.numberOfUsers = i.length);
   }
 
-  get fName() { return this.registryForm.get('fName'); }
+  // get fName() { return this.registryForm.get('fName'); }
 }
 

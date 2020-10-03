@@ -21,7 +21,8 @@ import { InMemoryDataService } from '../in-memory-data.service';
     AboutComponent,
     ContactComponent,
     PageNotFoundComponent,
-    RegistryComponent
+    RegistryComponent,
+    NewsletterComponent
 
   ],
 
