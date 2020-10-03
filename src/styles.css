@@ -42,16 +42,16 @@ section {
 
 /* === Start ===*/
 .start-bg {
-  background: url('/assets/img/aboutus.jpg') 50% 0 fixed no-repeat;
+  background: url('assets/img/bg1.jpg') 50% 0 fixed no-repeat;
   height: 100vh;
   background-size: cover;
 }
 
-#home .container {
+#start .container {
   height: 100%;
 }
 
-#home .row {
+#start .row {
   height: 80%;
 }
 
@@ -104,7 +104,7 @@ nav.navbar.navbar-dark .nav-link:hover {
 
 /* === News  ===*/
 .news-bg {
-  background: url('assets/img/bg11.jpg') 50% 0 fixed no-repeat;
+  background: url('assets/img/aboutus.jpg') 50% 0 fixed no-repeat;
   height: 100%;
   background-size: cover;
 }
