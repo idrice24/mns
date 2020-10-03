@@ -1,0 +1,37 @@
+/*******************
+Main sidebar
+******************/
+
+.left-sidebar {
+  position: fixed;
+  width: 40;
+  height: 100%;
+  top: 0px;
+  z-index: 10;
+  padding-top: 64px;
+  background: darkred;
+  box-shadow: royalblue;
+  transition: 0.2s ease-in;
+}
+
+.sidebar-nav ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.sidebar-nav ul li {
+  list-style: none;
+}
+
+.sidebar-nav li.active>.has-arrow::after,
+.sidebar-nav li>.has-arrow.active::after,
+.sidebar-nav .has-arrow[aria-expanded="true"]::after {
+  -webkit-transform: rotate(-135deg) translate(0, -50%);
+  -ms-transform: rotate(-135deg) translate(0, -50%);
+  -o-transform: rotate(-135deg) translate(0, -50%);
+  transform: rotate(-135deg) translate(0, -50%);
+}
+
+.collapse.in {
+  display: block;
+}
