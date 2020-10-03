@@ -42,6 +42,11 @@
 1. Push it
 1. Merge only with review!
 
+Or
+
+Run the powershell script **gh-page.ps1**
+<hr/>
+
 # Sample
 Some sample has been listed [here](https://github.com/idrice24/mns/wiki/Samples) be free to add more..
 - [Ref1](https://www.truecodex.com/)
