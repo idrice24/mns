@@ -7,6 +7,7 @@
     "build": "ng build",
     "test2": "ng test ",
     "test": "ng test",
+    "test-deploy": "npm run test -- --no-watch --no-progress",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "ng build --prod --output-path docs --base-href /mns/ ",

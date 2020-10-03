@@ -36,6 +36,7 @@
 1. Switch to your branch from 1.
 1. Run script  start --> **npm run start** to start angular app No error?
 1. Make your change
+1. Run the script test --> **npm run test-deploy** all green?
 1. Run the script deploy--> **npm run deploy** to generate gh-page __No error?__
 1. Go to docs folder  copy&paste index.hml  and rename it to 404.html
 1. Commit with Issue number (Create a new one if number not exists)
@@ -44,7 +45,7 @@
 
 Or
 
-Run the powershell script **gh-page.ps1**
+Run the batch file **deploy.cmd** and Commit your change if **NO error**
 <hr/>
 
 # Sample

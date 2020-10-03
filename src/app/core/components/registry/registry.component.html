@@ -1,20 +1,19 @@
 <section id="registry">
-  <div class="card-body">
-    <div class="col-md-12 text-center">
-      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Registry</h1>
-      <h2> Number of users: {{numberOfUsers}}</h2>
-    </div>
-    <div class="col-md-12 align-center">
+    <div class="card-body">
+        <div class="col-md-12 text-center">
+            <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Registry</h1>
+            <h2> Number of users: {{numberOfUsers}}</h2>
+        </div>
+        <div class="col-md-12 align-center">
 
-      <form [formGroup]="registryForm" (ngSubmit)="onSubmit(registryForm.value)" class="form-horizontal">
-        <!-- First Name-->
-        <div class="input-group input-group-lg mb-4">
-          <div class="input-group-prepend">
-            <span class="input-group-text icon-pin bg-primary text-white"></span>
-          </div>
-          <input type="text" name="fName" class="form-control" formControlName="fName" placeholder="First Name"
-            required>
-          <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="alert alert-danger">
+            <form [formGroup]="registryForm" (ngSubmit)="onSubmit(registryForm.value)" class="form-horizontal">
+                <!-- First Name-->
+                <div class="input-group input-group-lg mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text icon-pin bg-primary text-white"></span>
+                    </div>
+                    <input type="text" name="fName" class="form-control" formControlName="fName" placeholder="First Name" required>
+                    <!--    <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="alert alert-danger">
 
             <div *ngIf="fName.errors.required">
               Name is required.
@@ -22,52 +21,51 @@
             <div *ngIf="fName.errors.minlength">
               Name must be at least 4 characters long.
             </div>
-          </div>
-        </div>
+          </div>  -->
+                </div>
 
-        <!-- Last Name-->
-        <div class="input-group input-group-lg mb-4">
-          <div class="input-group-prepend">
-            <span class="input-group-text icon-wallet bg-primary text-white"></span>
-          </div>
-          <input required type="text" name="lName" class="form-control" formControlName="lName" placeholder="Last Name">
+                <!-- Last Name-->
+                <div class="input-group input-group-lg mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text icon-wallet bg-primary text-white"></span>
+                    </div>
+                    <input required type="text" name="lName" class="form-control" formControlName="lName" placeholder="Last Name">
 
-        </div>
+                </div>
 
-        <!-- Text EMAIL-->
-        <div class="input-group input-group-lg mb-4">
-          <div class="input-group-prepend">
-            <span class="input-group-text icon-envelope-letter bg-primary text-white"></span>
-          </div>
-          <input type="text" name="email" class="form-control" formControlName="email" placeholder="Email">
-        </div>
+                <!-- Text EMAIL-->
+                <div class="input-group input-group-lg mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text icon-envelope-letter bg-primary text-white"></span>
+                    </div>
+                    <input type="text" name="email" class="form-control" formControlName="email" placeholder="Email">
+                </div>
 
-        <!-- Password -->
-        <div class="input-group input-group-lg mb-4">
-          <div class="input-group-prepend">
-            <span class="input-group-text icon-key bg-primary text-white"></span>
-          </div>
-          <input type="password" name="password" class="form-control" formControlName="password" placeholder="Pasword">
-        </div>
+                <!-- Password -->
+                <div class="input-group input-group-lg mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text icon-key bg-primary text-white"></span>
+                    </div>
+                    <input type="password" name="password" class="form-control" formControlName="password" placeholder="Pasword">
+                </div>
 
-        <!-- Button  -->
-        <div class="form-group">
-          <div class="col-md-8">
-            <button id="registry" name="registry" type="submit"
-              class="btn btn-outline-primary btn-lg btn-block btn-round">Register</button>
-          </div>
+                <!-- Button  -->
+                <div class="form-group">
+                    <div class="col-md-8">
+                        <button id="registry" name="registry" type="submit" class="btn btn-outline-primary btn-lg btn-block btn-round">Register</button>
+                    </div>
+                </div>
+            </form>
+            <h6 class="text-danger">{{message}}</h6>
         </div>
-      </form>
-      <h6 class="text-danger">{{message}}</h6>
     </div>
-  </div>
 </section>
 
 <ul>
-  <li *ngFor="let appUser of users">
-    <a routerLink="/detail/{{appUser.id}}">
-      <span class="badge">{{appUser.id}}</span> {{appUser.fName}}
-    </a>
-    <button class="delete" title="delete appUser" (click)="delete(appUser)">x</button>
-  </li>
+    <li *ngFor="let appUser of users">
+        <a routerLink="/detail/{{appUser.id}}">
+            <span class="badge">{{appUser.id}}</span> {{appUser.fName}}
+        </a>
+        <button class="delete" title="delete appUser" (click)="delete(appUser)">x</button>
+    </li>
 </ul>

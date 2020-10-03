@@ -4,6 +4,9 @@ $ErrorActionPreference = "Stop"
 # Clean host
 Clear-Host
 
+# Run all test
+npm run test-deploy
+
 # Run deploy
 npm run deploy
 
@@ -13,7 +16,7 @@ Set-Location docs
 
 # Copy
 Copy-Item index.html 404.html -PassThru
- 
+
 
 
 #Preview location
