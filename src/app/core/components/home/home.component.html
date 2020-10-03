@@ -1,18 +1,22 @@
 <!-- Start  -->
-<section id="home" class="start-bg mb-5">
+<section id="start" class="start-bg mb-5">
   <div class="container">
     <div class="row justify-content-end align-items-center">
       <div class="col-md-5">
-        <h1 class="text-primary mb-4">
-          Bienvenue au MNS+237</h1>
+        <h1 class="text-primary mb-4">Bienvenue au MNS+237</h1>
         <p class="lead text-white">Votre premier partenaire.</p>
-        <a href="#about-us" role="button" class="btn btn-outline-primary btn-round btn-lg mt-2 smooth"><small><span
-              class="icon-arrow-down-circle pr-2"></span></small>start</a>
+
+        <form data-aos="fade-right" class="search-form">
+          <div class="form-group has-feedback">
+            <input type="text" class="btn-round btn-lg mt-2 smooth pr-5" name="search" id="search"
+              placeholder="search...">
+            <button type="submit" class="btn btn-outline-primary btn-round btn-lg mt-2 smooth">
+              <small><span class="icon-magnifier"></span></small> </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-
-
 </section>
 
 <!--  Our news -->
@@ -66,11 +70,9 @@
 
 <!-- Start AboutUs -->
 <section id="about-us" class="d-relative">
-  <div class="img-bg d-none d-lg-inline">
-    <img data-aos="fade-left" class="img-fluid" src="assets/img/aboutus.jpg" alt="">
-  </div>
-  <div class="container">
+   <div class="container">
     <div class="row">
+
       <div data-aos="fade-right" class="col-lg-6">
         <h1 class="text-primary mb-4">Apprendre a nous connaitre!</h1>
         <p>Proinde die funestis interrogationibus. Proinde die funestis interrogationibus
@@ -87,6 +89,11 @@
           aulaeum, nec diluere obiecta permissi nec defensi periere conplures ziehen.</p>
         <p class="text-uppercase text-muted mt-4">&mdash; mns &amp; 235 Team</p>
       </div>
+	  
+	  <div class="col-lg-6">
+           <img data-aos="fade-left" class="img-fluid" src="assets/img/aboutus.jpg" alt="">
+     </div>
+	 
     </div>
   </div>
 </section>
@@ -95,18 +102,15 @@
 <section id="newsletter" class="newsletter-bg d-relative mt-5">
   <div class="bg-overlay"></div>
   <div class="container">
-    <div class="col-md-10 text-center">
+    <div class="col-md-20 text-center">
       <p class="lead text-white mb-5">
         Abonnez-vous à notre newsletter et recevez toujours les dernières informations
       </p>
-      <button data-aos="fade-up" data-toggle="modal" data-target="#newsletter-modal" type="button"
-        class="btn btn-outline-primary btn-round btn-lg">Abonnez-vous</button>
+	  
+      <button data-aos="fade-up"  type="button" class="btn btn-outline-primary btn-round btn-lg">Abonnez-vous</button>
     </div>
 
   </div>
-
-
-
 </section>
 
 
@@ -151,7 +155,8 @@
 </section>
 
 <!-- Galleries -->
-<section id="gallery">
+<section id="gallery" class="bg-dark">
+
   <div class="container">
     <div class="row mb-5">
       <div class="col-md-12 text-center">
@@ -181,9 +186,13 @@
         <img class="card-img rounded-0" src="assets/imgs/s2.jpg" alt="TODO 2">
       </div>
     </div>
-    <div class="col-md-12 text-center">
-      <a data-aos="fade-in-up" routerLink="/gallery" class="text-primary">More...</a>
-    </div>
+	
+	<div  class="row justify-content-center mt-5">
+    <a routerLink="/gallery" role="button" class="btn btn-outline-primary btn-round btn-lg mt-2 smooth"><small><span
+          class="icon-arrow-down-circle pr-2"></span></small>Je Souhaite Decouvrier plus de Media</a>
+  </div>
+  
+     
   </div>
 
 </section>
