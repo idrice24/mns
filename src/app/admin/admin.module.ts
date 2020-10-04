@@ -6,6 +6,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import { ManageGalleryComponent } from './components/manage-gallery/manage-gallery.component';
 import { ManageBlogComponent } from './components/manage-blog/manage-blog.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { ManageUserComponent } from './components/manage-user/manage-user.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 // REF: https://angular.io/guide/router  live example
 const adminRoutes: Routes = [
@@ -20,6 +22,7 @@ const adminRoutes: Routes = [
         children: [
           { path: 'blog', component: ManageBlogComponent },
           { path: 'gallery', component: ManageGalleryComponent },
+          { path: 'users', component: ManageUserComponent },
           { path: '', component: AdminDashboardComponent }
         ]
       }
@@ -27,10 +30,14 @@ const adminRoutes: Routes = [
   }
 ];
 @NgModule({
-  declarations: [AdminComponent, AdminDashboardComponent, ManageGalleryComponent, ManageBlogComponent],
+  declarations: [
+    AdminComponent,
+    AdminDashboardComponent,
+    ManageGalleryComponent,
+    ManageUserComponent,
+    ManageBlogComponent],
   imports: [
     CommonModule,
-    RouterModule,
     RouterModule.forChild(adminRoutes)
   ]
 
