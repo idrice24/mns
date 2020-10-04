@@ -14,8 +14,8 @@ jobs:
           key: mns-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - "node_modules"
-      #  - run: xvfb-run -a npm run test TODO@Idrice
-      #  - run: xvfb-run -a npm run e2e
+      - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - run: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
       - run:
           name: Compiles the app into an output directory named dist/
           command: npm run build
