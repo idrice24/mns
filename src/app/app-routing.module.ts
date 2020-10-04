@@ -13,6 +13,7 @@ import { GalleryComponent } from './gallery/components/gallery/gallery.component
 import { TopicDetailComponent } from './blog/components/topic-detail/topic-detail.component';
 import { LoginComponent } from './core/components/login/login.component';
 import { AuthGuard } from './auth/guards/auth.guard';
+import { RegistryComponent } from './core/components/registry/registry.component';
 
 
 // sets up routes constant where you define your routes
@@ -26,6 +27,7 @@ const routes: Routes = [
   },
   { path: 'topic/:id', component: TopicDetailComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'registry', component: RegistryComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'newsletter', component: NewsletterComponent },

@@ -10,6 +10,7 @@ export class ManageBlogComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.warn('**************ManageBlogComponent  inti  ###########');
   }
 
 }

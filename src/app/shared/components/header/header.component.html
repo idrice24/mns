@@ -17,13 +17,15 @@
            <a class="nav-link smooth" routerLink="/blog">Blog</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link smooth" href="#about-us">About us</a>
+
+           <a class="nav-link smooth" routerLink="/about">About us</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link smooth" href="#newsletter">Newsletter </a>
+           <a class="nav-link smooth" routerLink="/newsletter">Newsletter </a>
          </li>
          <li class="nav-item">
-           <a class="nav-link smooth" href="#contact">Contact</a>
+           <a class="nav-link smooth" routerLink="/contact">Contact</a>
+
          </li>
 
          <!-- REF: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
@@ -34,17 +36,22 @@
                <i class="fa fa-cogs d-lg-none d-xl-none"> </i> CMS
              </button>
              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-               <a class="dropdown-item" routerLink="admin">
-                 <i class="icon-settings"> </i> Administrateur</a>
-               <a class="dropdown-item" href="#">Another action</a>
+               <a class="dropdown-item" routerLink="login">
+                 <i class="icon-login"> Login</i> </a>
+               <a class="dropdown-item" routerLink="registry">
+                 <i class="icon-people"> Registry </i>
+               </a>
              </div>
            </div>
          </li>
          <li class="nav-item">
-           <a class="nav-link smooth" href="#gallery">Gallery</a>
+
+           <a class="nav-link smooth" routerLink="/gallery">Gallery</a>
+
          </li>
 
        </ul>
      </div>
    </div>
  </nav>
+ <router-outlet></router-outlet>
