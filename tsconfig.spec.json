@@ -14,5 +14,9 @@
   "include": [
     "src/**/*.spec.ts",
     "src/**/*.d.ts"
-  ]
+  ],
+  "compileerOptions":{
+    "outDir": "./out-tsc/app",
+    "types": ["googlemaps"]
+  },
 }
