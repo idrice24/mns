@@ -10,6 +10,7 @@
     "test-deploy": "npm run test -- --no-watch --no-progress",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "e2e-deploy": "ng e2e -- --protractor-config=e2e/protractor-ci.conf.js",
     "deploy": "ng build --prod --output-path docs --base-href /mns/ ",
     "compodoc": "npx compodoc -p tsconfig.json -o -s",
     "dev": "npm run deploy && ng serve --open"
