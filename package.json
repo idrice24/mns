@@ -7,7 +7,7 @@
     "build": "ng build",
     "test2": "ng test ",
     "test": "ng test",
-    "test-deploy": "npm run test -- --no-watch --no-progress",
+    "test-deploy": "npm run test --  --no-watch --no-progress",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "e2e-deploy": "ng e2e -- --protractor-config=e2e/protractor-ci.conf.js",
