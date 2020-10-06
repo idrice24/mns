@@ -30,12 +30,14 @@ export class LoginComponent implements OnInit {
   login(userData) {
     console.warn('Your order has been submitted', userData);
 
+
     // TODO@Idrice logs this messae better way
     this.message = 'Trying to log in ...';
     // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
     }
+
 
     this.authService.login(this.f.username.value, this.f.password.value).subscribe(() => {
       this.setMessage();

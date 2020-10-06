@@ -12,14 +12,14 @@
               <div class="input-group-prepend">
                 <span class="input-group-text icon-user bg-primary text-white"></span>
               </div>
-              <input type="text" name="username" class="form-control" formControlName="username" placeholder="Username">
+              <input type="text" name="username" class="form-control" formControlName="username" placeholder="Username" required>
             </div>
             <div class="input-group input-group-lg mb-4">
               <div class="input-group-prepend">
                 <span class="input-group-text icon-key bg-primary text-white"></span>
               </div>
               <input type="password" name="password" class="form-control" formControlName="password"
-                placeholder="Pasword">
+                placeholder="Pasword" required>
             </div>
             <button type="submit" class="btn btn-outline-primary btn-lg btn-block btn-round">Login</button>
           </div>
@@ -30,6 +30,7 @@
           </div>
         </div>
       </form>
+      <h1>{{message}}</h1>
     </div>
   </div>
 
