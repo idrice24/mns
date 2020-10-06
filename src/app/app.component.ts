@@ -12,7 +12,7 @@ export class AppComponent {
   location: Location;
 
   constructor(private router: Router) {
-    window.location.href.replace('http', 'https');
+    // window.location.href.replace('http', 'https');
     AOS.init();
     console.log('##########> configured routes: ', this.router.config);
   }
