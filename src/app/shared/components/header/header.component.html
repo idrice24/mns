@@ -23,31 +23,39 @@
          <li class="nav-item">
            <a class="nav-link smooth" routerLink="/newsletter">Newsletter </a>
          </li>
-         <li class="nav-item">
-           <a class="nav-link smooth" routerLink="/contact">Contact</a>
+
+
+         <!-- REF: Copy and Modify from menu media above-->
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" role="button" id="dropdownMenuButtonCMS" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+             <i class="fa fa-cogs d-lg-none d-xl-none"> </i> CMS </a>
+           <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonCMS">
+             <a class="dropdown-item" routerLink="login">
+               <i class="icon-login"> Login</i> </a>
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item" routerLink="registry">
+               <i class="icon-people"> Registry </i>
+             </a>
+           </div>
 
          </li>
 
-         <!-- REF: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
-         <li class="nav-item">
-           <div class="dropdown">
-             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <i class="fa fa-cogs d-lg-none d-xl-none"> </i> CMS
-             </button>
-             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-               <a class="dropdown-item" routerLink="login">
-                 <i class="icon-login"> Login</i> </a>
-               <a class="dropdown-item" routerLink="registry">
-                 <i class="icon-people"> Registry </i>
-               </a>
-             </div>
+         <!-- REF: https://getbootstrap.com/docs/4.0/components/navbar/-->
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" routerLink="/media" routerLinkActive="active" id="navbarDropdownMEDIA" role="button" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+             Medias
+           </a>
+           <div class="dropdown-menu" aria-labelledby="navbarDropdownMEDIA">
+             <a class="dropdown-item" routerLink="media/gallery">Gallerie Photos</a>
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item smooth" routerLink="media/videos">Videos</a>
            </div>
          </li>
+
          <li class="nav-item">
-
-           <a class="nav-link smooth" routerLink="/gallery">Gallery</a>
-
+           <a class="nav-link smooth" routerLink="/contact">Contact</a>
          </li>
 
        </ul>
