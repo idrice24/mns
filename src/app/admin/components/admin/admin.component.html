@@ -4,22 +4,22 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-3">
-      <nav class="sidebar-nav">
-        <ul id="sidebarnav">
-          <li class="nav-devider"></li>
+      <nav class="left-sidebar">
+        <ul id="sidebarnav" style="list-style-type:none">
+          <li class="nav-devider"></li><br><br>
           <!-- First level menu -->
-          <li class="sidebar-item" [class.active]="showMenu === sidebarnavItem.title"
+          <li [class.active]="showMenu === sidebarnavItem.title"
             *ngFor="let sidebarnavItem of sidebarnavItems"
             [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
             <div class="nav-small-cap" *ngIf="sidebarnavItem.extralink === true">{{sidebarnavItem.title}}</div>
-            <a class="sidebar-link waves-effect waves-dark"
+            <a
               [routerLink]="sidebarnavItem.class === '' ? [sidebarnavItem.path] : null"
               [ngClass]="[sidebarnavItem.class]" *ngIf="!sidebarnavItem.extralink;"
               (click)="addExpandClass(sidebarnavItem.title)"
               [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
-              <i [ngClass]="[sidebarnavItem.icon]"></i>
+              <i [ngClass]="[sidebarnavItem.icon]"></i>&nbsp;&nbsp;
               <span class="hide-menu">{{sidebarnavItem.title}}</span>
-            </a>
+            </a><br><br>
           </li>
 
         </ul>
