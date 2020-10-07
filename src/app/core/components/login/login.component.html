@@ -3,11 +3,13 @@
     <div class="col-md-12 text-center">
       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Login</h1>
     </div>
+    
     <div class="col-md-12 align-center">
 
       <form class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
         <div class="row">
-          <div data-aos="fade-left" class="col-md-6 pr-md-5 pl-md-4">
+          
+          <div data-aos="fade-center" class="col-md-8 pr-md-5 pl-md-4">
             <div class="input-group input-group-lg mb-4">
               <div class="input-group-prepend">
                 <span class="input-group-text icon-user bg-primary text-white"></span>
@@ -23,14 +25,10 @@
             </div>
             <button type="submit" class="btn btn-outline-primary btn-lg btn-block btn-round">Login</button>
           </div>
-          <div class="col-md-6 align-center">
-             <div data-aos="zoom-in" class="card">
-               <img class="card-img rounded-0" src="assets/img/login2.jpg" alt="Login iMage" style="width: auto; height: 200px;">
-             </div>
-          </div>
+        
         </div>
       </form>
-      <h1>{{message}}</h1>
+      <h1 style="text-align: center">{{message}}</h1>
     </div>
   </div>
 
