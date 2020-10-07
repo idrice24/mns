@@ -13,7 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InMemoryDataService } from './in-memory-data.service';
-import { GalleryModule } from './gallery/gallery.module';
+
+import { MediaModule } from './media/media.module';
 
 
 @NgModule({
@@ -29,11 +30,11 @@ import { GalleryModule } from './gallery/gallery.module';
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }),
-    AppRoutingModule, // CLI adds AppRoutingModule to the AppModule's imports array
     SharedModule,
     CoreModule,
     BlogModule,
-    GalleryModule
+    AppRoutingModule, // CLI adds AppRoutingModule to the AppModule's imports array
+
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
