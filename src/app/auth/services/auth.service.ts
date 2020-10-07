@@ -17,16 +17,32 @@ export class AuthService {
 
   }
 
-  login(username, password): Observable<boolean> {
+  login(username, password): Observable<boolean | void> {
     // logic to check password
     const isOkay = username === 'admin' && password === 'admin';
-    return of(isOkay).pipe(
-      delay(1000),
+    const userAdmin = {
+      username: 'admin',
+      password: 'admin'
+    };
+    const token = localStorage.getItem('currentUser');
+
+    return of(isOkay && !token).pipe(map(fakeOkay => {
+      if (fakeOkay) {
+        localStorage.setItem('currentUser', JSON.stringify(userAdmin));
+      }
+    }),
+      delay(500),
       tap(val => this.isLoggedIn = isOkay)
     );
   }
 
-  logout(): void {
+  getAuthorizationToken() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return currentUser.token;
+  }
+
+  logout() {
+    localStorage.removeItem('currentUser');
     this.isLoggedIn = false;
   }
 

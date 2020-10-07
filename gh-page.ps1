@@ -13,7 +13,7 @@ npm run test-deploy
 
 # Run all e2e
 # why  --disable-gpu flag ? see angular original page? @Idrice
-npm run e2e-deploy
+# npm run e2e-deploy
 
 #Go to docs
 Set-Location docs
