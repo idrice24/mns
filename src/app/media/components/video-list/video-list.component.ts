@@ -14,6 +14,10 @@ export class VideoListComponent implements OnInit {
 
   ngOnInit(): void {
     this.funny = [0, 1, 2, 4, 5];
+    for (let i = 0; i < 20; i++) {
+      this.funny.push(i);
+    }
+
   }
 
 }
