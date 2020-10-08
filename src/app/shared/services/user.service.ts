@@ -53,7 +53,7 @@ export class UserService {
     );
   }
 
-  /** Method to list videos **/
+  /** GET: Videos from server */
   getVideos(): Observable<AppVideo[]>{
     return this.httpClient.get<AppVideo[]>(this.videosUrl).pipe(
     tap(_ => this.log('fetched Videos ')),
@@ -61,7 +61,7 @@ export class UserService {
     );
   }
 
-  /** POST: add a new video to the server **/
+  /** POST: add a new video to the server */
 
 
 

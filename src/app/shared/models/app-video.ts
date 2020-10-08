@@ -1,4 +1,5 @@
+
 export interface AppVideo{
-	id: number;
-	name: string;
+ id: number;
+ name: string;
 }
