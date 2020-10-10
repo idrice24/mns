@@ -6,7 +6,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-
 describe('VideoListComponent', () => {
   let component: VideoListComponent;
   let fixture: ComponentFixture<VideoListComponent>;
@@ -15,10 +14,9 @@ describe('VideoListComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [VideoListComponent],
       imports: [HttpClientTestingModule, FormsModule, RouterTestingModule, ReactiveFormsModule],
-    }) 
-      .compileComponents();
+    })
+    .compileComponents();
   });
-
 
   beforeEach(() => {
     fixture = TestBed.createComponent(VideoListComponent);
