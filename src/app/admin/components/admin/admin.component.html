@@ -1,6 +1,8 @@
 <div class="container-fluid">
   <h1 class="text-primary mb-4">ADMIN</h1>
   <!-- REF: https://github.com/wrappixel/monster-angular-lite/blob/master/angular-10/src/app/shared/sidebar/sidebar.component.ts -->
+  <div class="row">
+    <div class="col-lg-8">
   <ul class="nav flex-column">
 
     <li class="nav-item" [class.active]="showMenu === sidebarnavItem.title"
@@ -11,7 +13,7 @@
         [ngClass]="[sidebarnavItem.class]" *ngIf="!sidebarnavItem.extralink;"
         (click)="addExpandClass(sidebarnavItem.title)"
         [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
-        <i [ngClass]="[sidebarnavItem.icon]"></i>
+        <i [ngClass]="[sidebarnavItem.icon]"></i>&nbsp;&nbsp;
         <span class="hide-menu">{{sidebarnavItem.title}}</span>
       </a>
     </li>
@@ -19,9 +21,10 @@
     <li><a [routerLink]="['/login']">Logout</a></li>
 
   </ul>
-  <div class="col-lg-9">
+</div>
+  <div class="col-lg-8">
     <router-outlet></router-outlet>
   </div>
 
-
+</div>
 </div>
