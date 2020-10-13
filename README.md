@@ -34,11 +34,12 @@
 1. Create new branch or fork 
 1. Clone the Code or pull all*
 1. Switch to your branch from 1.
+1. Run command --> **npm install** to install dependencies **if needed**
 1. Run script  start --> **npm run start** to start angular app No error?
 1. Make your change
 1. Run the script test --> **npm run test-deploy** all green?
 1. Run the script deploy--> **npm run deploy** to generate gh-page __No error?__
-1. Go to docs folder  copy&paste index.hml  and rename it to 404.html
+1. Go to docs folder **copy&paste index.hml  and rename it to 404.html**
 1. Commit with Issue number (Create a new one if number not exists)
 1. Push it
 1. Merge only with review!
@@ -82,3 +83,40 @@ The following channels are available for discussions, feedback, and support requ
 ## More_info
 
  [Back to top](#table-of-contents)
+
+## What's included
+
+1.  [] CRUD: create, update and remove heroes with Firebase
+1.  [] Angular Universal (SSR)
+1.  [] Use of StateTransferModule to share state between browser and server
+1.  [] Security Headers using [helmet](https://helmetjs.github.io).
+1.  [] Internationalization with the official i18n. Separated builds for english and spanish.
+1.  [] Lazy loading modules
+1.  [] Service Workers enabled!
+1.  [] More logical directory structure (from
+      [here](https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7))
+1.  [] Basic example library
+1.  [] Following the [best practices](https://angular.io/guide/styleguide)!
+1.  [] Search bar, to look for heroes
+1.  [] Custom loading page
+1.  [X] Example of Angular Resolver for Hero Detail
+1.  [] Lazy loading images with [ng-lazyload-image](https://github.com/tjoskar/ng-lazyload-image)
+1.  [] Modal and toasts (snakbar)!
+1.  [] Scroll restoration and anchor examples
+1.  [] Responsive layout (flex layout module)
+1.  [] SASS (most common used functions and mixins) and BEM styles
+1.  [X] Animations with [ng-animate](https://jiayihu.github.io/ng-animate/)
+1.  [] Angular Pipes
+1.  [] Interceptors and Events (Progress bar active, if a request is pending)
+1.  [] Scroll to first invalid input in forms.
+      ([ngx-scroll-to-first-invalid](https://github.com/Ismaestro/ngx-scroll-to-first-invalid))
+1.  [] Modernizr (browser features detection)
+1.  [] Browser filter (Bowser) because of IE ^^
+1.  [] [Sentry](https://sentry.io)! (logs every error in the app)
+1.  [] Google Tag Manager
+1.  [] ES6 Promises and Observables
+1.  [] Unit tests with Jasmine and Karma including code coverage. Use of
+      [ng-bullet](https://www.npmjs.com/package/ng-bullet),
+      [karma-mocha-reporter](https://github.com/litixsoft/karma-mocha-reporter) and
+      [ng-mocks](https://github.com/ike18t/ng-mocks)
+1.  [] End-to-end tests with Protractor,
