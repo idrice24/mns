@@ -1,3 +1,7 @@
+# Angular Projects List
+1. https://github.com/shelbybryant/Breaking-Bad-Front-End
+1. 
+
 # Links
 
 1.  Theorie for Markdown language [here](https://markdown.de/#list)
