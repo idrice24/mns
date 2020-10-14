@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistryComponent } from './components/registry/registry.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from '../in-memory-data.service';
+import { SearchModule } from '../search/search.module';
 
 
 
@@ -31,14 +32,15 @@ import { InMemoryDataService } from '../in-memory-data.service';
     RouterModule, // Links will not works important!!
     FormsModule, // Form will not works important!!
     ReactiveFormsModule, // Form will not works important!!
-
+    SearchModule,
   ],
   exports: [
     HomeComponent,
     LoginComponent,
     AboutComponent,
     ContactComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+
   ]
 })
 export class CoreModule { }
