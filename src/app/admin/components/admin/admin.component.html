@@ -1,32 +1,30 @@
-<h1 class="text-primary mb-4">ADMIN</h1>
-<!-- REF: https://github.com/wrappixel/monster-angular-lite/blob/master/angular-10/src/app/shared/sidebar/sidebar.component.ts -->
-
 <div class="container-fluid">
+  <h1 class="text-primary mb-4">ADMIN</h1>
+  <!-- REF: https://github.com/wrappixel/monster-angular-lite/blob/master/angular-10/src/app/shared/sidebar/sidebar.component.ts -->
   <div class="row">
-    <div class="col-lg-3">
-      <nav class="sidebar-nav">
-        <ul id="sidebarnav">
-          <li class="nav-devider"></li>
-          <!-- First level menu -->
-          <li class="sidebar-item" [class.active]="showMenu === sidebarnavItem.title"
-            *ngFor="let sidebarnavItem of sidebarnavItems"
-            [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
-            <div class="nav-small-cap" *ngIf="sidebarnavItem.extralink === true">{{sidebarnavItem.title}}</div>
-            <a class="sidebar-link waves-effect waves-dark"
-              [routerLink]="sidebarnavItem.class === '' ? [sidebarnavItem.path] : null"
-              [ngClass]="[sidebarnavItem.class]" *ngIf="!sidebarnavItem.extralink;"
-              (click)="addExpandClass(sidebarnavItem.title)"
-              [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
-              <i [ngClass]="[sidebarnavItem.icon]"></i>
-              <span class="hide-menu">{{sidebarnavItem.title}}</span>
-            </a>
-          </li>
+    <div class="col-lg-8">
+  <ul class="nav flex-column">
 
-        </ul>
-      </nav>
-    </div>
-    <div class="col-lg-9">
-      <router-outlet></router-outlet>
-    </div>
+    <li class="nav-item" [class.active]="showMenu === sidebarnavItem.title"
+      *ngFor="let sidebarnavItem of sidebarnavItems"
+      [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
+      <div class="nav-small-cap" *ngIf="sidebarnavItem.extralink === true">{{sidebarnavItem.title}}</div>
+      <a class="nav-link" [routerLink]="sidebarnavItem.class === '' ? [sidebarnavItem.path] : null"
+        [ngClass]="[sidebarnavItem.class]" *ngIf="!sidebarnavItem.extralink;"
+        (click)="addExpandClass(sidebarnavItem.title)"
+        [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
+        <i [ngClass]="[sidebarnavItem.icon]"></i>&nbsp;&nbsp;
+        <span class="hide-menu">{{sidebarnavItem.title}}</span>
+      </a>
+    </li>
+
+    <li><a [routerLink]="['/login']">Logout</a></li>
+
+  </ul>
+</div>
+  <div class="col-lg-8">
+    <router-outlet></router-outlet>
   </div>
+
+</div>
 </div>
