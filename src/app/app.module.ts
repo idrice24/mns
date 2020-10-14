@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 import { InMemoryDataService } from './in-memory-data.service';
 
 import { MediaModule } from './media/media.module';
+import { SearchUiComponent } from './search/components/search-ui/search-ui.component';
 
 
 @NgModule({
