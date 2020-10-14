@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-ui',
@@ -7,25 +8,15 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild }
 })
 export class SearchUiComponent implements OnInit {
 
-  @ViewChild('edit', { static: false }) edit: ElementRef;
 
-  @Input() searchField: any;
-  @Input() placeholder: any;
-  @Input() results: any;
-  @Input() itemsCount: any;
-  @Input() icon: any;
 
-  @Output() search = new EventEmitter<string>();
+  constructor(private activatedRoute: ActivatedRoute) {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
   }
 
-  searching(): void {
-    console.log(this.edit.nativeElement.value);
-    // Send the writing string in search control
-    this.search.emit(this.edit.nativeElement.value);
-  }
+
 
 }
