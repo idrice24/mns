@@ -29,6 +29,10 @@ const routes: Routes = [
     path: 'media',
     loadChildren: () => import('./media/media.module').then(m => m.MediaModule)
   },
+  {
+    path: 'search',
+    loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
+  },
   { path: 'topic/:id', component: TopicDetailComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registry', component: RegistryComponent },
