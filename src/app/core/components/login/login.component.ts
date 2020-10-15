@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { Router, NavigationExtras } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user.service';
+import { AppUser } from 'src/app/shared/models/app-user';
 // REF: https://angular.io/start/start-forms
 @Component({
   selector: 'app-login',
@@ -12,20 +13,40 @@ import { UserService } from 'src/app/shared/services/user.service';
 export class LoginComponent implements OnInit {
 
   message: string;
-  loginForm;
-
+  loginForm: FormGroup;
+  appUser: AppUser;
   constructor(private formBuilder: FormBuilder, public authService: AuthService, public router: Router) {
+    this.appUser = {
+      email: '',
+      fName: '',
+      isAdmin: false,
+      lName: '',
+      password: '',
+      id: 0
+
+    };
     this.setMessage();
   }
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
-    });
+    this.loginForm = new FormGroup({
+      fName: new FormControl(this.appUser.fName, [
+        Validators.required,
+        Validators.minLength(4),
+        // forbiddenNameValidator(/bob/i)
+      ]),
+      password: new FormControl(this.appUser.password, [
+        Validators.required,
+        Validators.minLength(4)
+      ])
+    }
+    );
   }
   // convenience getter for easy access to form fields
-  get f() { return this.loginForm.controls; }
+  get fName() { return this.loginForm.get('fName'); }
+  get password() { return this.loginForm.get('password'); }
+
+
 
   login(userData) {
     console.warn('Your order has been submitted', userData);
@@ -39,7 +60,7 @@ export class LoginComponent implements OnInit {
     }
 
 
-    this.authService.login(this.f.username.value, this.f.password.value).subscribe(() => {
+    this.authService.login(this.fName.value, this.password.value).subscribe(() => {
       this.setMessage();
       if (this.authService.isLoggedIn) {
         // Usually you would use the redirect URL from the auth service.
