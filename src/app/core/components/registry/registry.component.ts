@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user.service';
-import { forbiddenEmailValidator } from 'src/app/shared/directives/forbitten-email-validator.directive';
+import { forbittenEmailValidator } from 'src/app/shared/directives/forbitten-email-validator.directive';
 
 
 @Component({
@@ -42,7 +42,7 @@ export class RegistryComponent implements OnInit {
       email: new FormControl(this.appUser.email, [
         Validators.required,
         Validators.minLength(4),
-        forbiddenEmailValidator(/bob/i)
+        forbittenEmailValidator()
       ]),
       // For fName
       fName: new FormControl(this.appUser.fName, [
@@ -72,13 +72,14 @@ export class RegistryComponent implements OnInit {
       });
 
     this.getNumberOfUsers();
-    this.getUsers();
+
   }
 
   onSubmit(userAppData) {
     if (!userAppData) {
       return;
     }
+
     this.userService.addUser(userAppData).subscribe();
     // Ref: https://angular.io/start/start-forms
     this.registryForm.reset();
@@ -99,25 +100,20 @@ export class RegistryComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  getUsers(): void {
-    this.userService.getUsers()
-      .subscribe(users => this.users = users);
-  }
 
-  delete(appUser: AppUser): void {
-    this.users = this.users.filter(user => user !== appUser);
-    this.userService.deleteUser(appUser).subscribe();
-  }
+
 
   async delay(ms: number) {
-    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => this.getNumberOfUsers());
+    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => {
+      this.getNumberOfUsers();
+      this.message = ' ';
+    }
+    );
   }
 
   getNumberOfUsers() {
     return this.userService.getUsers().subscribe(i => this.numberOfUsers = i.length);
   }
-
-  // get fName() { return this.registryForm.get('fName'); }
 
   get email() { return this.registryForm.get('email'); }
   get fName() { return this.registryForm.get('fName'); }

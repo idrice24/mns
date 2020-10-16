@@ -6,12 +6,18 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ForbittenEmailValidatorDirective } from './directives/forbitten-email-validator.directive';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, ForbittenEmailValidatorDirective],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    ForbittenEmailValidatorDirective],
   imports: [
     CommonModule,
     RouterModule,
   ],
-  exports: [HeaderComponent, FooterComponent],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    ForbittenEmailValidatorDirective],
   providers: []
 })
 export class SharedModule { }

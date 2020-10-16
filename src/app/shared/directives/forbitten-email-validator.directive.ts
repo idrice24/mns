@@ -2,12 +2,18 @@ import { Directive, Input } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, Validator, ValidatorFn } from '@angular/forms';
 
 
-export function forbiddenEmailValidator(nameRe: RegExp): ValidatorFn {
+export function forbittenEmailValidator(): ValidatorFn {
+
   return (control: AbstractControl): { [key: string]: any } | null => {
 
+
+    // valid email pattern
+    const emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
+    const regExp = new RegExp(emailPattern);
     // Execute Validation!! Cool
-    const forbidden = nameRe.test(control.value);
-    return forbidden ? { forbiddenEmail: { value: control.value } } : null;
+    const isOkay = regExp.test(control.value);
+    console.log(' ISOkay = ' + isOkay);
+    return !isOkay ? { forbiddenEmail: { value: control.value } } : null;
   };
 }
 
@@ -31,10 +37,13 @@ export class ForbittenEmailValidatorDirective implements Validator {
   // Return typ ?
   // Control ie. input element
   validate(control: AbstractControl): { [key: string]: any } | null {
-
+    console.log('Directive--> ' + control.errors);
     // Nice.. see how to  define RegExp object in angular
-    const regExp = new RegExp(this.forbittenEmail, 'i');
-    const response = this.forbittenEmail ? forbiddenEmailValidator(regExp)(control) : null;
+
+    // Execute validation logic --> ValidationErrors
+    const response = this.forbittenEmail ? forbittenEmailValidator()(control) : null;
+    // const l = JSON.stringify(response);
+    // console.log(' Response= ' + l + ' ' + response.forbiddenEmail);
     return response;
   }
 
