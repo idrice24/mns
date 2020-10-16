@@ -4,12 +4,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { ForbittenEmailValidatorDirective } from './directives/forbitten-email-validator.directive';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    ForbittenEmailValidatorDirective],
+    ForbittenEmailValidatorDirective,
+    SafePipe],
   imports: [
     CommonModule,
     RouterModule,
@@ -17,6 +19,8 @@ import { ForbittenEmailValidatorDirective } from './directives/forbitten-email-v
   exports: [
     HeaderComponent,
     FooterComponent,
+    SafePipe,
+
     ForbittenEmailValidatorDirective],
   providers: []
 })

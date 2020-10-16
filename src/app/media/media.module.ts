@@ -4,6 +4,7 @@ import { VideoListComponent } from './components/video-list/video-list.component
 import { RouterModule, Routes } from '@angular/router';
 import { MediaComponent } from './components/media/media.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { MediaDashboardComponent } from './components/media-dashboard/media-dashboard.component';
 
 
 const mediasRoutes: Routes = [
@@ -13,7 +14,7 @@ const mediasRoutes: Routes = [
     children: [
       { path: 'gallery', component: GalleryComponent },
       { path: 'videos', component: VideoListComponent },
-      { path: '', component: MediaComponent }]
+      { path: '', component: MediaDashboardComponent }]
   }];
 
 
@@ -21,7 +22,8 @@ const mediasRoutes: Routes = [
   declarations: [
     GalleryComponent,
     VideoListComponent,
-    MediaComponent],
+    MediaComponent,
+    MediaDashboardComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(mediasRoutes)
