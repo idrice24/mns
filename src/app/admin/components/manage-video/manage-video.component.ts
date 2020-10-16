@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppVideo, AppVideoItem } from 'src/app/shared/models/app-video';
 import { VideoService } from 'src/app/shared/services/video.service';
 
 @Component({
@@ -10,12 +11,15 @@ export class ManageVideoComponent implements OnInit {
 
   constructor(private videoService: VideoService) { }
 
-  videos;
+  appVideos: AppVideo[];
   selectedVideo;
+  selectedYear;
+  appVideoItems: AppVideoItem[];
 
   ngOnInit(): void {
-    this.videoService.getVideos().subscribe(i => this.videos = i);
-
+    this.selectedYear = 2020;
+    this.videoService.getVideos().subscribe(i => this.appVideos = i);
+    this.videoService.getVideoByYear(this.selectedYear).subscribe(i => this.appVideoItems = i.items);
   }
 
   select(video) {
@@ -23,8 +27,9 @@ export class ManageVideoComponent implements OnInit {
   }
 
 
-  onChange(event) {
-
+  onChange($event) {
+    this.selectedYear = $event.target.value;
+    this.videoService.getVideoByYear(this.selectedYear).subscribe(i => this.appVideoItems = i.items);
   }
 
 }

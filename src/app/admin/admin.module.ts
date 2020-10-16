@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { ManageUserComponent } from './components/manage-user/manage-user.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ManageVideoComponent } from './components/manage-video/manage-video.component';
+import { SharedModule } from '../shared/shared.module';
 
 // REF: https://angular.io/guide/router  live example
 const adminRoutes: Routes = [
@@ -41,6 +42,7 @@ const adminRoutes: Routes = [
     ManageVideoComponent],
   imports: [
     CommonModule,
+    SharedModule,
     RouterModule.forChild(adminRoutes)
   ]
 

@@ -1,62 +1,60 @@
 <h1 data-aos="fade-in-up" data-aos-offset="100" class="mt-4 text-primary">Manage Video </h1>
- 
- 
+<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
 
-  <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
-   
-    <div class="card bg-light mb-3 text-center">
-      <div class="card-body" *ngIf="selectedVideo">
-        <h5 class="card-title text-primary">{{ selectedVideo.artist }}</h5>
-        <h6 class="card-title text-info">{{ selectedVideo.title }}</h6>
-        <h6 class="card-title text-secondary">{{ selectedVideo.top }}</h6>
-      </div>
-      <div class="card-body" *ngIf="!selectedVideo">
-        <div class="alert alert-danger" role="alert">
-          Select a video on the list to see the clip<br>
-          <i class="fab fa-youtube fa-2x text-danger"></i>
-        </div>
+  <div class="card bg-light mb-3 text-center">
+  
+    <!-- Video is selected--->
+    <div class="card-body" *ngIf="selectedVideo">
+      <h5 class="card-title text-primary">{{ selectedVideo.artist }}</h5>
+      <h6 class="card-title text-info">{{ selectedVideo.title }}</h6>
+      <h6 class="card-title text-secondary">{{ selectedVideo.top }}</h6>
+    </div>
+	
+	  <!-- NO Video is selected--->
+    <div class="card-body" *ngIf="!selectedVideo">
+      <div class="alert alert-danger" role="alert">
+       Choisir une video de la liste pour voir le clip<br>
+        <i class="icon-social-youtube fa-2x text-danger"></i>
       </div>
     </div>
-    <!--   <iframe class="embed-responsive-item" [src]="('https://www.youtube.com/embed/' + selectedVideo.link) | safe"
-        allowfullscreen></iframe> -->
-    <div *ngIf="selectedVideo" class="embed-responsive embed-responsive-16by9">
-
-      <iframe class="embed-responsive-item" [src]="('https://www.youtube.com/embed/' + selectedVideo.link)"
-        allowfullscreen> </iframe>
-    </div>
-
-    <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
-      <div class="form-group">
-        <label class="text-primary font-weight-bold" for="exampleFormControlSelect1">Classement Mégafusion
-          (Téléchargements + Streaming)</label>
-        <select class="form-control text-primary font-weight-bold" id="exampleFormControlSelect1"
-          (change)="onChange($event)">
-          <option value="1">2018</option>
-          <option value="2">2017</option>
-          <option value="3">2016</option>
-          <option value="4">2015</option>
-        </select>
-      </div>
-      <table class="table table-hover table-striped table-bordered table-responsive-md table-sm">
-        <thead>
-          <tr>
-            <th class="text-secondary" style="text-align:center;">Clip</th>
-            <th class="text-secondary" style="text-align:center;">Top</th>
-            <th class="text-primary" style="text-align:center;">Artist</th>
-            <th class="text-info" style="cursor: pointer;text-align:center;">Title</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let video of videos" (click)="select(video)">
-            <td class="text-secondary" style="cursor: pointer;text-align:center"><i
-                class="icon-social-youtube text-danger"></i></td>
-            <td class="text-secondary" style="cursor: pointer;text-align:center">{{ video.top }}</td>
-            <td class="text-primary" style="cursor: pointer;text-align:center">{{ video.artist }}</td>
-            <td class="text-info" style="cursor: pointer;text-align:center">{{ video.title }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
+  </div>
  
+		
+		  <!-- PLAY Videos --->
+  <div *ngIf="selectedVideo" class="embed-responsive embed-responsive-16by9">
+ 
+    <iframe #ok class="embed-responsive-item" [src]="('https://www.youtube.com/embed/' + selectedVideo.link) | safe"
+      allowfullscreen> </iframe>
+	  <p> {{ok.src }}</p>
+  </div>
+
+  
+  <!-- List Videos --->
+    <div class="form-group">
+      <label class="text-primary font-weight-bold" for="exampleFormControlSelect1">Choisir l annnee</label>
+      <select class="form-control text-primary font-weight-bold" id="exampleFormControlSelect1"        (change)="onChange($event)">
+        <option *ngFor="let appVideo of appVideos" value="{{appVideo.year}}">{{appVideo.year}}</option>    
+      </select>
+    </div>
+    <table class="table table-hover table-striped table-bordered table-responsive-md table-sm">
+      <thead>
+        <tr>
+          <th class="text-secondary" style="text-align:center;">Clip</th>
+          <th class="text-secondary" style="text-align:center;">Top</th>       
+          <th class="text-info" style="cursor: pointer;text-align:center;">Titre</th>
+		   <th class="text-info" style="cursor: pointer;text-align:center;">Sous-titre</th>
+		    <th class="text-info" style="cursor: pointer;text-align:center;">Date de publication</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr   *ngFor="let video of appVideoItems" (click)="select(video)">
+          <td class="text-secondary" style="cursor: pointer;text-align:center">
+		  <i class="icon-social-youtube text-danger"></i></td>
+          <td   style="cursor: pointer;text-align:center">{{ video.top }}</td>      
+          <td   style="cursor: pointer;text-align:center">{{ video.title }}</td>
+		  <td  style="cursor: pointer;text-align:center">{{ video.subtitle }}</td>
+		    <td class="text-primary" style="cursor: pointer;text-align:center">{{ video.publishedDate }}</td>
+        </tr>
+      </tbody>
+    </table>
  
