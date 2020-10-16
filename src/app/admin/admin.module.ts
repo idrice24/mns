@@ -24,7 +24,7 @@ const adminRoutes: Routes = [
           { path: 'blog', component: ManageBlogComponent },
           { path: 'gallery', component: ManageGalleryComponent },
           { path: 'users', component: ManageUserComponent },
-          { path: 'videos', component: ManageVideoComponent },
+          { path: 'video', component: ManageVideoComponent },
           { path: '', component: AdminDashboardComponent }
         ]
       }

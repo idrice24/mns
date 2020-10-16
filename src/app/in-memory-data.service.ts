@@ -16,12 +16,14 @@ export class InMemoryDataService implements InMemoryDbService {
 
     ];
 
+    // @Idrice Videos should come from Youtube
     const videos = [
       { id: 1, name: 'CR goals', publishedDate: '2020/10/13', title: 'CR7 First Goal in UV', createdDate: '2020/10/10' },
       { id: 2, name: 'CR goals', publishedDate: '2020/10/13', title: 'CR7 First Goal in UV', createdDate: '2020/10/10' },
       { id: 3, name: 'CR goals', publishedDate: '2020/10/13', title: 'CR7 First Goal in UV', createdDate: '2020/10/10' },
       { id: 4, name: 'CR goals', publishedDate: '2020/10/13', title: 'CR7 First Goal in UV', createdDate: '2020/10/10' },
     ];
+
     const blog = [
       {
         _embedded: {
@@ -69,7 +71,7 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     // Important!! Name of array is the name of in api url --> api/users
-    return { users, blog };
+    return { users, blog, videos };
   }
 
 

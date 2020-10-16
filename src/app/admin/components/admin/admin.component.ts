@@ -10,7 +10,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AdminComponent implements OnInit {
   showMenu = '';
   showSubMenu = '';
-  public sidebarnavItems;
+  sidebarnavItems;
+
+
   constructor(private router: Router, private route: ActivatedRoute) {
 
   }
@@ -58,10 +60,10 @@ export class AdminComponent implements OnInit {
         submenu: []
       },
       {
-        path: '',
+        path: 'video',
         title: 'Manage Videos',
         icon: 'icon-bell',
-        class: 'nav-item',
+        class: '',
         extralink: false,
         submenu: []
       },

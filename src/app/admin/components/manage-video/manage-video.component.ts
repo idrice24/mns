@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VideoService } from 'src/app/shared/services/video.service';
 
 @Component({
   selector: 'app-manage-video',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageVideoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private videoService: VideoService) { }
+
+  videos;
+  selectedVideo;
 
   ngOnInit(): void {
+    this.videoService.getVideos().subscribe(i => this.videos = i);
+
+  }
+
+  select(video) {
+    this.selectedVideo = video;
+  }
+
+
+  onChange(event) {
+
   }
 
 }
