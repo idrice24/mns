@@ -10,6 +10,7 @@ export class MediaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

@@ -9,17 +9,14 @@ import { VideoService } from 'src/app/shared/services/video.service';
 })
 export class VideoListComponent implements OnInit {
 
-  funny;
+
   videos: AppVideo[];
 
   constructor(private videoService: VideoService) { }
 
 
   ngOnInit(): void {
-    this.funny = [0];
-    for (let i = 0; i < 2; i++) {
-      this.funny.push(i);
-    }
+
     this.getVideos();
   }
 
