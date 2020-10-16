@@ -53,24 +53,24 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-6">
-                            <button id="registry" name="registry" type="submit" class="btn btn-outline-primary btn-lg btn-block btn-round">Register</button>
+                            <button id="registry" name="registry" type="submit" class="btn btn-primary btn-block btn-round">Register</button>
                         </div>
                         <div class="col-md-6">
-                            <button id="cancel" name="cancel" type="cancel" class="btn btn-outline-danger btn-lg btn-block btn-round">Cancel</button>
+                            <button id="cancel" name="cancel" type="cancel" class="btn btn-danger btn-block btn-round">Cancel</button>
                         </div>
                     </div>
                 </div>
             </form>
-            <h6 class="text-danger">{{message}}</h6>
+            <h6 class="text-primary">{{message}}</h6>
         </div>
     </div>
 </section>
 
-<ul style="list-style-type:square">
+<!-- <ul style="list-style-type:square">
     <li *ngFor="let appUser of users"><br>
         <a routerLink="/detail/{{appUser.id}}">
             <span class="badge">{{appUser.id}}</span> {{appUser.fName}}
         </a>&nbsp;&nbsp;&nbsp;&nbsp;
         <button class="btn btn-primary" class="delete" title="delete appUser" (click)="delete(appUser)">X</button>
     </li>
-</ul>
+</ul> -->
