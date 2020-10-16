@@ -12,6 +12,7 @@ import { RegistryComponent } from './components/registry/registry.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from '../in-memory-data.service';
 import { SearchModule } from '../search/search.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -33,6 +34,7 @@ import { SearchModule } from '../search/search.module';
     FormsModule, // Form will not works important!!
     ReactiveFormsModule, // Form will not works important!!
     SearchModule,
+    SharedModule,
   ],
   exports: [
     HomeComponent,
