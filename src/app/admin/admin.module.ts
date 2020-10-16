@@ -8,6 +8,7 @@ import { ManageBlogComponent } from './components/manage-blog/manage-blog.compon
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { ManageUserComponent } from './components/manage-user/manage-user.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { ManageVideoComponent } from './components/manage-video/manage-video.component';
 
 // REF: https://angular.io/guide/router  live example
 const adminRoutes: Routes = [
@@ -23,6 +24,7 @@ const adminRoutes: Routes = [
           { path: 'blog', component: ManageBlogComponent },
           { path: 'gallery', component: ManageGalleryComponent },
           { path: 'users', component: ManageUserComponent },
+          { path: 'videos', component: ManageVideoComponent },
           { path: '', component: AdminDashboardComponent }
         ]
       }
@@ -35,7 +37,8 @@ const adminRoutes: Routes = [
     AdminDashboardComponent,
     ManageGalleryComponent,
     ManageUserComponent,
-    ManageBlogComponent],
+    ManageBlogComponent,
+    ManageVideoComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(adminRoutes)

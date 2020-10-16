@@ -1,6 +1,13 @@
- <div class="container-fluid coming">
+<h1> Dashboard </h1>
 
-   <h1>
-     <marquee>admin-dashboard *******Coming Soon !!*******.</marquee>
-   </h1>
- </div>
+<div class="card-group">
+  <div *ngFor="let item of items" class="card md-3 mt-3">
+    <img class="card-img-top" [src]="item.src" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"> {{item.title}} </h5>
+      <p class="card-text">{{item.text1}} </p>
+      <p class="card-text"><small class="text-muted">{{item.text2}}</small></p>
+    </div>
+  </div>
+
+</div>
