@@ -310,6 +310,8 @@
   			<tr class="text-primary">
   				<th scope="col">#</th>
   				<th scope="col">Videos Name</th>
+          <th scope="col">Videos Title</th>
+          <th scope="col">Published Date</th>
   				<th scope="col">View</th>
   				<th scope="col">Download</th>
   			</tr>
@@ -318,6 +320,8 @@
   				<tr *ngFor="let appVideo of videos; let i = index">
   					<td scope="row">{{ i }}</td>
   					<td class="text-secondary">{{ appVideo.name }}</td>
+            <td class="text-secondary">{{ appVideo.title }}</td>
+            <td class="text-secondary">{{ appVideo.publishedDate }}</td>
   					<th><button class="btn btn-primary">VIEW</button></th>
   					<th><button class="btn btn-secondary">Download</button></th>
   				<tr>
