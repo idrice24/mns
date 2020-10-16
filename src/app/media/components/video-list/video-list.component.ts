@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppVideo } from 'src/app/shared/models/app-video';
-import { UserService } from 'src/app/shared/services/user.service';
+import { VideoService } from 'src/app/shared/services/video.service';
 
 @Component({
   selector: 'app-video-list',
@@ -12,7 +12,7 @@ export class VideoListComponent implements OnInit {
   funny;
   videos: AppVideo[];
 
-  constructor(private userService: UserService) { }
+  constructor(private videoService: VideoService) { }
 
 
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class VideoListComponent implements OnInit {
   }
 
   getVideos(): void {
-    this.userService.getVideos()
+    this.videoService.getVideos()
       .subscribe(videos => this.videos = videos);
   }
 

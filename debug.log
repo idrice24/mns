@@ -1,1 +1,2 @@
 [0926/225652.934:ERROR:exception_handler_server.cc(524)] ConnectNamedPipe: Die Pipe wird gerade geschlossen. (0xE8)
+[1015/103331.019:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

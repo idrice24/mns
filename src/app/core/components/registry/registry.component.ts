@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AppUser } from 'src/app/shared/models/app-user';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DialogService } from 'src/app/shared/services/dialog.service';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user.service';
-
+import { forbiddenEmailValidator } from 'src/app/shared/directives/forbitten-email-validator.directive';
 
 
 @Component({
@@ -13,7 +13,8 @@ import { UserService } from 'src/app/shared/services/user.service';
   styleUrls: ['./registry.component.css']
 })
 export class RegistryComponent implements OnInit {
-  registryForm;
+  registryForm: FormGroup;
+
   appUser: AppUser;
   users: AppUser[];
   message: string;
@@ -26,17 +27,45 @@ export class RegistryComponent implements OnInit {
     private formBuilder: FormBuilder,
     public dialogService: DialogService) {
 
-    this.registryForm = this.formBuilder.group({
+    this.appUser = {
       fName: '',
       lName: '',
       email: '',
-      password: ''
-    });
+      password: '',
+      isAdmin: false,
+      id: 0,
+    };
   }
-
-
-
   ngOnInit() {
+
+    this.registryForm = new FormGroup({
+      email: new FormControl(this.appUser.email, [
+        Validators.required,
+        Validators.minLength(4),
+        forbiddenEmailValidator(/bob/i)
+      ]),
+      // For fName
+      fName: new FormControl(this.appUser.fName, [
+        Validators.required,
+        Validators.minLength(4)
+      ]),
+      // For lName
+      lName: new FormControl(this.appUser.lName, [
+        Validators.required,
+        Validators.minLength(4)
+      ]),
+      // For password
+      password: new FormControl(this.appUser.password, [
+        Validators.required,
+        Validators.minLength(4)
+      ]),
+      // For pas2
+      password2: new FormControl(this.appUser.password, [
+        Validators.required,
+        Validators.minLength(4)
+      ]),
+    });
+
     this.route.data
       .subscribe((data: { appUser: AppUser }) => {
         this.appUser = data.appUser;
@@ -89,5 +118,8 @@ export class RegistryComponent implements OnInit {
   }
 
   // get fName() { return this.registryForm.get('fName'); }
+
+  get email() { return this.registryForm.get('email'); }
+  get fName() { return this.registryForm.get('fName'); }
 }
 

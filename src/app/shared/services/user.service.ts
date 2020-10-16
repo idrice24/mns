@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AppUser } from '../models/app-user';
-import { AppVideo } from '../models/app-video';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
@@ -12,7 +11,6 @@ export class UserService {
 
 
   private usersUrl = 'api/users';  // URL to web api
-  private videosUrl = 'api/videos'; // URL to web api
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -52,19 +50,6 @@ export class UserService {
       catchError(this.handleError<AppUser>('deleteUser'))
     );
   }
-
-  /** GET: Videos from server */
-  getVideos(): Observable<AppVideo[]>{
-    return this.httpClient.get<AppVideo[]>(this.videosUrl).pipe(
-    tap(_ => this.log('fetched Videos ')),
-    catchError(this.handleError<AppVideo[]>('getVideos', []))
-    );
-  }
-
-  /** POST: add a new video to the server */
-
-
-
 
 
   /**
