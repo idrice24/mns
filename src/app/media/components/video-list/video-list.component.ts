@@ -10,7 +10,9 @@ import { VideoService } from 'src/app/shared/services/video.service';
 export class VideoListComponent implements OnInit {
 
 
+ 
   videoItems: AppVideoItem[];
+ 
 
   constructor(private videoService: VideoService) { }
 
