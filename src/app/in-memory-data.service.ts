@@ -16,6 +16,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
     ];
 
+
     // @Idrice Videos should come from Youtube
     const items2020 = [
       { id: 1, name: 'featuring', publishedDate: '2020/10/13', link: 'S6baf8BqKDI', top: '1', subtitle: 'Lartiste featuring', title: 'Mafiosa' },
@@ -47,6 +48,7 @@ export class InMemoryDataService implements InMemoryDbService {
         items: items1999
       }];
 
+
     const blog = [
       {
         _embedded: {
@@ -70,6 +72,26 @@ export class InMemoryDataService implements InMemoryDbService {
             updatedDate: '2020-03-02T16:41:45Z',
             summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
             rating: 1
+          },
+          {
+            content: 'hi... this is the third blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
+            createdDate: '2013-03-02T16:41:45Z',
+            id: 3,
+            imageUrl: 'assets/img/CMR5.jpg',
+            publishedDate: '2020-03-02T16:41:00Z',
+            title: 'third topic',
+            updatedDate: '2020-03-02T16:41:45Z',
+            summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
+          },
+          {
+            content: 'hi... this is the fouth blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
+            createdDate: '2013-03-02T16:41:45Z',
+            id: 3,
+            imageUrl: 'assets/img/CMR7.jpg',
+            publishedDate: '2020-03-02T16:41:00Z',
+            title: 'third topic',
+            updatedDate: '2020-03-02T16:41:45Z',
+            summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
           },
           {
             content: 'hi... this is the third blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',

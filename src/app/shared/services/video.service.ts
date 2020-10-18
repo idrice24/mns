@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { AppVideo } from '../models/app-video';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+
 import { tap, catchError, filter, map } from 'rxjs/operators';
 import { AppUser } from '../models/app-user';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +14,18 @@ export class VideoService {
 
 
 
+
   private videosUrl = 'api/videos'; // URL to web api
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+
   };
 
   constructor(private httpClient: HttpClient) { }
 
 
   /** GET: Videos from server */
+
   getVideos(): Observable<AppVideo[]> {
     return this.httpClient.get<AppVideo[]>(this.videosUrl).pipe(
       tap(_ => this.log('fetched Videos ')),
@@ -34,6 +39,7 @@ export class VideoService {
       map((vs: AppVideo[]) => vs.find(v => v.year === +selectedYear)));
 
   }
+
 
 
   /** POST: add a new video to the server */
@@ -56,10 +62,12 @@ export class VideoService {
       console.error(error); // log to console instead
       this.log(`${operation} failed: ${error.message}`);
       return of(result as T);
+
     };
   }
 
   /** Log a VideoService message with the MessageService */
+
   private log(message: string) {
     // this.messageService.add(`UserService: ${message}`);
     console.warn(`UserService: ${message}`);

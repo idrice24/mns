@@ -65,23 +65,29 @@
             placeholder="Mot de passe" required>
         </div>
 
-        <!-- Submit Button  -->
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-6">
-              <button id="registry" name="registry" type="submit"    [disabled]="registryForm.invalid"
-                class="btn btn-outline-primary btn-block  btn-round ">Enregistrer</button>
-            </div>
-            <div class="col-md-6">
-              <button id="cancel" name="cancel" type="cancel"
-                class="btn btn-outline-primary  btn-block btn-round">Quitter</button>
-            </div>
-          </div>
+
+                <!-- Submit Button  -->
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button id="registry" name="registry" type="submit" class="btn btn-primary btn-block btn-round">Register</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button id="cancel" name="cancel" type="cancel" class="btn btn-danger btn-block btn-round">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <h6 class="text-primary">{{message}}</h6>
+
+
         </div>
       </form>
       <h6 class="text-danger">{{message}}</h6>
     </div>
   </div>
 </section>
+
+
 
 
