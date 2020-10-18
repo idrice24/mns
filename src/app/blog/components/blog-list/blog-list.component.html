@@ -8,8 +8,7 @@
   </div>
 
   <div class="card">
-    <p-dataView #dv [value]="blogs" [paginator]="true" [rows]="5" filterBy="title" [sortField]="sortField"
-      [sortOrder]="sortOrder" layout="grid">
+    <p-dataView #dv [value]="blogs" [paginator]="true" [rows]="5" filterBy="title" [sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
       <ng-template pTemplate="header">
         <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
           <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Title"
