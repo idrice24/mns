@@ -40,6 +40,7 @@ import { SharedModule } from '../shared/shared.module';
     LoginComponent,
     AboutComponent,
     PageNotFoundComponent,
+    RegistryComponent
 
   ]
 })
