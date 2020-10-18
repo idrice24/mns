@@ -5,7 +5,7 @@ import { VideoService } from 'src/app/shared/services/video.service';
 @Component({
   selector: 'app-manage-video',
   templateUrl: './manage-video.component.html',
-  styleUrls: ['./manage-video.component.css']
+  styleUrls: ['./manage-video.component.scss']
 })
 export class ManageVideoComponent implements OnInit {
 

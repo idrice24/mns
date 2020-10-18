@@ -5,7 +5,7 @@ import { AppUser } from 'src/app/shared/models/app-user';
 @Component({
   selector: 'app-manage-user',
   templateUrl: './manage-user.component.html',
-  styleUrls: ['./manage-user.component.css']
+  styleUrls: ['./manage-user.component.scss']
 })
 export class ManageUserComponent implements OnInit {
 
