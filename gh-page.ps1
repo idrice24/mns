@@ -30,21 +30,18 @@ cd..
 
 #### JUST FOR FUN ###
 # Find all css file and remane it to scss
-cd "./src/app" 
+Set-Location "./src/app"
 $cssFiles = Get-ChildItem .\ -Filter "*.css" -Recurse
-$counter = 0 
-$cssFiles | ForEach-Object ($_) { 
-    $counter++;
-    Write-Output $_.fullname -foreground green
+$counter = 0
+Write-Host ' '  -ForeGroundColor Yellow 
+$cssFiles | ForEach-Object ($_) {
+  $counter++;
+  Write-Output $_.fullname
 }
 
-# REname .css in component.ts file to .scss
- $compFiles = Get-ChildItem .\ -Filter "*.component.ts" -Recurse 
-$compFiles  | ForEach-Object ($_) { 
-    $counter++;
-    Write-Output $_.fullname
+# Rename .css in component.ts file to .scss
 #	(Get-Content -path $_.fullname -Raw) -replace '.css','.scss'
-}
+
 
 
 

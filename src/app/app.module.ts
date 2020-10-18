@@ -13,9 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InMemoryDataService } from './in-memory-data.service';
-
-import { MediaModule } from './media/media.module';
-import { SearchUiComponent } from './search/components/search-ui/search-ui.component';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 
 @NgModule({
@@ -35,9 +34,9 @@ import { SearchUiComponent } from './search/components/search-ui/search-ui.compo
     CoreModule,
     BlogModule,
     AppRoutingModule, // CLI adds AppRoutingModule to the AppModule's imports array
-
+    ToastModule,
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
