@@ -12,19 +12,10 @@ import { AppUser } from 'src/app/shared/models/app-user';
 export class ContactFormComponent implements OnInit {
   message: string;
   sendForm: FormGroup;
-  appUser: AppUser;
+
 
   constructor() {
 
-    // TODO@Idrice api  by sending email
-    this.appUser = {
-      email: '',
-      fName: '',
-      isAdmin: false,
-      lName: '',
-      password: '',
-      id: 0
-    };
   }
 
   ngOnInit(): void {
@@ -33,7 +24,7 @@ export class ContactFormComponent implements OnInit {
         Validators.required,
         Validators.minLength(4),
       ]),
-      email: new FormControl(this.appUser.email, [
+      email: new FormControl('', [
         Validators.required,
         Validators.minLength(4)
       ])
@@ -49,11 +40,8 @@ export class ContactFormComponent implements OnInit {
 
   send(data) {
     console.warn('Your order has been submitted', data);
-    this.showSuccess();
+
     this.sendForm.reset();
   }
-  private showSuccess() {
-    console.log('YYYYYYYYYYY');
-    // this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
-  }
+
 }
