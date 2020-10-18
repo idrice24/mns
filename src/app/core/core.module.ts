@@ -4,13 +4,13 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
-import { ContactComponent } from './components/contact/contact.component';
+
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistryComponent } from './components/registry/registry.component';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from '../in-memory-data.service';
+
+
 import { SearchModule } from '../search/search.module';
 import { SharedModule } from '../shared/shared.module';
 
@@ -21,7 +21,6 @@ import { SharedModule } from '../shared/shared.module';
     HomeComponent,
     LoginComponent,
     AboutComponent,
-    ContactComponent,
     PageNotFoundComponent,
     RegistryComponent,
     NewsletterComponent
@@ -40,8 +39,8 @@ import { SharedModule } from '../shared/shared.module';
     HomeComponent,
     LoginComponent,
     AboutComponent,
-    ContactComponent,
     PageNotFoundComponent,
+    RegistryComponent
 
   ]
 })

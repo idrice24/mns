@@ -1,9 +1,11 @@
 <section id="registry">
   <div class="card-body">
+  
     <div class="col-md-12 text-center">
       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Registry</h1>
       <h2> Number of users: {{numberOfUsers}}</h2>
     </div>
+	
     <div class="col-md-12 align-center">
 
       <form [formGroup]="registryForm" (ngSubmit)="onSubmit(registryForm.value)" class="form-horizontal">
@@ -12,8 +14,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text icon-pin bg-primary text-white"></span>
           </div>
-          <input type="text" name="fName" class="form-control" formControlName="fName" placeholder="Prenom"
-            required>
+          <input type="text" name="fName" class="form-control" formControlName="fName" placeholder="Prenom" required>
 
         </div>
 
@@ -31,12 +32,12 @@
           <div class="input-group-prepend">
             <span class="input-group-text icon-envelope-letter bg-primary text-white"></span>
           </div>
-		 
+
           <input type="text" name="email" class="form-control" formControlName="email" appForbittenEmail
-            placeholder="Email"> 
-	 <hr/>
+            placeholder="Email">
+          <hr />
           <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-		  
+
             <div *ngIf="email.errors.required"> email is required. </div>
             <div *ngIf="email.errors.minlength">
               email must be at least 4 characters long.
@@ -44,7 +45,7 @@
             <div *ngIf="email.errors.forbiddenEmail">
               l'adresse email n'est pas valide
             </div>
-			 
+
           </div>
         </div>
 
@@ -53,8 +54,8 @@
           <div class="input-group-prepend">
             <span class="input-group-text icon-key bg-primary text-white"></span>
           </div>
-          <input type="password" name="password" class="form-control" formControlName="password" placeholder="Mot de passe"
-            required>
+          <input type="password" name="password" class="form-control" formControlName="password"
+            placeholder="Mot de passe" required>
         </div>
         <!-- Password2 -->
         <div class="input-group input-group-lg mb-4">
@@ -65,23 +66,21 @@
             placeholder="Mot de passe" required>
         </div>
 
+
         <!-- Submit Button  -->
         <div class="form-group">
           <div class="row">
             <div class="col-md-6">
-              <button id="registry" name="registry" type="submit"    [disabled]="registryForm.invalid"
-                class="btn btn-outline-primary btn-block  btn-round ">Enregistrer</button>
+              <button id="registry" name="registry" type="submit"
+                class="btn btn-primary btn-block btn-round">Register</button>
             </div>
             <div class="col-md-6">
-              <button id="cancel" name="cancel" type="cancel"
-                class="btn btn-outline-primary  btn-block btn-round">Quitter</button>
+              <button id="cancel" name="cancel" type="cancel" class="btn btn-danger btn-block btn-round">Cancel</button>
             </div>
           </div>
         </div>
       </form>
-      <h6 class="text-danger">{{message}}</h6>
+      <h6 class="text-primary">{{message}}</h6>
     </div>
   </div>
 </section>
-
-

@@ -7,4 +7,6 @@ export class Blog {
   updatedDate: string;
   summary: string;
   imageUrl: string;
+  rating?: number;
+  category?: string;
 }
