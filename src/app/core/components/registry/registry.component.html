@@ -1,53 +1,70 @@
 <section id="registry">
-    <div class="card-body">
-        <div class="col-md-12 text-center">
-            <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Registry</h1>
-            <h2> Number of users: {{numberOfUsers}}</h2>
+  <div class="card-body">
+    <div class="col-md-12 text-center">
+      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Registry</h1>
+      <h2> Number of users: {{numberOfUsers}}</h2>
+    </div>
+    <div class="col-md-12 align-center">
+
+      <form [formGroup]="registryForm" (ngSubmit)="onSubmit(registryForm.value)" class="form-horizontal">
+        <!-- First Name-->
+        <div class="input-group input-group-lg mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text icon-pin bg-primary text-white"></span>
+          </div>
+          <input type="text" name="fName" class="form-control" formControlName="fName" placeholder="Prenom"
+            required>
+
         </div>
-        <div class="col-md-12 align-center">
 
-            <form [formGroup]="registryForm" (ngSubmit)="onSubmit(registryForm.value)" class="form-horizontal">
-                <!-- First Name-->
-                <div class="input-group input-group-lg mb-4">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text icon-pin bg-primary text-white"></span>
-                    </div>
-                    <input type="text" name="fName" class="form-control" formControlName="fName" placeholder="First Name" required>
-                    <!--    <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="alert alert-danger">
+        <!-- Last Name-->
+        <div class="input-group input-group-lg mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text icon-wallet bg-primary text-white"></span>
+          </div>
+          <input required type="text" name="lName" class="form-control" formControlName="lName" placeholder="Nom">
 
-            <div *ngIf="fName.errors.required">
-              Name is required.
+        </div>
+
+        <!-- Text EMAIL-->
+        <div class="input-group input-group-lg mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text icon-envelope-letter bg-primary text-white"></span>
+          </div>
+		 
+          <input type="text" name="email" class="form-control" formControlName="email" appForbittenEmail
+            placeholder="Email"> 
+	 <hr/>
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+		  
+            <div *ngIf="email.errors.required"> email is required. </div>
+            <div *ngIf="email.errors.minlength">
+              email must be at least 4 characters long.
             </div>
-            <div *ngIf="fName.errors.minlength">
-              Name must be at least 4 characters long.
+            <div *ngIf="email.errors.forbiddenEmail">
+              l'adresse email n'est pas valide
             </div>
-          </div>  -->
-                </div>
+			 
+          </div>
+        </div>
 
-                <!-- Last Name-->
-                <div class="input-group input-group-lg mb-4">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text icon-wallet bg-primary text-white"></span>
-                    </div>
-                    <input required type="text" name="lName" class="form-control" formControlName="lName" placeholder="Last Name">
+        <!-- Password -->
+        <div class="input-group input-group-lg mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text icon-key bg-primary text-white"></span>
+          </div>
+          <input type="password" name="password" class="form-control" formControlName="password" placeholder="Mot de passe"
+            required>
+        </div>
+        <!-- Password2 -->
+        <div class="input-group input-group-lg mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text icon-key bg-primary text-white"></span>
+          </div>
+          <input type="password" name="password2" class="form-control" formControlName="password2"
+            placeholder="Mot de passe" required>
+        </div>
 
-                </div>
-
-                <!-- Text EMAIL-->
-                <div class="input-group input-group-lg mb-4">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text icon-envelope-letter bg-primary text-white"></span>
-                    </div>
-                    <input type="text" name="email" class="form-control" formControlName="email" placeholder="Email">
-                </div>
-
-                <!-- Password -->
-                <div class="input-group input-group-lg mb-4">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text icon-key bg-primary text-white"></span>
-                    </div>
-                    <input type="password" name="password" class="form-control" formControlName="password" placeholder="Pasword" required>
-                </div>
 
                 <!-- Submit Button  -->
                 <div class="form-group">
@@ -62,15 +79,15 @@
                 </div>
             </form>
             <h6 class="text-primary">{{message}}</h6>
+
+
         </div>
+      </form>
+      <h6 class="text-danger">{{message}}</h6>
     </div>
+  </div>
 </section>
 
-<!-- <ul style="list-style-type:square">
-    <li *ngFor="let appUser of users"><br>
-        <a routerLink="/detail/{{appUser.id}}">
-            <span class="badge">{{appUser.id}}</span> {{appUser.fName}}
-        </a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="btn btn-primary" class="delete" title="delete appUser" (click)="delete(appUser)">X</button>
-    </li>
-</ul> -->
+
+
+
