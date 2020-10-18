@@ -50,6 +50,7 @@ export class ContactFormComponent implements OnInit {
   send(data) {
     console.warn('Your order has been submitted', data);
     this.showSuccess();
+    this.sendForm.reset();
   }
   private showSuccess() {
     console.log('YYYYYYYYYYY');
