@@ -3,7 +3,7 @@
 # Table of contents
 
 1. [How to login](#how-to-login) 
-1. [How to send contact](#how to send contact) 
+1. [How to send contact](#how-to-send-contact) 
 
 # How to login
 1. Website is displayed on browser
