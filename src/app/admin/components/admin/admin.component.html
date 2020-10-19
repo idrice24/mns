@@ -1,6 +1,8 @@
+<div class="container-fluid">
 <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Administration</h1>
 <!-- REF: https://github.com/wrappixel/monster-angular-lite/blob/master/angular-10/src/app/shared/sidebar/sidebar.component.ts -->
-
+<div class="row">
+    <div class="col-lg-3">
 <ul class="nav flex-column">
   <li class="nav-item" [class.active]="showMenu === sidebarnavItem.title" *ngFor="let sidebarnavItem of sidebarnavItems"
     [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
@@ -17,8 +19,9 @@
   <li><a [routerLink]="['/login']">Logout</a></li>
 
 </ul>
-<div class="container-fluid">
+</div>
+<div class="col-lg-8">
   <router-outlet></router-outlet>
-
-
+</div>
+</div>
 </div>
