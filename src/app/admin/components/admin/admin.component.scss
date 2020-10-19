@@ -2,14 +2,14 @@
 Main sidebar
 ******************/
 
-.left-sidebar {
+.nav {
   position: fixed;
   width: 40;
-  height: 100%;
+  height: auto;
   top: 0px;
   z-index: 10;
   padding-top: 64px;
-  background: darkred;
+  background: darkyellow;
   box-shadow: royalblue;
   transition: 0.2s ease-in;
 }

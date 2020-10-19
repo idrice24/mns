@@ -10,7 +10,7 @@ import { forbittenEmailValidator } from 'src/app/shared/directives/forbitten-ema
 @Component({
   selector: 'app-registry',
   templateUrl: './registry.component.html',
-  styleUrls: ['./registry.component.css']
+  styleUrls: ['./registry.component.scss']
 })
 export class RegistryComponent implements OnInit {
   registryForm: FormGroup;

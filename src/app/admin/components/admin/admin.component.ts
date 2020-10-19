@@ -5,7 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
   showMenu = '';
@@ -38,7 +38,7 @@ export class AdminComponent implements OnInit {
         path: '/dashboard',
         title: 'Dashboard',
         icon: 'icon-list',
-        class: 'nav-item',
+        class: '',
         extralink: false,
         submenu: []
       },
@@ -46,7 +46,7 @@ export class AdminComponent implements OnInit {
         path: 'blog',
         title: 'Manage Blog',
         icon: 'icon-event',
-        class: 'nav-item',
+        class: '',
         extralink: false,
         submenu: []
       },
@@ -55,7 +55,7 @@ export class AdminComponent implements OnInit {
         path: 'gallery',
         title: 'Manage Gallery',
         icon: 'icon-bulb',
-        class: 'nav-item',
+        class: '',
         extralink: false,
         submenu: []
       },
@@ -79,7 +79,7 @@ export class AdminComponent implements OnInit {
         path: '',
         title: 'Settings',
         icon: 'icon-settings',
-        class: 'nav-item',
+        class: '',
         extralink: false,
         submenu: []
       },

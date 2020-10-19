@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-search-ui',
   templateUrl: './search-ui.component.html',
-  styleUrls: ['./search-ui.component.css']
+  styleUrls: ['./search-ui.component.scss']
 })
 export class SearchUiComponent implements OnInit {
 
