@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppVideo } from 'src/app/shared/models/app-video';
+import { AppVideo, AppVideoItem } from 'src/app/shared/models/app-video';
 import { VideoService } from 'src/app/shared/services/video.service';
 import { TableModule, Table } from 'primeng/table';
 
@@ -12,7 +12,9 @@ export class VideoListComponent implements OnInit {
 
 
   videos: AppVideo[];
-  appVideos: AppVideo[];
+  selectedVideo;
+  selectedYear;
+  appVideoItems: AppVideoItem[];
   cols: any[];
 
   constructor(private videoService: VideoService) { }
@@ -21,14 +23,26 @@ export class VideoListComponent implements OnInit {
   ngOnInit(): void {
         this.getVideos();
         this.cols = [
+            { field: 'top',  header: 'Top'},
             { field: 'name', header: 'Name' },
             { field: 'publishedDate', header: 'Published Date' },
             { field: 'subtitle', header: 'Subtitle' },
-            { field: 'title', header: 'Title' },
-            { field: 'year', header: 'Year'}
+            { field: 'title', header: 'Title' }
+            
         ];
+        this.selectedYear = 2020;
+        this.videoService.getVideos().subscribe(i => this.appVideos = i);
+        this.videoService.getVideoByYear(this.selectedYear).subscribe(i => this.appVideoItems = i.items);
   }
 
+  select(video) {
+    this.selectedVideo = video;
+  }
+
+  onChange($event) {
+    this.selectedYear = $event.target.value;
+    this.videoService.getVideoByYear(this.selectedYear).subscribe(i => this.appVideoItems = i.items);
+  }
 
   getVideos(): void {
     this.videoService.getVideos()

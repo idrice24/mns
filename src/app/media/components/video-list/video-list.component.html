@@ -21,8 +21,39 @@
         </tr>
     </ng-template>
 </p-table> -->
+      <!-- PLAY Videos --->
+  <div *ngIf="selectedVideo" class="embed-responsive embed-responsive-16by9">
+ 
+    <iframe #ok class="embed-responsive-item" [src]="('https://www.youtube.com/embed/' + selectedVideo.link) | safe"
+      allowfullscreen> </iframe>
+    <p> {{ok.src }}</p>
+  </div>
 
-<p-table [columns]="cols" [value]="videos">
+<div class="card bg-light mb-3 text-center">
+  
+    <!-- Video is selected--->
+    <div class="card-body" *ngIf="selectedVideo">
+      <h5 class="card-title text-primary">{{ selectedVideo.artist }}</h5>
+      <h6 class="card-title text-info">{{ selectedVideo.title }}</h6>
+      <h6 class="card-title text-secondary">{{ selectedVideo.top }}</h6>
+    </div>
+  
+    <!-- NO Video is selected--->
+    <div class="card-body" *ngIf="!selectedVideo">
+      <div class="alert alert-danger" role="alert">
+       Choisir une video de la liste pour voir le clip<br>
+        <i class="icon-social-youtube fa-2x text-danger"></i>
+      </div>
+    </div>
+  </div>
+<!-- Video list -->
+    <div class="form-group">
+      <label class="text-primary font-weight-bold" for="exampleFormControlSelect1">Choisir l annnee</label>
+      <select class="form-control text-primary font-weight-bold" id="exampleFormControlSelect1"        (change)="onChange($event)">
+        <option *ngFor="let appVideo of appVideos" value="{{appVideo.year}}">{{appVideo.year}}</option>    
+      </select>
+    </div>
+<p-table [columns]="cols" [value]="appVideoItems">
     <ng-template pTemplate="caption">
         List of Videos
     </ng-template>
@@ -30,12 +61,12 @@
         <tr>
             <th *ngFor="let col of columns">
                 {{col.header}}
-            </th>
+            </th> 
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr>
-            <td *ngFor="let col of columns">
+            <td *ngFor="let col of columns" (click)="select(video)" class="text-secondary" style="cursor: pointer;">
             {{rowData[col.field]}}
             </td>
         </tr>
@@ -48,6 +79,6 @@
         </tr>
     </ng-template>
     <ng-template pTemplate="summary">
-        There are {{videos?.length}} videos
+        There are {{appVideoItems?.length}} Videos
     </ng-template>
 </p-table>
