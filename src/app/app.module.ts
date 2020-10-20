@@ -13,10 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InMemoryDataService } from './in-memory-data.service';
-
-import { MediaModule } from './media/media.module';
-import { SearchUiComponent } from './search/components/search-ui/search-ui.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,6 +21,7 @@ import { SearchUiComponent } from './search/components/search-ui/search-ui.compo
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
