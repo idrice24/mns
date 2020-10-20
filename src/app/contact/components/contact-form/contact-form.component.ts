@@ -14,7 +14,7 @@ export class ContactFormComponent implements OnInit {
   sendForm: FormGroup;
 
 
-  constructor() {
+  constructor(private messageService: MessageService) {
 
   }
 
@@ -39,8 +39,8 @@ export class ContactFormComponent implements OnInit {
 
 
   send(data) {
-    console.warn('Your order has been submitted', data);
 
+    this.messageService.add({ severity: 'success', summary: 'Service Message', detail: 'Votre message est envoye' });
     this.sendForm.reset();
   }
 

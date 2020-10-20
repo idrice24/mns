@@ -14,6 +14,7 @@ import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TabViewModule } from 'primeng/tabview';
+import { MessageService } from 'primeng/api';
 
 const routes: Routes = [
   {
@@ -37,6 +38,7 @@ const routes: Routes = [
     TabViewModule,
     RouterModule.forChild(routes)
   ],
+  providers: [MessageService]
 
 })
 export class ContactModule { }
