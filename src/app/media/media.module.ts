@@ -8,9 +8,6 @@ import { MediaDashboardComponent } from './components/media-dashboard/media-dash
 import { TableModule, Table } from 'primeng/table';
 import { SharedModule } from '../shared/shared.module';
 
-
-
-
 const mediasRoutes: Routes = [
   {
     path: '',
