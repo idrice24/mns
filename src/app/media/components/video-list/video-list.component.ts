@@ -15,7 +15,11 @@ export class VideoListComponent implements OnInit {
   selectedVideo;
   selectedYear;
   appVideoItems: AppVideoItem[];
+  appVideos: AppVideo[];
+
   cols: any[];
+  yearFilter: number;
+  yearTimeout: any;
 
   constructor(private videoService: VideoService) { }
 
@@ -28,7 +32,6 @@ export class VideoListComponent implements OnInit {
             { field: 'publishedDate', header: 'Published Date' },
             { field: 'subtitle', header: 'Subtitle' },
             { field: 'title', header: 'Title' }
-            
         ];
         this.selectedYear = 2020;
         this.videoService.getVideos().subscribe(i => this.appVideos = i);
@@ -49,4 +52,18 @@ export class VideoListComponent implements OnInit {
       .subscribe(videos => this.videos = videos);
   }
 
+  /*reset(){
+  this.first= 0;
+  }*/
+  onYearChange(event, dt) {
+        if (this.yearTimeout) {
+            clearTimeout(this.yearTimeout);
+        }
+
+   /*     this.yearTimeout = setTimeout(() => {
+            tt.filter(event.value, 'year', 'gt');
+        }, 250);
+    }*/
+
+}
 }

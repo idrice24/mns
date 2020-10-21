@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { SearchUiComponent } from './components/search-ui/search-ui.component';
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const routes: Routes = [{ path: 'search', component: SearchResultComponent }];
@@ -13,6 +14,7 @@ const routes: Routes = [{ path: 'search', component: SearchResultComponent }];
     SearchUiComponent],
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     FormsModule,
     RouterModule.forChild(routes)
   ],
