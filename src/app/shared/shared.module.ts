@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { ForbittenEmailValidatorDirective } from './directives/forbitten-email-validator.directive';
 import { SafePipe } from './pipes/safe.pipe';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,12 @@ import { SafePipe } from './pipes/safe.pipe';
   imports: [
     CommonModule,
     RouterModule,
+    MenubarModule,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     SafePipe,
-
     ForbittenEmailValidatorDirective],
   providers: []
 })
