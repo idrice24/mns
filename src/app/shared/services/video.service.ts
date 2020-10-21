@@ -23,9 +23,7 @@ export class VideoService {
 
   constructor(private httpClient: HttpClient) { }
 
-
   /** GET: Videos from server */
-
   getVideos(): Observable<AppVideo[]> {
     return this.httpClient.get<AppVideo[]>(this.videosUrl).pipe(
       tap(_ => this.log('fetched Videos ')),

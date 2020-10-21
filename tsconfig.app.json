@@ -15,4 +15,5 @@
     "outDir": "./out-tsc/app",
     "types": ["googlemaps"]
   },
+  "enableIvy" : false,
 }
