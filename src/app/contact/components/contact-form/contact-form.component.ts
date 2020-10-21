@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
-import { AppUser } from 'src/app/shared/models/app-user';
+
 
 
 @Component({
@@ -14,7 +14,7 @@ export class ContactFormComponent implements OnInit {
   sendForm: FormGroup;
 
 
-  constructor() {
+  constructor(private messageService: MessageService) {
 
   }
 
@@ -39,8 +39,8 @@ export class ContactFormComponent implements OnInit {
 
 
   send(data) {
-    console.warn('Your order has been submitted', data);
 
+    this.messageService.add({ severity: 'success', summary: 'Service Message', detail: 'Votre message est envoye' });
     this.sendForm.reset();
   }
 
