@@ -10,8 +10,7 @@ import { TableModule, Table } from 'primeng/table';
 })
 export class VideoListComponent implements OnInit {
 
-
-  videos: AppVideo[];
+  appVideos: AppVideo[];
   selectedVideo;
   selectedYear;
   appVideoItems: AppVideoItem[];
@@ -21,18 +20,20 @@ export class VideoListComponent implements OnInit {
 
 
   ngOnInit(): void {
-        this.getVideos();
-        this.cols = [
-            { field: 'top',  header: 'Top'},
-            { field: 'name', header: 'Name' },
-            { field: 'publishedDate', header: 'Published Date' },
-            { field: 'subtitle', header: 'Subtitle' },
-            { field: 'title', header: 'Title' }
-            
-        ];
-        this.selectedYear = 2020;
-        this.videoService.getVideos().subscribe(i => this.appVideos = i);
-        this.videoService.getVideoByYear(this.selectedYear).subscribe(i => this.appVideoItems = i.items);
+    this.getVideos();
+
+    // TODO@Idrice : name in french
+    this.cols = [
+      { field: 'top', header: 'Top' },
+      { field: 'name', header: 'Name' },
+      { field: 'publishedDate', header: 'Published Date' },
+      { field: 'subtitle', header: 'Subtitle' },
+      { field: 'title', header: 'Title' }
+
+    ];
+    this.selectedYear = 2020;
+
+    this.videoService.getVideoByYear(this.selectedYear).subscribe(i => this.appVideoItems = i.items);
   }
 
   select(video) {
@@ -46,7 +47,7 @@ export class VideoListComponent implements OnInit {
 
   getVideos(): void {
     this.videoService.getVideos()
-      .subscribe(videos => this.videos = videos);
+      .subscribe(videos => this.appVideos = videos);
   }
 
 }
