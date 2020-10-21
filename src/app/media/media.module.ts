@@ -6,10 +6,7 @@ import { MediaComponent } from './components/media/media.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { MediaDashboardComponent } from './components/media-dashboard/media-dashboard.component';
 import { TableModule, Table } from 'primeng/table';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-
-
-
+import { SharedModule } from '../shared/shared.module';
 
 const mediasRoutes: Routes = [
   {
@@ -31,6 +28,7 @@ const mediasRoutes: Routes = [
   imports: [
     CommonModule,
     TableModule,
+    SharedModule,
     RouterModule.forChild(mediasRoutes)
   ],
   exports: [RouterModule]
