@@ -25,8 +25,8 @@ export class BlogListComponent implements OnInit {
     this.listBlogs();
     // TODO@idrcie sort by title
     this.sortOptions = [
-      { label: 'Alphabetique', value: '!price' },
-      { label: 'Price Low to High', value: 'price' }
+      { label: 'Produits', value: '!price' },
+      { label: 'Blogs', value: 'price' }
     ];
     this.sortKey = this.sortOptions[0];
   }
