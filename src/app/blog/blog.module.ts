@@ -13,6 +13,10 @@ import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { TabViewModule } from 'primeng/tabview';
 import { FormsModule } from '@angular/forms';
+import { FieldsetModule } from 'primeng/fieldset';
+import { ListboxModule } from 'primeng/listbox';
+
+
 const routes: Routes = [
   {
     path: '', component: BlogListComponent
@@ -33,6 +37,8 @@ const routes: Routes = [
     InputTextModule,
     RatingModule,
     ButtonModule,
+    FieldsetModule,
+    ListboxModule,
     RouterModule.forChild(routes),
 
   ],

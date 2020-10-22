@@ -1,29 +1,19 @@
- <div class="p-grid">
-   <div class="p-col-4">4</div>
-   <div class="p-col">1 </div>
-   <div class="p-col">1 </div>
-   <div class="p-col">1 </div>
-   <div class="p-col">1 </div>
-   <div class="p-col">1 </div>
-   <div class="p-col">1 </div>
-   <div class="p-col">1 </div>
-   <div class="p-col">1 </div>
- </div>
  <section id="blog">
    <!--TITLE-->
    <div class="row mb-5">
      <div class="col-md-12 text-center">
        <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Nos Actualités</h1>
      </div>
-     <!-- col -->
+
    </div>
 
 
 
    <div class="p-grid">
-     <div class="p-col-4">4
-
-       <h1>hhh</h1>
+     <div class="p-col-2">
+       <p-fieldset legend="RECENT POSTS">
+         <p-listbox [options]="recentPosts" optionLabel="title"></p-listbox>
+       </p-fieldset>
      </div>
      <div class="p-col">
        <div class="card">
