@@ -3,6 +3,7 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Avatar</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
       <th scope="col">Email</th>
@@ -11,12 +12,14 @@
   <tbody>
     <tr *ngFor="let appUser of users; let i = index">
       <th scope="row">{{ i }}</th>
+      <td> <img class="avatar" [src]="appUser.avatar"></td>
       <td>{{appUser.fName}}</td>
       <td>{{appUser.lName}}</td>
       <td>{{appUser.email}}</td>
-      <td><button type="button" class="btn btn-primary">View</button><td>
+      <td><button type="button" class="btn btn-primary">View</button>
+      <td>
       <td><button type="button" class="btn btn-danger">Delete</button></td>
-      
+
 
     </tr>
 

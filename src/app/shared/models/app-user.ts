@@ -6,5 +6,6 @@ export interface AppUser {
   email: string;
   password: string;
   isAdmin: boolean;
+  avatar?: string;
 }
 
