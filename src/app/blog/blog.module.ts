@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BlogListComponent } from './components/blog-list/blog-list.component';
-import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { TopicDetailComponent } from './components/topic-detail/topic-detail.component';
+
+import { SharedModule } from '../shared/shared.module';
+import { PostListComponent } from './components/post-list/post-list.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
+
 
 import { DataViewModule } from 'primeng/dataview';
 import { PanelModule } from 'primeng/panel';
@@ -12,20 +15,19 @@ import { RatingModule } from 'primeng/rating';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { TabViewModule } from 'primeng/tabview';
-import { FormsModule } from '@angular/forms';
 import { FieldsetModule } from 'primeng/fieldset';
 import { ListboxModule } from 'primeng/listbox';
 
-
 const routes: Routes = [
-  {
-    path: '', component: BlogListComponent
-  }];
+  { path: '', component: PostListComponent },
+  { path: 'post/:id', component: PostDetailComponent }
+];
 
 @NgModule({
   declarations: [
-    BlogListComponent,
-    TopicDetailComponent],
+    PostListComponent,
+    PostDetailComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -39,8 +41,7 @@ const routes: Routes = [
     ButtonModule,
     FieldsetModule,
     ListboxModule,
-    RouterModule.forChild(routes),
-
+    RouterModule.forChild(routes)
   ],
   exports: [RouterModule]
 })

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './core/components/home/home.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
-import { TopicDetailComponent } from './blog/components/topic-detail/topic-detail.component';
+
 import { LoginComponent } from './core/components/login/login.component';
 import { AuthGuard } from './auth/guards/auth.guard';
 import { RegistryComponent } from './core/components/registry/registry.component';
@@ -13,7 +13,6 @@ import { RegistryComponent } from './core/components/registry/registry.component
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: '', component: HomeComponent },
   {
     path: 'association',
     loadChildren: () => import('./association/association.module').then(m => m.AssociationModule)
@@ -24,7 +23,6 @@ const routes: Routes = [
     loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
 
   },
-
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
@@ -46,7 +44,6 @@ const routes: Routes = [
     path: 'products',
     loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
   },
-  { path: 'topic/:id', component: TopicDetailComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registry', component: RegistryComponent },
   { path: '**', component: PageNotFoundComponent }

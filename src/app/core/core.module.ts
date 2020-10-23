@@ -14,6 +14,8 @@ import { SearchModule } from '../search/search.module';
 import { SharedModule } from '../shared/shared.module';
 import { AssociationModule } from '../association/association.module';
 
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { AssociationModule } from '../association/association.module';
     RouterModule, // Links will not works important!!
     FormsModule, // Form will not works important!!
     ReactiveFormsModule, // Form will not works important!!
+    ButtonModule, // Due to Rounded and Outlined Icon Buttons
+    RippleModule, // Due to pRippe in home.html
     SearchModule,
     SharedModule,
     AssociationModule // Due to newletter component in home important!!
@@ -39,7 +43,6 @@ import { AssociationModule } from '../association/association.module';
   exports: [
     HomeComponent,
     LoginComponent,
-
     PageNotFoundComponent,
     RegistryComponent
 

@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from 'src/app/shared/services/blog.service';
-import { Blog } from 'src/app/shared/models/blog';
 import { SelectItem } from 'primeng/api';
+import { Blog } from 'src/app/shared/models/blog';
+import { BlogService } from 'src/app/shared/services/blog.service';
 
-
-// REF: https://stackblitz.com/angular/gxbmvnyvqrg?file=src%2Fapp%2Fhero.service.ts
 @Component({
-  selector: 'app-blog-list',
-  templateUrl: './blog-list.component.html',
-  styleUrls: ['./blog-list.component.scss']
+  selector: 'app-post-list',
+  templateUrl: './post-list.component.html',
+  styleUrls: ['./post-list.component.scss']
 })
-export class BlogListComponent implements OnInit {
-
+export class PostListComponent implements OnInit {
   blogs: Blog[];
   recentPosts: Blog[];
   sortOptions: SelectItem[];
@@ -56,3 +53,4 @@ export class BlogListComponent implements OnInit {
 
   }
 }
+
