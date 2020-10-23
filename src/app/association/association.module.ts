@@ -12,13 +12,14 @@ const routes: Routes = [
   { path: 'newsletter', component: NewsletterComponent }];
 
 @NgModule({
-  declarations: [AssociationComponent,
+  declarations: [
+    AssociationComponent,
     AboutComponent,
     NewsletterComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
   ],
-  exports: [RouterModule, NewsletterComponent]
+  exports: [RouterModule, NewsletterComponent, AboutComponent]
 })
 export class AssociationModule { }
