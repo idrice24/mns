@@ -7,10 +7,10 @@ import { ManageGalleryComponent } from './components/manage-gallery/manage-galle
 import { ManageBlogComponent } from './components/manage-blog/manage-blog.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { ManageUserComponent } from './components/manage-user/manage-user.component';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { ManageVideoComponent } from './components/manage-video/manage-video.component';
 import { SharedModule } from '../shared/shared.module';
-
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 // REF: https://angular.io/guide/router  live example
 const adminRoutes: Routes = [
   {
@@ -22,6 +22,7 @@ const adminRoutes: Routes = [
         path: '',
         canActivateChild: [AuthGuard],
         children: [
+          { path: 'dashboard', component: AdminDashboardComponent },
           { path: 'blog', component: ManageBlogComponent },
           { path: 'gallery', component: ManageGalleryComponent },
           { path: 'users', component: ManageUserComponent },
@@ -43,6 +44,7 @@ const adminRoutes: Routes = [
   imports: [
     CommonModule,
     SharedModule,
+    ProgressSpinnerModule,
     RouterModule.forChild(adminRoutes)
   ]
 

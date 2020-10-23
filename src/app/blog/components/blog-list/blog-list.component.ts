@@ -3,6 +3,7 @@ import { BlogService } from 'src/app/shared/services/blog.service';
 import { Blog } from 'src/app/shared/models/blog';
 import { SelectItem } from 'primeng/api';
 
+
 // REF: https://stackblitz.com/angular/gxbmvnyvqrg?file=src%2Fapp%2Fhero.service.ts
 @Component({
   selector: 'app-blog-list',
@@ -12,7 +13,7 @@ import { SelectItem } from 'primeng/api';
 export class BlogListComponent implements OnInit {
 
   blogs: Blog[];
-
+  recentPosts: Blog[];
   sortOptions: SelectItem[];
   sortKey: SelectItem;
   sortOrder: number;
@@ -23,10 +24,11 @@ export class BlogListComponent implements OnInit {
 
   ngOnInit(): void {
     this.listBlogs();
+    this.loadRecentPosts();
     // TODO@idrcie sort by title
     this.sortOptions = [
-      { label: 'Alphabetique', value: '!price' },
-      { label: 'Price Low to High', value: 'price' }
+      { label: 'Produits', value: '!price' },
+      { label: 'Blogs', value: 'price' }
     ];
     this.sortKey = this.sortOptions[0];
   }
@@ -46,7 +48,11 @@ export class BlogListComponent implements OnInit {
   listBlogs() {
     this.blogService.getBlogList().subscribe(data => {
       this.blogs = data;
-      console.warn(data);
+      this.recentPosts = this.blogs.slice(0, 3);
     });
+  }
+
+  private loadRecentPosts() {
+
   }
 }

@@ -17,7 +17,12 @@ import { RegistryComponent } from './core/components/registry/registry.component
 // sets up routes constant where you define your routes
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'blog', component: BlogListComponent },
+  {
+    path: 'posts',
+    loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
+
+  },
+
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),

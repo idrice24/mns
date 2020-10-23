@@ -8054,7 +8054,7 @@ export class InMemoryDataService implements InMemoryDbService {
             id: 2,
             imageUrl: 'assets/img/aboutus.jpg',
             publishedDate: '2020-03-02T16:41:00Z',
-            title: 'third topic',
+            title: 'Les Infractions qui portent atteinte à la paix et troublent l’ordre public',
             updatedDate: '2020-03-02T16:41:45Z',
             summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
             rating: 3
@@ -8075,7 +8075,7 @@ export class InMemoryDataService implements InMemoryDbService {
             id: 3,
             imageUrl: 'assets/img/CMR5.jpg',
             publishedDate: '2020-03-02T16:41:00Z',
-            title: 'third topic',
+            title: 'Les sanctions relatives à la Carte Nationale d’Identité',
             updatedDate: '2020-03-02T16:41:45Z',
             summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
           },
@@ -8085,7 +8085,7 @@ export class InMemoryDataService implements InMemoryDbService {
             id: 3,
             imageUrl: 'assets/img/CMR7.jpg',
             publishedDate: '2020-03-02T16:41:00Z',
-            title: 'third topic',
+            title: 'Production des passeports',
             updatedDate: '2020-03-02T16:41:45Z',
             summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
           },
@@ -8095,7 +8095,7 @@ export class InMemoryDataService implements InMemoryDbService {
             id: 3,
             imageUrl: 'assets/img/CMR5.jpg',
             publishedDate: '2020-03-02T16:41:00Z',
-            title: 'third topic',
+            title: 'topic A',
             updatedDate: '2020-03-02T16:41:45Z',
             summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
           },
@@ -8105,7 +8105,7 @@ export class InMemoryDataService implements InMemoryDbService {
             id: 3,
             imageUrl: 'assets/img/CMR7.jpg',
             publishedDate: '2020-03-02T16:41:00Z',
-            title: 'third topic',
+            title: 'Topic B',
             updatedDate: '2020-03-02T16:41:45Z',
             summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
           }]

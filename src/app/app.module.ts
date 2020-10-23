@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-import { BlogModule } from './blog/blog.module';
+
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -31,7 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       InMemoryDataService, { dataEncapsulation: false }),
     SharedModule,
     CoreModule,
-    BlogModule,
+
     AppRoutingModule, // CLI adds AppRoutingModule to the AppModule's imports array
 
   ],
