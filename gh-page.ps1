@@ -4,6 +4,9 @@ $ErrorActionPreference = "Stop"
 # Clean host
 Clear-Host
 
+
+
+
 # Run deploy
 npm run deploy
 
@@ -27,7 +30,6 @@ Copy-Item index.html 404.html -PassThru
 cd..
 
 
-
 #### JUST FOR FUN ###
 # Find all css file and remane it to scss
 cd "./src/app" 
@@ -45,6 +47,7 @@ $compFiles  | ForEach-Object ($_) {
     Write-Output $_.fullname
 #	(Get-Content -path $_.fullname -Raw) -replace '.css','.scss'
 }
+
 
 
 
