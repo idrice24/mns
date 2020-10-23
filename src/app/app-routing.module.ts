@@ -3,9 +3,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './core/components/home/home.component';
 
-import { AboutComponent } from './core/components/about/about.component';
-import { NewsletterComponent } from './core/components/newsletter/newsletter.component';
-
 import { BlogListComponent } from './blog/components/blog-list/blog-list.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { TopicDetailComponent } from './blog/components/topic-detail/topic-detail.component';
@@ -51,8 +48,7 @@ const routes: Routes = [
   { path: 'topic/:id', component: TopicDetailComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registry', component: RegistryComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'newsletter', component: NewsletterComponent },
+
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

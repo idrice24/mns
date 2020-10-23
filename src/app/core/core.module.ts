@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { AboutComponent } from './components/about/about.component';
-import { NewsletterComponent } from './components/newsletter/newsletter.component';
+
 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RouterModule } from '@angular/router';
@@ -13,6 +12,7 @@ import { RegistryComponent } from './components/registry/registry.component';
 
 import { SearchModule } from '../search/search.module';
 import { SharedModule } from '../shared/shared.module';
+import { AssociationModule } from '../association/association.module';
 
 
 
@@ -20,10 +20,10 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     HomeComponent,
     LoginComponent,
-    AboutComponent,
+
     PageNotFoundComponent,
-    RegistryComponent,
-    NewsletterComponent
+    RegistryComponent
+
 
   ],
 
@@ -34,11 +34,12 @@ import { SharedModule } from '../shared/shared.module';
     ReactiveFormsModule, // Form will not works important!!
     SearchModule,
     SharedModule,
+    AssociationModule // Due to newletter component in home important!!
   ],
   exports: [
     HomeComponent,
     LoginComponent,
-    AboutComponent,
+
     PageNotFoundComponent,
     RegistryComponent
 

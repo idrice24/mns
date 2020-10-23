@@ -22,15 +22,23 @@
             <li class="nav-item">
               <a class="nav-link smooth" routerLink="/products">Produits</a>
             </li>
-            <li class="nav-item">
+           
 
-              <a class="nav-link smooth" routerLink="/about">A Propose de nous</a>
+            <!---ASSOCIATION--->
+           <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" id="dMBAssocation" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Assocation </a>
+              <div class="dropdown-menu" aria-labelledby="dMBAssocation">
+                <a class="dropdown-item" routerLink="/about">
+                  <i class="icon-login"> A Propose de nous</i> </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="/newsletter">
+                  <i class="icon-people"> Newletter </i>
+                </a>
+              </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link smooth" routerLink="/newsletter">Builtin </a>
-            </li>
-
-
+			
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" role="button" id="dropdownMenuButtonCMS" data-toggle="dropdown"
@@ -44,7 +52,6 @@
                   <i class="icon-people"> Registry </i>
                 </a>
               </div>
-
             </li>
 
 
