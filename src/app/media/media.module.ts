@@ -7,7 +7,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { MediaDashboardComponent } from './components/media-dashboard/media-dashboard.component';
 import { TableModule, Table } from 'primeng/table';
 import { SharedModule } from '../shared/shared.module';
-
+/*
 const mediasRoutes: Routes = [
   {
     path: '',
@@ -16,7 +16,11 @@ const mediasRoutes: Routes = [
       { path: 'gallery', component: GalleryComponent },
       { path: 'videos', component: VideoListComponent },
       { path: '', component: MediaDashboardComponent }]
-  }];
+  }];*/
+const mediasRoutes: Routes = [
+  { path: 'gallery', component: GalleryComponent },
+  { path: 'videos', component: VideoListComponent },
+  { path: '', component: GalleryComponent }];
 
 
 @NgModule({
