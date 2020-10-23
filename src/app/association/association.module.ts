@@ -7,15 +7,14 @@ import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   {
-    path: '', component: AssociationComponent
-  },
-  {
     path: 'about', component: AboutComponent
   },
   { path: 'newsletter', component: NewsletterComponent }];
 
 @NgModule({
-  declarations: [AssociationComponent, AboutComponent, NewsletterComponent],
+  declarations: [AssociationComponent,
+    AboutComponent,
+    NewsletterComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
