@@ -2,8 +2,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './core/components/home/home.component';
-
-import { BlogListComponent } from './blog/components/blog-list/blog-list.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { TopicDetailComponent } from './blog/components/topic-detail/topic-detail.component';
 import { LoginComponent } from './core/components/login/login.component';
@@ -13,17 +11,20 @@ import { RegistryComponent } from './core/components/registry/registry.component
 
 // sets up routes constant where you define your routes
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  {
-    path: 'posts',
-    loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
-
-  },
+  { path: '', component: HomeComponent },
   {
     path: 'association',
     loadChildren: () => import('./association/association.module').then(m => m.AssociationModule)
 
   },
+  {
+    path: 'posts',
+    loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
+
+  },
+
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
@@ -48,8 +49,6 @@ const routes: Routes = [
   { path: 'topic/:id', component: TopicDetailComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registry', component: RegistryComponent },
-
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 // configures NgModule imports and exports
