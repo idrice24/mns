@@ -22,7 +22,11 @@ const routes: Routes = [
     loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
 
   },
+  {
+    path: 'association',
+    loadChildren: () => import('./association/association.module').then(m => m.AssociationModule)
 
+  },
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
