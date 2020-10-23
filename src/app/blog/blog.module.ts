@@ -20,7 +20,7 @@ import { ListboxModule } from 'primeng/listbox';
 
 const routes: Routes = [
   { path: '', component: PostListComponent },
-  { path: 'post/:id', component: PostDetailComponent }
+  { path: ':id', component: PostDetailComponent }
 ];
 
 @NgModule({
