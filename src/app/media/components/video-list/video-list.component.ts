@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppVideo, AppVideoItem } from 'src/app/shared/models/app-video';
 import { VideoService } from 'src/app/shared/services/video.service';
 import { TableModule, Table } from 'primeng/table';
@@ -15,6 +15,9 @@ export class VideoListComponent implements OnInit {
   selectedYear;
   appVideoItems: AppVideoItem[];
   cols: any[];
+  statuses: any[];
+  loading: boolean = true;
+  @ViewChild('dv') table: Table;
 
   constructor(private videoService: VideoService) { }
 
@@ -22,13 +25,13 @@ export class VideoListComponent implements OnInit {
   ngOnInit(): void {
     this.getVideos();
 
-    // TODO@Idrice : name in french
+    
     this.cols = [
       { field: 'top', header: 'Top' },
-      { field: 'name', header: 'Name' },
-      { field: 'publishedDate', header: 'Published Date' },
-      { field: 'subtitle', header: 'Subtitle' },
-      { field: 'title', header: 'Title' }
+      { field: 'name', header: 'Nom' },
+      { field: 'publishedDate', header: 'Date de Publication' },
+      { field: 'subtitle', header: 'Surtitre' },
+      { field: 'title', header: 'Titre' }
 
     ];
     this.selectedYear = 1999;
@@ -51,6 +54,37 @@ export class VideoListComponent implements OnInit {
   getVideos(): void {
     this.videoService.getVideos()
       .subscribe(videos => this.appVideos = videos);
+    this.loading = false;
   }
+
+  videoSort(event){
+  event.data.sort((data1, data2) => {
+    let value1= data1[event.field];
+    let value2 = data2[event.field];
+    let result = null;
+
+    if( value1 == null && value2 != null)
+    result = -1;
+    else if(value1 != null && value2 == null)
+    result = 1;
+    else if ( typeof value1 === 'string' && typeof value2 === 'string')
+    result = value1.localeCompare(value2);
+    else
+    result = (value1 < value2) ? -1 : (value1 > value2) ? 1 : 0;
+    return (event.order * result);
+  });
+  }
+
+  onActiveChange(event){
+  const value = event.target.value;
+  if(value && value.trim().length){
+  const activity = parseInt(value);
+
+  if(!isNaN(activity)){
+  this.table.filter(activity, 'activity', 'gte');
+  }
+  }
+  }
+
 
 }

@@ -37,18 +37,21 @@
           <option *ngFor="let appVideo of appVideos" value="{{appVideo.year}}">{{appVideo.year}}</option>
         </select>
       </div>
-      <p-table [columns]="cols" [value]="appVideoItems">
+      <p-table [columns]="cols" #dv [value]="appVideoItems" sortMode="multiple" dataKey="id" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50,100]" [loading]="loading" styleClass="p-datable-videos" [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [filterDelay]="0" [globalFilterFields]="['name', 'publishedDate', 'subtitle', 'title']">
         <ng-template pTemplate="caption">
           List of Videos
+          <span class="p-input-icon-right p-mb-2 p-mb-md-0">
+            
+            <input pInputText type="search" (input)="dv.filterGlobal($event.target.value, 'contains')" placeholder="Global Search"><i class="pi pi-search"></i></span>
         </ng-template>
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th *ngFor="let col of columns">
-              {{col.header}}
+              {{col.header}}<p-sortIcon></p-sortIcon>
             </th>
           </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-appVideoItem let-columns="columns">
+        <ng-template pTemplate="body" let-appVideoItem let-columns="columns" >
           <tr>
             <td *ngFor="let col of columns" (click)="select(appVideoItem)" class="text-secondary"
               style="cursor: pointer;">
