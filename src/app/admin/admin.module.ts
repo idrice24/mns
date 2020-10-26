@@ -11,6 +11,18 @@ import { ManageUserComponent } from './components/manage-user/manage-user.compon
 import { ManageVideoComponent } from './components/manage-video/manage-video.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { TableModule } from 'primeng/table';
+import { RippleModule } from 'primeng/ripple';
+import { ToolbarModule } from 'primeng/toolbar';
+import { DialogModule } from 'primeng/dialog';
+import { InputTextareaModule } from 'primeng/inputTextarea';
+import { InputNumberModule } from 'primeng/inputNumber';
+import { RadioButtonModule } from 'primeng/radioButton';
+import { RatingModule } from 'primeng/rating';
+import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { FileUploadModule } from 'primeng/fileupload';
 // REF: https://angular.io/guide/router  live example
 const adminRoutes: Routes = [
   {
@@ -45,6 +57,19 @@ const adminRoutes: Routes = [
     CommonModule,
     SharedModule,
     ProgressSpinnerModule,
+    TableModule,
+    RippleModule,
+    ToolbarModule,
+    DialogModule,
+    InputTextareaModule,
+    RadioButtonModule,
+    InputNumberModule,
+    RatingModule,
+    ToastModule,
+    ButtonModule,
+    InputTextModule,
+    FileUploadModule,
+
     RouterModule.forChild(adminRoutes)
   ]
 
