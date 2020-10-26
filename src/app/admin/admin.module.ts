@@ -23,6 +23,7 @@ import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FileUploadModule } from 'primeng/fileupload';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 // REF: https://angular.io/guide/router  live example
 const adminRoutes: Routes = [
   {
@@ -69,6 +70,7 @@ const adminRoutes: Routes = [
     ButtonModule,
     InputTextModule,
     FileUploadModule,
+    ConfirmDialogModule,
 
     RouterModule.forChild(adminRoutes)
   ]

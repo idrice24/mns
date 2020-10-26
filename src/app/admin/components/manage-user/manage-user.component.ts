@@ -19,7 +19,10 @@ export class ManageUserComponent implements OnInit {
   submitted: boolean;
   Delete; // for what?
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService,
+    private userService: UserService) { }
 
   ngOnInit(): void {
     this.appUser = { id: 0, description: 'kok' };
@@ -50,10 +53,23 @@ export class ManageUserComponent implements OnInit {
   }
 
   deleteAppUser(appUser) {
+    this.confirmationService.confirm({
+      message: 'Are you sure you want to delete ' + appUser.lName + '?',
+      header: 'Confirm',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.appUsers = this.appUsers.filter(val => val.id !== appUser.id);
+        this.appUser = { id: 0 };
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'App User Deleted', life: 10000 });
+      }
+    });
 
   }
 
   editAppUser(appUser) {
+
+    this.appUser = { ...appUser };
+    this.appUserDialog = true;
 
   }
 

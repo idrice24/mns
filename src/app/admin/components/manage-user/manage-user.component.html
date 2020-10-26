@@ -13,7 +13,7 @@
       <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button"></button>
     </ng-template>
   </p-toolbar>
-  <p-table #dt [value]="appUsers" [rows]="10" [paginator]="true"
+  <p-table #dt [value]="appUsers" [rows]="10" [paginator]="true" styleClass="p-datatable-striped"
     [globalFilterFields]="['lName','fName','isAdmin','email']" [(selection)]="selectedAppUsers" [rowHover]="true"
     dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
     [showCurrentPageReport]="true">
@@ -36,7 +36,7 @@
           <p-sortIcon field="fName"></p-sortIcon>
         </th>
         <th pSortableColumn="lName">Nom
-          <p-sortIcon field="lName"></p-sortIcon> >
+          <p-sortIcon field="lName"></p-sortIcon> 
         </th>
 
         <th pSortableColumn="email">E-Mail
@@ -45,7 +45,7 @@
         <th pSortableColumn="admin">Admin
           <p-sortIcon field="admin"> </p-sortIcon>
         </th>
-
+       <th> </th>
 
       </tr>
     </ng-template>
@@ -63,12 +63,14 @@
         <td>{{appUser.lName}}</td>
 
         <td>{{appUser.email}}</td>
-        <td>{{appUser.admin}}</td>
+        <td>{{appUser.isAdmin}}</td>
 
 
-        <!--	<td>
-					<span [class]="'appUser-badge status-' + appUser.inventoryStatus.toLowerCase()">{{appUser.inventoryStatus}}</span>
-				</td> -->
+       	<td>
+		 <button pButton pRipple type="button" [icon]="appUser.isAdmin?'pi pi-check':'pi pi-times'" disabled="true"  class="p-button-rounded p-button-outlined"></button>
+		 
+					 
+		</td>  
         <td>
           <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
             (click)="editAppUser(appUser)"></button>
@@ -137,4 +139,4 @@
     <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveAppUser()"></button>
   </ng-template>
 </p-dialog>
-<!-- <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog> -->
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
