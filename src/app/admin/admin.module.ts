@@ -20,18 +20,15 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { ContextMenuModule } from 'primeng/contextmenu';
 import { DropdownModule } from 'primeng/dropdown';
 import { ProgressBarModule } from 'primeng/progressbar';
-
-
-
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import { TableModule } from 'primeng/table';
 import { RippleModule } from 'primeng/ripple';
 import { ToolbarModule } from 'primeng/toolbar';
 import { DialogModule } from 'primeng/dialog';
-import { InputTextareaModule } from 'primeng/inputTextarea';
-import { InputNumberModule } from 'primeng/inputNumber';
-import { RadioButtonModule } from 'primeng/radioButton';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { RadioButtonModule } from 'primeng/radiobutton';
 import { RatingModule } from 'primeng/rating';
 import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
