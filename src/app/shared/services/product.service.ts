@@ -10,7 +10,7 @@ import { Product } from '../models/product';
 })
 export class ProductService {
 
-  private productUrl = '/assets/data/blogs.json';
+  private productUrl = 'api/products';
 
   // private productUrl = 'api/product';
   httpOptions = {

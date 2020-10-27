@@ -6,7 +6,7 @@ import { ProductService } from 'src/app/shared/services/product.service';
 @Component({
   selector: 'app-manage-product',
   templateUrl: './manage-product.component.html',
-  styleUrls: ['./manage-product.component.css']
+  styleUrls: ['./manage-product.component.scss']
 })
 export class ManageProductComponent implements OnInit {
   productDialog: boolean;
@@ -25,7 +25,10 @@ export class ManageProductComponent implements OnInit {
     private confirmationService: ConfirmationService) { }
 
   ngOnInit() {
-    this.productService.getProducts().subscribe(data => this.products = data);
+    this.productService.getProducts().subscribe(data => {
+      this.products = data;
+      console.log(data[0].name);
+    });
   }
 
   openNew() {
