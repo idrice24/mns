@@ -1,5 +1,11 @@
-  .avatar {
-    height: 30px;
-    width: 30px;
-    border-radius: 50px;
-  }
+:host ::ng-deep .p-dialog .product-image {
+  width: 150px;
+  margin: 0 auto 2rem auto;
+  display: block;
+}
+
+.avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+}
