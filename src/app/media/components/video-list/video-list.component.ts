@@ -16,7 +16,7 @@ export class VideoListComponent implements OnInit {
   appVideoItems: AppVideoItem[];
   cols: any[];
   statuses: any[];
-  loading: boolean = true;
+  // loading?: boolean = true;
   @ViewChild('dv') table: Table;
 
   constructor(private videoService: VideoService) { }
@@ -24,8 +24,6 @@ export class VideoListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getVideos();
-
-    
     this.cols = [
       { field: 'top', header: 'Top' },
       { field: 'name', header: 'Nom' },
@@ -54,33 +52,35 @@ export class VideoListComponent implements OnInit {
   getVideos(): void {
     this.videoService.getVideos()
       .subscribe(videos => this.appVideos = videos);
-    this.loading = false;
+    // this.loading = false;
   }
 
   videoSort(event){
   event.data.sort((data1, data2) => {
-    let value1= data1[event.field];
-    let value2 = data2[event.field];
+    const value1 = data1[event.field];
+    const value2 = data2[event.field];
     let result = null;
 
-    if( value1 == null && value2 != null)
+    if ( value1 == null && value2 != null){
     result = -1;
-    else if(value1 != null && value2 == null)
+    }else if (value1 != null && value2 == null){
     result = 1;
-    else if ( typeof value1 === 'string' && typeof value2 === 'string')
+    }else if ( typeof value1 === 'string' && typeof value2 === 'string'){
     result = value1.localeCompare(value2);
-    else
+    }else{
     result = (value1 < value2) ? -1 : (value1 > value2) ? 1 : 0;
     return (event.order * result);
+    }
   });
   }
 
   onActiveChange(event){
   const value = event.target.value;
-  if(value && value.trim().length){
+  if (value && value.trim().length){
+  // tslint:disable-next-line: radix
   const activity = parseInt(value);
 
-  if(!isNaN(activity)){
+  if (!isNaN(activity)){
   this.table.filter(activity, 'activity', 'gte');
   }
   }

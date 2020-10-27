@@ -11,6 +11,8 @@ import { ManageUserComponent } from './components/manage-user/manage-user.compon
 import { ManageVideoComponent } from './components/manage-video/manage-video.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { TableModule, Table } from 'primeng/table';
+// import {  ToastModule } from 'primeng';
 // REF: https://angular.io/guide/router  live example
 const adminRoutes: Routes = [
   {
@@ -44,6 +46,8 @@ const adminRoutes: Routes = [
   imports: [
     CommonModule,
     SharedModule,
+   // ToastModule,
+    TableModule,
     ProgressSpinnerModule,
     RouterModule.forChild(adminRoutes)
   ]
