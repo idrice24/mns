@@ -60,6 +60,14 @@ export class AdminComponent implements OnInit {
         submenu: []
       },
       {
+        path: 'products',
+        title: 'Manage Product',
+        icon: 'icon-belt',
+        class: '',
+        extralink: false,
+        submenu: []
+      },
+      {
         path: 'video',
         title: 'Manage Videos',
         icon: 'icon-bell',

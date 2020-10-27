@@ -24,6 +24,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ManageProductComponent } from './components/manage-product/manage-product.component';
 // REF: https://angular.io/guide/router  live example
 const adminRoutes: Routes = [
   {
@@ -39,6 +40,7 @@ const adminRoutes: Routes = [
           { path: 'blog', component: ManageBlogComponent },
           { path: 'gallery', component: ManageGalleryComponent },
           { path: 'users', component: ManageUserComponent },
+          { path: 'products', component: ManageProductComponent },
           { path: 'video', component: ManageVideoComponent },
           { path: '', component: AdminDashboardComponent }
         ]
@@ -53,7 +55,8 @@ const adminRoutes: Routes = [
     ManageGalleryComponent,
     ManageUserComponent,
     ManageBlogComponent,
-    ManageVideoComponent],
+    ManageVideoComponent,
+    ManageProductComponent],
   imports: [
     CommonModule,
     SharedModule,
