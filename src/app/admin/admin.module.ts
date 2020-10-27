@@ -11,6 +11,20 @@ import { ManageUserComponent } from './components/manage-user/manage-user.compon
 import { ManageVideoComponent } from './components/manage-video/manage-video.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+
+
+
+import { CalendarModule } from 'primeng/calendar';
+import { SliderModule } from 'primeng/slider';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { DropdownModule } from 'primeng/dropdown';
+import { ProgressBarModule } from 'primeng/progressbar';
+
+
+
+import { ConfirmationService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { TableModule } from 'primeng/table';
 import { RippleModule } from 'primeng/ripple';
 import { ToolbarModule } from 'primeng/toolbar';
@@ -63,20 +77,33 @@ const adminRoutes: Routes = [
     ProgressSpinnerModule,
     TableModule,
     RippleModule,
-    ToolbarModule,
     DialogModule,
-    InputTextareaModule,
     RadioButtonModule,
-    InputNumberModule,
     RatingModule,
     ToastModule,
     ButtonModule,
     InputTextModule,
     FileUploadModule,
+    TableModule,
+    CalendarModule,
+    SliderModule,
+    DialogModule,
+    MultiSelectModule,
+    ContextMenuModule,
+    DropdownModule,
+    ToastModule,
+    InputTextModule,
+    ProgressBarModule,
+    FileUploadModule,
+    ToolbarModule,
+    RatingModule,
+    RadioButtonModule,
+    InputNumberModule,
     ConfirmDialogModule,
-
+    InputTextareaModule,
     RouterModule.forChild(adminRoutes)
-  ]
+  ],
+  providers: [MessageService, ConfirmationService]
 
 })
 export class AdminModule { }
