@@ -17,7 +17,7 @@ export class ProductListComponent implements OnInit {
   sortOrder: number;
   sortField: string;
 
-  constructor( private productService: ProductService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.listProducts();
@@ -43,10 +43,7 @@ export class ProductListComponent implements OnInit {
   }
 
   listProducts() {
-    this.productService.getProductList().subscribe(data => {
-      this.products = data;
-      this.recentPosts = this.products.slice(0, 3);
-    });
+
   }
 
   private loadRecentPosts() {
