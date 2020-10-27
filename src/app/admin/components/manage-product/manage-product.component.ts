@@ -13,7 +13,7 @@ export class ManageProductComponent implements OnInit {
 
   products: Product[];
 
-  product: Product;
+  product: Product = {};
 
   selectedProducts: Product[];
 

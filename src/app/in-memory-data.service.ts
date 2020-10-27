@@ -1,8 +1,7 @@
 
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { AppUser } from './shared/models/app-user';
-import { AppVideo } from './shared/models/app-video';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8043,8 +8042,6 @@ export class InMemoryDataService implements InMemoryDbService {
         year: 1999,
         items: items1999
       }];
-
-
     const blog = [
       {
         _embedded: {
@@ -8112,9 +8109,15 @@ export class InMemoryDataService implements InMemoryDbService {
         }
       }
     ];
+    const products = [{
+      id: 1,
+      price: 10,
+      rating: 2,
+      category: 'Tech'
 
+    }];
     // Important!! Name of array is the name of in api url --> api/users
-    return { users, blog, videos };
+    return { users, blog, videos, products };
   }
 
 
