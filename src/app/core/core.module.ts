@@ -16,6 +16,7 @@ import { AssociationModule } from '../association/association.module';
 
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
+import { ContactModule } from '../contact/contact.module';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { RippleModule } from 'primeng/ripple';
     RippleModule, // Due to pRippe in home.html
     SearchModule,
     SharedModule,
-    AssociationModule // Due to newletter component in home important!!
+    AssociationModule, // Due to newletter component in home important!!
+    ContactModule // Due to app-contact-form component in home
   ],
   exports: [
     HomeComponent,
