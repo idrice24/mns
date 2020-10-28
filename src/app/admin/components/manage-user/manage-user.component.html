@@ -19,23 +19,16 @@
         <ng-template pTemplate="body" let-users let-columns="columns" >
           <tr>
             <th style="width: 3rem">
-                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                    <p-tableColumnsCheckbox></p-tableColumnsCheckbox>
                 </th>
-                <td> <img class="avatar" [src]="users.avatar"></td>
+                
             <td *ngFor="let col of columns" (click)="select(users)" class="text-secondary"
               style="cursor: pointer;">
               {{users[col.field]}}
             </td>
-            <button pButton pRipple icon="pi pi-pencil" class="p-button-round p-button-success p-mr-2" (click)="editUser(user)"><i class="pi pi-pencil"></i></button>
+
+            <button pButton pRipple icon="pi pi-pencil" class="p-button-round p-button-success p-mr-2" (click)="editUser(user)"></button>
                 <button pButton pRipple icon="pi pi-pencil" class="p-button-round p-button-warning p-mr-2" (click)="deleteUser(user)"></button>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="footer" let-columns>
-          <tr>
-            <td>Avatar</td>
-            <td *ngFor="let col of columns">
-              {{col.header}}
-            </td>
           </tr>
         </ng-template>
         <ng-template pTemplate="summary">
