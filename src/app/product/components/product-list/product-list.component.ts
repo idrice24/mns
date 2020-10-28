@@ -43,6 +43,7 @@ export class ProductListComponent implements OnInit {
   }
 
   listProducts() {
+    this.productService.getProducts().subscribe(ps => this.products = ps);
 
   }
 
