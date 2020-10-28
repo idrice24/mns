@@ -7,16 +7,10 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { MediaDashboardComponent } from './components/media-dashboard/media-dashboard.component';
 import { TableModule, Table } from 'primeng/table';
 import { SharedModule } from '../shared/shared.module';
-/*
-const mediasRoutes: Routes = [
-  {
-    path: '',
-    component: MediaComponent,
-    children: [
-      { path: 'gallery', component: GalleryComponent },
-      { path: 'videos', component: VideoListComponent },
-      { path: '', component: MediaDashboardComponent }]
-  }];*/
+
+import { GalleriaModule } from 'primeng/galleria';
+import { CardModule } from 'primeng/card';
+
 const mediasRoutes: Routes = [
   { path: 'gallery', component: GalleryComponent },
   { path: 'videos', component: VideoListComponent },
@@ -33,6 +27,8 @@ const mediasRoutes: Routes = [
     CommonModule,
     TableModule,
     SharedModule,
+    GalleriaModule,
+    CardModule,
     RouterModule.forChild(mediasRoutes)
   ],
   exports: [RouterModule]
