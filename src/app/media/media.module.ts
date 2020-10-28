@@ -20,7 +20,7 @@ const mediasRoutes: Routes = [
 const mediasRoutes: Routes = [
   { path: 'gallery', component: GalleryComponent },
   { path: 'videos', component: VideoListComponent },
-  { path: '', component: GalleryComponent }];
+  { path: '', component: MediaDashboardComponent }];
 
 
 @NgModule({

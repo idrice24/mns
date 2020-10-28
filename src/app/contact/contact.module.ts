@@ -18,7 +18,7 @@ import { MessageService } from 'primeng/api';
 
 const routes: Routes = [
   {
-    path: '', component: ContactComponent
+    path: 'contact', component: ContactComponent
   }];
 
 @NgModule({

@@ -8,6 +8,52 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
+
+    const photos = [
+      {
+        src: 'assets/img/CMR7.jpg',
+        thumbnailImageSrc: 'assets/img/CMR5.jpg',
+        alt: 'Description for Image 1',
+        title: 'Title 1'
+      },
+      {
+        src: 'assets/img/bg1.jpg',
+        thumbnailImageSrc: 'assets/img/bg2.jpg',
+        alt: 'Description for Image 2',
+        title: 'Title 2'
+      },
+      {
+        src: 'assets/img/bg3.jpg',
+        thumbnailImageSrc: 'assets/img/CMR3.jpg',
+        alt: 'Description for Image 3',
+        title: 'Title 3'
+      },
+      {
+        src: 'assets/img/bg11.jpg',
+        thumbnailImageSrc: 'assets/img/bg9.jpg',
+        alt: 'Description for Image 3',
+        title: 'Title 3'
+      },
+      {
+        src: 'assets/img/bg6.jpg',
+        thumbnailImageSrc: 'assets/img/bg7.jpg',
+        alt: 'Description for Image 3',
+        title: 'Title 3'
+      }
+      , {
+        src: 'assets/img/bg9.jpg',
+        thumbnailImageSrc: 'assets/img/bg8.jpg',
+        alt: 'Description for Image 3',
+        title: 'Title 3'
+      },
+      {
+        src: 'assets/img/bg10.jpg',
+        thumbnailImageSrc: 'assets/img/bg11.jpg',
+        alt: 'Description for Image 3',
+        title: 'Title 3'
+      }
+    ];
+
     const users = [
       {
         id: 1,
@@ -10220,7 +10266,7 @@ export class InMemoryDataService implements InMemoryDbService {
     }
     ];
     // Important!! Name of array is the name of in api url --> api/users
-    return { users, blog, videos, products };
+    return { users, blog, videos, products, photos };
   }
 
 
