@@ -36,11 +36,10 @@ export class ManageUserComponent implements OnInit {
   ngOnInit(): void {
     this.getUsers();
     this.cols = [
+      { filed: '', header: 'Avatar'},
       { field: 'fName', header: 'First Name' },
       { field: 'lName', header: 'Last Name' },
-      { field: 'email', header: 'email' },
-      { filed: 'avatar', header: 'Avatar'}
-
+      { field: 'email', header: 'email' }
       ];
   }
   getUsers(): void {
