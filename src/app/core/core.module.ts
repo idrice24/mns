@@ -35,6 +35,7 @@ import { ContactModule } from '../contact/contact.module';
     RouterModule, // Links will not works important!!
     FormsModule, // Form will not works important!!
     ReactiveFormsModule, // Form will not works important!!
+
     ButtonModule, // Due to Rounded and Outlined Icon Buttons
     RippleModule, // Due to pRippe in home.html
     SearchModule,
