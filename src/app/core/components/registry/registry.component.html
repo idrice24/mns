@@ -1,9 +1,9 @@
-<section id="registry">
+<section id="registry" style="background-image: url('assets/img/bg5.jpg');">
   <div class="card-body">
   
     <div class="col-md-12 text-center">
-      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Registry</h1>
-      <h2> Number of users: {{numberOfUsers}}</h2>
+      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'identifier</h1>
+      <h2> Nombre d'utilisateurs: {{numberOfUsers}}</h2>
     </div>
 	
     <div class="col-md-12 align-center">
@@ -14,7 +14,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text icon-pin bg-primary text-white"></span>
           </div>
-          <input type="text" name="fName" class="form-control" formControlName="fName" placeholder="Prenom" required>
+          <input type="text" name="fName" class="form-control" formControlName="fName" placeholder="Nom" required>
 
         </div>
 
@@ -23,7 +23,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text icon-wallet bg-primary text-white"></span>
           </div>
-          <input required type="text" name="lName" class="form-control" formControlName="lName" placeholder="Nom">
+          <input required type="text" name="lName" class="form-control" formControlName="lName" placeholder="Prenom">
 
         </div>
 
@@ -38,9 +38,9 @@
           <hr />
           <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
 
-            <div *ngIf="email.errors.required"> email is required. </div>
+            <div *ngIf="email.errors.required"> email est requis. </div>
             <div *ngIf="email.errors.minlength">
-              email must be at least 4 characters long.
+              L'email doit comporter au moins 4 caracteres.
             </div>
             <div *ngIf="email.errors.forbiddenEmail">
               l'adresse email n'est pas valide
@@ -72,11 +72,11 @@
           <div class="row">
             <div class="col-md-6">
               <button id="registry" name="registry" type="submit"
-                class="btn btn-primary btn-block btn-round">Register</button>
+                class="btn btn-primary btn-block btn-round">S#inscrire</button>
             </div>
             <div class="col-md-6">
               <a href="#home" role="button" type="button"
-                 class="btn btn-danger btn-block btn-round "><small></small>Cancel</a>
+                 class="btn btn-danger btn-block btn-round "><small></small>Annuler</a>
             </div>
           </div>
         </div>

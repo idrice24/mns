@@ -1,4 +1,10 @@
+#registry{
+	margin: 0;
+	font-family: sans-serif;
+	display: center;
+	background-repeat: no-repeat;
 
+}
 
 ul {
     background: #3399ff;
@@ -16,3 +22,14 @@ button {
     font-size: 15px;
 }
 
+.card-body{
+	top: 50%;
+	margin-left: 250px;
+	display: center;
+	width: 900px;
+	padding: 40px;
+	background: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,.10,.10);
+	border-radius: 10px;
+}
