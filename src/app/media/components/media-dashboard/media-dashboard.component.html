@@ -1,19 +1,8 @@
- <!--TITLE-->
-
- <div class="row mb-5">
-   <div class="col-md-12 text-center">
-     <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Nos Medias</h1>
+ <div *ngFor="let item of items" class="col card md-3 mt-3">
+   <img class="card-img-top" [src]="item.src" alt="Card image cap">
+   <div class="card-body">
+     <h5 class="card-title"> {{item.title}} </h5>
+     <p class="card-text">{{item.text1}} </p>
+     <p class="card-text"><small class="text-muted">{{item.text2}}</small></p>
    </div>
  </div>
-
- <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [numVisible]="5" [circular]="true"
-   [autoPlay]="true" [transitionInterval]="2000">
-   <ng-template pTemplate="item" let-item>
-     <img [src]="item.src" style="width: 80%;height: 60%; display: block;" />
-   </ng-template>
-   <ng-template pTemplate="thumbnail" let-item>
-     <div class="p-justify-center">
-       <img [src]="item.thumbnailImageSrc" style="display: block; height: 100px;" />
-     </div>
-   </ng-template>
- </p-galleria>

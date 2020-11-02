@@ -3,7 +3,6 @@ import { AppUser } from '../models/app-user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
-import { AvatarService } from './avatar.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +15,7 @@ export class UserService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor(private httpClient: HttpClient, private avatarService: AvatarService) { }
+  constructor(private httpClient: HttpClient) { }
 
   /** GET User by id. Will 404 if id not found */
   getUser(id: number): Observable<AppUser> {
@@ -30,7 +29,7 @@ export class UserService {
   /** GET Users from the server */
   getUsers(): Observable<AppUser[]> {
     return this.httpClient.get<AppUser[]>(this.usersUrl).pipe(
-      tap((userList: AppUser[]) => this.addAvatar(userList)),
+      tap(_ => this.log('fetched  Users')),
       catchError(this.handleError<AppUser[]>('getUsers', []))
     );
   }
@@ -78,19 +77,5 @@ export class UserService {
     // this.messageService.add(`UserService: ${message}`);
     console.warn(`UserService: ${message}`);
   }
-  // Set Avatar for Fun
 
-  private addAvatar(userList: AppUser[]) {
-    // this.messageService.add(`UserService: ${message}`);
-    if (userList === null) {
-      return;
-    }
-    userList.forEach(user => {
-
-      if (user.avatar === undefined) {
-        user.avatar = this.avatarService.generateAvatar(user.fName, user.lName);
-      }
-
-    });
-  }
 }

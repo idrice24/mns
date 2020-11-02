@@ -1,142 +1,24 @@
-<p-toast></p-toast>
-<div class="col-md-12 text-center">
-  <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Users</h1>
-</div>
-<div class="card">
-  <p-toolbar styleClass="p-mb-4">
-    <ng-template pTemplate="left">
-      <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
-        (click)="deleteSelectedAppUsers()" [disabled]="!selectedAppUsers || !selectedAppUsers.length"></button>
-    </ng-template>
-    <ng-template pTemplate="right">
+<h1>List of users!</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let appUser of users; let i = index">
+      <th scope="row">{{ i }}</th>
+      <td>{{appUser.fName}}</td>
+      <td>{{appUser.lName}}</td>
+      <td>{{appUser.email}}</td>
+      <td><button type="button" class="btn btn-primary">View</button><td>
+      <td><button type="button" class="btn btn-danger">Delete</button></td>
+      
 
-      <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button"></button>
-    </ng-template>
-  </p-toolbar>
-  <p-table #dt [value]="appUsers" [rows]="10" [paginator]="true" styleClass="p-datatable-striped"
-    [globalFilterFields]="['lName','fName','isAdmin','email']" [(selection)]="selectedAppUsers" [rowHover]="true"
-    dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-    [showCurrentPageReport]="true">
-    <ng-template pTemplate="caption">
-      <div class="p-d-flex p-ai-center p-jc-between">
-        <span class="p-input-icon-left">
-          <i class="pi pi-search"></i>
-          <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
-            placeholder="Recherche..." />
-        </span>
-      </div>
-    </ng-template>
-    <ng-template pTemplate="header">
-      <tr>
-        <th style="width: 3rem">
-          <p-tableHeaderCheckbox> </p-tableHeaderCheckbox>
-        </th>
-        <th>Avatar</th>
-        <th pSortableColumn="fName">Prenom
-          <p-sortIcon field="fName"></p-sortIcon>
-        </th>
-        <th pSortableColumn="lName">Nom
-          <p-sortIcon field="lName"></p-sortIcon> 
-        </th>
+    </tr>
 
-        <th pSortableColumn="email">E-Mail
-          <p-sortIcon field="email"> </p-sortIcon>
-        </th>
-        <th pSortableColumn="admin">Admin
-          <p-sortIcon field="admin"> </p-sortIcon>
-        </th>
-       <th> </th>
-
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-appUser>
-      <tr>
-        <td>
-          <p-tableCheckbox [value]="appUser"> </p-tableCheckbox>
-        </td>
-
-        <td>
-          <img [src]="appUser.avatar" [alt]="appUser.avatar" width="50" Height="50" class="p-shadow-4" />
-        </td>
-
-        <td>{{appUser.fName}}</td>
-        <td>{{appUser.lName}}</td>
-
-        <td>{{appUser.email}}</td>
-        <td>{{appUser.isAdmin}}</td>
-
-
-       	<td>
-		 <button pButton pRipple type="button" [icon]="appUser.isAdmin?'pi pi-check':'pi pi-times'" disabled="true"  class="p-button-rounded p-button-outlined"></button>
-		 
-					 
-		</td>  
-        <td>
-          <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
-            (click)="editAppUser(appUser)"></button>
-          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
-            (click)="deleteAppUser(appUser)"></button>
-        </td>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="summary">
-      <div class="p-d-flex p-ai-center p-jc-between">
-        In total there are {{appUsers ? appUsers.length : 0 }} appUsers.
-      </div>
-    </ng-template>
-  </p-table>
-</div>
-<p-dialog [(visible)]="appUserDialog" [style]="{width: '450px'}" header="AppUsers Details" [modal]="true"
-  styleClass="p-fluid">
-  <ng-template pTemplate="content">
-    <img [src]="appUser.avatar" [alt]="appUser.avatar" class="product-image" *ngIf="appUser.avatar">
-    <div class="p-field">
-      <label for="name">Name</label>
-      <input type="text" pInputText id="name" required autofocus />
-      <small class="p-invalid" *ngIf="submitted && !appUser.fName">Name is required.</small>
-    </div>
-    <div class="p-field">
-      <label for="description">Description</label>
-      <!--  <textarea id="description" pInputTextarea [(ngModel)]="appUser.description" required rows="3"
-        cols="20"></textarea> -->
-    </div>
-    <!---
-        <div class="p-field">
-            <label class="p-mb-3">Category</label>
-            <div class="p-formgrid p-grid">
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category1" name="category" value="Accessories" [(ngModel)]="appUser.fName"></p-radioButton>
-                    <label for="category1">Accessories</label>
-                </div>
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category2" name="category" value="Clothing" [(ngModel)]="appUser.fName"></p-radioButton>
-                    <label for="category2">Clothing</label>
-                </div>
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category3" name="category" value="Electronics" [(ngModel)]="appUser.fName"></p-radioButton>
-                    <label for="category3">Electronics</label>
-                </div>
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category4" name="category" value="Fitness" [(ngModel)]="appUser.fName"></p-radioButton>
-                    <label for="category4">Fitness</label>
-                </div>
-            </div>
-        </div> -->
-    <div class="p-formgrid p-grid">
-      <div class="p-field p-col">
-        <label for="price">Price</label>
-        <!--   <p-inputNumber id="price" [(ngModel)]="appUser.id" mode="currency" currency="USD" locale="en-US">
-        </p-inputNumber> -->
-      </div>
-      <div class="p-field p-col">
-        <label for="quantity">Quantity</label>
-        <!--   <p-inputNumber id="quantity" [(ngModel)]="appUser.id"></p-inputNumber> -->
-      </div>
-    </div>
-  </ng-template>
-  <ng-template pTemplate="footer">
-    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveAppUser()"></button>
-  </ng-template>
-</p-dialog>
-<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+  </tbody>
+</table>

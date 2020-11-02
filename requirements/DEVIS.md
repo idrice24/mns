@@ -8,5 +8,3 @@ Points a discuter
 1. Maintenance ---> 20 euro / month
 1. Outils (ie. DevOp cloud to manage projet) --> 40 euro /ans
 1. Licences --> primeng  template $ 49 once
-
-# Table of contents
