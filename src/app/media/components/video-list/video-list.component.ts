@@ -11,7 +11,7 @@ import { TableModule, Table } from 'primeng/table';
 export class VideoListComponent implements OnInit {
 
   appVideos: AppVideo[];
-  selectedVideo;
+  selectedVideo: AppVideoItem;
   selectedYear;
   appVideoItems: AppVideoItem[];
   cols: any[];
@@ -31,9 +31,12 @@ export class VideoListComponent implements OnInit {
       { field: 'title', header: 'Title' }
 
     ];
-    this.selectedYear = 2020;
+    this.selectedYear = 1999;
 
-    this.videoService.getVideoByYear(this.selectedYear).subscribe(i => this.appVideoItems = i.items);
+    this.videoService.getVideoByYear(this.selectedYear).subscribe(i => {
+      this.appVideoItems = i.items;
+      this.selectedVideo = this.appVideoItems[0];
+    });
   }
 
   select(video) {
