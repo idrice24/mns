@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from 'src/app/shared/services/blog.service';
 
 @Component({
   selector: 'app-post-detail',
@@ -6,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-detail.component.scss']
 })
 export class PostDetailComponent implements OnInit {
-  funs;
-  constructor() { }
+
+  header: any;
+  constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
-    this.funs = [1, 3, 4, 5, 6, 7, 8, 9, 0];
+    this.header = 'XXXXXXXXXXXXXXXXXXXXXXXXXX';
   }
 
 }

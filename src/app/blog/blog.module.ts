@@ -39,7 +39,7 @@ const routes: Routes = [
     InputTextModule,
     RatingModule,
     ButtonModule,
-    FieldsetModule,
+    FieldsetModule, // For a fieldset toggeable
     ListboxModule,
     RouterModule.forChild(routes)
   ],
