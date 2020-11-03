@@ -2,15 +2,15 @@
   <div class="card-body">
   
     <div class="col-md-12 text-center">
-      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Registry</h1>
-      <h2> Number of users: {{numberOfUsers}}</h2>
+      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'inscrire</h1>
+      <h2> Nombre d'utilisateurs: {{numberOfUsers}}</h2>
     </div>
 	
     <div class="col-md-12 align-center">
 
       <form [formGroup]="registryForm" (ngSubmit)="onSubmit(registryForm.value)" class="form-horizontal">
         <!-- First Name-->
-        <div class="input-group input-group-lg mb-4">
+        <div class="p-field p-grid">
           <div class="input-group-prepend">
             <span class="input-group-text icon-pin bg-primary text-white"></span>
           </div>
@@ -19,7 +19,7 @@
         </div>
 
         <!-- Last Name-->
-        <div class="input-group input-group-lg mb-4">
+        <div class="p-field p-grid">
           <div class="input-group-prepend">
             <span class="input-group-text icon-wallet bg-primary text-white"></span>
           </div>
@@ -28,7 +28,7 @@
         </div>
 
         <!-- Text EMAIL-->
-        <div class="input-group input-group-lg mb-4">
+        <div class="p-field p-grid">
           <div class="input-group-prepend">
             <span class="input-group-text icon-envelope-letter bg-primary text-white"></span>
           </div>
@@ -50,7 +50,7 @@
         </div>
 
         <!-- Password -->
-        <div class="input-group input-group-lg mb-4">
+        <div class="p-field p-grid">
           <div class="input-group-prepend">
             <span class="input-group-text icon-key bg-primary text-white"></span>
           </div>
@@ -58,7 +58,7 @@
             placeholder="Mot de passe" required>
         </div>
         <!-- Password2 -->
-        <div class="input-group input-group-lg mb-4">
+        <div class="p-field p-grid">
           <div class="input-group-prepend">
             <span class="input-group-text icon-key bg-primary text-white"></span>
           </div>
@@ -72,11 +72,11 @@
           <div class="row">
             <div class="col-md-6">
               <button id="registry" name="registry" type="submit"
-                class="btn btn-primary btn-block btn-round">Register</button>
+                class="btn btn-primary btn-block btn-round" style="width: 250px;">S'inscrire</button>
             </div>
             <div class="col-md-6">
               <a href="#home" role="button" type="button"
-                 class="btn btn-danger btn-block btn-round "><small></small>Cancel</a>
+                 class="btn btn-danger btn-block btn-round" style="width: 250px;"><small></small>Annuler</a>
             </div>
           </div>
         </div>
