@@ -18,9 +18,6 @@ const routes: Routes = [{ path: 'search', component: SearchResultComponent }];
     FormsModule,
     RouterModule.forChild(routes)
   ],
-  exports: [
-    SearchResultComponent,
-    SearchUiComponent,
-    RouterModule]
+  exports: [SearchResultComponent, SearchUiComponent, RouterModule]
 })
 export class SearchModule { }

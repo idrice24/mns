@@ -1,72 +1,61 @@
-<div class="container">
+<!-- PLAY Videos --->
+<div *ngIf="selectedVideo" class="embed-responsive embed-responsive-16by9">
 
-  <!---TITLE-->
-  <div class="row mt-5">
-    <div class="col text-center">
-      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Nos Videos</h1>
-      <!-- PLAY Videos --->
-      <div *ngIf="selectedVideo" class="embed-responsive embed-responsive-16by9">
+  <iframe #ok class="embed-responsive-item" [src]="('https://www.youtube.com/embed/' + selectedVideo.link) | safe"
+    allowfullscreen> </iframe>
+  <p> {{ok.src }}</p>
+</div>
 
-        <iframe #ok class="embed-responsive-item" [src]="('https://www.youtube.com/embed/' + selectedVideo.link) | safe"
-          allowfullscreen> </iframe>
-        <p> {{ok.src }}</p>
-      </div>
+<div class="card bg-light mb-3 text-center">
 
-      <div class="card bg-light mb-3 text-center">
+  <!-- Video is selected--->
+  <div class="card-body" *ngIf="selectedVideo">
+    <h5 class="card-title text-primary">{{ selectedVideo.artist }}</h5>
+    <h6 class="card-title text-info">{{ selectedVideo.title }}</h6>
+    <h6 class="card-title text-secondary">{{ selectedVideo.top }}</h6>
+  </div>
 
-        <!-- Video is selected--->
-        <div class="card-body" *ngIf="selectedVideo">
-          <h5 class="card-title text-primary">{{ selectedVideo.id }}</h5>
-          <h6 class="card-title text-info">{{ selectedVideo.title }}</h6>
-          <h6 class="card-title text-secondary">{{ selectedVideo.publishedDate }}</h6>
-        </div>
-
-        <!-- NO Video is selected--->
-        <div class="card-body" *ngIf="!selectedVideo">
-          <div class="alert alert-danger" role="alert">
-            Choisir une video de la liste pour voir le clip<br>
-            <i class="icon-social-youtube fa-2x text-danger"></i>
-          </div>
-        </div>
-      </div>
-      <!-- Video list -->
-      <div class="form-group">
-        <label class="text-primary font-weight-bold" for="exampleFormControlSelect1">Choisir l annnee</label>
-        <select class="form-control text-primary font-weight-bold" id="exampleFormControlSelect1"
-          (change)="onChange($event)">
-          <option *ngFor="let appVideo of appVideos" value="{{appVideo.year}}">{{appVideo.year}}</option>
-        </select>
-      </div>
-      <p-table [columns]="cols" [value]="appVideoItems">
-        <ng-template pTemplate="caption">
-          List of Videos
-        </ng-template>
-        <ng-template pTemplate="header" let-columns>
-          <tr>
-            <th *ngFor="let col of columns">
-              {{col.header}}
-            </th>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-appVideoItem let-columns="columns">
-          <tr>
-            <td *ngFor="let col of columns" (click)="select(appVideoItem)" class="text-secondary"
-              style="cursor: pointer;">
-              {{appVideoItem[col.field]}}
-            </td>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="footer" let-columns>
-          <tr>
-            <td *ngFor="let col of columns">
-              {{col.header}}
-            </td>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="summary">
-          There are {{appVideoItems?.length}} Videos
-        </ng-template>
-      </p-table>
+  <!-- NO Video is selected--->
+  <div class="card-body" *ngIf="!selectedVideo">
+    <div class="alert alert-danger" role="alert">
+      Choisir une video de la liste pour voir le clip<br>
+      <i class="icon-social-youtube fa-2x text-danger"></i>
     </div>
   </div>
 </div>
+<!-- Video list -->
+<div class="form-group">
+  <label class="text-primary font-weight-bold" for="exampleFormControlSelect1">Choisir l annnee</label>
+  <select class="form-control text-primary font-weight-bold" id="exampleFormControlSelect1" (change)="onChange($event)">
+    <option *ngFor="let appVideo of appVideos" value="{{appVideo.year}}">{{appVideo.year}}</option>
+  </select>
+</div>
+<p-table [columns]="cols" [value]="appVideoItems">
+  <ng-template pTemplate="caption">
+    List of Videos
+  </ng-template>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns">
+        {{col.header}}
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-appVideoItem let-columns="columns">
+    <tr>
+      <td *ngFor="let col of columns" (click)="select(appVideoItem)" class="text-secondary" style="cursor: pointer;">
+        {{appVideoItem[col.field]}}
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="footer" let-columns>
+    <tr>
+      <td *ngFor="let col of columns">
+        {{col.header}}
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+    There are {{appVideoItems?.length}} Videos
+  </ng-template>
+</p-table>
