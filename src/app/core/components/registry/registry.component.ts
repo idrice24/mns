@@ -83,7 +83,7 @@ export class RegistryComponent implements OnInit {
     this.userService.addUser(userAppData).subscribe();
     // Ref: https://angular.io/start/start-forms
     this.registryForm.reset();
-    this.message = 'Your user has been submitted';
+    this.message = 'Votre Utilisateur a ete soumis!!';
     console.warn(this.message, userAppData);
     // Just wait 2 s
     this.delay(2000);
