@@ -8088,73 +8088,68 @@ export class InMemoryDataService implements InMemoryDbService {
         year: 1999,
         items: items1999
       }];
-    const blog = [
-      {
-        _embedded: {
-          blogs: [{
-            content: 'hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
-            createdDate: '2013-03-02T16:41:45Z',
-            id: 2,
-            imageUrl: 'assets/img/aboutus.jpg',
-            publishedDate: '2020-03-02T16:41:00Z',
-            title: 'Les Infractions qui portent atteinte à la paix et troublent l’ordre public',
-            updatedDate: '2020-03-02T16:41:45Z',
-            summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
-            rating: 3
-          }, {
-            content: 'hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
-            createdDate: '2013-03-02T16:41:45Z',
-            id: 3,
-            imageUrl: 'assets/img/aboutus.jpg',
-            publishedDate: '2020-03-02T16:41:00Z',
-            title: 'third topic',
-            updatedDate: '2020-03-02T16:41:45Z',
-            summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
-            rating: 1
-          },
-          {
-            content: 'hi... this is the third blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
-            createdDate: '2013-03-02T16:41:45Z',
-            id: 3,
-            imageUrl: 'assets/img/CMR5.jpg',
-            publishedDate: '2020-03-02T16:41:00Z',
-            title: 'Les sanctions relatives à la Carte Nationale d’Identité',
-            updatedDate: '2020-03-02T16:41:45Z',
-            summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
-          },
-          {
-            content: 'hi... this is the fouth blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
-            createdDate: '2013-03-02T16:41:45Z',
-            id: 3,
-            imageUrl: 'assets/img/CMR7.jpg',
-            publishedDate: '2020-03-02T16:41:00Z',
-            title: 'Production des passeports',
-            updatedDate: '2020-03-02T16:41:45Z',
-            summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
-          },
-          {
-            content: 'hi... this is the third blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
-            createdDate: '2013-03-02T16:41:45Z',
-            id: 3,
-            imageUrl: 'assets/img/CMR5.jpg',
-            publishedDate: '2020-03-02T16:41:00Z',
-            title: 'topic A',
-            updatedDate: '2020-03-02T16:41:45Z',
-            summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
-          },
-          {
-            content: 'hi... this is the fouth blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
-            createdDate: '2013-03-02T16:41:45Z',
-            id: 3,
-            imageUrl: 'assets/img/CMR7.jpg',
-            publishedDate: '2020-03-02T16:41:00Z',
-            title: 'Topic B',
-            updatedDate: '2020-03-02T16:41:45Z',
-            summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
-          }]
-        }
-      }
-    ];
+    const blog = [{
+      content: 'hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
+      createdDate: '2013-03-02T16:41:45Z',
+      id: 2,
+      imageUrl: 'assets/img/aboutus.jpg',
+      publishedDate: '2020-03-02T16:41:00Z',
+      title: 'Les Infractions qui portent atteinte à la paix et troublent l’ordre public',
+      updatedDate: '2020-03-02T16:41:45Z',
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
+      rating: 3
+    }, {
+      content: 'hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
+      createdDate: '2013-03-02T16:41:45Z',
+      id: 3,
+      imageUrl: 'assets/img/aboutus.jpg',
+      publishedDate: '2020-03-02T16:41:00Z',
+      title: 'third topic',
+      updatedDate: '2020-03-02T16:41:45Z',
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
+      rating: 1
+    },
+    {
+      content: 'hi... this is the third blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
+      createdDate: '2013-03-02T16:41:45Z',
+      id: 3,
+      imageUrl: 'assets/img/CMR5.jpg',
+      publishedDate: '2020-03-02T16:41:00Z',
+      title: 'Les sanctions relatives à la Carte Nationale d’Identité',
+      updatedDate: '2020-03-02T16:41:45Z',
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
+    },
+    {
+      content: 'hi... this is the fouth blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
+      createdDate: '2013-03-02T16:41:45Z',
+      id: 3,
+      imageUrl: 'assets/img/CMR7.jpg',
+      publishedDate: '2020-03-02T16:41:00Z',
+      title: 'Production des passeports',
+      updatedDate: '2020-03-02T16:41:45Z',
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
+    },
+    {
+      content: 'hi... this is the third blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
+      createdDate: '2013-03-02T16:41:45Z',
+      id: 3,
+      imageUrl: 'assets/img/CMR5.jpg',
+      publishedDate: '2020-03-02T16:41:00Z',
+      title: 'topic A',
+      updatedDate: '2020-03-02T16:41:45Z',
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
+    },
+    {
+      content: 'hi... this is the fouth blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
+      createdDate: '2013-03-02T16:41:45Z',
+      id: 3,
+      imageUrl: 'assets/img/CMR7.jpg',
+      publishedDate: '2020-03-02T16:41:00Z',
+      title: 'Topic B',
+      updatedDate: '2020-03-02T16:41:45Z',
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
+    }];
+
     const products = [{
       id: 1,
       name: 'Shrimp - 150 - 250',

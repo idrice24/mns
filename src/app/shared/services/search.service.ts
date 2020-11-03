@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AppUser } from '../models/app-user';
-import { Blog } from '../models/blog';
+
 import { UserService } from './user.service';
 
 @Injectable({

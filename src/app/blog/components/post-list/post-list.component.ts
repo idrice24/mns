@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
-import { Blog } from 'src/app/shared/models/blog';
+
+import { Topic } from 'src/app/shared/models/topic';
 import { BlogService } from 'src/app/shared/services/blog.service';
 
 @Component({
@@ -9,8 +10,8 @@ import { BlogService } from 'src/app/shared/services/blog.service';
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-  blogs: Blog[];
-  recentPosts: Blog[];
+  blogs: Topic[];
+  recentPosts: Topic[];
   sortOptions: SelectItem[];
   sortKey: SelectItem;
   sortOrder: number;
@@ -42,14 +43,20 @@ export class PostListComponent implements OnInit {
     }
   }
 
-  listBlogs() {
-    this.blogService.getBlogList().subscribe(data => {
+  private listBlogs() {
+    this.blogService.getTopicList().subscribe(data => {
+
+      this.recentPosts = data.slice(0, 3);
       this.blogs = data;
-      this.recentPosts = this.blogs.slice(0, 3);
     });
   }
 
   private loadRecentPosts() {
+    this.blogService.getTopicList().subscribe(data => {
+
+      this.recentPosts = data.slice(0, 3);
+
+    });
 
   }
 }

@@ -1,13 +1,17 @@
    <!--TITLE-->
-   <div class="row mb-5">
-     <div class="col-md-12 text-center">
-       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">BLOG</h1>
+   <section>
+     <div class="row mb-5">
+       <div class="col-md-12 text-center">
+         <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">BLOG</h1>
+       </div>
      </div>
-   </div>
+
+     <p-fieldset *ngIf="selectedTopic" [legend]="header" [toggleable]="true">
+       <marquee class="text-danger">
+         <h2> @Idrice Can you improve this UI? Thank you </h2>
+       </marquee>
+       {{selectedTopic.content}}
+     </p-fieldset>
 
 
-   <p-fieldset [legend]="header" [toggleable]="true">
-     <marquee class="text-danger">
-       <h2> COMING SOON --> </h2>
-     </marquee>
-   </p-fieldset>
+   </section>
