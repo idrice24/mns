@@ -9,45 +9,45 @@
       <form class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
 
         <div class="row">
-          <div data-aos="fade-center" class="col-md-8 pr-md-5 pl-md-4">
-            <div class="input-group input-group-lg mb-4">
+          <div data-aos="fade-center" class="d-5 pl-md-4">
+            <div class="p-field p-grid">
               <div class="input-group-prepend">
                 <span class="input-group-text icon-user bg-primary text-white"></span>
               </div>
-              <input type="text" name="fName" class="form-control" formControlName="fName" placeholder="nom" required>
+              <input type="text" name="fName" formControlName="fName" placeholder="nom" pInputText required>
               <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="alert alert-danger">
 
                 <div *ngIf="fName.errors.required">
-                  Name is required.
+                  Le Nom est requis.
                 </div>
                 <div *ngIf="fName.errors.minlength">
-                  Name must be at least 4 characters long.
+                  Le Nom doit etre plus de 4 caractere.
                 </div>
 
               </div>
             </div>
 
 
-            <div class="input-group input-group-lg mb-4">
+            <div class="p-field p-grid">
               <div class="input-group-prepend">
                 <span class="input-group-text icon-key bg-primary text-white"></span>
               </div>
-              <input type="password" name="password" class="form-control" formControlName="password"
+              <input type="password" name="password" formControlName="password"
                 placeholder="Mot de passe" required>
               <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
 
                 <div *ngIf="password.errors.required">
-                  Name is required.
+                  Le Mot de Passe est requis.
                 </div>
                 <div *ngIf="password.errors.minlength">
-                  Name must be at least 4 characters long.
+                  Le Mot de passe doit etre plus de 4 caractere.
                 </div>
 
               </div>
 
             </div>
             <button [disabled]="loginForm.invalid" type="submit"
-              class="btn btn-outline-primary btn-lg btn-block btn-round">Login</button>
+              class="btn btn-outline-primary btn-lg btn-block btn-round">Envoyer</button>
           </div>
 
         </div>
