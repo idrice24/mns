@@ -10,6 +10,15 @@ p {
   background-size: cover;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-alt {
+  font-family: 'Oleo Script Swash Caps', cursive;
+}
 
 
 /* Button */
@@ -61,7 +70,11 @@ a.text-white:hover {
   text-decoration: none;
 }
 
-
+nav {
+  -webkit-transition: 0.7s ease-in-out;
+  -o-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
+}
 
 /* === For Coming Soon ===*/
 .soon {
@@ -89,38 +102,10 @@ a.text-white:hover {
 }
 
 /* === Navigation ===*/
-header {
-  nav {
-    -webkit-transition: 0.7s ease-in-out;
-    -o-transition: 0.9s ease-in-out;
-    transition: 0.7s ease-in-out;
-    background-color: var(--primary);
-
-    /* @GhZe: Same Hirarschie wie in HTML abbilden */
-    .navbar-nav {
-      ul {
-        li.nav-item {
-          color: #FFF;
-        }
-      }
-    }
-  }
-}
-
-.nav-link {
-  color: white;
-}
-
-/*
 nav.navbar.navbar-dark button:hover,
 nav.navbar.navbar-dark button:focus,
 nav.navbar.navbar-dark .nav-link:hover {
-  color: var(--secondary);
-  background-color: var(--primary);
-}
-
-nav.navbar.navbar-dark .nav-link:focus {
-  color: #FFF;
+  color: #0a0dec;
 }
 
 .navbar-nav .badge {
@@ -130,10 +115,16 @@ nav.navbar.navbar-dark .nav-link:focus {
   padding-right: .5em;
   padding-left: .5em;
 }
-*/
 
+.form {
+  background-color: skyblue;
+  border-style: solid;
+}
 
-
+.form-group .form-control {
+  border-style: solid block green;
+  background-color: #eee;
+}
 
 /* === News  ===*/
 .news-bg {
@@ -199,7 +190,6 @@ p,
 button,
 a {
   filter: blur(0);
-
 }
 
 /* Bild Hover */
