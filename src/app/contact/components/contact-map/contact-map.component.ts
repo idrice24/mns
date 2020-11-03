@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-contact-map',
   templateUrl: './contact-map.component.html',
-  styleUrls: ['./contact-map.component.css']
+  styleUrls: ['./contact-map.component.scss']
 })
 export class ContactMapComponent implements OnInit {
   options: any;
