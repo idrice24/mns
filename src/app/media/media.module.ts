@@ -8,13 +8,15 @@ import { MediaDashboardComponent } from './components/media-dashboard/media-dash
 import { TableModule, Table } from 'primeng/table';
 import { SharedModule } from '../shared/shared.module';
 
-import { GalleriaModule } from 'primeng/galleria';
-import { CardModule } from 'primeng/card';
-
 const mediasRoutes: Routes = [
-  { path: 'gallery', component: GalleryComponent },
-  { path: 'videos', component: VideoListComponent },
-  { path: '', component: MediaDashboardComponent }];
+  {
+    path: '',
+    component: MediaComponent,
+    children: [
+      { path: 'gallery', component: GalleryComponent },
+      { path: 'videos', component: VideoListComponent },
+      { path: '', component: MediaDashboardComponent }]
+  }];
 
 
 @NgModule({
@@ -27,8 +29,6 @@ const mediasRoutes: Routes = [
     CommonModule,
     TableModule,
     SharedModule,
-    GalleriaModule,
-    CardModule,
     RouterModule.forChild(mediasRoutes)
   ],
   exports: [RouterModule]
