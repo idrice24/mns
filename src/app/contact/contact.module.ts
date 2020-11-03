@@ -18,7 +18,7 @@ import { MessageService } from 'primeng/api';
 
 const routes: Routes = [
   {
-    path: '', component: ContactComponent
+    path: 'contact', component: ContactComponent
   }];
 
 @NgModule({
@@ -38,7 +38,8 @@ const routes: Routes = [
     TabViewModule,
     RouterModule.forChild(routes)
   ],
-  providers: [MessageService]
+  providers: [MessageService],
+  exports: [ContactFormComponent]
 
 })
 export class ContactModule { }
