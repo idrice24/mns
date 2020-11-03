@@ -1,0 +1,70 @@
+<!-- Start Produkte -->
+<section id="blog">
+  <div class="row mb-5">
+    <div class="col-md-12 text-center">
+      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Notre Blog</h1>
+    </div>
+    <!-- col -->
+  </div>
+
+  <div class="card">
+    <p-dataView #dv [value]="blogs" [paginator]="true" [rows]="5" filterBy="title" [sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
+      <ng-template pTemplate="header">
+        <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
+          <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Title"
+            (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown>
+          <span class="p-input-icon-left p-mb-2 p-mb-md-0">
+            <i class="pi pi-search"></i>
+            <input type="search" pInputText placeholder="Search by Title" (input)="dv.filter($event.target.value)">
+          </span>
+          <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+        </div>
+      </ng-template>
+	  <!--LIST-->
+      <ng-template let-blog pTemplate="listItem">
+        <div class="p-col-12">
+          <div class="blog-list-item">
+            <img [src]="blog.imageUrl" [alt]="blog.title" />
+            <div class="blog-list-detail">
+              <div class="blog-name">{{blog.title}}</div>
+              <div class="blog-description">{{blog.content}}</div>
+              <p-rating [ngModel]="blog.rating" [readonly]="true" [cancel]="false"></p-rating>
+              <i class="pi pi-tag blog-category-icon"></i><span class="blog-category">{{blog.category}}</span>
+            </div>
+            <!--  <div class="blog-list-action">
+              <span class="blog-price">${{blog.price}}</span>
+              <p-button icon="pi pi-shopping-cart" label="Add to Cart"
+                [disabled]="blog.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+              <span [class]="'blog-badge status-' + blog.inventoryStatus.toLowerCase()">{{blog.inventoryStatus}}</span>
+            </div> -->
+          </div>
+        </div>
+      </ng-template>
+	    <!--GRID-->
+      <ng-template let-blog pTemplate="gridItem">
+        <div class="p-col-12 p-md-4">
+          <div class="blog-grid-item card">
+            <div class="blog-grid-item-top">
+              <div>
+                <i class="pi pi-tag blog-category-icon"></i>
+                <span class="blog-category">{{blog.category}}</span>
+              </div>
+              <!--   <span [class]="'blog-badge status-' + blog.inventoryStatus.toLowerCase()">{{blog.inventoryStatus}}</span> -->
+            </div>
+            <div class="blog-grid-item-content">
+              <img [src]="blog.imageUrl" [alt]="blog.title" />
+              <div class="blog-name">{{blog.title}}</div>
+              <div class="blog-description">{{blog.content}}</div>
+              <p-rating [ngModel]="blog.rating" [readonly]="true" [cancel]="false"></p-rating>
+            </div>
+            <!--      <div class="blog-grid-item-bottom">
+              <span class="blog-price">${{blog.price}}</span>
+              <p-button icon="pi pi-shopping-cart" [disabled]="blog.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+            </div> -->
+          </div>
+        </div>
+      </ng-template>
+    </p-dataView>
+  </div>
+
+</section>

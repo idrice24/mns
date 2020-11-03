@@ -35,7 +35,7 @@ export class AdminComponent implements OnInit {
   getRoutes() {
     const theR = [
       {
-        path: 'dashboard',
+        path: '/dashboard',
         title: 'Dashboard',
         icon: 'icon-list',
         class: '',
@@ -55,14 +55,6 @@ export class AdminComponent implements OnInit {
         path: 'gallery',
         title: 'Manage Gallery',
         icon: 'icon-bulb',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: 'products',
-        title: 'Manage Product',
-        icon: 'icon-belt',
         class: '',
         extralink: false,
         submenu: []

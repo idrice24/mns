@@ -10,6 +10,15 @@ p {
   background-size: cover;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-alt {
+  font-family: 'Oleo Script Swash Caps', cursive;
+}
 
 
 /* Button */
@@ -96,11 +105,7 @@ nav {
 nav.navbar.navbar-dark button:hover,
 nav.navbar.navbar-dark button:focus,
 nav.navbar.navbar-dark .nav-link:hover {
-  color: var(--primary);
-}
-
-nav.navbar.navbar-dark .nav-link:focus {
-  color: #FFF;
+  color: #0a0dec;
 }
 
 .navbar-nav .badge {

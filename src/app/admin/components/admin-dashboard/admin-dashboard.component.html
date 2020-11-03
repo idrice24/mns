@@ -1,50 +1,13 @@
-   <!--TITLE-->
-   <div class="row mb-5">
-     <div class="col-md-12 text-center">
-       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Dashboard</h1>
-     </div>
-   </div>
+<h1> Dashboard </h1>
 
-   <div class="p-grid">
-     <div class="p-col">
-       <div [style]="{width: '250px', height: '250px'}" class="bg-success text-center p-shadow-5">
-         <i class="pi pi-video"></i>
-         <h1> 23 Videos</h1>
-       </div>
-     </div>
-     <div class="p-col">
-       <div [style]="{width: '250px', height: '250px'}" class="bg-danger text-center p-shadow-5">
-         <i class="pi pi-user"></i>
-         <h1> {{numberOfAppUsers}} Users</h1>
-       </div>
-     </div>
-     <div class="p-col">
-       <div [style]="{width: '250px', height: '250px'}" class="bg-warning text-center p-shadow-5">
-         <i class="pi pi-spin pi-spinner"></i>
-         <h1> 23 Posts</h1>
-       </div>
-     </div>
-     <div class="p-col">
-       <div [style]="{width: '250px', height: '250px'}" class="bg-secondary text-center p-shadow-5">
-         <i class="pi pi-play"></i>
-         <h1> 50 Photos</h1>
-       </div>
-     </div>
+<div class="card-group">
+  <div *ngFor="let item of items" class="card md-3 mt-3">
+    <img class="card-img-top" [src]="item.src" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"> {{item.title}} </h5>
+      <p class="card-text">{{item.text1}} </p>
+      <p class="card-text"><small class="text-muted">{{item.text2}}</small></p>
+    </div>
+  </div>
 
-     <div class="p-col">
-       <div [style]="{width: '250px', height: '250px'}" class="text-center p-shadow-5">
-         <i class="pi pi-bell"></i>
-         <h1> ... Products</h1>
-       </div>
-     </div>
-
-   </div>
-   <!--
-     <div class="p-col-4" *ngFor="let box of items; index as i">
-       <div [class]="box p-shadow-5">
-         <p-progressSpinner strokeWidth="5" fill="#EEEEEE" animationDuration="1s"
-           [style]="{width: '150px', height: '150px'}">
-           <p> sdsd <span class="p-badge">2 </span> </p>
-         </p-progressSpinner>
-       </div>
-     </div> -->
+</div>

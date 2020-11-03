@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LogService } from 'src/app/shared/services/log.service';
-import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -9,13 +8,10 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  numberOfAppUsers: number;
   items;
-  constructor(private logService: LogService, private userService: UserService) { }
+  constructor(private logService: LogService) { }
 
   ngOnInit(): void {
-
-    this.userService.getUsers().subscribe(appUsers => this.numberOfAppUsers = appUsers.length);
     this.items = [
       {
         text1: 'oka',
