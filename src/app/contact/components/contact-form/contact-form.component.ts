@@ -27,6 +27,10 @@ export class ContactFormComponent implements OnInit {
       email: new FormControl('', [
         Validators.required,
         Validators.minLength(4)
+      ]),
+      msg: new FormControl('', [
+        Validators.required,
+        Validators.minLength(14)
       ])
     }
     );
@@ -36,12 +40,12 @@ export class ContactFormComponent implements OnInit {
   // convenience getter for easy access to form fields
   get name() { return this.sendForm.get('name'); }
   get email() { return this.sendForm.get('email'); }
-
-  get messageToSend() { return this.sendForm.get('messageName'); }
+  get msg() { return this.sendForm.get('msg'); }
 
   send(data) {
-    const sd = JSON.stringify(data, null, 4);
-    this.messageService.add({ severity: 'success', summary: 'Service Message', detail: 'Votre message est envoye ' + sd });
+    const sd = JSON.stringify(data, null, 2);
+    console.log(sd);
+    this.messageService.add({ severity: 'success', summary: 'Service Message', detail: sd });
     this.sendForm.reset();
   }
 

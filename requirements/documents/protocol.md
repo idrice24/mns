@@ -46,8 +46,8 @@ ng g class contact // if needed
 |required| To valide input element using angular|
 |[disabled ]|Binding using angular|
 |label="Envoyer"|Content of button |
-|formControlName="messageName"|To call/use textarea component file |
-messageName
+|formControlName="mgs"|To use for Validation |
+ 
 
 
 
