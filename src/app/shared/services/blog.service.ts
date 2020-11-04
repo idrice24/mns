@@ -15,19 +15,19 @@ export class BlogService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getBlogList() {
-    // TODO@Idrice find out best way to  call  without [0]
-    return this.httpClient.get<GetResponse>(this.blogUrl).pipe(map(res => res[0]._embedded.blogs));
-  }
 
+
+  // TODO@Idrice find out best way to  call  standard httpClient
   getTopicList(): Observable<Topic[]> {
-    return this.httpClient.get<GetResponse>(this.blogUrl).pipe(map(res => res._embedded.blogs));
+    return this.httpClient.get<Topic[]>(this.blogUrl);
 
   }
-  getTopic(id: number | string) {
-    return this.getTopicList().pipe(
+
+  getTopicById(id: number | string) {
+    return this.httpClient.get<Topic[]>(this.blogUrl).pipe(
       // (+) before `id` turns the string into a number
-      map((heroes: Topic[]) => heroes.find(hero => hero.id === +id))
+      map((topics: Topic[]) => topics.find(topic => topic.id === +id))
+
     );
   }
 }
