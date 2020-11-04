@@ -8,6 +8,7 @@ import { ForbittenFnameValidatorDirective } from './directives/forbitten-fName-v
 import { ForbittenPasswordValidatorDirective } from './directives/forbitten-password-validator.directive';
 import { SafePipe } from './pipes/safe.pipe';
 import { MenubarModule } from 'primeng/menubar';
+import { GallerySharedComponent } from './components/gallery-shared/gallery-shared.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MenubarModule } from 'primeng/menubar';
     ForbittenEmailValidatorDirective,
     ForbittenFnameValidatorDirective,
     ForbittenPasswordValidatorDirective,
-    SafePipe],
+    SafePipe,
+    GallerySharedComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -25,6 +27,7 @@ import { MenubarModule } from 'primeng/menubar';
   exports: [
     HeaderComponent,
     FooterComponent,
+    GallerySharedComponent, // allows home to use it
     SafePipe,
     ForbittenEmailValidatorDirective,
     ForbittenFnameValidatorDirective,

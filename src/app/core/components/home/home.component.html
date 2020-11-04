@@ -66,7 +66,7 @@
 </section>
 
 <!-- Start AboutUs -->
- <app-about> </app-about>
+<app-about> </app-about>
 
 <hr />
 <app-newsletter> </app-newsletter>
@@ -74,50 +74,13 @@
 
 <!-- Contakt -->
 <section id="contact" class="mb-5 text-center">
-<app-contact-form></app-contact-form>
+  <app-contact-form></app-contact-form>
 </section>
 
 <!-- Galleries -->
-<section id="gallery" class="bg-dark">
+<section class="bg-dark">
 
-  <div class="container">
-    <div class="row mb-5">
-      <div class="col-md-12 text-center">
-        <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Gallery</h1>
-      </div>
-    </div>
-    <div class="card-columns">
-      <div data-aos="zoom-in" class="card">
-        <img class="card-img rounded-0" src="assets/img/bg1.jpg" alt="Frau trinkt Kaffee">
-      </div>
-      <div data-aos="zoom-in" class="card">
-        <img class="card-img rounded-0" src="assets/img/bg8.jpg" alt="Gebäck">
-      </div>
-      <div data-aos="zoom-in" class="card">
-        <img class="card-img rounded-0" src="assets/img/bg5.jpg" alt="Ein Stück Torte">
-      </div>
-      <div data-aos="zoom-in" class="card">
-        <img class="card-img rounded-0" src="assets/img/bg11.jpg" alt="Espressomaschine">
-      </div>
-      <div data-aos="zoom-in" class="card">
-        <img class="card-img rounded-0" src="assets/img/aboutus.jpg" alt="Kaffeetasse">
-      </div>
-      <div data-aos="zoom-in" class="card">
-        <img class="card-img rounded-0" src="assets/img/bg11.jpg" alt="TODO3">
-      </div>
-      <div data-aos="zoom-in" class="card">
-        <img class="card-img rounded-0" src="assets/img/bg7.jpg" alt="TODO 2">
-      </div>
-    </div>
-
-    <div class="row justify-content-center mt-5">
-      <a routerLink="/media/gallery" role="button"
-        class="btn btn-outline-primary btn-round btn-lg mt-2 smooth"><small><span
-            class="icon-arrow-down-circle pr-2"></span></small>Je Souhaite Decouvrier plus de Media</a>
-    </div>
-
-
-  </div>
+  <app-gallery-shared> </app-gallery-shared>
   <!-- Back to Top Button-->
   <a id="back-to-top-button" class="btn btn-outline-danger btn-round smooth" href="#home" role="button">
     <span class="icon-user"></span></a>
