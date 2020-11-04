@@ -5,6 +5,8 @@ import { DialogService } from 'src/app/shared/services/dialog.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user.service';
 import { forbittenEmailValidator } from 'src/app/shared/directives/forbitten-email-validator.directive';
+import { forbittenFnameValidator } from 'src/app/shared/directives/forbitten-fName-validator.directive';
+import { forbittenPasswordValidator } from 'src/app/shared/directives/forbitten-password-validator.directive';
 
 
 @Component({
@@ -39,26 +41,33 @@ export class RegistryComponent implements OnInit {
   ngOnInit() {
 
     this.registryForm = new FormGroup({
+
       email: new FormControl(this.appUser.email, [
         Validators.required,
         Validators.minLength(4),
         forbittenEmailValidator()
       ]),
+
       // For fName
       fName: new FormControl(this.appUser.fName, [
         Validators.required,
-        Validators.minLength(4)
+        Validators.minLength(4),
+        forbittenFnameValidator()
       ]),
+
       // For lName
       lName: new FormControl(this.appUser.lName, [
         Validators.required,
         Validators.minLength(4)
       ]),
+
       // For password
       password: new FormControl(this.appUser.password, [
         Validators.required,
-        Validators.minLength(4)
+        Validators.minLength(4),
+        forbittenPasswordValidator()
       ]),
+
       // For pas2
       password2: new FormControl(this.appUser.password, [
         Validators.required,
