@@ -14,7 +14,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text icon-pin bg-primary text-white"></span>
           </div>
-          <input type="text" name="fName" class="form-control" formControlName="fName" placeholder="Nom" required>
+          <input type="text" name="fName" class="form-control" formControlName="fName" forbittenFnameValidator placeholder="Nom" required>
 
         </div>
 
@@ -24,6 +24,17 @@
             <span class="input-group-text icon-wallet bg-primary text-white"></span>
           </div>
           <input required type="text" name="lName" class="form-control" formControlName="lName" placeholder="Prenom">
+          <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="alert alert-danger">
+
+            <div *ngIf="fName.errors.required">Le Nom est requis. </div>
+            <div *ngIf="fName.errors.minlength">
+              Le Nom doit comporter au moins 4 caracteres.
+            </div>
+            <div *ngIf="fName.errors.forbiddenFname">
+              le Nom n'est pas valide
+            </div>
+
+          </div>
 
         </div>
 
@@ -54,15 +65,16 @@
           <div class="input-group-prepend">
             <span class="input-group-text icon-key bg-primary text-white"></span>
           </div>
-          <input type="password" name="password" class="form-control" formControlName="password"
+          <input type="password" name="password" class="form-control" appForbittenPassword formControlName="password"
             placeholder="Mot de passe" required>
+
         </div>
         <!-- Password2 -->
         <div class="input-group input-group-lg mb-4">
           <div class="input-group-prepend">
             <span class="input-group-text icon-key bg-primary text-white"></span>
           </div>
-          <input type="password" name="password2" class="form-control" formControlName="password2"
+          <input type="password" name="password2" class="form-control" appForbittenPassword formControlName="password2"
             placeholder="Mot de passe" required>
         </div>
 

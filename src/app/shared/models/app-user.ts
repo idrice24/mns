@@ -9,4 +9,3 @@ export interface AppUser {
   avatar?: string;
   description?: string;
 }
-

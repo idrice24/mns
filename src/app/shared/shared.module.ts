@@ -4,6 +4,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { ForbittenEmailValidatorDirective } from './directives/forbitten-email-validator.directive';
+import { ForbittenFnameValidatorDirective } from './directives/forbitten-fName-validator.directive';
+import { ForbittenPasswordValidatorDirective } from './directives/forbitten-password-validator.directive';
 import { SafePipe } from './pipes/safe.pipe';
 import { MenubarModule } from 'primeng/menubar';
 
@@ -12,6 +14,8 @@ import { MenubarModule } from 'primeng/menubar';
     HeaderComponent,
     FooterComponent,
     ForbittenEmailValidatorDirective,
+    ForbittenFnameValidatorDirective,
+    ForbittenPasswordValidatorDirective,
     SafePipe],
   imports: [
     CommonModule,
@@ -22,7 +26,9 @@ import { MenubarModule } from 'primeng/menubar';
     HeaderComponent,
     FooterComponent,
     SafePipe,
-    ForbittenEmailValidatorDirective],
+    ForbittenEmailValidatorDirective,
+    ForbittenFnameValidatorDirective,
+    ForbittenPasswordValidatorDirective],
   providers: []
 })
 export class SharedModule { }
