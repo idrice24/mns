@@ -18,11 +18,23 @@
 
 
 # Step by Step for contact-form
-1. Import
+1. Import desired modules -  Module file
 ```ts
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button'; 
 import { RippleModule } from 'primeng/ripple'; // pRipple would not works
 import { InputTextareaModule } from 'primeng/inputtextarea';
 ```
+1. Create model -- Model file
+```ts
+ng g class contact // if needed
+```
+1. Create component  -- html, ts, scss
+1. Rename css to scss // If needed
+1. Export component file
+1. Implement  desired logic i.e validation, sending
+1. Design HTML with primeng and Bootstrap
+```html
+
+````
 ## The protocol how github destop function
