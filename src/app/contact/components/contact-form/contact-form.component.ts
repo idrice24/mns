@@ -37,10 +37,11 @@ export class ContactFormComponent implements OnInit {
   get name() { return this.sendForm.get('name'); }
   get email() { return this.sendForm.get('email'); }
 
+  get messageToSend() { return this.sendForm.get('messageName'); }
 
   send(data) {
-
-    this.messageService.add({ severity: 'success', summary: 'Service Message', detail: 'Votre message est envoye' });
+    const sd = JSON.stringify(data, null, 4);
+    this.messageService.add({ severity: 'success', summary: 'Service Message', detail: 'Votre message est envoye ' + sd });
     this.sendForm.reset();
   }
 

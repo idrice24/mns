@@ -18,14 +18,14 @@
 
 
 # Step by Step for contact-form
-1. Import desired modules -  Module file
+1. Import desired modules -  **Module file**
 ```ts
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button'; 
 import { RippleModule } from 'primeng/ripple'; // pRipple would not works
 import { InputTextareaModule } from 'primeng/inputtextarea';
 ```
-1. Create model -- Model file
+1. Create model -- **Model file**
 ```ts
 ng g class contact // if needed
 ```
@@ -33,8 +33,23 @@ ng g class contact // if needed
 1. Rename css to scss // If needed
 1. Export component file
 1. Implement  desired logic i.e validation, sending
-1. Design HTML with primeng and Bootstrap
-```html
+1. Design HTML with primeng and Bootstrap -- **HTML file**
 
-````
+|PrimeNG Css-class |Description|
+|--|---|
+|p-grid|to represents a grid witd div tag|
+|p-ai-stretch|@Idrice need helps|
+|p-inputgroup|@Idrice need helps|
+|pInputText|Extended input as primeng input important!|
+|pButton|Extended button as primeng button important!|
+|pRipple|Extended input as primeng input important!|
+|required| To valide input element using angular|
+|[disabled ]|Binding using angular|
+|label="Envoyer"|Content of button |
+|formControlName="messageName"|To call/use textarea component file |
+messageName
+
+
+
+
 ## The protocol how github destop function

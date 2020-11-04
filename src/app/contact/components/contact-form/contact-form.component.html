@@ -6,28 +6,28 @@
 
     <div class="p-col p-ai-stretch vertical-container">
 
-      <textarea style="height:160px" pInputTextarea></textarea>
+      <textarea type="text" placeholder="Message" style="height:160px" pInputTextarea></textarea>
     </div>
 
     <div class="p-col">
       <div class="p-field p-grid">
         <div class="p-inputgroup">
           <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-          <input type="text" pInputText placeholder="Nom">
+          <input pInputText type="text" placeholder="Nom">
         </div>
       </div>
 
       <div class="p-field p-grid">
         <div class="p-inputgroup">
           <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
-          <input type="text" pInputText placeholder="Email">
+          <input pInputText formControlName="email" type="text" placeholder="Email">
         </div>
       </div>
 
       <div class="p-field p-grid">
         <div class="p-inputgroup">
-          <button pButton pRipple [disabled]="sendForm.invalid" type="submit" label="Envoyer"
-            class="p-button-rounded"></button>
+          <!--[disabled]="sendForm.invalid" -->
+          <button pButton pRipple type="submit" label="Envoyer" class="p-button-rounded"></button>
         </div>
       </div>
 
