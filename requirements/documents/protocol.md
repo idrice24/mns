@@ -1,5 +1,6 @@
 # Table of Contents
 1. [Step by Step for users](#step-by-step-for-users)
+1. [Step by Step for contact-form](#step-by-step-for-contact-form)
 
 # Here are protocols of components, functions/method, technologíes 
 
@@ -14,4 +15,15 @@
  1. lastly you create two files of in-memory that will store data for users.
  1. run your code if any error correct it run back.
 
+
+
+# Step by Step for contact-form
+1. Import
+```ts
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+```
 ## The protocol how github destop function

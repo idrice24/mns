@@ -1,36 +1,40 @@
 <p-toast></p-toast>
 <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Nous contacter per Email</h1>
+
 <form [formGroup]="sendForm" (ngSubmit)="send(sendForm.value)">
-  <div class="row">
-    <div data-aos="fade-right" class="col-md-6 mb-4 pr-md-4 pl-md-5">
+  <div class="p-fluid p-grid">
 
-      <!--MESSAGE-->
-      <div class="input-group input-group-lg">
-        <textarea name="message" class="form-control" rows="6" placeholder="Message"></textarea>
-      </div>
+    <div class="p-col p-ai-stretch vertical-container">
+
+      <textarea style="height:160px" pInputTextarea></textarea>
     </div>
 
-    <div class="col-md-6 pr-md-5 pl-md-4">
-
-      <!--NAME-->
-      <div class="input-group input-group-lg mb-4">
-        <div class="input-group-prepend">
-          <span class="input-group-text icon-user bg-primary text-white"></span>
+    <div class="p-col">
+      <div class="p-field p-grid">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+          <input type="text" pInputText placeholder="Nom">
         </div>
-        <input type="text" name="name" class="form-control" formControlName="name" placeholder="Nom" required>
       </div>
 
-      <!--EMAIL-->
-      <div class="input-group input-group-lg mb-4">
-        <div class="input-group-prepend">
-          <span class="input-group-text icon-paper-plane bg-primary text-white"></span>
+      <div class="p-field p-grid">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+          <input type="text" pInputText placeholder="Email">
         </div>
-        <input type="email" name="email" class="form-control" formControlName="email" placeholder="E-Mail" required>
       </div>
 
-      <!-- BUTTONS -->
-      <button [disabled]="sendForm.invalid" type="submit"
-        class="btn btn-outline-primary btn-lg btn-block btn-round">Envoyer</button>
+      <div class="p-field p-grid">
+        <div class="p-inputgroup">
+          <button pButton pRipple [disabled]="sendForm.invalid" type="submit" label="Envoyer"
+            class="p-button-rounded"></button>
+        </div>
+      </div>
+
+
+
     </div>
+
+
   </div>
 </form>
