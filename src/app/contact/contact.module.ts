@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContactMapComponent } from './components/contact-map/contact-map.component';
@@ -16,6 +16,7 @@ import { ButtonModule } from 'primeng/button';
 import { TabViewModule } from 'primeng/tabview';
 import { MessageService } from 'primeng/api';
 import { RippleModule } from 'primeng/ripple';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 const routes: Routes = [
   {

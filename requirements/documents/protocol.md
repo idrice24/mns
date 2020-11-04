@@ -20,10 +20,9 @@
 # Step by Step for contact-form
 1. Import
 ```ts
-import {AutoCompleteModule} from 'primeng/autocomplete';
-import {AutoCompleteModule} from 'primeng/autocomplete';
-import {AutoCompleteModule} from 'primeng/autocomplete';
-import {AutoCompleteModule} from 'primeng/autocomplete';
-import {AutoCompleteModule} from 'primeng/autocomplete';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button'; 
+import { RippleModule } from 'primeng/ripple'; // pRipple would not works
+import { InputTextareaModule } from 'primeng/inputtextarea';
 ```
 ## The protocol how github destop function
