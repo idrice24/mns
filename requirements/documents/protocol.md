@@ -1,7 +1,9 @@
+# Table of Contents
+1. [Step by Step for users](#step-by-step-for-users)
+
 # Here are protocols of components, functions/method, technologíes 
 
-## The proceduce to use when we want to use primeNG in and angular project for users
-the steps is as follows
+## Step by Step for users
  1. Download the primeNg liberies useing the commands 
  1. Import all the module you are going to use in the  admin module file of your project
  1. Create 4 files the .html (Makeup file), .scss ( the style file), .spec.ts (the method file), and .ts ( component file) files using the command 'ng generate component manage-user' in the respective directory .
