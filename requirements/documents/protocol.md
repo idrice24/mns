@@ -1,7 +1,8 @@
 # Table of Contents
 1. [Step by Step for users](#step-by-step-for-users)
 1. [Step by Step for contact-form](#step-by-step-for-contact-form)
-1. [Delete a local branch in Git](#delete-a-local-branch-in-Git)
+1. [Delete a local branch in Git](#delete-a-local-branch-in-git)
+1. [NullInjectorError by E2E Test](#nullInjectorError-by-e2e-test)
 
 # Here are protocols of components, functions/method, technologíes 
 
@@ -54,7 +55,8 @@ ng g class contact // if needed
 git branch -l // List local branch 
 git branch -D  nameOfLocalBranch //
 ```
-
+# NullInjectorError by E2E Test
+Just **import HttpClientTestingModule** in desired spec.ts file
 
 
 ## The protocol how github destop function
