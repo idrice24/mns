@@ -1,81 +1,81 @@
-<section id="registry" style="background-image: url('assets/img/bg5.jpg');">
+<section id=" registry" style="background-image: url('assets/img/bg5.jpg');">
   <div class="card-body">
-  
+
     <div class="col-md-12 text-center">
       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'identifier</h1>
       <h2> Nombre d'utilisateurs: {{numberOfUsers}}</h2>
     </div>
-	
+
     <div class="col-md-12 align-center">
 
       <form [formGroup]="registryForm" (ngSubmit)="onSubmit(registryForm.value)" class="form-horizontal">
+        <div class="p-formgroup-inline">
         <!-- First Name-->
-        <div class="input-group input-group-lg mb-4">
-          <div class="input-group-prepend">
-            <span class="input-group-text icon-pin bg-primary text-white"></span>
-          </div>
-          <input type="text" name="fName" class="form-control" formControlName="fName" forbittenFnameValidator placeholder="Nom" required>
+          <div class="p-field">
+            <div class="input-group-prepend">
+              <span class="input-group-text icon-pin bg-primary text-white"></span>
+              <input type="text" name="fName" class="form-control" formVontrolName="fName" appForbittenFname placeholder="Entre le nom" required>
+              <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="alert alert-danger">
 
-        </div>
+                <div *ngIf="fName.errors.required">Le Nom est requis. </div>
+                <div *ngIf="fName.errors.minlength">
+                  Le Nom doit comporter au moins 4 caracteres.
+                </div>
+                <div *ngIf="fName.errors.forbiddenFname">
+                  le Nom n'est pas valide
+                </div>
 
-        <!-- Last Name-->
-        <div class="input-group input-group-lg mb-4">
-          <div class="input-group-prepend">
-            <span class="input-group-text icon-wallet bg-primary text-white"></span>
-          </div>
-          <input required type="text" name="lName" class="form-control" formControlName="lName" placeholder="Prenom">
-          <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="alert alert-danger">
-
-            <div *ngIf="fName.errors.required">Le Nom est requis. </div>
-            <div *ngIf="fName.errors.minlength">
-              Le Nom doit comporter au moins 4 caracteres.
+              </div>
             </div>
-            <div *ngIf="fName.errors.forbiddenFname">
-              le Nom n'est pas valide
-            </div>
-
           </div>
 
-        </div>
-
-        <!-- Text EMAIL-->
-        <div class="input-group input-group-lg mb-4">
-          <div class="input-group-prepend">
-            <span class="input-group-text icon-envelope-letter bg-primary text-white"></span>
+          <!-- Last Name -->
+          <div class="p-filed">
+            <div class="input-group-prepend">
+              <span class="input-group-text icon-wallet bg-primary text-white"></span>
+              <input type="text" name="lName" class="form-control" formControlName="lName" placeholder="Entre le Pre-Nom">
+            </div>
           </div>
 
-          <input type="text" name="email" class="form-control" formControlName="email" appForbittenEmail
-            placeholder="Email">
-          <hr />
-          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+          <!-- Text Email  -->
+          <div class="p-filed">
+            <div class="input-group-prepend">
+              <span class="input-group-text icon-envelope-letter bg-primary text-white"></span>
+              <input type="email" name="email" class="form-control" formControlName="email" placeholder="Entre l'Email" appForbittenEmail>
 
-            <div *ngIf="email.errors.required"> email est requis. </div>
-            <div *ngIf="email.errors.minlength">
-              L'email doit comporter au moins 4 caracteres.
-            </div>
-            <div *ngIf="email.errors.forbiddenEmail">
-              l'adresse email n'est pas valide
-            </div>
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
 
+                <div *ngIf="email.errors.required"> email est requis. </div>
+                <div *ngIf="email.errors.minlength">
+                  L'email doit comporter au moins 4 caracteres.
+                </div>
+                <div *ngIf="email.errors.forbiddenEmail">
+                  l'adresse email n'est pas valide
+                </div>
+
+              </div>
+
+            </div>
           </div>
         </div>
 
         <!-- Password -->
-        <div class="input-group input-group-lg mb-4">
+        <div class="p-field">
           <div class="input-group-prepend">
             <span class="input-group-text icon-key bg-primary text-white"></span>
-          </div>
           <input type="password" name="password" class="form-control" appForbittenPassword formControlName="password"
             placeholder="Mot de passe" required>
-
+          </div>
         </div>
+
         <!-- Password2 -->
-        <div class="input-group input-group-lg mb-4">
+        <div class="field">
           <div class="input-group-prepend">
             <span class="input-group-text icon-key bg-primary text-white"></span>
-          </div>
+
           <input type="password" name="password2" class="form-control" appForbittenPassword formControlName="password2"
             placeholder="Mot de passe" required>
+          </div>
         </div>
 
 

@@ -1,11 +1,11 @@
-<div class="container-fluid mb-3">
+<!-- <div class="container-fluid mb-3">
 
 
 
 
 
 
-  <!---Copy from Idrcie project-->
+  <!---Copy from Idrcie project
   <h1 *ngFor="let f of funny" class="text-danger">
     <marquee> ENJOY OUR GALLERY.</marquee>
   </h1>
@@ -158,10 +158,27 @@
   </div>
 
 
-  <!---Copy from Idrcie project-->
+  <!---Copy from Idrcie project------------------------
   <h1 *ngFor="let f of funny" class="text-danger">
     <marquee> ENJOY OUR GALLERY.</marquee>
   </h1>
 
+</div> -->
+<!--TITLE-->
 
+<div class="row mb-5">
+    <div class="col-md-12 text-center">
+        <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Nos Medias</h1>
+    </div>
 </div>
+
+<p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [numVisible]="5" [circular]="true" [autoPlay]="true" [transitionInterval]="2000">
+    <ng-template pTemplate="item" let-item>
+        <img [src]="item.src" style="width: 80%;height: 60%; display: block;" />
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+        <div class="p-justify-center">
+            <img [src]="item.thumbnailImageSrc" style="display: block; height: 100px;" />
+        </div>
+    </ng-template>
+</p-galleria>
