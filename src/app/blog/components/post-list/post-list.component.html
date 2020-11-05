@@ -8,13 +8,13 @@
   </div>
 
   <div class="p-grid">
-    <div class="p-col-2">
+    <div class="p-col-3">
       <p-fieldset legend="RECENT POSTS">
         <p-listbox [options]="recentPosts" optionLabel="title"></p-listbox>
       </p-fieldset>
     </div>
     <!-- DATAVIEW-->
-    <div class="p-col">
+    <div class="p-col-9">
 
       <p-dataView #dv [value]="blogs" [paginator]="true" [rows]="5" filterBy="title" [sortField]="sortField"
         [sortOrder]="sortOrder" layout="list">
