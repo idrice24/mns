@@ -8,13 +8,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchUiComponent implements OnInit {
 
-
+  model: any;
+  disabled: boolean;
 
   constructor(private activatedRoute: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
+    this.disabled = this.model === null || this.model === undefined;
   }
 
 

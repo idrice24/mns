@@ -5,6 +5,9 @@ import { SearchResultComponent } from './components/search-result/search-result.
 import { SearchUiComponent } from './components/search-ui/search-ui.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
 
 
 const routes: Routes = [{ path: 'search', component: SearchResultComponent }];
@@ -16,6 +19,9 @@ const routes: Routes = [{ path: 'search', component: SearchResultComponent }];
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,
+    InputTextModule,
+    ButtonModule,
+    RippleModule,
     RouterModule.forChild(routes)
   ],
   exports: [
