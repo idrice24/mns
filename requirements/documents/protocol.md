@@ -1,6 +1,7 @@
 # Table of Contents
 1. [Step by Step for users](#step-by-step-for-users)
 1. [Step by Step for contact-form](#step-by-step-for-contact-form)
+1. [Delete a local branch in Git](#delete-a-local-branch-in-Git)
 
 # Here are protocols of components, functions/method, technologíes 
 
@@ -48,7 +49,11 @@ ng g class contact // if needed
 |label="Envoyer"|Content of button |
 |formControlName="mgs"|To use for Validation |
  
-
+# Delete a local branch in Git
+```js
+git branch -l // List local branch 
+git branch -D  nameOfLocalBranch //
+```
 
 
 
