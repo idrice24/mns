@@ -1,5 +1,6 @@
 # Table of Contents
 1. [Step by Step for users](#step-by-step-for-users)
+1. [Step by Step for contact-form](#step-by-step-for-contact-form)
 
 # Here are protocols of components, functions/method, technologíes 
 
@@ -13,5 +14,42 @@
  1. create all a file that will user to declear variables of the users (ge name, forname, email, age .......etc)
  1. lastly you create two files of in-memory that will store data for users.
  1. run your code if any error correct it run back.
+
+
+
+# Step by Step for contact-form
+1. Import desired modules -  **Module file**
+```ts
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button'; 
+import { RippleModule } from 'primeng/ripple'; // pRipple would not works
+import { InputTextareaModule } from 'primeng/inputtextarea';
+```
+1. Create model -- **Model file**
+```ts
+ng g class contact // if needed
+```
+1. Create component  -- html, ts, scss
+1. Rename css to scss // If needed
+1. Export component file
+1. Implement  desired logic i.e validation, sending
+1. Design HTML with primeng and Bootstrap -- **HTML file**
+
+|PrimeNG Css-class |Description|
+|--|---|
+|p-grid|to represents a grid witd div tag|
+|p-ai-stretch|@Idrice need helps|
+|p-inputgroup|@Idrice need helps|
+|pInputText|Extended input as primeng input important!|
+|pButton|Extended button as primeng button important!|
+|pRipple|Extended input as primeng input important!|
+|required| To valide input element using angular|
+|[disabled ]|Binding using angular|
+|label="Envoyer"|Content of button |
+|formControlName="mgs"|To use for Validation |
+ 
+
+
+
 
 ## The protocol how github destop function

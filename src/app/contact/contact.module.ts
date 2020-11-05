@@ -15,6 +15,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TabViewModule } from 'primeng/tabview';
 import { MessageService } from 'primeng/api';
+import { RippleModule } from 'primeng/ripple';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 const routes: Routes = [
   {
@@ -35,7 +37,9 @@ const routes: Routes = [
     CheckboxModule,
     DialogModule,
     ButtonModule,
+    RippleModule,
     TabViewModule,
+    InputTextareaModule,
     RouterModule.forChild(routes)
   ],
   providers: [MessageService],
