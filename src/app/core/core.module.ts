@@ -17,6 +17,7 @@ import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { ContactModule } from '../contact/contact.module';
+import { InputTextModule } from 'primeng/inputtext';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ContactModule } from '../contact/contact.module';
     SearchModule,
     PasswordModule, // Passwort would not works fine
     SharedModule,
+    InputTextModule,
     AssociationModule, // Due to newletter component in home important!!
     ContactModule // Due to app-contact-form component in home
   ],
