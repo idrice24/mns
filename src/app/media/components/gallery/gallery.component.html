@@ -1,3 +1,17 @@
+<p></p><br>
+<div class="contain" xmlns="">
+  <p-fileUpload name="myfile[]" customUpload="true" multiple="multiple" (uploadHandler)="myUploader($event)" accept="image/jpeg">
+    <ng-template pTemplate="toolbar">
+      <div>Upload Images/files</div>
+    </ng-template>
+    <ng-template left-file pTplate="file">
+      <div>Custom UI to Display a file</div>
+    </ng-template>
+    <ng-template pTemplate="content" left-file>
+      <div>Additional content</div>
+    </ng-template>
+  </p-fileUpload>
+</div>
 <div class="container-fluid mb-3">
 
 
