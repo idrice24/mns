@@ -1,12 +1,26 @@
-<!-- <div class="container-fluid mb-3">
+
+<p></p><br>
+<div class="contain" xmlns="">
+  <p-fileUpload name="myfile[]" customUpload="true" multiple="multiple" (uploadHandler)="myUploader($event)" accept="image/jpeg">
+    <ng-template pTemplate="toolbar">
+      <div>Upload Images/files</div>
+    </ng-template>
+    <ng-template left-file pTplate="file">
+      <div>Custom UI to Display a file</div>
+    </ng-template>
+    <ng-template pTemplate="content" left-file>
+      <div>Additional content</div>
+    </ng-template>
+  </p-fileUpload>
+</div>
+<div class="container-fluid mb-3">
 
 
 
 
 
-
-  <!---Copy from Idrcie project
-  <h1 *ngFor="let f of funny" class="text-danger">
+  <!---Copy from Idrcie project -->
+  <h1 class="text-danger">
     <marquee> ENJOY OUR GALLERY.</marquee>
   </h1>
 
@@ -158,27 +172,9 @@
   </div>
 
 
-  <!---Copy from Idrcie project------------------------
-  <h1 *ngFor="let f of funny" class="text-danger">
+  <!---Copy from Idrcie project-->
+  <h1  class="text-danger">
     <marquee> ENJOY OUR GALLERY.</marquee>
   </h1>
 
-</div> -->
-<!--TITLE-->
-
-<div class="row mb-5">
-    <div class="col-md-12 text-center">
-        <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Nos Medias</h1>
-    </div>
 </div>
-
-<p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [numVisible]="5" [circular]="true" [autoPlay]="true" [transitionInterval]="2000">
-    <ng-template pTemplate="item" let-item>
-        <img [src]="item.src" style="width: 80%;height: 60%; display: block;" />
-    </ng-template>
-    <ng-template pTemplate="thumbnail" let-item>
-        <div class="p-justify-center">
-            <img [src]="item.thumbnailImageSrc" style="display: block; height: 100px;" />
-        </div>
-    </ng-template>
-</p-galleria>
