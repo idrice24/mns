@@ -88,16 +88,24 @@
         </div>
 
         <!--PASSWORD-->
-        <div class="p-field p-col-12">
+        <div class="p-col-12">
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
-            <input pPassword formControlName="password" promptLabel="Entrer le mot de passe" type="text"
-              showPassword=false placeholder="Mot de passe">
+            <input pPassword type="password" formControlName="password" promptLabel="Entrer le mot de passe"
+              feedback="false" placeholder="Entrer le mot de passe" showPassword="false">
+          </div>
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="p-col-12 alert alert-danger">
+            <div *ngIf="password.errors.required">
+              Name is required.
+            </div>
+            <div *ngIf="password.errors.minlength">
+              Name must be at least 4 characters long.
+            </div>
           </div>
         </div>
 
         <!--BUTTON-->
-        <div class="p-field p-grid">
+        <div class="p-col-12">
           <button pButton pRipple [disabled]="loginForm.invalid" type="submit" label="Envoyer"
             class="p-button-rounded"></button>
         </div>
