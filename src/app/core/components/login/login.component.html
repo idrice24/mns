@@ -95,8 +95,7 @@
           <div class="p-col-12">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
-              <input pPassword type="password" formControlName="password" promptLabel="Entrer le mot de passe"
-                feedback="false" placeholder="Entrer le mot de passe" showPassword="false">
+              <input type="password" formControlName="password" placeholder="Entre le mot de passe" pPassword />
             </div>
             <div *ngIf="password.invalid && (password.dirty || password.touched)" class="p-col-12">
               <small *ngIf="password.errors.required" class="p-invalid">Name is required.</small>
