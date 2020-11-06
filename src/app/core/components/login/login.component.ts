@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   message: string;
   loginForm: FormGroup;
   appUser: AppUser;
+
+    data : Date = new Date();
   constructor(private formBuilder: FormBuilder, public authService: AuthService, public router: Router) {
     this.appUser = {
       email: '',
