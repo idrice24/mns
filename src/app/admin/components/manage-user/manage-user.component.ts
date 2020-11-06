@@ -15,7 +15,7 @@ export class ManageUserComponent implements OnInit {
   appUsers: AppUser[];
   appUser: AppUser;
   selectedAppUsers;
-  appUserDialog;
+  appUserDetailsDialog: boolean;
   submitted: boolean;
   Delete; // for what?
 
@@ -66,10 +66,11 @@ export class ManageUserComponent implements OnInit {
 
   }
 
-  editAppUser(appUser) {
+
+  displayAppUser(appUser): void {
 
     this.appUser = { ...appUser };
-    this.appUserDialog = true;
+    this.appUserDetailsDialog = true;
 
   }
 

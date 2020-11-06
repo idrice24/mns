@@ -1,8 +1,10 @@
 <p-toast></p-toast>
 <div class="col-md-12 text-center">
-  <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Users</h1>
+  <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Users
+    ({{appUsers ? appUsers.length : 0 }})</h1>
 </div>
 <div class="card">
+  <!--TOOLBAR-->
   <p-toolbar styleClass="p-mb-4">
     <ng-template pTemplate="left">
       <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
@@ -13,6 +15,8 @@
       <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button"></button>
     </ng-template>
   </p-toolbar>
+
+  <!--TABLE-->
   <p-table #dt [value]="appUsers" [rows]="10" [paginator]="true" styleClass="p-datatable-striped"
     [globalFilterFields]="['lName','fName','isAdmin','email']" [(selection)]="selectedAppUsers" [rowHover]="true"
     dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
@@ -36,7 +40,7 @@
           <p-sortIcon field="fName"></p-sortIcon>
         </th>
         <th pSortableColumn="lName">Nom
-          <p-sortIcon field="lName"></p-sortIcon> 
+          <p-sortIcon field="lName"></p-sortIcon>
         </th>
 
         <th pSortableColumn="email">E-Mail
@@ -45,7 +49,12 @@
         <th pSortableColumn="admin">Admin
           <p-sortIcon field="admin"> </p-sortIcon>
         </th>
-       <th> </th>
+
+        <th pSortableColumn="description">Description
+          <p-sortIcon field="description"> </p-sortIcon>
+        </th>
+
+        <th> </th>
 
       </tr>
     </ng-template>
@@ -54,27 +63,23 @@
         <td>
           <p-tableCheckbox [value]="appUser"> </p-tableCheckbox>
         </td>
-
         <td>
-          <img [src]="appUser.avatar" [alt]="appUser.avatar" width="50" Height="50" class="p-shadow-4" />
+          <img style="border-radius: 50%;" [src]="appUser.avatar" [alt]="appUser.avatar" width="50" Height="50"
+            class="p-shadow-4" />
         </td>
-
         <td>{{appUser.fName}}</td>
         <td>{{appUser.lName}}</td>
-
         <td>{{appUser.email}}</td>
-        <td>{{appUser.isAdmin}}</td>
-
-
-       	<td>
-		 <button pButton pRipple type="button" [icon]="appUser.isAdmin?'pi pi-check':'pi pi-times'" disabled="true"  class="p-button-rounded p-button-outlined"></button>
-		 
-					 
-		</td>  
         <td>
-          <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
-            (click)="editAppUser(appUser)"></button>
-          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+          <button pButton pRipple type="button" [icon]="appUser.isAdmin?'pi pi-star':'pi pi-minus-circle'"
+            disabled="true"
+            [class]="appUser.isAdmin?'p-button-rounded p-button-info p-button-outlined':'p-button-rounded p-button-danger p-button-outlined'"></button>
+        </td>
+        <td>{{appUser.description}}</td>
+        <td>
+          <button pButton pRipple icon="pi pi-info-circle" class="p-button-rounded p-button-success p-mr-2"
+            (click)="displayAppUser(appUser)"></button>
+          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
             (click)="deleteAppUser(appUser)"></button>
         </td>
       </tr>
@@ -86,57 +91,38 @@
     </ng-template>
   </p-table>
 </div>
-<p-dialog [(visible)]="appUserDialog" [style]="{width: '450px'}" header="AppUsers Details" [modal]="true"
+
+<!--USER DETAILS-->
+<p-dialog [(visible)]="appUserDetailsDialog" [style]="{width: '450px'}" header="AppUsers Details" [modal]="true"
   styleClass="p-fluid">
   <ng-template pTemplate="content">
     <img [src]="appUser.avatar" [alt]="appUser.avatar" class="product-image" *ngIf="appUser.avatar">
+
     <div class="p-field">
-      <label for="name">Name</label>
-      <input type="text" pInputText id="name" required autofocus />
-      <small class="p-invalid" *ngIf="submitted && !appUser.fName">Name is required.</small>
+      <label for="name">{{appUser.fName}}</label>
     </div>
     <div class="p-field">
-      <label for="description">Description</label>
-      <!--  <textarea id="description" pInputTextarea [(ngModel)]="appUser.description" required rows="3"
-        cols="20"></textarea> -->
+      <label for="name">{{appUser.lName}}</label>
     </div>
-    <!---
-        <div class="p-field">
-            <label class="p-mb-3">Category</label>
-            <div class="p-formgrid p-grid">
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category1" name="category" value="Accessories" [(ngModel)]="appUser.fName"></p-radioButton>
-                    <label for="category1">Accessories</label>
-                </div>
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category2" name="category" value="Clothing" [(ngModel)]="appUser.fName"></p-radioButton>
-                    <label for="category2">Clothing</label>
-                </div>
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category3" name="category" value="Electronics" [(ngModel)]="appUser.fName"></p-radioButton>
-                    <label for="category3">Electronics</label>
-                </div>
-                <div class="p-field-radiobutton p-col-6">
-                    <p-radioButton id="category4" name="category" value="Fitness" [(ngModel)]="appUser.fName"></p-radioButton>
-                    <label for="category4">Fitness</label>
-                </div>
-            </div>
-        </div> -->
     <div class="p-formgrid p-grid">
       <div class="p-field p-col">
-        <label for="price">Price</label>
-        <!--   <p-inputNumber id="price" [(ngModel)]="appUser.id" mode="currency" currency="USD" locale="en-US">
-        </p-inputNumber> -->
+        <label for="name">Est -il Administrateur ?</label>
       </div>
       <div class="p-field p-col">
-        <label for="quantity">Quantity</label>
-        <!--   <p-inputNumber id="quantity" [(ngModel)]="appUser.id"></p-inputNumber> -->
+        <label for="quantity">{{appUser.isAdmin}}</label>
       </div>
+    </div>
+    <div class="p-field">
+      <label for="name">{{appUser.email}}</label>
+    </div>
+    <div class="p-field">
+      <label for="name">{{appUser.description}}</label>
     </div>
   </ng-template>
   <ng-template pTemplate="footer">
     <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveAppUser()"></button>
   </ng-template>
 </p-dialog>
+
+<!--POP CONFIRMATION-->
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
