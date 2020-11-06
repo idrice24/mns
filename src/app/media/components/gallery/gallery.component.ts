@@ -14,6 +14,10 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit(): void {
     this.funny = [0];
+
+  }
+  myUploader(event){
+  //event.files == files to myUploader
   }
 
 }
