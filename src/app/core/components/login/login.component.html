@@ -66,50 +66,55 @@
     </div>
   </div>
 -->
-
-  <!--TITLE-->
-  <div class="row mb-5">
-    <div class="col-md-12 text-center">
-      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'identifier</h1>
-    </div>
-  </div>
-
-
-  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
-    <div class="p-d-flex p-jc-center">
-      <!--   @Idrice-- can you explain the css-class p-grid? -->
-      <div class="p-grid">
-        <!--USERNAME-->
-        <div class="p-col-12">
-          <div class="p-inputgroup">
-            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-            <input pInputText formControlName="fName" type="text" placeholder="Nom d'utilisateur">
-          </div>
-        </div>
-
-        <!--PASSWORD-->
-        <div class="p-col-12">
-          <div class="p-inputgroup">
-            <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
-            <input pPassword type="password" formControlName="password" promptLabel="Entrer le mot de passe"
-              feedback="false" placeholder="Entrer le mot de passe" showPassword="false">
-          </div>
-          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="p-col-12 alert alert-danger">
-            <div *ngIf="password.errors.required">
-              Name is required.
-            </div>
-            <div *ngIf="password.errors.minlength">
-              Name must be at least 4 characters long.
-            </div>
-          </div>
-        </div>
-
-        <!--BUTTON-->
-        <div class="p-col-12">
-          <button pButton pRipple [disabled]="loginForm.invalid" type="submit" label="Envoyer"
-            class="p-button-rounded"></button>
-        </div>
+  <p-card class="p-shadow-24">
+    <!--TITLE-->
+    <div class="row mb-5">
+      <div class="col-md-12 text-center">
+        <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'identifier</h1>
       </div>
     </div>
-  </form>
+
+
+    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+      <div class="p-d-flex p-jc-center">
+        <!--   @Idrice-- can you explain the css-class p-grid? -->
+        <div class="p-grid">
+          <!--USERNAME-->
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+              <input pInputText formControlName="fName" type="text" placeholder="Nom d'utilisateur">
+            </div>
+            <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
+              <small *ngIf="fName.errors.required" class="p-invalid">Name is required.</small>
+              <small *ngIf="fName.errors.minlength" class="p-invalid">Name must be at least 4 characters long.</small>
+            </div>
+          </div>
+
+          <!--PASSWORD-->
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+              <input pPassword type="password" formControlName="password" promptLabel="Entrer le mot de passe"
+                feedback="false" placeholder="Entrer le mot de passe" showPassword="false">
+            </div>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="p-col-12">
+              <small *ngIf="password.errors.required" class="p-invalid">Name is required.</small>
+              <small *ngIf="password.errors.minlength" class="p-invalid">Name must be at least 4 characters
+                long.</small>
+            </div>
+          </div>
+
+          <!--BUTTON-->
+          <div class="p-col-12">
+            <button pButton pRipple [disabled]="loginForm.invalid" type="submit" label="Envoyer"
+              class="p-button-rounded"></button>
+            <button pButton routerLink="/registry" type="button" label="Create Account" class="p-button-text"></button>
+
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </p-card>
 </section>

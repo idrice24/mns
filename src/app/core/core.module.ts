@@ -18,6 +18,7 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { ContactModule } from '../contact/contact.module';
 import { InputTextModule } from 'primeng/inputtext';
+import { CardModule } from 'primeng/card';
 
 
 @NgModule({
@@ -39,9 +40,10 @@ import { InputTextModule } from 'primeng/inputtext';
     ButtonModule, // Due to Rounded and Outlined Icon Buttons
     RippleModule, // Due to pRippe in home.html
     SearchModule,
-    PasswordModule, // Passwort would not works fine
     SharedModule,
     InputTextModule,
+    CardModule,
+    PasswordModule, // Passwort would not works fine
     AssociationModule, // Due to newletter component in home important!!
     ContactModule // Due to app-contact-form component in home
   ],
