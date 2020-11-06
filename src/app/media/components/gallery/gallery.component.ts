@@ -16,8 +16,6 @@ export class GalleryComponent implements OnInit {
     this.funny = [0];
 
   }
-  myUploader(event){
-  //event.files == files to myUploader
-  }
+  myUploader(event){ }
 
 }

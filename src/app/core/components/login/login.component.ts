@@ -15,8 +15,6 @@ export class LoginComponent implements OnInit {
   message: string;
   loginForm: FormGroup;
   appUser: AppUser;
-
-    data : Date = new Date();
   constructor(private formBuilder: FormBuilder, public authService: AuthService, public router: Router) {
     this.appUser = {
       email: '',
@@ -54,7 +52,7 @@ export class LoginComponent implements OnInit {
     console.warn('Your order has been submitted', userData);
 
 
-    // TODO@Idrice logs this messae better way
+    // TODO@Idrice logs this message better way
     this.message = 'Trying to log in ...';
     // stop here if form is invalid
     if (this.loginForm.invalid) {
