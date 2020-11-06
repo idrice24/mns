@@ -31,8 +31,6 @@ items;
   constructor(private photoService: PhotoService) { }
 
   ngOnInit(): void {
-    this.funny = [0];
-
   }
   myUploader(event){ }
 
