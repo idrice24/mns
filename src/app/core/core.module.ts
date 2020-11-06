@@ -38,7 +38,7 @@ import { ContactModule } from '../contact/contact.module';
     ButtonModule, // Due to Rounded and Outlined Icon Buttons
     RippleModule, // Due to pRippe in home.html
     SearchModule,
-    PasswordModule,// Passwort would not works fine
+    PasswordModule, // Passwort would not works fine
     SharedModule,
     AssociationModule, // Due to newletter component in home important!!
     ContactModule // Due to app-contact-form component in home

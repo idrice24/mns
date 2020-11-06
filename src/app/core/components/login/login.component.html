@@ -76,31 +76,32 @@
 
 
   <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    <div class="p-d-flex p-jc-center">
+      <!--   @Idrice-- can you explain the css-class p-grid? -->
+      <div class="p-grid">
+        <!--USERNAME-->
+        <div class="p-field p-col-12">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input pInputText formControlName="fName" type="text" placeholder="Nom d'utilisateur">
+          </div>
+        </div>
 
-    <!--   @Idrice-- can you explain the css-class p-grid? -->
-    <!--USERNAME-->
-    <div class="p-field p-grid">
-      <div class="p-inputgroup">
-        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-        <input pInputText formControlName="fName" type="text" placeholder="Nom d utilisateur">
+        <!--PASSWORD-->
+        <div class="p-field p-col-12">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+            <input pPassword formControlName="password" promptLabel="Entrer le mot de passe" type="text"
+              placeholder="Mot de passe">
+          </div>
+        </div>
+
+        <!--BUTTON-->
+        <div class="p-field p-grid">
+          <button pButton pRipple [disabled]="loginForm.invalid" type="submit" label="Envoyer"
+            class="p-button-rounded"></button>
+        </div>
       </div>
     </div>
-
-    <!--PASSWORD-->
-    <div class="p-field p-grid">
-      <div class="p-inputgroup">
-        <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
-        <input pPassword formControlName="password" promptLabel="Entrer le mot de passe" type="text"
-          placeholder="Mot de passe">
-      </div>
-    </div>
-
-    <!--BUTTON-->
-    <div class="p-field p-grid">
-      <button pButton pRipple [disabled]="loginForm.invalid" type="submit" label="Envoyer"
-        class="p-button-rounded"></button>
-    </div>
-
-
   </form>
 </section>
