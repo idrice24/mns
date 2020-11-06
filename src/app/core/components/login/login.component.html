@@ -36,6 +36,7 @@
             <div *ngIf="password.errors.required">
               Name is required.
             </div>
+
             <div *ngIf="password.errors.minlength">
               Name must be at least 4 characters long.
             </div>
@@ -43,6 +44,10 @@
           </div>
 
         </div>
+          <button [disabled]="loginForm.invalid" type="submit"
+                  class="btn btn-outline-primary btn-lg btn-block btn-round">S'identifier</button>
+        </div>
+
         <div class="p-field">
           <h6>
             <a routerLink="/registry" class="link">Create Account</a>
@@ -57,7 +62,6 @@
         <button [disabled]="loginForm.invalid" type="submit"
                 class="btn btn-outline-primary btn-lg btn-block btn-round">S'identifier
         </button>
-
       </form>
 
     </div>
