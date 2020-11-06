@@ -1,5 +1,5 @@
-<section id="login" style="background-image: url('assets/img/bg5.jpg');">
-  <div class="card-body">
+<section>
+  <!--  <div class="card-body">
     <div class="col-md-12 text-center">
       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'identifier</h1>
     </div>
@@ -30,7 +30,7 @@
             <span class="input-group-text icon-key bg-primary text-white"></span>
           </div>
           <input type="password" name="password" class="form-control" formControlName="password"
-                 placeholder="Mot de passe" required>
+            placeholder="Mot de passe" required>
           <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
 
             <div *ngIf="password.errors.required">
@@ -57,7 +57,7 @@
           </h6>
         </div>
         <button [disabled]="loginForm.invalid" type="submit"
-                class="btn btn-outline-primary btn-lg btn-block btn-round">S'identifier
+          class="btn btn-outline-primary btn-lg btn-block btn-round">S'identifier
         </button>
       </form>
 
@@ -65,5 +65,42 @@
     <div class="col-md-12 text-center">
     </div>
   </div>
+-->
 
+  <!--TITLE-->
+  <div class="row mb-5">
+    <div class="col-md-12 text-center">
+      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'identifier</h1>
+    </div>
+  </div>
+
+
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+
+
+    <!--USERNAME-->
+    <div class="p-field p-grid">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+        <input pInputText formControlName="fName" type="text" placeholder="Nom d utilisateur">
+      </div>
+    </div>
+
+    <!--PASSWORD-->
+    <div class="p-field p-grid">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+        <input pPassword formControlName="password" promptLabel="Entrer le mot de passe" type="text"
+          placeholder="Mot de passe">
+      </div>
+    </div>
+
+    <!--BUTTON-->
+    <div class="p-field p-grid">
+      <button pButton pRipple [disabled]="loginForm.invalid" type="submit" label="Envoyer"
+        class="p-button-rounded"></button>
+    </div>
+
+
+  </form>
 </section>

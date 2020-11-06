@@ -13,7 +13,7 @@ import { RegistryComponent } from './components/registry/registry.component';
 import { SearchModule } from '../search/search.module';
 import { SharedModule } from '../shared/shared.module';
 import { AssociationModule } from '../association/association.module';
-
+import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { ContactModule } from '../contact/contact.module';
@@ -38,6 +38,7 @@ import { ContactModule } from '../contact/contact.module';
     ButtonModule, // Due to Rounded and Outlined Icon Buttons
     RippleModule, // Due to pRippe in home.html
     SearchModule,
+    PasswordModule,// Passwort would not works fine
     SharedModule,
     AssociationModule, // Due to newletter component in home important!!
     ContactModule // Due to app-contact-form component in home
