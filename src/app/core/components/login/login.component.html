@@ -1,5 +1,5 @@
-<section id="login" style="background-image: url('assets/img/bg5.jpg');">
-  <div class="card-body">
+<section>
+  <!--  <div class="card-body">
     <div class="col-md-12 text-center">
       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'identifier</h1>
     </div>
@@ -30,7 +30,7 @@
             <span class="input-group-text icon-key bg-primary text-white"></span>
           </div>
           <input type="password" name="password" class="form-control" formControlName="password"
-                 placeholder="Mot de passe" required>
+            placeholder="Mot de passe" required>
           <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
 
             <div *ngIf="password.errors.required">
@@ -57,7 +57,7 @@
           </h6>
         </div>
         <button [disabled]="loginForm.invalid" type="submit"
-                class="btn btn-outline-primary btn-lg btn-block btn-round">S'identifier
+          class="btn btn-outline-primary btn-lg btn-block btn-round">S'identifier
         </button>
       </form>
 
@@ -65,5 +65,55 @@
     <div class="col-md-12 text-center">
     </div>
   </div>
+-->
+  <p-card class="p-shadow-24">
+    <!--TITLE-->
+    <div class="row mb-5">
+      <div class="col-md-12 text-center">
+        <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'identifier</h1>
+      </div>
+    </div>
 
+
+    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+      <div class="p-d-flex p-jc-center">
+        <!--   @Idrice-- can you explain the css-class p-grid? -->
+        <div class="p-grid">
+          <!--USERNAME-->
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+              <input pInputText formControlName="fName" type="text" placeholder="Nom d'utilisateur">
+            </div>
+            <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
+              <small *ngIf="fName.errors.required" class="p-invalid">Name is required.</small>
+              <small *ngIf="fName.errors.minlength" class="p-invalid">Name must be at least 4 characters long.</small>
+            </div>
+          </div>
+
+          <!--PASSWORD-->
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+              <input type="password" formControlName="password" placeholder="Entre le mot de passe" pPassword />
+            </div>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="p-col-12">
+              <small *ngIf="password.errors.required" class="p-invalid">Name is required.</small>
+              <small *ngIf="password.errors.minlength" class="p-invalid">Name must be at least 4 characters
+                long.</small>
+            </div>
+          </div>
+
+          <!--BUTTON-->
+          <div class="p-col-12">
+            <button pButton pRipple [disabled]="loginForm.invalid" type="submit" label="Envoyer"
+              class="p-button-rounded"></button>
+            <button pButton routerLink="/registry" type="button" label="Create Account" class="p-button-text"></button>
+
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </p-card>
 </section>
