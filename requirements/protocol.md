@@ -4,6 +4,7 @@
 1. [Delete a local branch in Git](#delete-a-local-branch-in-git)
 1. [NullInjectorError by E2E Test](#nullInjectorError-by-e2e-test)
 1. [Commits behind master](#commits-behind-master)
+1. [PrimeNG Components That we use](#primeng-components-that-we-use)
  
 
 # Here are protocols of components, functions/method, technologies 
@@ -97,5 +98,10 @@ Just **import HttpClientTestingModule** in desired spec.ts file
 1. Risk on conflict
 1. Best way number should be Zero--> Sync with master before to make a change
 
+# Sidebar
+|PrimeNG Component |Description|
+|--|---|
+|Sidebar|to represents a grid witd div tag|
+|Sidebar|to represents a grid witd div tag|
 
 ## The protocol how github destop function

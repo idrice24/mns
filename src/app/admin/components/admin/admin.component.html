@@ -1,27 +1,24 @@
-<div class="container-fluid">
-<h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Administration</h1>
-<!-- REF: https://github.com/wrappixel/monster-angular-lite/blob/master/angular-10/src/app/shared/sidebar/sidebar.component.ts -->
-<div class="row">
-    <div class="col-lg-3">
-<ul class="nav flex-column">
-  <li class="nav-item" [class.active]="showMenu === sidebarnavItem.title" *ngFor="let sidebarnavItem of sidebarnavItems"
-    [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
-    <div class="nav-small-cap" *ngIf="sidebarnavItem.extralink === true">{{sidebarnavItem.title}}</div>
-    <a class="nav-link" [routerLink]="sidebarnavItem.class === '' ? [sidebarnavItem.path] : null"
-      [ngClass]="[sidebarnavItem.class]" *ngIf="!sidebarnavItem.extralink;"
-      (click)="addExpandClass(sidebarnavItem.title)"
-      [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
-      <i [ngClass]="[sidebarnavItem.icon]"></i>&nbsp;&nbsp;
-      <span class="hide-menu">{{sidebarnavItem.title}}</span>
-    </a>
-  </li>
+<section>
+  <p-sidebar [(visible)]="display">
+    <ul class="nav flex-column">
+      <li class="nav-item" [class.active]="showMenu === sidebarnavItem.title"
+        *ngFor="let sidebarnavItem of sidebarnavItems"
+        [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
+        <div class="nav-small-cap" *ngIf="sidebarnavItem.extralink === true">{{sidebarnavItem.title}}</div>
+        <a class="nav-link" [routerLink]="sidebarnavItem.class === '' ? [sidebarnavItem.path] : null"
+          [ngClass]="[sidebarnavItem.class]" *ngIf="!sidebarnavItem.extralink;"
+          (click)="addExpandClass(sidebarnavItem.title)"
+          [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
+          <i [ngClass]="[sidebarnavItem.icon]"></i>&nbsp;&nbsp;
+          <span class="hide-menu">{{sidebarnavItem.title}}</span>
+        </a>
+      </li>
 
-  <li><a [routerLink]="['/login']">Logout</a></li>
+      <li><a [routerLink]="['/login']">Logout</a></li>
 
-</ul>
-</div>
-<div class="col-lg-8">
+    </ul>
+  </p-sidebar>
+
+  <p-button type="text" (click)="display = true" icon="pi pi-plus" label="Show"></p-button>
   <router-outlet></router-outlet>
-</div>
-</div>
-</div>
+</section>

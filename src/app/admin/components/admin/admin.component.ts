@@ -11,6 +11,7 @@ export class AdminComponent implements OnInit {
   showMenu = '';
   showSubMenu = '';
   sidebarnavItems;
+  display: boolean;
 
 
   constructor(private router: Router, private route: ActivatedRoute) {

@@ -31,6 +31,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { RatingModule } from 'primeng/rating';
 import { ToastModule } from 'primeng/toast';
+import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FileUploadModule } from 'primeng/fileupload';
@@ -98,6 +99,7 @@ const adminRoutes: Routes = [
     InputNumberModule,
     ConfirmDialogModule,
     InputTextareaModule,
+    SidebarModule,
     RouterModule.forChild(adminRoutes)
   ],
   providers: [MessageService, ConfirmationService]
