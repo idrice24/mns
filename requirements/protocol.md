@@ -3,6 +3,7 @@
 1. [Step by Step for contact-form](#step-by-step-for-contact-form)
 1. [Delete a local branch in Git](#delete-a-local-branch-in-git)
 1. [NullInjectorError by E2E Test](#nullInjectorError-by-e2e-test)
+1. [Commits behind master](#commits-behind-master)
  
 
 # Here are protocols of components, functions/method, technologies 
@@ -78,7 +79,7 @@ ng g class contact // if needed
 |pButton|Extended button as primeng button important!|
 |pRipple|Extended input as primeng input important!|
 |required| To valide input element using angular|
-|[disabled ]|Binding using angular|
+|[disabled]|Binding using angular|
 |label="Envoyer"|Content of button |
 |formControlName="mgs"|To use for Validation |
  
@@ -90,7 +91,11 @@ git branch -D  nameOfLocalBranch //
  
 # NullInjectorError by E2E Test
 Just **import HttpClientTestingModule** in desired spec.ts file
- 
+
+# Commits behind master
+1. Risk, overwrite something in master
+1. Risk on conflict
+1. Best way number should be Zero--> Sync with master before to make a change
 
 
 ## The protocol how github destop function
