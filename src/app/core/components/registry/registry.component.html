@@ -1,16 +1,109 @@
+<section>
+<p-card class="p-shadow-24">
+  <!--TITLE-->
+  <div class="row mb-5">
+    <div class="col-md-12 text-center">
+      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'identifier</h1>
+      <h2> Nombre d'utilisateurs: {{numberOfUsers}}</h2>
+    </div>
+  </div>
+  <form [formGroup]="registryForm" (ngsubmit)="onSubmit(registryForm.value)">
+    <div class="p-d-flex p-jc-center">
+      <div class="p-grid">
+        <!-- First Name -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input pInputText formControlName="fName" type="text" placeholder="Nom d'utilisateur">
+          </div>
+          <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
+            <small *ngIf="fName.errors.required" class="p-invalid">Name is required.</small>
+            <small *ngIf="fName.errors.minlength" class="p-invalid">Name must be at least 4 characters long.</small>
+          </div>
+        </div>
+
+        <!-- Second name -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
+            <input pInputText formControlName="lName" type="text" placeholder="Pre Nom">
+          </div>
+        </div>
+        <!-- Email -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-envelope-letter"></i></span>
+            <input pInputText formControlName="email" type="email" placeholder="Email">
+          </div>
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="p-col-12">
+
+            <small *ngIf="email.errors.required" class="p-invalid"> email est requis. </small>
+            <small *ngIf="email.errors.minlength" class="p-invalid">
+              L'email doit comporter au moins 4 caracteres.
+            </small>
+            <small *ngIf="email.errors.forbiddenEmail" class="p-invalid">
+              l'adresse email n'est pas valide
+            </small>
+
+          </div>
+        </div>
+
+        <!-- Password 1 -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+            <input pInputText formControlName="password" type="password" placeholder="Mot de Passe">
+          </div>
+          <!-- it is given an error that password does not exit on the type registryComponent. please help-->
+          <!--<div *ngIf="password.invalid && (password.dirty || password.touched)" class="p-col-12">
+            <small *ngIf="password.errors.required" class="p-invalid">Le Mot de Passe Es requis. </small>
+            <small *ngIf="password.errors.minlength" class="p-invalid">Le Mot De Passe Doit Comporter au moins 4 caracteres.</small>
+          </div>-->
+        </div>
+
+        <!-- Password 2 -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+            <input pInputText formControlName="password" type="text" placeholder="Entre encore le mot de Passe">
+          </div>
+          <!--<div *ngIf="password.invalid && (password.dirty || password.touched)" class="p-col-12">
+            <small *ngIf="password.errors.required" class="p-invalid">Name is required.</small>
+            <small *ngIf="password.errors.minlength" class="p-invalid">Le Mot De Passe Doit Comporter au moins 4 caracteres.</small>
+          </div>-->
+        </div>
+
+
+        <!--BUTTON-->
+        <div class="p-col-12">
+          <button pButton pRipple  type="submit" label="S'inscrire"
+                  class="p-button-rounded" name="registry"></button> &nbsp;&nbsp;&nbsp;&nbsp;
+          <button pButton pRipple routerLink="/home"  label="Annuler" class="p-button-rounded"></button>
+
+        </div>
+      </div>
+    </div>
+
+  </form>
+  <h6 class="text-primary">{{message}}</h6>
+</p-card>
+</section>
+
+<!--
+------------------------------------------------------------------------------------------------------------
 <section id=" registry" style="background-image: url('assets/img/bg5.jpg');">
   <div class="card-body">
 
     <div class="col-md-12 text-center">
       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'identifier</h1>
-      <h2> Nombre d'utilisateurs: {{numberOfUsers}}</h2>
+
     </div>
 
     <div class="col-md-12 align-center">
 
       <form [formGroup]="registryForm" (ngSubmit)="onSubmit(registryForm.value)" class="form-horizontal">
-        <div class="p-formgroup-inline">
-        <!-- First Name-->
+        <div class="p-formgroup-inline">-->
+        <!-- First Name--><!--
           <div class="p-field">
             <div class="input-group-prepend">
               <span class="input-group-text icon-pin bg-primary text-white"></span>
@@ -28,17 +121,18 @@
               </div>
             </div>
           </div>
-
+-->
           <!-- Last Name -->
+<!--
           <div class="p-filed">
             <div class="input-group-prepend">
               <span class="input-group-text icon-wallet bg-primary text-white"></span>
               <input type="text" name="lName" class="form-control" formControlName="lName" placeholder="Entre le Pre-Nom">
             </div>
           </div>
-
+-->
           <!-- Text Email  -->
-          <div class="p-filed">
+      <!--    <div class="p-filed">
             <div class="input-group-prepend">
               <span class="input-group-text icon-envelope-letter bg-primary text-white"></span>
               <input type="email" name="email" class="form-control" formControlName="email" placeholder="Entre l'Email" appForbittenEmail>
@@ -58,8 +152,9 @@
             </div>
           </div>
         </div>
-
+-->
         <!-- Password -->
+<!--
         <div class="p-field">
           <div class="input-group-prepend">
             <span class="input-group-text icon-key bg-primary text-white"></span>
@@ -68,7 +163,7 @@
           </div>
         </div>
 
-        <!-- Password2 -->
+         Password2
         <div class="field">
           <div class="input-group-prepend">
             <span class="input-group-text icon-key bg-primary text-white"></span>
@@ -79,7 +174,7 @@
         </div>
 
 
-        <!-- Submit Button  -->
+         Submit Button
         <div class="form-group">
           <div class="row">
             <div class="col-md-6">
@@ -97,3 +192,4 @@
     </div>
   </div>
 </section>
+-->
