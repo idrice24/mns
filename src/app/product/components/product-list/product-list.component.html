@@ -1,5 +1,4 @@
-
- <section id="product">
+<section id="product">
   <!--TITLE-->
   <div class="row mb-5">
     <div class="col-md-12 text-center">
@@ -9,16 +8,12 @@
   </div>
 
   <div class="p-grid">
-    <div class="p-col-2">
-      <p-fieldset legend="RECENT POSTS">
-        <p-listbox [options]="recentPosts" optionLabel="title"></p-listbox>
-      </p-fieldset>
-    </div>
+
     <!-- DATAVIEW-->
     <div class="p-col">
 
-      <p-dataView #dv [value]="products" [paginator]="true" [rows]="5" filterBy="title" [sortField]="sortField"
-        [sortOrder]="sortOrder" layout="list">
+      <p-dataView #dv [value]="products" [paginator]="true" [rows]="7" filterBy="title" [sortField]="sortField"
+        [sortOrder]="sortOrder" layout="grid">
         <!--HEADER-->
         <ng-template pTemplate="header">
           <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
@@ -36,32 +31,49 @@
         <ng-template let-product pTemplate="listItem">
           <div class="p-col-12">
             <div class="product-list-item">
-              <img [src]="product.imageUrl" [alt]="product.title" />
+              <img [src]="product.imageUrl" [alt]="product.name" />
               <div class="product-list-detail">
-                <div class="product-name">{{product.title}}</div>
-                <div class="product-description">{{product.content}}</div>
+                <div class="product-name">{{product.name}}</div>
+                <div class="product-description">{{product.summary}}</div>
                 <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
-                <button routerLink="./{{product.id}}" pButton type="button" label="Lire plus..."
-                  class="p-m-2 p-button-raised-sm p-button-rounded"></button>
-                <button routerLink="./postX" pButton type="button" label="Laisser un commentaire..."
-                  class="p-m-2 p-button-raised-sm p-button-rounded"></button>
+                <i class="pi pi-tag product-category-icon"></i><span
+                  class="product-category">{{product.category}}</span>
               </div>
-
+              <div class="product-list-action">
+                <span class="product-price">{{product.price}} <i>Fcfa</i></span>
+                <p-button icon="pi pi-shopping-cart" label="Panier"></p-button>
+              </div>
             </div>
           </div>
         </ng-template>
+
         <!--GRID-->
         <ng-template let-product pTemplate="gridItem">
           <div class="p-col-12 p-md-4">
             <div class="product-grid-item card">
+
+              <div class="product-grid-item-top">
+                <div>
+                  <i class="pi pi-tag product-category-icon"></i>
+                  <span class="product-category">{{product.category}}</span>
+                </div>
+
+              </div>
+
               <div class="product-grid-item-content">
-                <img [src]="product.imageUrl" [alt]="product.title" />
-                <div class="product-name">{{product.title}}</div>
-                <div class="product-description">{{product.content}}</div>
+                <img class="product-img" [src]="product.imageUrl" [alt]="product.title" />
+                <div class="product-name">{{product.name}}</div>
+                <div class="product-description">{{product.summary}}</div>
                 <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
               </div>
+              <div class="product-grid-item-bottom">
+                <span class="product-price">{{product.price}} <i>Fcfa</i></span>
+                <p-button icon="pi pi-shopping-cart" label="Panier"></p-button>
+              </div>
             </div>
+
           </div>
+
         </ng-template>
       </p-dataView>
     </div>
