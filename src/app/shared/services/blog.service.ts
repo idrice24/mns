@@ -16,7 +16,6 @@ export class BlogService {
   constructor(private httpClient: HttpClient) { }
 
 
-
   // TODO@Idrice find out best way to  call  standard httpClient
   getTopicList(): Observable<Topic[]> {
     return this.httpClient.get<Topic[]>(this.blogUrl);
