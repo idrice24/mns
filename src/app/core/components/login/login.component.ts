@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       id: 0
 
     };
-    this.setMessage();
+
   }
 
   ngOnInit(): void {
@@ -49,8 +49,6 @@ export class LoginComponent implements OnInit {
 
 
   login(userData) {
-    console.warn('Your order has been submitted', userData);
-
 
     // TODO@Idrice logs this message better way
     this.message = 'Trying to log in ...';
@@ -60,21 +58,23 @@ export class LoginComponent implements OnInit {
     }
 
 
-    this.authService.login(this.fName.value, this.password.value).subscribe(() => {
-      this.setMessage();
-      if (this.authService.isLoggedIn) {
+    this.authService.checkLogin(this.fName.value, this.password.value).subscribe(isLoggedIn => {
+
+      if (isLoggedIn) {
+        console.log('LoggIn Successfully');
         // Usually you would use the redirect URL from the auth service.
         // However to keep the example simple, we will always redirect to `/admin`.
         const redirectUrl = '/admin';
 
         // Set our navigation extras object
+        // TODO@Idrice I dont  understand this?!!
         // that passes on our global query params and fragment
         const navigationExtras: NavigationExtras = {
           queryParamsHandling: 'preserve',
           preserveFragment: true
         };
 
-        // Redirect the user
+        // Navigation to admin page!!
         this.router.navigate([redirectUrl], navigationExtras);
       }
     });
@@ -82,10 +82,8 @@ export class LoginComponent implements OnInit {
 
   logout() {
     this.authService.logout();
-    this.setMessage();
+
   }
 
-  setMessage() {
-    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
-  }
+
 }

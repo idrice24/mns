@@ -27,29 +27,22 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   }
 
   canLoad(route: Route): boolean {
+    // Store the entry url i.e. /admin-- > @Idrice am i not right?
     const url = `/${route.path}`;
 
     return this.checkLogin(url);
   }
 
   checkLogin(url: string): boolean {
-    if (this.authService.isLoggedIn) { return true; }
+    if (this.authService.isLoggedIn) {
+      return true;
+    }
 
+    this.authService.redirectUrl = url;
+    this.router.navigate(['/login'], { queryParams: { returnUrl: url } });
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
 
-    // Create a dummy session id
-    const sessionId = 123456789;
 
-    // Set our navigation extras object
-    // that contains our global query params and fragment
-    const navigationExtras: NavigationExtras = {
-      queryParams: { session_id: sessionId },
-      fragment: 'anchor'
-    };
-
-    // Navigate to the login page with extras
-    this.router.navigate(['/login'], navigationExtras);
-    return false;
   }
 }

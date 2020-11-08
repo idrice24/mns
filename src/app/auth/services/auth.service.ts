@@ -9,41 +9,47 @@ import { UserService } from 'src/app/shared/services/user.service';
   providedIn: 'root',
 })
 export class AuthService {
-  isLoggedIn = false;
 
   // store the URL so we can redirect after logging in
   redirectUrl: string;
-  constructor(private httpClient: HttpClient) {
+  constructor(private userService: UserService, private httpClient: HttpClient) {
 
   }
 
-  login(username, password): Observable<boolean | void> {
+  checkLogin(username, password): Observable<boolean | void> {
     // logic to check password
-    const isOkay = username === 'admin' && password === 'admin';
-    const userAdmin = {
-      username: 'admin',
-      password: 'admin'
-    };
-    const token = localStorage.getItem('currentUser');
 
-    return of(isOkay && !token).pipe(map(fakeOkay => {
-      if (fakeOkay) {
-        localStorage.setItem('currentUser', JSON.stringify(userAdmin));
-      }
-    }),
-      delay(500),
-      tap(val => this.isLoggedIn = isOkay)
-    );
+    return this.userService.findUser(username, password).pipe(
+      map(userFromBackend => {
+        if (userFromBackend && userFromBackend.token) {
+
+          // Get user data from Browser!!
+          localStorage.setItem('currentUserKey', JSON.stringify(userFromBackend.token));
+
+          console.log('User Found !!--- ');
+
+          return true;
+        }
+
+      }),
+      delay(500)); // Delay just for fun !!!
   }
 
   getAuthorizationToken() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const currentUser = JSON.parse(localStorage.getItem('currentUserKey'));
     return currentUser.token;
   }
+  // Provide information if Login is corect or Not.!
+  isLoggedIn() {
+    if (localStorage.getItem('currentUserKey')) {
+      return true;
+    }
+    return false;
+  }
+
 
   logout() {
-    localStorage.removeItem('currentUser');
-    this.isLoggedIn = false;
+    localStorage.removeItem('currentUserKey');
   }
 
   // Todo@Idrice for later DO NOT REMOVE
@@ -51,7 +57,7 @@ export class AuthService {
     return this.httpClient.post<any>(`apiServer/users/authenticate`, { username, password })
       .pipe(map(user => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
-        localStorage.setItem('currentUser', JSON.stringify(user));
+        localStorage.setItem('currentUserKey', JSON.stringify(user));
         return user;
       }));
   }
