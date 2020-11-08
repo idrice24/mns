@@ -40,3 +40,4 @@
 1. Click on button +Show
 1. This will display the list of different manage activities of the website
 1. Chose what you want to do.
+

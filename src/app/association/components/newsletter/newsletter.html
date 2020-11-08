@@ -21,7 +21,7 @@
    </div>
 
    <!-- Start Modal -->
-   <div id="newsletter-modal" class="modal fade" role="dialog" aria-hidden="true">
+   <div id="newsletter-modal" class="modal fade" role="dialog" aria-hidden="true" background-color="#eee">
      <div class="modal-dialog modal-lg">
        <div class="modal-content">
          <div class="modal-header mb-4">
@@ -31,21 +31,30 @@
          </div>
          <div class="modal-body">
            <div class="container">
-             <form>
+             <form [formGroup]="newsletterForm">
                <div class="row">
                  <div class="col-lg-6 mb-4">
                    <div class="input-group input-group-lg">
-                     <input type="text" class="form-control" placeholder="Prenom">
+                     <input type="text" class="form-control" placeholder="Prenom" required>
+                   </div>
+                   <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="p-col-12">
+                     <small *ngIf="prenom.errors.required" class="p-invalid">Prenom est requis.</small>
                    </div>
                  </div>
                  <div class="col-lg-6 mb-4">
                    <div class="input-group input-group-lg">
-                     <input type="text" class="form-control" placeholder="Nom">
+                     <input type="text" class="form-control" placeholder="Nom" required>
+                   </div>
+                   <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="p-col-12">
+                     <small *ngIf="nom.errors.required" class="p-invalid">Nom est requis.</small>
                    </div>
                  </div>
                  <div class="col-lg-12 mb-4">
                    <div class="input-group input-group-lg">
-                     <input type="email" class="form-control" placeholder="E-Mail">
+                     <input type="email" class="form-control" placeholder="E-Mail" required>
+                   </div>
+                   <div *ngIf="email.invalid && (email.dirty || email.touched)" class="p-col-12">
+                     <small *ngIf="email.errors.required" class="p-invalid">Email est requis.</small>
                    </div>
                  </div>
                </div>
