@@ -14,8 +14,8 @@
     "deploy": "ng lint && ng build --prod --output-path docs --base-href /mns/ ",
     "compodoc": "npx compodoc -p tsconfig.json -o -s",
     "dev": "npm run deploy && ng serve --open",
-    "fire": "ng lint && ng build --prod --output-path ./../../../public --verbose ",
-    "fire-deploy": "firebase deploy"
+    "fire": "ng lint && ng build --prod --output-path public --verbose ",
+    "fire-deploy": "npm run fire && firebase deploy"
   },
   "private": true,
   "dependencies": {

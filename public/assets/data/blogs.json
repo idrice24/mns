@@ -1,0 +1,32 @@
+{
+  "_embedded": {
+    "blogs": [{
+      "content": "hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.",
+      "createdDate": "2020-03-02T15:35:28Z",
+      "id": 1,
+      "imageUrl": "assets/img/bg1.jpg",
+      "publishedDate": "2013-03-02T15:35:00Z",
+      "title": "first topic",
+      "updatedDate": "2020-03-02T15:35:28Z",
+      "summary": "hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the"
+    }, {
+      "content": "hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...",
+      "createdDate": "2013-03-02T16:41:45Z",
+      "id": 2,
+      "imageUrl": "assets/img/bg8.jpg",
+      "publishedDate": "2020-03-02T16:41:00Z",
+      "title": "second topic",
+      "updatedDate": "2020-03-02T16:41:45Z",
+      "summary": "this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the"
+    }, {
+      "content": "hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...",
+      "createdDate": "2013-03-02T16:41:45Z",
+      "id": 3,
+      "imageUrl": "assets/img/aboutus.jpg",
+      "publishedDate": "2020-03-02T16:41:00Z",
+      "title": "third topic",
+      "updatedDate": "2020-03-02T16:41:45Z",
+      "summary": "this is is is is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the"
+    }]
+  }
+}
