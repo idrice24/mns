@@ -1,6 +1,18 @@
 <section>
+
   <p-sidebar [(visible)]="display">
-    <ul class="nav flex-column">
+    <!--JUst for fun!!-->
+    <p-progressBar mode="indeterminate"></p-progressBar>
+
+    <p-progressBar class="p-mb-6" [showValue]="false" [value]="100"></p-progressBar>
+
+    <!--OUr MENU-->
+    <p-menu class="p-mt-6" [model]="items">
+
+    </p-menu>
+
+    <!--
+          <ul class="nav flex-column">
       <li class="nav-item" [class.active]="showMenu === sidebarnavItem.title"
         *ngFor="let sidebarnavItem of sidebarnavItems"
         [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
@@ -15,10 +27,13 @@
       </li>
 
       <li><a [routerLink]="['/login']">Logout</a></li>
+      <li>
+        <button pButton (click)="display = true" icon="pi pi-th-large" label="Show Menu"></button>
+      </li>
+    </ul> -->
 
-    </ul>
   </p-sidebar>
 
-  <p-button type="text" (click)="display = true" icon="pi pi-plus" label="Show"></p-button>
+  <button pButton (click)="display = true" icon="pi pi-th-large" label="Show Menu"></button>
   <router-outlet></router-outlet>
 </section>

@@ -10,4 +10,5 @@ export interface AppUser {
   isAdmin?: boolean;
   avatar?: string;
   description?: string;
+  token?: string; // For Token Based Authentication
 }

@@ -13,7 +13,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 
-
+import { MenuModule } from 'primeng/menu';
 import { CalendarModule } from 'primeng/calendar';
 import { SliderModule } from 'primeng/slider';
 import { MultiSelectModule } from 'primeng/multiselect';
@@ -37,6 +37,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ManageProductComponent } from './components/manage-product/manage-product.component';
+import { ManageAbonnementComponent } from './components/manage-abonnement/manage-abonnement.component';
 // REF: https://angular.io/guide/router  live example
 const adminRoutes: Routes = [
   {
@@ -49,6 +50,7 @@ const adminRoutes: Routes = [
         canActivateChild: [AuthGuard],
         children: [
           { path: 'dashboard', component: AdminDashboardComponent },
+          { path: 'abonnement', component: ManageAbonnementComponent },
           { path: 'blog', component: ManageBlogComponent },
           { path: 'gallery', component: ManageGalleryComponent },
           { path: 'users', component: ManageUserComponent },
@@ -68,7 +70,8 @@ const adminRoutes: Routes = [
     ManageUserComponent,
     ManageBlogComponent,
     ManageVideoComponent,
-    ManageProductComponent],
+    ManageProductComponent,
+    ManageAbonnementComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -100,6 +103,7 @@ const adminRoutes: Routes = [
     ConfirmDialogModule,
     InputTextareaModule,
     SidebarModule,
+    MenuModule,
     RouterModule.forChild(adminRoutes)
   ],
   providers: [MessageService, ConfirmationService]

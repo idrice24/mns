@@ -91,11 +91,16 @@
             </div>
           </div>
 
+
           <!--PASSWORD-->
+          <!---
+            1. [feedback]="false" We don't want to show the strenght indicator to the user @Idrice
+          -->
           <div class="p-col-12">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
-              <input type="password" formControlName="password" placeholder="Entre le mot de passe" pPassword />
+              <input [feedback]="false" type="password" formControlName="password" placeholder="Entre le mot de passe"
+                pPassword />
             </div>
             <div *ngIf="password.invalid && (password.dirty || password.touched)" class="p-col-12">
               <small *ngIf="password.errors.required" class="p-invalid">Name is required.</small>
