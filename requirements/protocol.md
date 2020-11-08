@@ -8,6 +8,7 @@
 1. [Use of Firebase for WebApp](#use-of-firebase-for-WebApp) @idrice helps
 1. [Token Based Authentication](#token-based-authentication)
 1. [Generate 1000 mock gigga data](#generate-mock-data)
+1. [Firebase nice commands](#firebase-nice-commands)
  
 
 # Here are protocols of components, functions/method, technologies 
@@ -126,3 +127,12 @@ Just **import HttpClientTestingModule** in desired spec.ts file
 1. Go to website https://mockaroo.com/
 1. Select you POCO data
 1. Save it json or whatever you want.
+
+# Firebase nice commands
+|Commands |Description|
+|--|---|
+|npm install -g firebase-tools|install glabally **firebase-tools**|
+|firebase login|Login to your firebase like in browser|
+|firebase projects:list|Check if loggin succes by list all projects|
+|firebase init| List next feature of firease ie. hosting |
+|firebase deploy| Push your static html into firebase cloud |
