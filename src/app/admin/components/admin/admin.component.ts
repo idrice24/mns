@@ -12,17 +12,81 @@ export class AdminComponent implements OnInit {
   showSubMenu = '';
   sidebarnavItems;
   display: boolean;
+  items: any;
 
 
   constructor(private router: Router, private route: ActivatedRoute) {
 
+    // TODO@Idrice why  pi-fw on icons?
   }
 
 
   ngOnInit() {
-    this.sidebarnavItems = this.getRoutes();
+    const manageItems = [
+      {
+        routerLink: 'dashboard',
+        label: 'Dashboard',
+        icon: 'pi pi-list',
 
+      },
+      {
+        routerLink: 'abonnement',
+        label: 'Abonnements',
+        icon: 'pi pi-fw  pi-comments',
+        badge: '10',
+        title: 'TODO@Idrice ---'
+
+      },
+      {
+        routerLink: 'blog',
+        label: 'Blog',
+        icon: 'pi pi-fw pi-share-alt',
+
+      },
+
+      {
+        routerLink: 'gallery',
+        label: 'Gallery',
+        icon: 'pi pi-fw pi-bell',
+
+      },
+      {
+        routerLink: 'products',
+        label: 'Product',
+        icon: 'pi pi-fw pi-folder',
+
+      },
+      {
+        routerLink: 'video',
+        label: 'Videos',
+        icon: 'pi pi-fw pi-video',
+
+      },
+      {
+        routerLink: 'users',
+        label: 'Users',
+        icon: 'pi pi-fw pi-user'
+      }
+    ];
+    this.items = [
+      {
+        label: 'Manage',
+        items: manageItems
+      },
+      {
+        label: 'Setting',
+        items: [
+          { label: 'Admin', icon: 'pi pi-fw pi-filter' },
+          {
+            label: 'Log out', routerLink: '/login',
+            icon: 'pi pi-fw pi-sign-out'
+          }
+        ]
+      }];
   }
+
+  // this.sidebarnavItems = this.getRoutes();
+
 
   // this is for the open close
   addExpandClass(element: any) {
@@ -34,75 +98,5 @@ export class AdminComponent implements OnInit {
   }
 
 
-  getRoutes() {
-    const theR = [
-      {
-        path: 'dashboard',
-        title: 'Dashboard',
-        icon: 'icon-list',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: 'abonnement',
-        title: 'Manage Abonnements',
-        icon: 'icon-envelope',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: 'blog',
-        title: 'Manage Blog',
-        icon: 'icon-event',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
 
-      {
-        path: 'gallery',
-        title: 'Manage Gallery',
-        icon: 'icon-bulb',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: 'products',
-        title: 'Manage Product',
-        icon: 'icon-belt',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: 'video',
-        title: 'Manage Videos',
-        icon: 'icon-bell',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: 'users',
-        title: ' User-List',
-        icon: 'icon-people',
-        class: '',
-        extralink: false,
-        submenu: []
-      }
-      , {
-        path: '',
-        title: 'Settings',
-        icon: 'icon-settings',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-
-    ];
-    return theR;
-  }
 }

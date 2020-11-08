@@ -13,7 +13,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 
-
+import { MenuModule } from 'primeng/menu';
 import { CalendarModule } from 'primeng/calendar';
 import { SliderModule } from 'primeng/slider';
 import { MultiSelectModule } from 'primeng/multiselect';
@@ -103,6 +103,7 @@ const adminRoutes: Routes = [
     ConfirmDialogModule,
     InputTextareaModule,
     SidebarModule,
+    MenuModule,
     RouterModule.forChild(adminRoutes)
   ],
   providers: [MessageService, ConfirmationService]
