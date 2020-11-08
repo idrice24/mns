@@ -85,18 +85,4 @@ export class AdminComponent implements OnInit {
       }];
   }
 
-  // this.sidebarnavItems = this.getRoutes();
-
-
-  // this is for the open close
-  addExpandClass(element: any) {
-    if (element === this.showMenu) {
-      this.showMenu = '0';
-    } else {
-      this.showMenu = element;
-    }
-  }
-
-
-
 }

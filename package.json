@@ -13,7 +13,8 @@
     "e2e-deploy": "ng e2e -- --protractor-config=e2e/protractor-ci.conf.js",
     "deploy": "ng lint && ng build --prod --output-path docs --base-href /mns/ ",
     "compodoc": "npx compodoc -p tsconfig.json -o -s",
-    "dev": "npm run deploy && ng serve --open"
+    "dev": "npm run deploy && ng serve --open",
+    "fire": "ng lint && ng build --prod --output-path ./../public "
   },
   "private": true,
   "dependencies": {
