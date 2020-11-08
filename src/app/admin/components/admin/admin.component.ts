@@ -18,9 +18,10 @@ export class AdminComponent implements OnInit {
 
   }
 
-  // End open close
+
   ngOnInit() {
     this.sidebarnavItems = this.getRoutes();
+
   }
 
   // this is for the open close
@@ -39,6 +40,14 @@ export class AdminComponent implements OnInit {
         path: 'dashboard',
         title: 'Dashboard',
         icon: 'icon-list',
+        class: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: 'abonnement',
+        title: 'Manage Abonnements',
+        icon: 'icon-envelope',
         class: '',
         extralink: false,
         submenu: []
