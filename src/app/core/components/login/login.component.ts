@@ -74,6 +74,9 @@ export class LoginComponent implements OnInit {
           preserveFragment: true
         };
 
+        // Clear input data in form
+        this.loginForm.reset();
+
         // Navigation to admin page!!
         this.router.navigate([redirectUrl], navigationExtras);
       }
@@ -82,7 +85,6 @@ export class LoginComponent implements OnInit {
 
   logout() {
     this.authService.logout();
-
   }
 
 

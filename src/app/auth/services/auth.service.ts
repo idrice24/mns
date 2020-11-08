@@ -42,8 +42,10 @@ export class AuthService {
   // Provide information if Login is corect or Not.!
   isLoggedIn() {
     if (localStorage.getItem('currentUserKey')) {
+      console.log(' isLoggedIn() ----> TRUE');
       return true;
     }
+    console.log(' isLoggedIn() ----> FALSE');
     return false;
   }
 

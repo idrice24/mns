@@ -7,6 +7,7 @@
 1. [PrimeNG Components That we use](#primeng-components-that-we-use)
 1. [Use of Firebase for WebApp](#use-of-firebase-for-WebApp) @idrice helps
 1. [Token Based Authentication](#token-based-authentication)
+1. [Generate 1000 mock gigga data](#generate-mock-data)
  
 
 # Here are protocols of components, functions/method, technologies 
@@ -118,3 +119,10 @@ Just **import HttpClientTestingModule** in desired spec.ts file
 1. Open your browser with the app
 1. Go to **Application Tab**  when you want to spy your app with browser
 1. On the left see **Local Storage** whih provide a table with your key
+
+# Generate Mock Data
+1. To facility my test data
+1. Can generate gigga data from any data type
+1. Go to website https://mockaroo.com/
+1. Select you POCO data
+1. Save it json or whatever you want.
