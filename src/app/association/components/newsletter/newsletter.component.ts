@@ -11,7 +11,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class NewsletterComponent implements OnInit {
   newsletterForm: FormGroup;
-  display: boolean = false;
+  display = false;
 
   showDialog(){
       this.display = true;
