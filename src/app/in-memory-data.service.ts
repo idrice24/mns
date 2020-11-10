@@ -57,19 +57,23 @@ export class InMemoryDataService implements InMemoryDbService {
     const users = [
       {
         id: 1,
-        fName: 'Miléna',
-        lName: 'Job',
-        password: 'WdHgIeLZCM',
-        email: 'rbruinemann0@free.fr',
-        isAdmin: true
+        fName: 'admin',
+        lName: 'admin',
+        password: '#123456789#',
+        email: 'admni@mns237.org',
+        isAdmin: true,
+        token: '123456789#ZebationStafouetIdrice123456789#',
+        username: 'admin'
       },
       {
         id: 2,
-        fName: 'Anaé',
-        lName: 'Veribet',
-        password: '82cXout',
-        email: 'hcamocke1@pbs.org',
-        isAdmin: false
+        fName: 'idrice',
+        lName: 'Tsafouet',
+        password: '0000',
+        email: 'admni@mns237.org',
+        isAdmin: true,
+        token: '00000#123456789#0000',
+        username: 'idrice'
       },
       {
         id: 3,

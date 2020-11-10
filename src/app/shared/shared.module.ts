@@ -9,6 +9,7 @@ import { ForbittenPasswordValidatorDirective } from './directives/forbitten-pass
 import { SafePipe } from './pipes/safe.pipe';
 import { MenubarModule } from 'primeng/menubar';
 import { GallerySharedComponent } from './components/gallery-shared/gallery-shared.component';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { GallerySharedComponent } from './components/gallery-shared/gallery-shar
     CommonModule,
     RouterModule,
     MenubarModule,
+    ButtonModule,
   ],
   exports: [
     HeaderComponent,

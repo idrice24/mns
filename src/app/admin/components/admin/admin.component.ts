@@ -12,88 +12,77 @@ export class AdminComponent implements OnInit {
   showSubMenu = '';
   sidebarnavItems;
   display: boolean;
+  items: any;
 
 
   constructor(private router: Router, private route: ActivatedRoute) {
 
+    // TODO@Idrice why  pi-fw on icons?
   }
 
-  // End open close
+
   ngOnInit() {
-    this.sidebarnavItems = this.getRoutes();
-  }
-
-  // this is for the open close
-  addExpandClass(element: any) {
-    if (element === this.showMenu) {
-      this.showMenu = '0';
-    } else {
-      this.showMenu = element;
-    }
-  }
-
-
-  getRoutes() {
-    const theR = [
+    const manageItems = [
       {
-        path: 'dashboard',
-        title: 'Dashboard',
-        icon: 'icon-list',
-        class: '',
-        extralink: false,
-        submenu: []
+        routerLink: 'dashboard',
+        label: 'Dashboard',
+        icon: 'pi pi-list',
+
       },
       {
-        path: 'blog',
-        title: 'Manage Blog',
-        icon: 'icon-event',
-        class: '',
-        extralink: false,
-        submenu: []
+        routerLink: 'abonnement',
+        label: 'Abonnements',
+        icon: 'pi pi-fw  pi-comments',
+        badge: '10',
+        title: 'TODO@Idrice ---'
+
+      },
+      {
+        routerLink: 'blog',
+        label: 'Blog',
+        icon: 'pi pi-fw pi-share-alt',
+
       },
 
       {
-        path: 'gallery',
-        title: 'Manage Gallery',
-        icon: 'icon-bulb',
-        class: '',
-        extralink: false,
-        submenu: []
+        routerLink: 'gallery',
+        label: 'Gallery',
+        icon: 'pi pi-fw pi-bell',
+
       },
       {
-        path: 'products',
-        title: 'Manage Product',
-        icon: 'icon-belt',
-        class: '',
-        extralink: false,
-        submenu: []
+        routerLink: 'products',
+        label: 'Product',
+        icon: 'pi pi-fw pi-folder',
+
       },
       {
-        path: 'video',
-        title: 'Manage Videos',
-        icon: 'icon-bell',
-        class: '',
-        extralink: false,
-        submenu: []
+        routerLink: 'video',
+        label: 'Videos',
+        icon: 'pi pi-fw pi-video',
+
       },
       {
-        path: 'users',
-        title: ' User-List',
-        icon: 'icon-people',
-        class: '',
-        extralink: false,
-        submenu: []
+        routerLink: 'users',
+        label: 'Users',
+        icon: 'pi pi-fw pi-user'
       }
-      , {
-        path: '',
-        title: 'Settings',
-        icon: 'icon-settings',
-        class: '',
-        extralink: false,
-        submenu: []
-      },
-
     ];
-    return theR;
+    this.items = [
+      {
+        label: 'Manage',
+        items: manageItems
+      },
+      {
+        label: 'Setting',
+        items: [
+          { label: 'Admin', icon: 'pi pi-fw pi-filter' },
+          {
+            label: 'Log out', routerLink: '/login',
+            icon: 'pi pi-fw pi-sign-out'
+          }
+        ]
+      }];
   }
+
 }

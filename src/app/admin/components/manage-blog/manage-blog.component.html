@@ -7,6 +7,7 @@
   <!--TOOLBAR-->
   <p-toolbar styleClass="p-mb-4">
     <ng-template pTemplate="left">
+ 
       <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
               (click)="deleteSelectedTopics()" [disabled]="!selectedTopics || !selectedTopics.length"></button>
     </ng-template>
@@ -119,3 +120,4 @@
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
 
 
+ 

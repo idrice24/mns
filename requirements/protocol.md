@@ -5,6 +5,10 @@
 1. [NullInjectorError by E2E Test](#nullInjectorError-by-e2e-test)
 1. [Commits behind master](#commits-behind-master)
 1. [PrimeNG Components That we use](#primeng-components-that-we-use)
+1. [Use of Firebase for WebApp](#use-of-firebase-for-WebApp) @idrice helps
+1. [Token Based Authentication](#token-based-authentication)
+1. [Generate 1000 mock gigga data](#generate-mock-data)
+1. [Firebase nice commands](#firebase-nice-commands)
  
 
 # Here are protocols of components, functions/method, technologies 
@@ -104,4 +108,31 @@ Just **import HttpClientTestingModule** in desired spec.ts file
 |Sidebar|to represents a grid witd div tag|
 |Sidebar|to represents a grid witd div tag|
 
-## The protocol how github destop function
+# Use of Firebase for WebApp
+1. Sync data using Cloud Firestore and Cloud Storage for Firebase.
+1. Authenticate your users using Firebase Authentication.
+1. Deploy your web app on Firebase Hosting.
+1. Send notifications with Firebase Cloud Messaging.
+1. Collect your web app's performance data.
+
+# Token Based Authentication
+1. We use it in Auth, Admin, Authservice, Loggin Component
+1. Open your browser with the app
+1. Go to **Application Tab**  when you want to spy your app with browser
+1. On the left see **Local Storage** whih provide a table with your key
+
+# Generate Mock Data
+1. To facility my test data
+1. Can generate gigga data from any data type
+1. Go to website https://mockaroo.com/
+1. Select you POCO data
+1. Save it json or whatever you want.
+
+# Firebase nice commands
+|Commands |Description|
+|--|---|
+|npm install -g firebase-tools|install glabally **firebase-tools**|
+|firebase login|Login to your firebase like in browser|
+|firebase projects:list|Check if loggin succes by list all projects|
+|firebase init| List next feature of firease ie. hosting |
+|firebase deploy| Push your static html into firebase cloud |

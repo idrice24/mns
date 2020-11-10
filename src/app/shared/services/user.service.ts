@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AppUser } from '../models/app-user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
+import { tap, catchError, map } from 'rxjs/operators';
 import { AvatarService } from './avatar.service';
 
 @Injectable({
@@ -52,6 +52,11 @@ export class UserService {
     );
   }
 
+  /** FIND: Find user by given username and password @Idrice this should be removed. backend should check it */
+  findUser(username: string, password: string): Observable<AppUser> {
+    return this.getUsers().pipe(
+      map(myArray => myArray.find(i => i.username === username && i.password === password)));
+  }
 
   /**
    * Handle Http operation that failed.
