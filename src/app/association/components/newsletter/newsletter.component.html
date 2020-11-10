@@ -1,66 +1,69 @@
- <section id="newsletter" class="mt-5">
-   <!-- <div class="bg-overlay"></div> -->
-   <!--TITLE-->
-   <div class="row mb-5">
-     <div class="col-md-12 text-center">
-       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Newsletter</h1>
-     </div>
+<p-card class="p-shadow-24">
+  <!--TITLE-->
+    <div class="row mb-5">
+      <div class="col-md-12 text-center">
+        <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Newsletter</h1>
+      </div>
+    </div>
 
-   </div>
+    <div class="row mb-5">
+      <div class="col-md-12 text-center">
+        <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-secondary">Abonnez-vous à notre newsletter et recevez toujours les dernières informations</h1>
+      </div>
+    </div>
+    <!-- modal start here -->
+    <p-dialog header="Abonnement!" [(visible)]="display" style="display: center">
+<form [formGroup]="newsletterForm" (ngSubmit)="newsletter()">
+  <div class="p-d-flex p-jc-center">
+    <div class="p-grid">
+          <!--USERNAME-->
+          <p></p>
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+              <input pInputText formControlName="fName" type="text" placeholder="Nom d'utilisateur" required>
+            </div>
+             <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
+              <small *ngIf="fName.errors.required" class="p-invalid">le nom est requis</small>
+              <small *ngIf="fName.errors.minlength" class="p-invalid">le nom doit etre au moins 4 chiffres de long.</small>
+            </div>
+          </div>
+          <!--Last Name-->
+          <p></p>
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+              <input pInputText formControlName="lName" type="text" placeholder="Prenom d'utilisateur" required>
+            </div>
+             <div *ngIf="lName.invalid && (lName.dirty || lName.touched)" class="p-col-12">
+              <small *ngIf="lName.errors.required" class="p-invalid">le prenom es requis.</small>
+              <small *ngIf="lName.errors.minlength" class="p-invalid">le prenom doit etre au moins 8 chiffres de long .</small>
+            </div> 
+          </div>
+                    <!--USER EMAIL-->
+          <p></p>
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-envelope-letter"></i></span>
+              <input pInputText formControlName="email" type="text" placeholder="L'email d'utilisateur" required>
+            </div>
+             <div *ngIf="email.invalid && (email.dirty || email.touched)" class="p-col-12">
+              <small *ngIf="email.errors.required" class="p-invalid">l'email est requis.</small>
+              <small *ngIf="email.errors.minlength" class="p-invalid">l'email doit etre au moins 5 chiffres de long.</small>
+            </div> 
+          </div>
 
-   <div class="container">
-     <div class="col-md-12 text-center">
-       <p class="lead mb-5">
-         Abonnez-vous à notre newsletter et recevez toujours les dernières informations
-       </p>
-     </div>
-     <div class="col-md-12 text-center">
-       <button data-aos="fade-up" data-toggle="modal" data-target="#newsletter-modal" type="button"
-         class="btn btn-outline-primary btn-round btn-lg">Abonnez-vous</button>
-     </div>
-   </div>
+          <!--BUTTON-->
+          <div class="p-col-12">
+            <button pButton pRipple [disabled]="newsletterForm.invalid" type="submit" label="Envoyer"
+              class="p-button-rounded"></button>&nbsp;&nbsp;&nbsp;
+            <button pButton  type="button" label=" Quitter" class="p-button-rounded" data-dismiss="dialog"></button>
 
-   <!-- Start Modal -->
-   <div id="newsletter-modal" class="modal fade" role="dialog" aria-hidden="true">
-     <div class="modal-dialog modal-lg">
-       <div class="modal-content">
-         <div class="modal-header mb-4">
-           <h1 class="modal-title text-primary ml-3">Abonnement!</h1>
-           <button type="button" class="close mr-3" data-dismiss="modal" aria-label="Close"><span class="icon-close"
-               aria-hidden="true"></span></button>
-         </div>
-         <div class="modal-body">
-           <div class="container">
-             <form>
-               <div class="row">
-                 <div class="col-lg-6 mb-4">
-                   <div class="input-group input-group-lg">
-                     <input type="text" class="form-control" placeholder="Prenom">
-                   </div>
-                 </div>
-                 <div class="col-lg-6 mb-4">
-                   <div class="input-group input-group-lg">
-                     <input type="text" class="form-control" placeholder="Nom">
-                   </div>
-                 </div>
-                 <div class="col-lg-12 mb-4">
-                   <div class="input-group input-group-lg">
-                     <input type="email" class="form-control" placeholder="E-Mail">
-                   </div>
-                 </div>
-               </div>
-             </form>
-           </div>
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-outline-primary btn-round" data-dismiss="modal">quitter</button>
-           <button type="submit" class="btn btn-outline-primary btn-round mr-3">envoyer</button>
-         </div>
-       </div>
+          </div>
+</div>
+  </div>
 
-     </div>
-
-   </div>
-
-   <!-- Ende Modal -->
- </section>
+</form>
+</p-dialog>
+<button pButton type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Abonnez-vous" ></button>
+</p-card>

@@ -4,3 +4,8 @@ export interface Image {
   alt?;
   title?;
 }
+export interface AppNews {
+  nom?;
+  email: string;
+  prenom: string;
+}

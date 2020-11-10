@@ -7,11 +7,9 @@
   <!--TOOLBAR-->
   <p-toolbar styleClass="p-mb-4">
     <ng-template pTemplate="left">
-      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2"
-        (click)="openNew()"></button>
-
-      <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedTopics()"
-        [disabled]="!selectedTopics || !selectedTopics.length"></button>
+ 
+      <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
+              (click)="deleteSelectedTopics()" [disabled]="!selectedTopics || !selectedTopics.length"></button>
     </ng-template>
     <ng-template pTemplate="right">
 
@@ -21,15 +19,15 @@
 
   <!--TABLE-->
   <p-table #dt [value]="appBlogs" [rows]="10" [paginator]="true" styleClass="p-datatable-striped"
-    [globalFilterFields]="['content','createdDate','id','publishedDate', 'title','updatedDate','summary', 'imageUrl', 'rating','category']"
-    [(selection)]="selectedTopics" [rowHover]="true" dataKey="id"
-    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+           [globalFilterFields]="['content','createdDate','id','publishedDate', 'title','updatedDate','summary', 'imageUrl', 'rating','category']" [(selection)]="selectedTopics" [rowHover]="true"
+           dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+           [showCurrentPageReport]="true">
     <ng-template pTemplate="caption">
       <div class="p-d-flex p-ai-center p-jc-between">
         <span class="p-input-icon-left">
           <i class="pi pi-search"></i>
           <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
-            placeholder="Recherche..." />
+                 placeholder="Recherche..." />
         </span>
       </div>
     </ng-template>
@@ -68,7 +66,7 @@
         </td>
         <td>
           <img style="border-radius: 50%;" [src]="appBlog.imageUrl" [alt]="appBlog.imageUrl" width="50" Height="50"
-            class="p-shadow-4" />
+               class="p-shadow-4" />
         </td>
         <td>{{appBlog.title}}</td>
         <td>{{appBlog.content}}</td>
@@ -77,9 +75,9 @@
         <td>{{appBlog.summary}}</td>
         <td>
           <button pButton pRipple icon="pi pi-info-circle" class="p-button-rounded p-button-success p-mr-2"
-            (click)="displayTopic(appBlog)"></button>
+                  (click)="displayTopic(appBlog)"></button>
           <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
-            (click)="deleteTopic(appBlog)"></button>
+                  (click)="deleteTopic(appBlog)"></button>
         </td>
       </tr>
     </ng-template>
@@ -93,7 +91,7 @@
 
 <!--Blog DETAILS-->
 <p-dialog [(visible)]="appBlogDetailsDialog" [style]="{width: '450px'}" header="AppBlogs Details" [modal]="true"
-  styleClass="p-fluid">
+          styleClass="p-fluid">
   <ng-template pTemplate="content">
     <img [src]="appBlog.imageUrl" [alt]="appBlog.imageUrl" class="product-image" *ngIf="appBlog.imageUrl">
 
@@ -120,3 +118,6 @@
 
 <!--POP CONFIRMATION-->
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+
+
+ 
