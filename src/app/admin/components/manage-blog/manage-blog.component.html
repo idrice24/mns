@@ -1,30 +1,37 @@
 <p-toast></p-toast>
 <div class="col-md-12 text-center">
-    <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Blogs ({{appBlogs ? appBlogs.length : 0 }})</h1>
+  <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Blogs
+    ({{appBlogs ? appBlogs.length : 0 }})</h1>
 </div>
 <div class="card">
-    <!--TOOLBAR-->
-    <p-toolbar styleClass="p-mb-4">
-        <ng-template pTemplate="left">
-            <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedTopics()" [disabled]="!selectedTopics || !selectedTopics.length"></button>
-        </ng-template>
-        <ng-template pTemplate="right">
+  <!--TOOLBAR-->
+  <p-toolbar styleClass="p-mb-4">
+    <ng-template pTemplate="left">
+ 
+      <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
+              (click)="deleteSelectedTopics()" [disabled]="!selectedTopics || !selectedTopics.length"></button>
+    </ng-template>
+    <ng-template pTemplate="right">
 
-            <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button"></button>&nbsp;&nbsp;&nbsp;
+      <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button"></button>&nbsp;&nbsp;&nbsp;
             <button pButton pRipple label="AJOUTE" icon="pi pi-plus" class="p-button" (click)="addTopic(appBlog)"></button>
-        </ng-template>
-    </p-toolbar>
+    </ng-template>
+  </p-toolbar>
 
-    <!--TABLE-->
-    <p-table #dt [value]="appBlogs" [rows]="10" [paginator]="true" styleClass="p-datatable-striped" [globalFilterFields]="['content','createdDate','id','publishedDate', 'title','updatedDate','summary', 'imageUrl', 'rating','category']" [(selection)]="selectedTopics"
-        [rowHover]="true" dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
-        <ng-template pTemplate="caption">
-            <div class="p-d-flex p-ai-center p-jc-between">
-                <span class="p-input-icon-left">
+  <!--TABLE-->
+  <p-table #dt [value]="appBlogs" [rows]="10" [paginator]="true" styleClass="p-datatable-striped"
+           [globalFilterFields]="['content','createdDate','id','publishedDate', 'title','updatedDate','summary', 'imageUrl', 'rating','category']" [(selection)]="selectedTopics" [rowHover]="true"
+           dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+           [showCurrentPageReport]="true">
+    <ng-template pTemplate="caption">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        <span class="p-input-icon-left">
+
           <i class="pi pi-search"></i>
           <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
                  placeholder="Recherche..." />
         </span>
+
             </div>
         </ng-template>
         <ng-template pTemplate="header">

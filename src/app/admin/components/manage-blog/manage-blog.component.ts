@@ -5,6 +5,7 @@ import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-manage-blog',
   templateUrl: './manage-blog.component.html',
@@ -14,10 +15,12 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class ManageBlogComponent implements OnInit {
   newBlogForm: FormGroup;
   display = false;
+
   appBlogs: Topic[];
   appBlog: Topic;
   selectedTopics;
   appBlogDetailsDialog: boolean;
+
   appBlogAddDialog: boolean;
   submitted: boolean;
   message: string;
@@ -30,9 +33,14 @@ export class ManageBlogComponent implements OnInit {
 
   ngOnInit(): void {
     this.appBlog = { id: 0, summary: 'kok' };
-    this.getBlogs();
+    this.getBlogs()
     this.newBlogForm = new FormGroup({});
   }
+   getBlogs(): void {
+      this.blogService.getTopicList()
+        .subscribe(blogs => {
+          this.appBlogs = blogs;
+
 
   // get blogs
    getBlogs(): void {
@@ -71,14 +79,13 @@ export class ManageBlogComponent implements OnInit {
   }
 
 
-
-
   displayTopic(appBlog): void {
 
     this.appBlog = { ...appBlog };
     this.appBlogDetailsDialog = true;
 
   }
+
   addTopic(appBlog): void {
     // this.appBlog = { ...appBlog };
     this.appBlogAddDialog = true;
@@ -87,6 +94,7 @@ export class ManageBlogComponent implements OnInit {
   hideDialog() {
 
   }
+
 
   onSubmit(blogAppData) {
     if (!blogAppData) {
