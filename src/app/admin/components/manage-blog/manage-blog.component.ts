@@ -12,6 +12,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   providers: [MessageService, ConfirmationService]
 })
 export class ManageBlogComponent implements OnInit {
+  newBlogForm: FormGroup;
   display = false;
   appBlogs: Topic[];
   appBlog: Topic;
@@ -19,7 +20,6 @@ export class ManageBlogComponent implements OnInit {
   appBlogDetailsDialog: boolean;
   appBlogAddDialog: boolean;
   submitted: boolean;
-  addBlogForm: FormGroup;
   message: string;
 
   constructor(
@@ -31,6 +31,7 @@ export class ManageBlogComponent implements OnInit {
   ngOnInit(): void {
     this.appBlog = { id: 0, summary: 'kok' };
     this.getBlogs();
+    this.newBlogForm = new FormGroup({});
   }
 
   // get blogs
@@ -94,7 +95,7 @@ export class ManageBlogComponent implements OnInit {
 
     this.blogService.addBlog(blogAppData).subscribe();
     // Ref: https://angular.io/start/start-forms
-    this.addBlogForm.reset();
+    this.newBlogForm.reset();
 
     this.message = 'Votre blog a ete soumis';
 
@@ -106,9 +107,9 @@ export class ManageBlogComponent implements OnInit {
 
 
   // convenience getter for easy access to form fields
-  get title() { return this.addBlogForm.get('title'); }
-  get content() { return this.addBlogForm.get('content'); }
-  get category() { return this.addBlogForm.get('category'); }
-  get imageUrl() { return this.addBlogForm.get('imageUrl'); }
-  get summary() { return this.addBlogForm.get('summary'); }
+  get title() { return this.newBlogForm.get('title'); }
+  get content() { return this.newBlogForm.get('content'); }
+  get category() { return this.newBlogForm.get('category'); }
+  get imageUrl() { return this.newBlogForm.get('imageUrl'); }
+  get summary() { return this.newBlogForm.get('summary'); }
 }

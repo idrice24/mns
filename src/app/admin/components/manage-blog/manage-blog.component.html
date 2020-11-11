@@ -1,207 +1,181 @@
 <p-toast></p-toast>
 <div class="col-md-12 text-center">
-  <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Blogs
-    ({{appBlogs ? appBlogs.length : 0 }})</h1>
+    <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Blogs ({{appBlogs ? appBlogs.length : 0 }})</h1>
 </div>
 <div class="card">
-  <!--TOOLBAR-->
-  <p-toolbar styleClass="p-mb-4">
-    <ng-template pTemplate="left">
-      <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
-              (click)="deleteSelectedTopics()" [disabled]="!selectedTopics || !selectedTopics.length"></button>
-    </ng-template>
-    <ng-template pTemplate="right">
+    <!--TOOLBAR-->
+    <p-toolbar styleClass="p-mb-4">
+        <ng-template pTemplate="left">
+            <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedTopics()" [disabled]="!selectedTopics || !selectedTopics.length"></button>
+        </ng-template>
+        <ng-template pTemplate="right">
 
-      <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button"></button>&nbsp;&nbsp;&nbsp;
-      <button pButton pRipple label="AJOUTE" icon="pi pi-plus" class="p-button" (click)="addTopic(appBlog)"></button>
-    </ng-template>
-  </p-toolbar>
+            <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button"></button>&nbsp;&nbsp;&nbsp;
+            <button pButton pRipple label="AJOUTE" icon="pi pi-plus" class="p-button" (click)="addTopic(appBlog)"></button>
+        </ng-template>
+    </p-toolbar>
 
-  <!--TABLE-->
-  <p-table #dt [value]="appBlogs" [rows]="10" [paginator]="true" styleClass="p-datatable-striped"
-           [globalFilterFields]="['content','createdDate','id','publishedDate', 'title','updatedDate','summary', 'imageUrl', 'rating','category']" [(selection)]="selectedTopics" [rowHover]="true"
-           dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-           [showCurrentPageReport]="true">
-    <ng-template pTemplate="caption">
-      <div class="p-d-flex p-ai-center p-jc-between">
-        <span class="p-input-icon-left">
+    <!--TABLE-->
+    <p-table #dt [value]="appBlogs" [rows]="10" [paginator]="true" styleClass="p-datatable-striped" [globalFilterFields]="['content','createdDate','id','publishedDate', 'title','updatedDate','summary', 'imageUrl', 'rating','category']" [(selection)]="selectedTopics"
+        [rowHover]="true" dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex p-ai-center p-jc-between">
+                <span class="p-input-icon-left">
           <i class="pi pi-search"></i>
           <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
                  placeholder="Recherche..." />
         </span>
-      </div>
-    </ng-template>
-    <ng-template pTemplate="header">
-      <tr>
-        <th style="width: 3rem">
-          <p-tableHeaderCheckbox> </p-tableHeaderCheckbox>
-        </th>
-        <th>Image</th>
-        <th pSortableColumn="title">Title
-          <p-sortIcon field="title"></p-sortIcon>
-        </th>
-        <th pSortableColumn="content">Content
-          <p-sortIcon field="content"></p-sortIcon>
-        </th>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 3rem">
+                    <p-tableHeaderCheckbox> </p-tableHeaderCheckbox>
+                </th>
+                <th>Image</th>
+                <th pSortableColumn="title">Title
+                    <p-sortIcon field="title"></p-sortIcon>
+                </th>
+                <th pSortableColumn="content">Content
+                    <p-sortIcon field="content"></p-sortIcon>
+                </th>
 
-        <th pSortableColumn="createdDate">Cretae Date
-          <p-sortIcon field="createdDate"> </p-sortIcon>
-        </th>
-        <th pSortableColumn="category">Category
-          <p-sortIcon field="category"> </p-sortIcon>
-        </th>
+                <th pSortableColumn="createdDate">Cretae Date
+                    <p-sortIcon field="createdDate"> </p-sortIcon>
+                </th>
+                <th pSortableColumn="category">Category
+                    <p-sortIcon field="category"> </p-sortIcon>
+                </th>
 
-        <th pSortableColumn="summary">Summary
-          <p-sortIcon field="summary"> </p-sortIcon>
-        </th>
+                <th pSortableColumn="summary">Summary
+                    <p-sortIcon field="summary"> </p-sortIcon>
+                </th>
 
-        <th> </th>
+                <th> </th>
 
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-appBlog>
-      <tr>
-        <td>
-          <p-tableCheckbox [value]="appBlog"> </p-tableCheckbox>
-        </td>
-        <td>
-          <img style="border-radius: 50%;" [src]="appBlog.imageUrl" [alt]="appBlog.imageUrl" width="50" Height="50"
-               class="p-shadow-4" />
-        </td>
-        <td>{{appBlog.title}}</td>
-        <td>{{appBlog.content}}</td>
-        <td>{{appBlog.createdDate}}</td>
-        <td>{{appBlog.category}}</td>
-        <td>{{appBlog.summary}}</td>
-        <td>
-          <button pButton pRipple icon="pi pi-info-circle" class="p-button-rounded p-button-success p-mr-2"
-                  (click)="displayTopic(appBlog)"></button>
-          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
-                  (click)="deleteTopic(appBlog)"></button>
-        </td>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="summary">
-      <div class="p-d-flex p-ai-center p-jc-between">
-        In total there are {{appBlogs ? appBlogs.length : 0 }} Blogs.
-      </div>
-    </ng-template>
-  </p-table>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-appBlog>
+            <tr>
+                <td>
+                    <p-tableCheckbox [value]="appBlog"> </p-tableCheckbox>
+                </td>
+                <td>
+                    <img style="border-radius: 50%;" [src]="appBlog.imageUrl" [alt]="appBlog.imageUrl" width="50" Height="50" class="p-shadow-4" />
+                </td>
+                <td>{{appBlog.title}}</td>
+                <td>{{appBlog.content}}</td>
+                <td>{{appBlog.createdDate}}</td>
+                <td>{{appBlog.category}}</td>
+                <td>{{appBlog.summary}}</td>
+                <td>
+                    <button pButton pRipple icon="pi pi-info-circle" class="p-button-rounded p-button-success p-mr-2" (click)="displayTopic(appBlog)"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="deleteTopic(appBlog)"></button>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="p-d-flex p-ai-center p-jc-between">
+                In total there are {{appBlogs ? appBlogs.length : 0 }} Blogs.
+            </div>
+        </ng-template>
+    </p-table>
 </div>
 
 <!--Blog DETAILS-->
-<p-dialog [(visible)]="appBlogDetailsDialog" [style]="{width: '450px'}" header="AppBlogs Details" [modal]="true"
-          styleClass="p-fluid">
-  <ng-template pTemplate="content">
-    <img [src]="appBlog.imageUrl" [alt]="appBlog.imageUrl" class="product-image" *ngIf="appBlog.imageUrl">
+<p-dialog [(visible)]="appBlogDetailsDialog" [style]="{width: '450px'}" header="AppBlogs Details" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <img [src]="appBlog.imageUrl" [alt]="appBlog.imageUrl" class="product-image" *ngIf="appBlog.imageUrl">
 
-    <div class="p-field">
-      <label for="title">{{appBlog.title}}</label>
-    </div>
-    <div class="p-field">
-      <label for="name">{{appBlog.content}}</label>
-    </div>
-    <div class="p-field p-col">
-      <label for="name">{{appBlog.createdDate}}</label>
-    </div>
-    <div class="p-field">
-      <label for="name">{{appBlog.category}}</label>
-    </div>
-    <div class="p-field">
-      <label for="name">{{appBlog.summary}}</label>
-    </div>
-  </ng-template>
-  <ng-template pTemplate="footer">
-    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-  </ng-template>
+        <div class="p-field">
+            <label for="title">{{appBlog.title}}</label>
+        </div>
+        <div class="p-field">
+            <label for="name">{{appBlog.content}}</label>
+        </div>
+        <div class="p-field p-col">
+            <label for="name">{{appBlog.createdDate}}</label>
+        </div>
+        <div class="p-field">
+            <label for="name">{{appBlog.category}}</label>
+        </div>
+        <div class="p-field">
+            <label for="name">{{appBlog.summary}}</label>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+    </ng-template>
 </p-dialog>
 
 <!-- Blog addition -->
-<p-dialog [(visible)]="appBlogAddDialog" [style]="{width: '800px'}" header="Add a New Blog!" [modal]="true"
-          styleClass="p-fluid">
+<p-dialog [(visible)]="appBlogAddDialog" [style]="{width: '800px'}" header="Add a New Blog!" [modal]="true" styleClass="p-fluid">
 
-<form [formGroup]="addBlogForm" (ngSubmit)="onSubmit(addBlogForm.value)">
-  <div class="p-d-flex p-jc-center">
-    <div class="p-grid">
+    <form [formGroup]="newBlogForm" (ngSubmit)="onSubmit(newBlogForm.value)">
+        <div class="p-d-flex p-jc-center">
+            <div class="p-grid">
 
-    <!-- TITLE-->
-          <p></p>
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
-              <input pInputText formControlName="title" type="text" placeholder="Nom Due Titre" required>
+                <!-- TITLE-->
+                <p></p>
+                <div class="p-col-12">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
+                        <input pInputText formControlName="title" type="text" placeholder="Nom Due Titre" required>
+                    </div>
+                </div>
+
+                <!-- SUMMARY-->
+                <p></p>
+                <div class="p-col-12">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
+                        <input pInputText formControlName="summary" type="text" placeholder="Summary" required>
+                    </div>
+                </div>
+
+                <!-- CATEGORY-->
+                <p></p>
+                <div class="p-col-12">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
+                        <input pInputText formControlName="category" type="text" placeholder="Category" required>
+                    </div>
+                </div>
+
+                <!-- IMAGEURL -->
+                <p></p>
+                <div class="p-col-12">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
+                        <input pInputText formControlName="imageUrl" type="file" placeholder="Image" required>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="p-col-12">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-text"></i></span>
+                        <textarea pInputTextarea formControlName="content" style="height:160px" placeholder="content"></textarea>
+                    </div>
+                </div>
+
+                <!--BUTTON
+                <div class="p-col-12">
+                    <button pButton pRipple [disabled]="newBlogForm.invalid" type="submit" label="Envoyer" class="p-button-rounded"></button>
+                </div>-->
+ 
+
             </div>
-            <!-- <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
-              <small *ngIf="fName.errors.required" class="p-invalid">le nom est requis</small>
-              <small *ngIf="fName.errors.minlength" class="p-invalid">le nom doit etre au moins 4 chiffres de long.</small>
-            </div>-->
-          </div>
+        </div>
+    </form>
 
-    <!-- SUMMARY-->
-          <p></p>
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
-              <input pInputText formControlName="summary" type="text" placeholder="Summary" required>
-            </div>
-            <!-- <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
-              <small *ngIf="fName.errors.required" class="p-invalid">le nom est requis</small>
-              <small *ngIf="fName.errors.minlength" class="p-invalid">le nom doit etre au moins 4 chiffres de long.</small>
-            </div>-->
-          </div>
+                <ng-template pTemplate="footer">
+                    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"></button>
+                    <button pButton pRipple type="submit" label="AJOUTE" icon="pi pi-plus" class="p-button-text"></button>
 
-    <!-- CATEGORY-->
-          <p></p>
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
-              <input pInputText formControlName="category" type="text" placeholder="Category" required>
-            </div>
-            <!-- <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
-              <small *ngIf="fName.errors.required" class="p-invalid">le nom est requis</small>
-              <small *ngIf="fName.errors.minlength" class="p-invalid">le nom doit etre au moins 4 chiffres de long.</small>
-            </div>-->
-          </div>
-    <!-- IMAGEURL -->
-          <p></p>
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
-              <input pInputText formControlName="imageUrl" type="file" placeholder="Image" required>
-            </div>
-            <!-- <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
-              <small *ngIf="fName.errors.required" class="p-invalid">le nom est requis</small>
-              <small *ngIf="fName.errors.minlength" class="p-invalid">le nom doit etre au moins 4 chiffres de long.</small>
-            </div>-->
-          </div>
-    <!-- Content -->
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon"><i class="pi pi-text"></i></span>
-              <textarea pInputTextarea formControlName="content" style="height:160px" placeholder="content"></textarea>
-            </div>
-          </div>
-
-            <!--BUTTON
-          <div class="p-col-12">
-            <button pButton pRipple [disabled]="addBlogForm.invalid" type="submit" label="Envoyer"
-              class="p-button-rounded"></button>
-          </div>-->
-      
-  </div>
-</div>
-</form>
-
-  <ng-template pTemplate="footer">
-    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"></button>
-    <button pButton pRipple type="submit" label="AJOUTE" icon="pi pi-plus" class="p-button-text"></button>
-    
-  </ng-template>
+                </ng-template>
 
 </p-dialog>
 
 <!--POP CONFIRMATION-->
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
-
-
-

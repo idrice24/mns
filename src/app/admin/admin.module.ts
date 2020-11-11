@@ -11,6 +11,7 @@ import { ManageUserComponent } from './components/manage-user/manage-user.compon
 import { ManageVideoComponent } from './components/manage-video/manage-video.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -77,6 +78,8 @@ const adminRoutes: Routes = [
     TableModule,
     RippleModule,
     DialogModule,
+    FormsModule,
+    ReactiveFormsModule,
     RadioButtonModule,
     RatingModule,
     ToastModule,
