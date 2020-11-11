@@ -3,6 +3,7 @@ import { BlogService } from 'src/app/shared/services/blog.service';
 import { Topic } from 'src/app/shared/models/topic';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-manage-blog',
@@ -11,11 +12,15 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService, ConfirmationService]
 })
 export class ManageBlogComponent implements OnInit {
+  display = false;
   appBlogs: Topic[];
   appBlog: Topic;
   selectedTopics;
   appBlogDetailsDialog: boolean;
+  appBlogAddDialog: boolean;
   submitted: boolean;
+  addBlogForm: FormGroup;
+  message: string;
 
   constructor(
     private messageService: MessageService,
@@ -27,6 +32,8 @@ export class ManageBlogComponent implements OnInit {
     this.appBlog = { id: 0, summary: 'kok' };
     this.getBlogs();
   }
+
+  // get blogs
    getBlogs(): void {
       this.blogService.getTopicList()
         .subscribe(blogs => {
@@ -63,14 +70,45 @@ export class ManageBlogComponent implements OnInit {
   }
 
 
+
+
   displayTopic(appBlog): void {
 
     this.appBlog = { ...appBlog };
     this.appBlogDetailsDialog = true;
 
   }
+  addTopic(appBlog): void {
+    // this.appBlog = { ...appBlog };
+    this.appBlogAddDialog = true;
+  }
 
   hideDialog() {
 
   }
+
+  onSubmit(blogAppData) {
+    if (!blogAppData) {
+      return;
+    }
+
+    this.blogService.addBlog(blogAppData).subscribe();
+    // Ref: https://angular.io/start/start-forms
+    this.addBlogForm.reset();
+
+    this.message = 'Votre blog a ete soumis';
+
+    console.warn(this.message, blogAppData);
+    // Just wait 2 s
+    // this.delay(2000);
+
+  }
+
+
+  // convenience getter for easy access to form fields
+  get title() { return this.addBlogForm.get('title'); }
+  get content() { return this.addBlogForm.get('content'); }
+  get category() { return this.addBlogForm.get('category'); }
+  get imageUrl() { return this.addBlogForm.get('imageUrl'); }
+  get summary() { return this.addBlogForm.get('summary'); }
 }
