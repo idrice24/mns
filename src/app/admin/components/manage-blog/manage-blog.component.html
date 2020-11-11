@@ -12,7 +12,8 @@
     </ng-template>
     <ng-template pTemplate="right">
 
-      <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button"></button>
+      <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button"></button>&nbsp;&nbsp;&nbsp;
+      <button pButton pRipple label="AJOUTE" icon="pi pi-plus" class="p-button" (click)="addTopic(appBlog)"></button>
     </ng-template>
   </p-toolbar>
 
@@ -115,7 +116,92 @@
   </ng-template>
 </p-dialog>
 
+<!-- Blog addition -->
+<p-dialog [(visible)]="appBlogAddDialog" [style]="{width: '800px'}" header="Add a New Blog!" [modal]="true"
+          styleClass="p-fluid">
+
+<form [formGroup]="addBlogForm" (ngSubmit)="onSubmit(addBlogForm.value)">
+  <div class="p-d-flex p-jc-center">
+    <div class="p-grid">
+
+    <!-- TITLE-->
+          <p></p>
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
+              <input pInputText formControlName="title" type="text" placeholder="Nom Due Titre" required>
+            </div>
+            <!-- <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
+              <small *ngIf="fName.errors.required" class="p-invalid">le nom est requis</small>
+              <small *ngIf="fName.errors.minlength" class="p-invalid">le nom doit etre au moins 4 chiffres de long.</small>
+            </div>-->
+          </div>
+
+    <!-- SUMMARY-->
+          <p></p>
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
+              <input pInputText formControlName="summary" type="text" placeholder="Summary" required>
+            </div>
+            <!-- <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
+              <small *ngIf="fName.errors.required" class="p-invalid">le nom est requis</small>
+              <small *ngIf="fName.errors.minlength" class="p-invalid">le nom doit etre au moins 4 chiffres de long.</small>
+            </div>-->
+          </div>
+
+    <!-- CATEGORY-->
+          <p></p>
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
+              <input pInputText formControlName="category" type="text" placeholder="Category" required>
+            </div>
+            <!-- <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
+              <small *ngIf="fName.errors.required" class="p-invalid">le nom est requis</small>
+              <small *ngIf="fName.errors.minlength" class="p-invalid">le nom doit etre au moins 4 chiffres de long.</small>
+            </div>-->
+          </div>
+    <!-- IMAGEURL -->
+          <p></p>
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
+              <input pInputText formControlName="imageUrl" type="file" placeholder="Image" required>
+            </div>
+            <!-- <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
+              <small *ngIf="fName.errors.required" class="p-invalid">le nom est requis</small>
+              <small *ngIf="fName.errors.minlength" class="p-invalid">le nom doit etre au moins 4 chiffres de long.</small>
+            </div>-->
+          </div>
+    <!-- Content -->
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-text"></i></span>
+              <textarea pInputTextarea formControlName="content" style="height:160px" placeholder="content"></textarea>
+            </div>
+          </div>
+
+            <!--BUTTON
+          <div class="p-col-12">
+            <button pButton pRipple [disabled]="addBlogForm.invalid" type="submit" label="Envoyer"
+              class="p-button-rounded"></button>
+          </div>-->
+      
+  </div>
+</div>
+</form>
+
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"></button>
+    <button pButton pRipple type="submit" label="AJOUTE" icon="pi pi-plus" class="p-button-text"></button>
+    
+  </ng-template>
+
+</p-dialog>
+
 <!--POP CONFIRMATION-->
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+
 
 
