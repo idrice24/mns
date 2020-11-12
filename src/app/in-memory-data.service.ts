@@ -8096,6 +8096,7 @@ export class InMemoryDataService implements InMemoryDbService {
       content: 'hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
       createdDate: '2013-03-02T16:41:45Z',
       id: 2,
+      category: 'E-Health',
       imageUrl: 'assets/img/aboutus.jpg',
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'Les Infractions qui portent atteinte à la paix et troublent l’ordre public',
@@ -8103,6 +8104,7 @@ export class InMemoryDataService implements InMemoryDbService {
       summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
       rating: 3
     }, {
+      category: 'CARE For the Women',
       content: 'hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
       createdDate: '2013-03-02T16:41:45Z',
       id: 3,
@@ -8114,6 +8116,7 @@ export class InMemoryDataService implements InMemoryDbService {
       rating: 1
     },
     {
+      category: 'Wahter is Life',
       content: 'hi... this is the third blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
       createdDate: '2013-03-02T16:41:45Z',
       id: 3,
