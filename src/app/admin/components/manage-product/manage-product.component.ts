@@ -70,7 +70,6 @@ export class ManageProductComponent implements OnInit {
   }
 
   hideDialog() {
-    
     this.submitted = false;
   }
 
