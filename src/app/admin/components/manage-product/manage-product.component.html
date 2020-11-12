@@ -1,6 +1,6 @@
 <p-toast></p-toast>
 <div class="col-md-12 text-center">
-  <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Product</h1>
+  <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Product ({{products ? products.length : 0 }})</h1>
  
 </div>
 
@@ -23,7 +23,7 @@
   </p-toolbar>
 
   <p-table #dt [value]="products" [rows]="10" [paginator]="true"
-    [globalFilterFields]="['name','country.name','representative.name','status']" [(selection)]="selectedProducts"
+    [globalFilterFields]="['name','country.name','representative.name','status', 'price']" [(selection)]="selectedProducts"
     [rowHover]="true" dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
     [showCurrentPageReport]="true">
     <ng-template pTemplate="caption">
@@ -71,7 +71,7 @@
         <td>
           <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
             (click)="editProduct(product)"></button>
-          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
             (click)="deleteProduct(product)"></button>
         </td>
       </tr>

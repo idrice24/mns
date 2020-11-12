@@ -35,6 +35,7 @@ export class ManageProductComponent implements OnInit {
     this.product = {};
     this.submitted = false;
     this.productDialog = true;
+    this.messageService.add({life: 1000});
   }
 
   deleteSelectedProducts() {
@@ -69,7 +70,6 @@ export class ManageProductComponent implements OnInit {
   }
 
   hideDialog() {
-    this.productDialog = false;
     this.submitted = false;
   }
 
@@ -79,13 +79,13 @@ export class ManageProductComponent implements OnInit {
     if (this.product.name.trim()) {
       if (this.product.id) {
         this.products[this.findIndexById(this.product.id)] = this.product;
-        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 1000 });
       }
       else {
         this.product.id = 1;
         this.product.image = 'product-placeholder.svg';
         this.products.push(this.product);
-        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000 });
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Created', life: 1000 });
       }
 
       this.products = [...this.products];

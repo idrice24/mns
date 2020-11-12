@@ -13,9 +13,11 @@ import { MessageService } from 'primeng/api';
 export class ManageBlogComponent implements OnInit {
   appBlogs: Topic[];
   appBlog: Topic;
+  blog: Topic = {};
   selectedTopics;
   appBlogDetailsDialog: boolean;
   submitted: boolean;
+  appBlogDialog: boolean;
 
   constructor(
     private messageService: MessageService,
@@ -37,6 +39,9 @@ export class ManageBlogComponent implements OnInit {
 
     openNew() {
       this.appBlog = { id: 0 };
+      this.appBlog = {};
+      this.submitted = false;
+      this.appBlogDialog = true;
 
     }
 
@@ -44,10 +49,29 @@ export class ManageBlogComponent implements OnInit {
 
     }
 
-    saveTopic() {
       // REF: https://www.primefaces.org/primeng/showcase/#/table/crud
 
-}
+  saveBlog() {
+    this.submitted = true;
+
+    if (this.blog.title.trim()) {
+      if (this.blog.id) {
+        this.appBlogs[this.findIndexById(this.blog.id)] = this.blog;
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Blog Updated', life: 1000 });
+      }
+      else {
+        this.blog.id = 1;
+        this.blog.imageUrl = 'blog-placeholder.svg';
+        this.appBlogs.push(this.blog);
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Blog Created', life: 1000 });
+      }
+
+      this.appBlogs = [...this.appBlogs];
+      this.appBlogDialog = false;
+      this.blog = {};
+    }
+  }
+
   deleteTopic(appBlog) {
     this.confirmationService.confirm({
       message: 'Are you sure you want to delete ' + appBlog.title + '?',
@@ -71,6 +95,19 @@ export class ManageBlogComponent implements OnInit {
   }
 
   hideDialog() {
+    this.appBlogDialog = false;
+    this.submitted = false;
+  }
 
+  findIndexById(id: number): number {
+    let index = -1;
+    for (let i = 0; i < this.appBlogs.length; i++) {
+      if (this.appBlogs[i].id === id) {
+        index = i;
+        break;
+      }
+    }
+
+    return index;
   }
 }
