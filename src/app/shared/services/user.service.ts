@@ -10,7 +10,7 @@ import { AvatarService } from './avatar.service';
 })
 export class UserService {
 
-
+  // private userUrl = 'localhost:8080/'
   private usersUrl = 'api/users';  // URL to web api
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
