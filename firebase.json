@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "public",
+    "site" : "mns237test-org",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -136,3 +136,39 @@ Just **import HttpClientTestingModule** in desired spec.ts file
 |firebase projects:list|Check if loggin succes by list all projects|
 |firebase init| List next feature of firease ie. hosting |
 |firebase deploy| Push your static html into firebase cloud |
+
+# HOSTING YOUR UI
+To host your web project on firebase do the following steps
+ 1. Create an account on Firebase
+ 1. Sign-in and create a firebase project
+ 1. Register your app with firebase
+ 1. Add firebase SDK
+ to add only a specific firebase product, add the following code to your main html file
+ ```ts
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.0.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.0.2/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+```
+1. Install CLI firebase using
+```ts
+$ npm install -g firebase tools
+```
+1. Deploy your firebase hosting using the following command
+```ts
+$ firebase login ( to login to fb account if not yet )
+$ firebase init (to run your project )
+```
+1. modify your firebase.json file, add 
+```ts
+"site": "mns237test-org", ( the site name of your web site )
+```
+1. run the deploy command 
+```ts
+firebase deploy --only hosting:mns237test-org
+```
