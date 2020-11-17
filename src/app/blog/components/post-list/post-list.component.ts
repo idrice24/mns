@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+
 import { Topic } from 'src/app/shared/models/topic';
 import { BlogService } from 'src/app/shared/services/blog.service';
 
@@ -11,24 +14,42 @@ import { BlogService } from 'src/app/shared/services/blog.service';
 })
 export class PostListComponent implements OnInit {
   blogs: Topic[];
+  blog: Topic;
   recentPosts: Topic[];
   sortOptions: SelectItem[];
   sortKey: SelectItem;
   sortOrder: number;
+  showMenu = '';
+  showSubMenu = '';
+  display: boolean;
 
   sortField: string;
 
-  constructor(private blogService: BlogService) { }
+  commentForm: FormGroup;
+  message: string;
+  comment: Topic[];
+
+  constructor(
+    private blogService: BlogService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private formBuilder: FormBuilder
+    ) { }
 
   ngOnInit(): void {
     this.listBlogs();
     this.loadRecentPosts();
-    // TODO@idrcie sort by title
+
     this.sortOptions = [
       { label: 'Produits', value: '!price' },
       { label: 'Blogs', value: 'price' }
     ];
     this.sortKey = this.sortOptions[0];
+
+    this.route.data
+      .subscribe((data: { blogs: Topic }) => {
+        this.blog = data.blogs;
+      });
   }
   onSortChange(event) {
     const value = event.value;
@@ -57,6 +78,16 @@ export class PostListComponent implements OnInit {
       this.recentPosts = data.slice(0, 3);
 
     });
+
+  }
+  onSubmit(blogAppData) {
+    if (!blogAppData) {
+      return;
+    }
+    this.blogService.addComment(blogAppData).subscribe();
+    // Ref: https://angular.io/start/start-forms
+    this.commentForm.reset();
+    console.warn(this.message, blogAppData);
 
   }
 }

@@ -15,10 +15,7 @@ export class AdminComponent implements OnInit {
   items: any;
 
 
-  constructor(private router: Router, private route: ActivatedRoute) {
-
-    // TODO@Idrice why  pi-fw on icons?
-  }
+  constructor(private router: Router, private route: ActivatedRoute) {  }
 
 
   ngOnInit() {
@@ -34,7 +31,7 @@ export class AdminComponent implements OnInit {
         label: 'Abonnements',
         icon: 'pi pi-fw  pi-comments',
         badge: '10',
-        title: 'TODO@Idrice ---'
+        title: 'mns237-admin'
 
       },
       {

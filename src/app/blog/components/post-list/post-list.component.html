@@ -8,13 +8,13 @@
   </div>
 
   <div class="p-grid">
-    <div class="p-col-3">
+    <div class="p-col-8">
       <p-fieldset legend="RECENT POSTS">
         <p-listbox [options]="recentPosts" optionLabel="title"></p-listbox>
       </p-fieldset>
     </div>
     <!-- DATAVIEW-->
-    <div class="p-col-9">
+    <div class="p-col-12">
 
       <p-dataView #dv [value]="blogs" [paginator]="true" [rows]="5" filterBy="title" [sortField]="sortField"
         [sortOrder]="sortOrder" layout="list">
@@ -39,9 +39,11 @@
               <div class="blog-list-detail">
                 <div class="blog-name">{{blog.title}}</div>
                 <div class="blog-description">{{blog.content}}</div>
+                <hr>
                 <p-rating [ngModel]="blog.rating" [readonly]="true" [cancel]="false"></p-rating>
                 <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
                   class="p-m-2 p-button-raised-sm p-button-rounded"></button>
+
 
               </div>
 
@@ -50,16 +52,30 @@
         </ng-template>
         <!--GRID-->
         <ng-template let-blog pTemplate="gridItem">
-          <div class="p-col-12 p-md-4">
+          <div class="p-col-12 p-md-5">
             <div class="blog-grid-item card">
               <div class="blog-grid-item-content">
                 <img [src]="blog.imageUrl" [alt]="blog.title" />
-                <div class="blog-name">{{blog.title}}</div>
-                <div class="blog-description">{{blog.content}}</div>
+                <div class="blog-name"><article>{{blog.title}}</article></div>
+                <div class="blog-description"><article>{{blog.content}}</article></div>
+                <hr>
                 <p-rating [ngModel]="blog.rating" [readonly]="true" [cancel]="false"></p-rating>
                 <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
+                  class="p-m-1 p-button-raised-sm p-button-rounded"></button>
+              
+              <form class="form-horizontal">
+    <ul style="list-style-type:square">
+    <li><br>
+        <a routerLink="/detail/{{blog.id}}">
+            <span class="badge">{{blog.comment}}</span>
+        </a>
+    </li>
+    </ul>
+                <input type="text" pInputText placeholder="comment..">
+              <button pButton type="submit" name="comment" label="comment!"
                   class="p-m-2 p-button-raised-sm p-button-rounded"></button>
-              </div>
+                </form>
+                </div>
             </div>
           </div>
         </ng-template>
