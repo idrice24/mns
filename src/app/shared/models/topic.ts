@@ -9,4 +9,5 @@ export interface Topic {
   imageUrl?: string;
   rating?: number;
   category?: string;
+  comment?: string;
 }
