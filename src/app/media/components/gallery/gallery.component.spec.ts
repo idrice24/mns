@@ -10,7 +10,7 @@ describe('GalleryComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [GalleryComponent],
-      imports: [HttpClientTestingModule]
+      imports: [HttpClientTestingModule, FormsModule, RouterTestingModule, ReactiveFormsModule]
     })
       .compileComponents();
   });
