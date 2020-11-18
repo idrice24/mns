@@ -34,12 +34,14 @@ export class BlogService {
   }
 
   /** POST: add a new Comment to the server */
+
   addComment(blog: Topic) {
     return this.httpClient.post(this.blogUrl, blog);
   }
 
   getComment(id: number){
   return this.httpClient.get<Topic[]>(this.blogUrl);
+
   }
 
   /**

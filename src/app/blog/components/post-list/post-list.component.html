@@ -41,6 +41,7 @@
                 <div class="blig-item"><article>publishedDate: {{blog.publishedDate}}</article></div>
                 <div class="blog-description">{{blog.content}}</div>
                 <hr>
+
                            
               <span ><i class="pi pi-thumbs-up"></i>Like  </span>&nbsp;
               <span ><i class="pi pi-thumbs-down"></i>Unlike  </span>&nbsp;
@@ -51,6 +52,7 @@
 
                 <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
                   class="p-m-2 p-button-raised-sm p-button-rounded"></button>
+
               </div>
 
             </div>
@@ -63,6 +65,7 @@
               <div class="blog-grid-item-content">
                 <img [src]="blog.imageUrl" [alt]="blog.title" />
                 <div class="blog-name"><article>{{blog.title}}</article></div>
+
                 <div class="blig-item"><article>publishedDate: {{blog.publishedDate}}</article></div>
                 <div class="blog-description"><article>{{blog.content}}</article></div>
                 <hr>
@@ -77,7 +80,6 @@
                 <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
                   class="p-m-1 p-button-raised-sm p-button-rounded"></button>
               
-             
                 </div>
             </div>
           </div>
