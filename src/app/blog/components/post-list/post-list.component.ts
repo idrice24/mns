@@ -80,15 +80,5 @@ export class PostListComponent implements OnInit {
     });
 
   }
-  onSubmit(blogAppData) {
-    if (!blogAppData) {
-      return;
-    }
-    this.blogService.addComment(blogAppData).subscribe();
-    // Ref: https://angular.io/start/start-forms
-    this.commentForm.reset();
-    console.warn(this.message, blogAppData);
-
-  }
 }
 
