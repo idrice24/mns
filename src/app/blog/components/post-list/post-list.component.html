@@ -38,13 +38,41 @@
               <img [src]="blog.imageUrl" [alt]="blog.title" />
               <div class="blog-list-detail">
                 <div class="blog-name">{{blog.title}}</div>
+                <div class="blig-item"><article>publishedDate: {{blog.publishedDate}}</article></div>
                 <div class="blog-description">{{blog.content}}</div>
                 <hr>
-                <p-rating [ngModel]="blog.rating" [readonly]="true" [cancel]="false"></p-rating>
+                <div class="col-sm-8">
+                  <div class="panel panel-white post panel-shadow">
+                    <div class="post-heading">
+                      <div class="pull-left h5">
+                        <h6 class="text-muted time">1 munute ago</h6>
+                      </div>
+                    </div>
+                    <div class="post-describtion">
+                      <p>{{blog.comment}}</p>
+                      <!-- <div class="stats">
+                        <a href="" class="btn btn-default stat-item">
+                          <i class="fa fa-thumbs-up icon"></i>2
+                        </a>
+                        <a href="" class="btn btn-default stat-item">
+                          <i class="fa fa-thumbs-down icon"></i>1
+                        </a>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                
+                <form class="post-form" [form]="addForm" (ngSubmit)="addComment(blog.id)">
+                  <div class="form-group task-group">
+                    <div class="form-group">
+                      <label class="">Comments</label>
+                      <input type="text" class="form-controle task-textarea" row="1" formControleName="comment" id="comment">
+                    </div>
+                  </div>
+                  <button class="btn btn-default btn-submit" type="submit">Submit</button>
+                </form>
                 <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
                   class="p-m-2 p-button-raised-sm p-button-rounded"></button>
-
-
               </div>
 
             </div>
@@ -57,29 +85,20 @@
               <div class="blog-grid-item-content">
                 <img [src]="blog.imageUrl" [alt]="blog.title" />
                 <div class="blog-name"><article>{{blog.title}}</article></div>
+                <div class="blig-item"><article>publishedDate: {{blog.publishedDate}}</article></div>
                 <div class="blog-description"><article>{{blog.content}}</article></div>
                 <hr>
                 <p-rating [ngModel]="blog.rating" [readonly]="true" [cancel]="false"></p-rating>
                 <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
                   class="p-m-1 p-button-raised-sm p-button-rounded"></button>
               
-              <form class="form-horizontal">
-    <ul style="list-style-type:square">
-    <li><br>
-        <a routerLink="/detail/{{blog.id}}">
-            <span class="badge">{{blog.comment}}</span>
-        </a>
-    </li>
-    </ul>
-                <input type="text" pInputText placeholder="comment..">
-              <button pButton type="submit" name="comment" label="comment!"
-                  class="p-m-2 p-button-raised-sm p-button-rounded"></button>
-                </form>
+             
                 </div>
             </div>
           </div>
         </ng-template>
       </p-dataView>
+
     </div>
 
   </div>
