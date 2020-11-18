@@ -20,9 +20,29 @@
 
 
   <!---Copy from Idrcie project -->
+
+  <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [numVisible]="5" [circular]="true"
+   [autoPlay]="true" [transitionInterval]="2000">
+
+    <ng-template pTemplate="header">
+  <h1 class="text-primary">
+    <marquee> ENJOY OUR GALLERY.</marquee>
+  </h1>
+    </ng-template>
+    <ng-template pTemplate="item" let-item >
+      <img src="item.src" [alt]="item.alt" style="width: 80%;height: 60%; display: block;"/>
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item >
+      <div class="p-justify-center">
+      <img src="item.thumbnailImageSrc" style="display: block; height: 100px;">
+    </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
   <h1 class="text-danger">
     <marquee> ENJOY OUR GALLERY.</marquee>
   </h1>
+    </ng-template>
+  </p-galleria>
 
   <div class="img">
     <a target="_blank" href="CMR6.jpg">
@@ -169,7 +189,7 @@
       <img src="assets/img/CMR7.jpg" alt="Mountains">
     </a>
     <div class="desc">Add a description of the image here</div>
-  </div>
+  </div> 
 
 
   <!---Copy from Idrcie project-->
