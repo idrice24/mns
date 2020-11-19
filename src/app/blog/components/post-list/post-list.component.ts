@@ -25,9 +25,9 @@ export class PostListComponent implements OnInit {
 
   sortField: string;
 
-  commentForm: FormGroup;
+
   message: string;
-  comment: Topic[];
+
 
   constructor(
     private blogService: BlogService,
@@ -46,11 +46,11 @@ export class PostListComponent implements OnInit {
     ];
     this.sortKey = this.sortOptions[0];
 
-    this.route.data
-      .subscribe((data: { blogs: Topic }) => {
-        this.blog = data.blogs;
-      });
-  }
+
+   }
+
+
+
   onSortChange(event) {
     const value = event.value;
 
@@ -75,19 +75,9 @@ export class PostListComponent implements OnInit {
   private loadRecentPosts() {
     this.blogService.getTopicList().subscribe(data => {
 
-      this.recentPosts = data.slice(0, 3);
+      this.recentPosts = data.slice(0, 4);
 
     });
-
-  }
-  onSubmit(blogAppData) {
-    if (!blogAppData) {
-      return;
-    }
-    this.blogService.addComment(blogAppData).subscribe();
-    // Ref: https://angular.io/start/start-forms
-    this.commentForm.reset();
-    console.warn(this.message, blogAppData);
 
   }
 }

@@ -31,6 +31,7 @@ items;
   constructor(private photoService: PhotoService) { }
 
   ngOnInit(): void {
+  this.photoService.getImages().subscribe(photos => this.images = photos);
   }
   myUploader(event){ }
 

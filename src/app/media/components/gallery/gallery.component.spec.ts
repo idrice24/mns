@@ -1,5 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { GalleryComponent } from './gallery.component';
 
@@ -10,7 +12,7 @@ describe('GalleryComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [GalleryComponent],
-      imports: [HttpClientTestingModule]
+      imports: [HttpClientTestingModule, FormsModule, RouterTestingModule, ReactiveFormsModule]
     })
       .compileComponents();
   });

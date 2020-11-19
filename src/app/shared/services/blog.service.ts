@@ -34,11 +34,14 @@ export class BlogService {
   }
 
   /** POST: add a new Comment to the server */
-  addComment(blog: Topic): Observable<Topic> {
-    return this.httpClient.post<Topic>(this.blogUrl, blog, this.httpOptions).pipe(
-      tap((newComment: Topic) => this.log(`added Comment w/ id=${blog.id}`)),
-      catchError(this.handleError<Topic>('addComment'))
-    );
+
+  addComment(blog: Topic) {
+    return this.httpClient.post(this.blogUrl, blog);
+  }
+
+  getComment(id: number){
+  return this.httpClient.get<Topic[]>(this.blogUrl);
+
   }
 
   /**
