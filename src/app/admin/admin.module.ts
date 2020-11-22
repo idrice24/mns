@@ -23,6 +23,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import { TableModule } from 'primeng/table';
+
 import { RippleModule } from 'primeng/ripple';
 import { ToolbarModule } from 'primeng/toolbar';
 import { DialogModule } from 'primeng/dialog';
@@ -102,6 +103,7 @@ const adminRoutes: Routes = [
     InputNumberModule,
     ConfirmDialogModule,
     InputTextareaModule,
+    // TableCheckboxModule,
     SidebarModule,
     MenuModule,
     RouterModule.forChild(adminRoutes)
