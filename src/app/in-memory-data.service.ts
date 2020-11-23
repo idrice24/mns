@@ -2,13 +2,38 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
 
+    // For Abonnements!!
+    const subscribers = [
+      {
+        id: 1,
+        fName: 'admin',
+        lName: 'admin',
+        email: 'gzeleu@protonmail.com',
+        verified: false,
+      },
+      {
+        id: 2,
+        fName: 'Idirce',
+        lName: 'Zebatio',
+        email: 'idrice.tsafouet@yahoo.com',
+        verified: true,
+      },
+      {
+        id: 3,
+        fName: 'demo first name',
+        lName: 'demo last name',
+        email: 'admni@mns237.org',
+        verified: false,
+
+      },
+
+    ];
     const photos = [
       {
         src: 'assets/img/CMR7.jpg',
@@ -10268,7 +10293,7 @@ export class InMemoryDataService implements InMemoryDbService {
     }
     ];
     // Important!! Name of array is the name of in api url --> api/users
-    return { users, blog, videos, products, photos };
+    return { users, blog, videos, products, photos, subscribers };
   }
 
 

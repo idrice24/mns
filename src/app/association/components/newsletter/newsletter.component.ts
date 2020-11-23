@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AppSubscriberService } from 'src/app/shared/services/app-subscriber.service';
+import { AppSubscriber } from 'src/app/shared/models/app-subscriber';
 
 
 
@@ -13,41 +15,55 @@ export class NewsletterComponent implements OnInit {
   newsletterForm: FormGroup;
   display = false;
 
-  showDialog(){
-      this.display = true;
-}
+  showDialog() {
+    this.display = true;
+  }
 
-// convenience getter for easy access to form fields
+  // convenience getter for easy access to form fields
   get fName() { return this.newsletterForm.get('fName'); }
-  get email() { return this.newsletterForm.get('email'); }
   get lName() { return this.newsletterForm.get('lName'); }
+  get email() { return this.newsletterForm.get('email'); }
 
-  constructor() { }
+
+  constructor(private appSubscriberService: AppSubscriberService) { }
 
   ngOnInit(): void {
-  this.newsletterForm = new FormGroup({
+    this.newsletterForm = new FormGroup({
 
-        // fname
-        fName: new FormControl( '', [
-          Validators.required,
-          Validators.minLength(8),
-        ]),
-
-        // email
-        email: new FormControl( '', [
-          Validators.required,
-          Validators.minLength(4),
-        ]),
-
-        // lName
-        lName: new FormControl( '', [
-          Validators.required,
-          Validators.minLength(8),
-        ]),
-  });
-}
+      // fname
+      fName: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+      // lName
+      lName: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+      // email
+      email: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
 
 
-  newsletter() {
-    }
+    });
+  }
+
+
+  // Save to data base this user information
+  doSubscription() {
+
+    const currentAppSubsriber: AppSubscriber = {
+      fName: this.fName.value,
+      lName: this.lName.value,
+      email: this.email.value,
+      verified: false
+    };
+
+    this.appSubscriberService.addAppSubscriber(currentAppSubsriber).subscribe(_ =>
+      // To Clean a formular
+      this.newsletterForm.reset());
+
+  }
 }

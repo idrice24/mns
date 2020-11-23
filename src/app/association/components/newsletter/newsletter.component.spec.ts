@@ -1,5 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 import { NewsletterComponent } from './newsletter.component';
 
 describe('NewsletterComponent', () => {
@@ -8,9 +10,10 @@ describe('NewsletterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewsletterComponent ]
+      declarations: [NewsletterComponent],
+      imports: [HttpClientTestingModule, FormsModule, RouterTestingModule, ReactiveFormsModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
