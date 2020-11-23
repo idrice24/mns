@@ -1,6 +1,85 @@
-<div class="container-fluid coming">
-
-  <h1>
-    <marquee>manage-abonnement *******Coming Soon !!*******.</marquee>
-  </h1>
+<p-toast></p-toast>
+<div class="col-md-12 text-center">
+  <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Subscriptions
+    ({{appSubscriberList ? appSubscriberList.length : 0 }})</h1>
 </div>
+
+<div class="card">
+  <!--TOOLBAR -->
+  <p-toolbar styleClass="p-mb-4">
+    <!--UNSUBSCRIPTION-->
+    <ng-template pTemplate="left">
+      <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-rounded p-button-danger"
+        (click)="deleteSelectedAppSubscriberList()"
+        [disabled]="!selectedAppSubscriberList || !selectedAppSubscriberList.length"></button>
+    </ng-template>
+    <!-- Ende UNSUBSCRIPTION-->
+  </p-toolbar>
+
+  <!--START TABLE-->
+  <p-table #dt [value]="appSubscriberList" [rows]="numberOfRowPerPage" [paginator]="true"
+    [globalFilterFields]="['fName','lName', 'email']" [(selection)]="selectedAppSubscriberList" [rowHover]="true"
+    dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [showCurrentPageReport]="true">
+    <ng-template pTemplate="caption">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <!--EMBEDDED SEARCH LOGIC see #dt-->
+          <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+            placeholder="Search..." />
+        </span>
+      </div>
+    </ng-template>
+    <!--START TABLE HEADER -->
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 3rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon>
+        </th>
+        <th pSortableColumn="fName">First name <p-sortIcon field="fName"></p-sortIcon>
+        </th>
+        <th pSortableColumn="lName">Last name <p-sortIcon field="lName"></p-sortIcon>
+        </th>
+        <th pSortableColumn="email">Email <p-sortIcon field="email"></p-sortIcon>
+        </th>
+        <th pSortableColumn="verified">Verified <p-sortIcon field="verified"></p-sortIcon>
+        </th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-appSubscriber>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="appSubscriber"></p-tableCheckbox>
+        </td>
+        <td>{{appSubscriber.id}}</td>
+        <!--  <td><img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.name" width="100"
+            class="p-shadow-4" /></td> -->
+
+        <td>{{appSubscriber.fName}}</td>
+        <td>{{appSubscriber.lName}}</td>
+
+        <td>{{appSubscriber.email}}</td>
+
+        <td><span [class]="'appSubscriber.verified' ? 'p-shadow-1' : 'p-shadow-24'">{{appSubscriber.verified}}</span>
+        </td>
+        <td>
+          <!--BUTTON for each ROW-->
+          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+            (click)="deleteAppSubscriber(appSubscriber)"></button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        In total there are {{appSubscriberList ? appSubscriberList.length : 0 }} subcribers.
+      </div>
+    </ng-template>
+  </p-table>
+</div>
+
+
+<p-confirmDialog [style]="{width: '450px'}"> </p-confirmDialog>
