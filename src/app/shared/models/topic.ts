@@ -10,4 +10,5 @@ export interface Topic {
   rating?: number;
   category?: string;
   comment?: string;
+  like?: number;
 }

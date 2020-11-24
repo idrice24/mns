@@ -15,6 +15,9 @@ export class PostDetailComponent implements OnInit {
   public header: any;
 
   public selectedTopic: Topic;
+  private counter = 1;
+  blogs: Topic[];
+  blog: Topic;
 
   // @Irice why should i use ActivatedRoute  in this Component?
   constructor(
@@ -46,6 +49,11 @@ export class PostDetailComponent implements OnInit {
             });
         }
       });
+  }
+
+  createComment(){
+    console.log('Creating comment', this.blog);
+    this.blog.comment = this.blog.comment + this.counter++;
   }
 
 }
