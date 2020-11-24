@@ -18,7 +18,9 @@
    </div>
 
    <div class="p-grid">
-     <div class="p-col-9">
+
+     <!--First column-->
+     <div class="p-col-9  p-sm-6 p-md-6 p-lg-9">
        <!-- PLAY Videos --->
        <div *ngIf="selectedVideo" class="embed-responsive embed-responsive-16by9">
 
@@ -35,8 +37,8 @@
        </div>
      </div>
 
-     <!-- Video list -->
-     <div class="p-col-3">
+     <!-- Second column -->
+     <div class="p-col-3 p-sm-6 p-md-6 p-lg-3">
        <p-listbox #theListBox ngDefaultControl (onClick)="onClick($event)" [options]="appVideoItems" [multiple]="false"
          [filter]="true" optionLabel="title" [listStyle]="{'max-height':'550px'}">
          <ng-template pTemplate="header">
