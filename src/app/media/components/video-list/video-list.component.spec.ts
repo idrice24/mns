@@ -13,9 +13,13 @@ describe('VideoListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [VideoListComponent],
-      imports: [HttpClientTestingModule, FormsModule, RouterTestingModule, ReactiveFormsModule],
+      imports: [
+        HttpClientTestingModule,
+        FormsModule,
+        RouterTestingModule,
+        ReactiveFormsModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

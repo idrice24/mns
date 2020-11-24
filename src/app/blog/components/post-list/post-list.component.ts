@@ -27,14 +27,15 @@ export class PostListComponent implements OnInit {
 
 
   message: string;
-    like = 0; unlike = 0;
+  like = 0; unlike = 0;
 
 
   constructor(
-    private blogService: BlogService, private route: ActivatedRoute,
+    private blogService: BlogService,
+    private route: ActivatedRoute,
     private router: Router,
     private formBuilder: FormBuilder
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.listBlogs();
@@ -44,8 +45,9 @@ export class PostListComponent implements OnInit {
       { label: 'Produits', value: '!price' },
 
       { label: 'Blogs', value: 'price' }
-];
-    this.sortKey = this.sortOptions[0]; }
+    ];
+    this.sortKey = this.sortOptions[0];
+  }
 
   onSortChange(event) {
     const value = event.value;
@@ -76,16 +78,17 @@ export class PostListComponent implements OnInit {
     });
 
   }
-  changeBlogComment(){ }
-changeBlogLike(){
-this.like += 1;
-}
-
-  changeBlogUnlike(){
-this.unlike += 1;
+  changeBlogComment() { }
+  changeBlogLike() {
+    this.like += 1;
   }
-shareBlog(){}
 
-isPositiveChange(): boolean { return this.like >= this.unlike;
-}
+  changeBlogUnlike() {
+    this.unlike += 1;
+  }
+  shareBlog() { }
+
+  isPositiveChange(): boolean {
+    return this.like >= this.unlike;
+  }
 }

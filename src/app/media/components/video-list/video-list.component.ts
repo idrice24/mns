@@ -12,9 +12,9 @@ export class VideoListComponent implements OnInit {
 
   appVideos: AppVideo[];
   selectedVideo: AppVideoItem;
-  selectedYear;
   appVideoItems: AppVideoItem[];
   cols: any[];
+  selectedYear;
 
   constructor(private videoService: VideoService) { }
 
@@ -42,6 +42,12 @@ export class VideoListComponent implements OnInit {
   select(video) {
     this.selectedVideo = video;
   }
+
+  onClick($event) {
+    this.selectedVideo = $event.value;
+    console.log(this.selectedVideo);
+  }
+
 
   onChange($event) {
     this.selectedYear = $event.target.value;
