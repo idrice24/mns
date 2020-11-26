@@ -34,6 +34,7 @@ export class AppSubscriberService {
       catchError(this.handleError<AppSubscriber>('addUser'))
     );
   }
+  
   /** DELETE: REMOVE  subscriber from DB */
   deleteAppSubscriber(appSubscriber: AppSubscriber | number): Observable<AppSubscriber> {
     const id = typeof appSubscriber === 'number' ? appSubscriber : appSubscriber.id;
