@@ -3,6 +3,7 @@ import { BlogService } from 'src/app/shared/services/blog.service';
 import { Topic } from 'src/app/shared/models/topic';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-manage-blog',
@@ -18,6 +19,14 @@ export class ManageBlogComponent implements OnInit {
   appBlogDetailsDialog: boolean;
   submitted: boolean;
   appBlogDialog: boolean;
+  blogForm: FormGroup;
+
+  // convenience getter for easy access to form fields
+  get title() { return this.blogForm.get('title'); }
+  get content() { return this.blogForm.get('content'); }
+  get category() { return this.blogForm.get('category'); }
+  get summary() { return this.blogForm.get('summary'); }
+  get imageUrl() { return this.blogForm.get('imageUrl'); }
 
   constructor(
     private messageService: MessageService,
@@ -28,6 +37,20 @@ export class ManageBlogComponent implements OnInit {
   ngOnInit(): void {
     this.appBlog = { id: 0, summary: 'kok' };
     this.getBlogs();
+
+    this.blogForm = new FormGroup ({
+    // title
+    title: new FormControl('', [ Validators.required, ]),
+
+    content: new FormControl('', [ Validators.required, ]),
+
+    summary: new FormControl('', [ Validators.required, ]),
+
+    imageUrl: new FormControl('', [ Validators.required, ]),
+
+    category: new FormControl('', [ Validators.required, ]),
+    });
+
   }
    getBlogs(): void {
       this.blogService.getTopicList()
@@ -110,4 +133,23 @@ export class ManageBlogComponent implements OnInit {
 
     return index;
   }
+
+// Save to data base this user information
+  doSubscription(){
+
+  const currentAppBlog: Topic = {
+    title: this.title.value,
+    content: this.content.value,
+    imageUrl: this.imageUrl.value,
+    summary: this.summary.value,
+    category: this.category.value,
+    verified: false
+  };
+
+  this.blogService.addBlog(currentAppBlog).subscribe(_ =>
+      // To Clean a formular
+      this.blogForm.reset());
+
+  }
+
 }

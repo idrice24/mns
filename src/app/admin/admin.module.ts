@@ -8,6 +8,8 @@ import { ManageBlogComponent } from './components/manage-blog/manage-blog.compon
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { ManageUserComponent } from './components/manage-user/manage-user.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { ManageVideoComponent } from './components/manage-video/manage-video.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -105,6 +107,8 @@ const adminRoutes: Routes = [
     InputTextareaModule,
     // TableCheckboxModule,
     SidebarModule,
+    FormsModule,
+    ReactiveFormsModule,
     MenuModule,
     RouterModule.forChild(adminRoutes)
   ],
