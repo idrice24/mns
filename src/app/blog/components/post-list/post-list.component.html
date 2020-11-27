@@ -4,7 +4,6 @@
     <div class="col-md-12 text-center">
       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Nos Actualités</h1>
     </div>
-
   </div>
 
   <div class="p-grid">
@@ -38,17 +37,25 @@
               <img [src]="blog.imageUrl" [alt]="blog.title" />
               <div class="blog-list-detail">
                 <div class="blog-name">{{blog.title}}</div>
-                <div class="blig-item"><article>publishedDate: {{blog.publishedDate}}</article></div>
+                <div class="blig-item">
+                  <article>publishedDate: {{blog.publishedDate}}</article>
+                </div>
                 <div class="blog-description">{{blog.content}}</div>
                 <hr>
 
-                           
-              <button (click)="changeBlogLike()" pButton type="button" label="Like" class="p-button-rounded" [class]="isPositiveChange ? 'positive' : 'negative'">{{like}}&nbsp;<i class="pi pi-thumbs-up"></i></button>
-              <button (click)="changeBlogUnlike()" pButton type="button" label="Unlike" class="p-button-rounded"[class]="isPositiveChange ? 'negative' : 'positive'">{{unlike}}&nbsp;<i class="pi pi-thumbs-down"></i></button>&nbsp;
-              <button (click)="shareBlog()" pButton type="button" label="Public" class="p-button-rounded" ><i class="pi pi-globe"></i></button>&nbsp;
-              <button (click)="changeBlogComment()" pButton type="button" label="comment" class="p-button-rounded"><i class="pi pi-comments"></i></button>
-                            <br>
-                            
+
+                <button (click)="changeBlogLike()" pButton type="button" label="Like" class="p-button-rounded"
+                  [class]="isPositiveChange ? 'positive' : 'negative'">{{like}}&nbsp;<i
+                    class="pi pi-thumbs-up"></i></button>
+                <button (click)="changeBlogUnlike()" pButton type="button" label="Unlike" class="p-button-rounded"
+                  [class]="isPositiveChange ? 'negative' : 'positive'">{{unlike}}&nbsp;<i
+                    class="pi pi-thumbs-down"></i></button>&nbsp;
+                <button (click)="shareBlog()" pButton type="button" label="Public" class="p-button-rounded"><i
+                    class="pi pi-globe"></i></button>&nbsp;
+                <button (click)="changeBlogComment()" pButton type="button" label="comment" class="p-button-rounded"><i
+                    class="pi pi-comments"></i></button>
+                <br>
+
 
                 <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
                   class="p-m-2 p-button-raised-sm p-button-rounded"></button>
@@ -64,23 +71,29 @@
             <div class="blog-grid-item card">
               <div class="blog-grid-item-content">
                 <img [src]="blog.imageUrl" [alt]="blog.title" />
-                <div class="blog-name"><article>{{blog.title}}</article></div>
+                <div class="blog-name">
+                  <article>{{blog.title}}</article>
+                </div>
 
-                <div class="blig-item"><article>publishedDate: {{blog.publishedDate}}</article></div>
-                <div class="blog-description"><article>{{blog.content}}</article></div>
+                <div class="blig-item">
+                  <article>publishedDate: {{blog.publishedDate}}</article>
+                </div>
+                <div class="blog-description">
+                  <article>{{blog.content}}</article>
+                </div>
                 <hr>
 
-                           
-              <span ><i class="pi pi-thumbs-up"></i>Like  </span>&nbsp;
-              <span ><i class="pi pi-thumbs-down"></i>Unlike  </span>&nbsp;
-              <span ><i class="pi pi-globe"></i>Public  </span>&nbsp;
-              <span ><i class="pi pi-comments"></i>comment  </span>
-                            <br>
+
+                <span><i class="pi pi-thumbs-up"></i>Like </span>&nbsp;
+                <span><i class="pi pi-thumbs-down"></i>Unlike </span>&nbsp;
+                <span><i class="pi pi-globe"></i>Public </span>&nbsp;
+                <span><i class="pi pi-comments"></i>comment </span>
+                <br>
                 <p-rating [ngModel]="blog.rating" [readonly]="true" [cancel]="false"></p-rating>
                 <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
                   class="p-m-1 p-button-raised-sm p-button-rounded"></button>
-              
-                </div>
+
+              </div>
             </div>
           </div>
         </ng-template>

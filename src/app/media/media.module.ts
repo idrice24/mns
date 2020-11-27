@@ -8,9 +8,10 @@ import { MediaDashboardComponent } from './components/media-dashboard/media-dash
 import { TableModule, Table } from 'primeng/table';
 import { SharedModule } from '../shared/shared.module';
 import { FileUploadModule } from 'primeng/fileupload';
-
+import { ListboxModule } from 'primeng/listbox';
 import { GalleriaModule } from 'primeng/galleria';
 import { CardModule } from 'primeng/card';
+import { FormsModule } from '@angular/forms';
 
 const mediasRoutes: Routes = [
   { path: 'gallery', component: GalleryComponent },
@@ -26,6 +27,8 @@ const mediasRoutes: Routes = [
     MediaDashboardComponent],
   imports: [
     CommonModule,
+    FormsModule, // For ngModel, otherweise p-listbox not works
+    ListboxModule,
     TableModule,
     SharedModule,
     GalleriaModule,
