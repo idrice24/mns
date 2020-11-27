@@ -7,14 +7,18 @@
   </div>
 
   <div class="p-grid">
-    <div class="p-col-8">
-      <p-fieldset legend="RECENT POSTS">
-        <p-listbox [options]="recentPosts" optionLabel="title"></p-listbox>
-      </p-fieldset>
-    </div>
-    <!-- DATAVIEW-->
-    <div class="p-col-12">
 
+    <!--COL1: RECENT POSTS-->
+    <div class="p-col-4">
+      <p-listbox styleClass="text-primary" filter="true" [options]="recentPosts" optionLabel="title">
+        <ng-template pTemplate="header">
+          RECENT POSTS
+        </ng-template>
+      </p-listbox>
+    </div>
+
+    <!-- DATAVIEW-->
+    <div class="p-col-8">
       <p-dataView #dv [value]="blogs" [paginator]="true" [rows]="5" filterBy="title" [sortField]="sortField"
         [sortOrder]="sortOrder" layout="list">
         <!--HEADER-->
