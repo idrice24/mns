@@ -14,6 +14,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { FieldsetModule } from 'primeng/fieldset';
 import { ListboxModule } from 'primeng/listbox';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { ProductLandingViewComponent } from './components/product-landing-view/product-landing-view.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
@@ -21,7 +22,7 @@ const routes: Routes = [
   ];
 
 @NgModule({
-  declarations: [ProductListComponent, PostDetailComponent
+  declarations: [ProductListComponent, PostDetailComponent, ProductLandingViewComponent
   ],
   imports: [
     CommonModule,
