@@ -1,1 +1,5 @@
-<p>product-landing-view works!</p>
+ <p-carousel [value]="cars" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions">
+   <ng-template let-car pTemplate="item">
+     Content to display
+   </ng-template>
+ </p-carousel>

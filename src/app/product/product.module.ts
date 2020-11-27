@@ -22,7 +22,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ProductListComponent, PostDetailComponent, ProductLandingViewComponent
+  declarations: [ProductListComponent,
+    PostDetailComponent,
+    ProductLandingViewComponent
   ],
   imports: [
     CommonModule,
@@ -36,9 +38,12 @@ const routes: Routes = [
     ButtonModule,
     FieldsetModule,
     ListboxModule,
-    CarouselModule,
+    CarouselModule, // To use p-carousel in html file
     RouterModule.forChild(routes)
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule,
+    ProductLandingViewComponent // to use it outside of this module
+  ]
 })
 export class ProductModule { }
