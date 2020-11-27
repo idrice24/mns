@@ -129,9 +129,18 @@
     }
   }
 }
+
 .positive {
- color: green;
+  color: green;
 }
+
 .negative {
- color: red;
+  color: red;
+}
+
+.p-listbox .p-listbox-header {
+  padding: 0.429rem 0.857rem;
+  border: 50px solid red;
+  color: #333333;
+  border-top-left-radius: 3px;
 }

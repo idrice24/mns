@@ -93,24 +93,6 @@ nav {
 }
 
 /* === Navigation ===*/
-nav.navbar.navbar-dark button:hover,
-nav.navbar.navbar-dark button:focus,
-nav.navbar.navbar-dark .nav-link:hover {
-  color: var(--primary);
-}
-
-nav.navbar.navbar-dark .nav-link:focus {
-  color: #FFF;
-}
-
-.navbar-nav .badge {
-  position: absolute;
-  left: 25px;
-  bottom: 25px;
-  padding-right: .5em;
-  padding-left: .5em;
-}
-
 .form {
   background-color: skyblue;
   border-style: solid;
