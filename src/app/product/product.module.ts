@@ -16,6 +16,8 @@ import { ListboxModule } from 'primeng/listbox';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { ProductLandingViewComponent } from './components/product-landing-view/product-landing-view.component';
 import { CarouselModule } from 'primeng/carousel';
+
+
 const routes: Routes = [
   { path: '', component: ProductListComponent },
   { path: ':id', component: PostDetailComponent }

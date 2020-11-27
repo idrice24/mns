@@ -44,9 +44,9 @@ import { ProductModule } from '../product/product.module';
     SharedModule,
     InputTextModule,
     CardModule,
-    PasswordModule, // Passwort would not works fine
+    PasswordModule, // Password would not works fine
     AssociationModule, // Due to newletter component in home important!!
-    ContactModule,// Due to app-contact-form component in home
+    ContactModule, // Due to app-contact-form component in home
     ProductModule // Due to app-product-landing-view
   ],
   exports: [
