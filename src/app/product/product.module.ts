@@ -20,12 +20,12 @@ import { CarouselModule } from 'primeng/carousel';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
-  { path: ':id', component: PostDetailComponent }
+  //  { path: ':id', component: PostDetailComponent }
 ];
 
 @NgModule({
   declarations: [ProductListComponent,
-    PostDetailComponent,
+    // PostDetailComponent,
     ProductLandingViewComponent
   ],
   imports: [
