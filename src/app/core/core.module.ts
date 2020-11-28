@@ -26,12 +26,8 @@ import { ProductModule } from '../product/product.module';
   declarations: [
     HomeComponent,
     LoginComponent,
-
     PageNotFoundComponent,
-    RegistryComponent
-
-
-  ],
+    RegistryComponent],
 
   imports: [
     CommonModule,

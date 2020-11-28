@@ -8,7 +8,7 @@ import { ProductService } from 'src/app/shared/services/product.service';
 })
 export class ProductLandingViewComponent implements OnInit {
   responsiveOptions;
-  cars;
+  products: any;
   constructor(private productService: ProductService) {
     this.responsiveOptions = [
       {
@@ -30,7 +30,7 @@ export class ProductLandingViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(sd => this.cars = sd);
+    this.productService.getProducts().subscribe(items => this.products = items);
   }
 
 }

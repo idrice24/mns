@@ -1,5 +1,39 @@
- <p-carousel [value]="cars" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions">
-   <ng-template let-car pTemplate="item">
-     Content to display
-   </ng-template>
- </p-carousel>
+ <!--circular: Defines if scrolling would be infinite. -->
+ <section id="newsletter">
+
+
+   <p-card class="p-shadow-24">
+
+     <!--TITLE-->
+     <div class="row mb-5">
+       <div class="col-md-12 text-center">
+         <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Products</h1>
+       </div>
+     </div>
+
+     <p-carousel [value]="products" [circular]="true" autoplayInterval="3000" [numVisible]="3" [numScroll]="1"
+       [responsiveOptions]="responsiveOptions">
+       <ng-template let-product pTemplate="item">
+         <div class="product-item">
+           <div class="product-item-content">
+             <div class="p-mb-3">
+               <img [src]="product.imageUrl" [alt]="product.name" class="product-image" />
+             </div>
+             <div>
+               <h4 class="p-mb-1">{{product.name}}</h4>
+               <h6 class="p-mt-0 p-mb-3">{{product.price}} <i>Fcfa</i></h6>
+               <!--  <span
+             [class]="'product-badge status-'+product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>  -->
+               <div class="car-buttons p-mt-5">
+                 <button pButton styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-cog"></button>
+                 <button pButton styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star">
+                 </button>
+                 <button pButton styleClass="p-button-help p-button-rounded" icon="pi pi-shopping-cart"></button>
+               </div>
+             </div>
+           </div>
+         </div>
+       </ng-template>
+     </p-carousel>
+   </p-card>
+ </section>

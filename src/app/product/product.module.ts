@@ -16,6 +16,7 @@ import { ListboxModule } from 'primeng/listbox';
 
 import { ProductLandingViewComponent } from './components/product-landing-view/product-landing-view.component';
 import { CarouselModule } from 'primeng/carousel';
+import { CardModule } from 'primeng/card';
 
 
 const routes: Routes = [
@@ -24,20 +25,21 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ProductListComponent,
-
+  declarations: [
+    ProductListComponent,
     ProductLandingViewComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     DataViewModule,
+    CardModule,
     PanelModule,
     DropdownModule,
     TabViewModule,
     InputTextModule,
     RatingModule,
-    ButtonModule,
+    ButtonModule, // To use p-button in html file
     FieldsetModule,
     ListboxModule,
     CarouselModule, // To use p-carousel in html file
