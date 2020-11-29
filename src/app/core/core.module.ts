@@ -19,18 +19,15 @@ import { RippleModule } from 'primeng/ripple';
 import { ContactModule } from '../contact/contact.module';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
+import { ProductModule } from '../product/product.module';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     LoginComponent,
-
     PageNotFoundComponent,
-    RegistryComponent
-
-
-  ],
+    RegistryComponent],
 
   imports: [
     CommonModule,
@@ -43,9 +40,10 @@ import { CardModule } from 'primeng/card';
     SharedModule,
     InputTextModule,
     CardModule,
-    PasswordModule, // Passwort would not works fine
+    PasswordModule, // Password would not works fine
     AssociationModule, // Due to newletter component in home important!!
-    ContactModule // Due to app-contact-form component in home
+    ContactModule, // Due to app-contact-form component in home
+    ProductModule // Due to app-product-landing-view
   ],
   exports: [
     HomeComponent,

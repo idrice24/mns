@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --verbose  --open",
+    "start": "ng serve --verbose --open --allowedHosts --poll",
     "build": "ng build",
     "test2": "ng test ",
     "test": "ng test",
