@@ -1,3 +1,5 @@
+// @Idrice what means this :host??
+
 :host ::ng-deep {
   .p-dropdown {
     width: 14rem;
@@ -93,8 +95,6 @@
     }
   }
 }
-
-
 
 @media screen and (max-width: 576px) {
   :host ::ng-deep .product-list-item {
