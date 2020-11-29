@@ -172,3 +172,56 @@ $ firebase init (to run your project )
 ```ts
 firebase deploy --only hosting:mns237test-org
 ```
+
+# CREATING A FORM
+## Form Controls (Using Reactive Forms)
+1. we import the NgModule and ReactiveFormsModule
+```ts 
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+```
+1. Create a component file
+import the formControle file
+````ts 
+import { formControl } from '@angular/form';
+````
+create alll the function/method to be use.
+1. Create an html file ( UI )
+	-Using a form control binding instead of ngModel
+	-Access the current value in the form field
+
+## Form Groups
+	here we dot he first and second steps of as that of form control then you do the following
+1. import the FormModule in the main app module
+````ts
+import { FormModule } from '@angular/form';
+````
+1. create a commponent file and import the following files
+````ts
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+````
+then create all the method and function to be use...#
+1. create your UI ( html file )
+
+## Form Builders
+here you jsu have to repeat the above steps and modify the follolwing files
+-- the component file by importing the formBuilder
+
+## Form Data
+Here it is to manage the Control State, Validity and Error Messages
+ Here we just modify the HTML file by doing the following
+ -- Accesss an individual control element's validity through the form group
+ -- Check for indivitual validator status for a form element
+
+## Form and Data Model
+1. here just have to modify your UI so that it will do the following
+-- Reset the form  to its original state
+-- Simulate loading a stock from the server
+1. Modify the component file so as to create the method and function to be use by the 1 and 2 steps of the UI file.
+
+## FormArrays //i will use this to create a comment part of the a post in a blog.
+the steps are:
+1. Add a new model to represent one or many comment under a blog or post
+1. Add a button in the UI to add a new comment for a blog or post
+1. Add a button to remove an added comment from blogManage
+1. Support basic validation on each comment added. 
