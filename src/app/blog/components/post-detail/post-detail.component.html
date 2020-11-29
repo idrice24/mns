@@ -1,16 +1,51 @@
-   <!--TITLE-->
-   <section>
-     <div class="row mb-5">
-       <div class="col-md-12 text-center">
-         <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">BLOG</h1>
-       </div>
-     </div>
+<!--TITLE-->
+<section>
+    <div class="row mb-5">
+        <div class="col-md-12 text-center">
+            <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">BLOG</h1>
+        </div>
+    </div>
 
-     <p-fieldset *ngIf="selectedTopic" [legend]="header" [toggleable]="true">
-       
-       {{selectedTopic.content}}
-	   <h4>{{blog.comment}}</h4>
-     </p-fieldset>
+    <p-fieldset *ngIf="selectedTopic" [legend]="header" [toggleable]="true">
 
-   </section>
-	
+        {{selectedTopic.content}}
+    </p-fieldset>
+    <article>
+        <hr>
+        <h2>Comment is here..</h2>
+        <!-- <p *ngFor="let comment of comments" [comment]="comment">
+            {{comment}}
+        </p> -->
+        <form [formGroup]="commentForm" (ngSubmit)="onSubmit">
+            <div class="form-group">
+                <textarea id="comment" name="comment" formControlName="comment"></textarea><br><br>
+                <div formArrayName="notablePeople">
+                    <div *ngFor="let person of notablePeople.controls; let i = index" [formGroupName]="i" class="notable-people">
+                        <div>
+                            Comment {{ i + 1 }}
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Person Name" formControlName="name">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="title" formControlName="title">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Enter your Email" fromControlName="email">
+                        </div>
+                        <button type="buuton" (click)="removeNotablePerson(i)">Remove Person</button>
+                    </div>
+                </div>
+                <button type="button" (click)="addNotablePerson()">Add Person</button>
+                <button type="submit" (click)="resetForm()">comment</button>
+            </div>
+
+        </form>
+        <p>this is the comment {{ commentForm.value}}</p>
+
+        <p>Form Control value: {{ commentForm.value | json }}</p>
+        <p>Form Control status: {{ commentForm.status | json }}</p>
+        <!--<p>Stock Value: {{comment | json}}</p>-->
+    </article>
+
+</section>

@@ -22,6 +22,7 @@ export class ManageBlogComponent implements OnInit {
   blogForm: FormGroup;
 
   // convenience getter for easy access to form fields
+  get code() {return this.blogForm.get('code'); }
   get title() { return this.blogForm.get('title'); }
   get content() { return this.blogForm.get('content'); }
   get category() { return this.blogForm.get('category'); }
@@ -91,7 +92,6 @@ export class ManageBlogComponent implements OnInit {
 
       this.appBlogs = [...this.appBlogs];
       this.appBlogDialog = false;
-      this.blog = {};
     }
   }
 
