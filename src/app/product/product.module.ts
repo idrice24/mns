@@ -17,6 +17,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { ProductLandingViewComponent } from './components/product-landing-view/product-landing-view.component';
 import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
+import { ToastModule } from 'primeng/toast';
 
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
     DataViewModule,
     CardModule,
     PanelModule,
+    ToastModule,
     DropdownModule,
     TabViewModule,
     InputTextModule,
