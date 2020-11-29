@@ -20,7 +20,9 @@ export class ProductListComponent implements OnInit {
   sortOrder: number;
   sortField: string;
 
-  constructor(private productService: ProductService) { }
+  constructor(
+    private messageService: MessageService,
+    private productService: ProductService) { }
 
   ngOnInit(): void {
     // Get a list of products from DB
@@ -48,7 +50,8 @@ export class ProductListComponent implements OnInit {
 
   // Logic to add a product in Chart
   addToChart(product) {
-
+    const msg = product.id;
+    this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product add to chart' + msg, life: 6000 });
 
   }
 
