@@ -45,6 +45,12 @@ export class ProductListComponent implements OnInit {
     }
   }
 
+  // Logic to add a product in Chart
+  addToChart(product) {
+
+
+  }
+
 
 
 
