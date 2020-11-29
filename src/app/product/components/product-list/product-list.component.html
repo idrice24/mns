@@ -12,7 +12,7 @@
     <!-- DATAVIEW-->
     <div class="p-col">
 
-      <p-dataView #dv [value]="products" [paginator]="true" [rows]="7" filterBy="title" [sortField]="sortField"
+      <p-dataView #dv [value]="products$|async" [paginator]="true" [rows]="9" filterBy="title" [sortField]="sortField"
         [sortOrder]="sortOrder" layout="grid">
         <!--HEADER-->
         <ng-template pTemplate="header">
@@ -41,7 +41,8 @@
               </div>
               <div class="product-list-action">
                 <span class="product-price">{{product.price}} <i>Fcfa</i></span>
-                <p-button icon="pi pi-shopping-cart" label="Panier"></p-button>
+                <button pButton class="p-button-raised p-button-rounded" icon="pi pi-shopping-cart"
+                  label="Panier"></button>
               </div>
             </div>
           </div>
@@ -51,15 +52,12 @@
         <ng-template let-product pTemplate="gridItem">
           <div class="p-col-12 p-md-4">
             <div class="product-grid-item card">
-
               <div class="product-grid-item-top">
                 <div>
                   <i class="pi pi-tag product-category-icon"></i>
                   <span class="product-category">{{product.category}}</span>
                 </div>
-
               </div>
-
               <div class="product-grid-item-content">
                 <img class="product-img" [src]="product.imageUrl" [alt]="product.title" />
                 <div class="product-name">{{product.name}}</div>
@@ -68,12 +66,11 @@
               </div>
               <div class="product-grid-item-bottom">
                 <span class="product-price">{{product.price}} <i>Fcfa</i></span>
-                <p-button icon="pi pi-shopping-cart" label="Panier"></p-button>
+                <button pButton icon="pi pi-shopping-cart" class="p-button-raised p-button-rounded"
+                  label="Panier"></button>
               </div>
             </div>
-
           </div>
-
         </ng-template>
       </p-dataView>
     </div>
