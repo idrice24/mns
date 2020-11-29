@@ -10,9 +10,11 @@ import { LogService } from './log.service';
   providedIn: 'root'
 })
 export class BlogService {
+  private comments: Comment[];
 
   // private baseUrl = '/assets/data/blogs.json';
   private blogUrl = 'api/blog';
+  private appCommentsUrl = 'api/blog/id/comment';
     httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -57,6 +59,22 @@ deleteAppBlog(blog: Topic | number): Observable<Topic> {
     return this.httpClient.delete<Topic>(url, this.httpOptions).pipe(
 
       catchError(this.handleError<Topic>('deleteBlog'))
+    );
+  }
+
+  /** GETTER: get the comment */
+  getAppComment(): Observable<Topic[]> {
+    return this.httpClient.get<Topic[]>(this.appCommentsUrl).pipe(
+      tap((commentList: Topic[]) => this.logService.log(commentList)),
+      catchError(this.handleError<Topic[]>('getAppComment', []))
+    );
+  }
+
+  /** CREATE: create a comment */
+  addAppComment(appComment: Topic): Observable<Topic> {
+    return this.httpClient.post<Topic>(this.appCommentsUrl, appComment, this.httpOptions).pipe(
+      tap((newComment: Topic) => this.logService.log(`added Comment`)),
+      catchError(this.handleError<Topic>('addComment'))
     );
   }
 
