@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
+import { Observable } from 'rxjs';
 import { Product } from 'src/app/shared/models/product';
 import { ProductService } from 'src/app/shared/services/product.service';
 
@@ -9,7 +10,8 @@ import { ProductService } from 'src/app/shared/services/product.service';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-
+  // To store products from DB
+  products$: Observable<Product[]>; // @Idirce see stocts$ in p.
   products: Product[];
   recentPosts: Product[];
   sortOptions: SelectItem[];
@@ -20,8 +22,9 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.listProducts();
-    this.loadRecentPosts();
+    // Get a list of products from DB
+    this.products$ = this.productService.getProducts();
+
     this.sortOptions = [
       { label: 'Produits', value: '!price' },
       { label: 'Products', value: 'price' }
@@ -42,13 +45,7 @@ export class ProductListComponent implements OnInit {
     }
   }
 
-  listProducts() {
-    this.productService.getProducts().subscribe(ps => this.products = ps);
 
-  }
 
-  private loadRecentPosts() {
-
-  }
 
 }
