@@ -13,30 +13,41 @@ import { DropdownModule } from 'primeng/dropdown';
 import { TabViewModule } from 'primeng/tabview';
 import { FieldsetModule } from 'primeng/fieldset';
 import { ListboxModule } from 'primeng/listbox';
-import { PostDetailComponent } from './components/post-detail/post-detail.component';
+
+import { ProductLandingViewComponent } from './components/product-landing-view/product-landing-view.component';
+import { CarouselModule } from 'primeng/carousel';
+import { CardModule } from 'primeng/card';
+
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
-  { path: ':id', component: PostDetailComponent }
-  ];
+  //  { path: ':id', component: PostDetailComponent }
+];
 
 @NgModule({
-  declarations: [ProductListComponent, PostDetailComponent
+  declarations: [
+    ProductListComponent,
+    ProductLandingViewComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     DataViewModule,
+    CardModule,
     PanelModule,
     DropdownModule,
     TabViewModule,
     InputTextModule,
     RatingModule,
-    ButtonModule,
+    ButtonModule, // To use p-button in html file
     FieldsetModule,
     ListboxModule,
+    CarouselModule, // To use p-carousel in html file
     RouterModule.forChild(routes)
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule,
+    ProductLandingViewComponent // to use it outside of this module
+  ]
 })
 export class ProductModule { }
