@@ -49,9 +49,11 @@ export class ProductListComponent implements OnInit {
   }
 
   // Logic to add a product in Chart
-  addToChart(product) {
+  addToChart(product: Product) {
     const msg = product.id;
-    this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product add to chart' + msg, life: 6000 });
+
+    // TODO@Idrice: Missing logic to add to Chart
+    this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product add to chart ID=' + msg, life: 6000 });
 
   }
 
