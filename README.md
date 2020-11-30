@@ -25,7 +25,7 @@
 - Web server api:Click here to see [Live RESTFul API](https://mns237-serverapi.herokuapp.com/api/)
 - [Reference](https://angular.ganatan.com/crud/cities)
 - And his [Demo](https://github.com/ganatan/angular10-app/tree/master/frontend)
-- mns237 [demo](https://mns237test-org.web.app/)
+- mns237 [demo](https://idrice.web.app/home) FIREBASE HOSTING
 
 # Coding
 ## Precondition
