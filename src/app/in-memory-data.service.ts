@@ -8127,6 +8127,9 @@ export class InMemoryDataService implements InMemoryDbService {
       title: 'Les Infractions qui portent atteinte à la paix et troublent l’ordre public',
       updatedDate: '2020-03-02T16:41:45Z',
       summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
+      comment: 'this is my first comment',
+      like: 2,
+      unlike: 1,
       rating: 3
     }, {
       category: 'CARE For the Women',
@@ -8138,7 +8141,10 @@ export class InMemoryDataService implements InMemoryDbService {
       title: 'third topic',
       updatedDate: '2020-03-02T16:41:45Z',
       summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
-      rating: 1
+      rating: 1,
+      comment: 'this is my 2 comment ',
+      like: 9,
+      unlike: 3
     },
     {
       category: 'Wahter is Life',
@@ -8149,7 +8155,10 @@ export class InMemoryDataService implements InMemoryDbService {
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'Les sanctions relatives à la Carte Nationale d’Identité',
       updatedDate: '2020-03-02T16:41:45Z',
-      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
+      comment: 'i dont like react!!',
+      like: 0,
+      unlike: 1
     },
     {
       content: 'hi... this is the fouth blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
