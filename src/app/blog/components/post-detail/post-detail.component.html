@@ -11,11 +11,12 @@
         {{selectedTopic.content}}
     </p-fieldset><br>
     <div class="content">
-      {{ appCommentList}}
-    <form [formGroup]="commentForm" (ngSubmit)="doSubscription()">
-      <textarea name="comment" id="comment" formControlName="comment" style="width: : 250px; height: 50px;"></textarea>&nbsp;
-      <button pButton type="submit" label="Envoyer" class="p-button-rounded"></button>
-    </form>
-  </div>
+        {{ appCommentLists.comment }}
+        <hr>
+        <form [formGroup]="commentForm" (ngSubmit)="doSubscription()">
+            <textarea name="comment" id="comment" formControlName="comment" [(ngModel)]="appCommentLists.comment" style="width: 250px; height: 50px;"></textarea>&nbsp;
+            <button pButton type="submit" label="Envoyer" class="p-button-rounded"></button>
+        </form>
+    </div>
 
 </section>
