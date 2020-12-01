@@ -24,10 +24,10 @@ export class PostListComponent implements OnInit {
   display: boolean;
 
   sortField: string;
-
+  addlike = 1;
 
   message: string;
-  like = 0; unlike = 0;
+  public unique: boolean;
 
 
   constructor(
@@ -40,6 +40,8 @@ export class PostListComponent implements OnInit {
   ngOnInit(): void {
     this.listBlogs();
     this.loadRecentPosts();
+    this.blog.like = 0;
+    this.blog.unlike = 0;
 
     this.sortOptions = [
       { label: 'Produits', value: '!price' },
@@ -79,16 +81,17 @@ export class PostListComponent implements OnInit {
 
   }
   changeBlogComment() { }
+
   changeBlogLike() {
-    this.like += 1;
+  this.blog.like += 1;
   }
 
   changeBlogUnlike() {
-    this.unlike += 1;
+    this.blog.unlike += 1;
   }
   shareBlog() { }
 
-  isPositiveChange(): boolean {
-    return this.like >= this.unlike;
-  }
+  get unlike() { return this.changeBlogUnlike(); }
+  get like(){ return this.changeBlogLike(); }
+
 }
