@@ -11,6 +11,8 @@ export interface Topic {
   category?: string;
   comment?: string;
   like?: number;
+  unlike?: number;
   verified?: boolean;
 
 }
+
