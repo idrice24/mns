@@ -1,18 +1,17 @@
+<p-toast></p-toast>
 <section id="product">
   <!--TITLE-->
   <div class="row mb-5">
     <div class="col-md-12 text-center">
       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Nos Produits</h1>
     </div>
-
   </div>
 
   <div class="p-grid">
 
     <!-- DATAVIEW-->
     <div class="p-col">
-
-      <p-dataView #dv [value]="products$|async" [paginator]="true" [rows]="9" filterBy="title" [sortField]="sortField"
+      <p-dataView #dv [value]="products$ | async" [paginator]="true" [rows]="9" filterBy="title" [sortField]="sortField"
         [sortOrder]="sortOrder" layout="grid">
         <!--HEADER-->
         <ng-template pTemplate="header">
@@ -64,10 +63,10 @@
                 <div class="product-description">{{product.summary}}</div>
                 <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
               </div>
-              <div class="product-grid-item-bottom">
-                <span class="product-price">{{product.price}} <i>Fcfa</i></span>
-                <button pButton icon="pi pi-shopping-cart" class="p-button-raised p-button-rounded"
-                  label="Panier"></button>
+              <div class="product-grid-item-bottom p-p-1">
+                <span class="product-price pr-2">{{product.price}} <i>Fcfa</i></span>
+                <button (click)="addToChart(product)" pButton icon="pi pi-shopping-cart"
+                  class="p-button-raised p-button-rounded" label="Panier"></button>
               </div>
             </div>
           </div>
