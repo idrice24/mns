@@ -202,30 +202,30 @@
           <div class="p-col-12">
             <div class="p-inputgroup">
               <label for="name">Content</label>
-              <textarea id="description"  pInputTextarea required rows="3" cols="20"></textarea>
+              <textarea id="description"  pInputTextarea formControlName="content" required rows="3" cols="20"></textarea>
             </div>
           </div>
           <!-- Categiry -->
           <div class="p-col-12">
             <div class="p-inputgroup">
-              <label for="name">Category</label>
+              <label for="name" formControleName="category">Category</label>
               <div class="p-formgrid p-grid">
         <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category1" name="category" value="Accessories" >
+          <p-radioButton id="category1" name="category" value="Accessories" formControleName="category" >
           </p-radioButton>
           <label for="category1">Accessories</label>
         </div>
         <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category2" name="category" value="Clothing" ></p-radioButton>
+          <p-radioButton id="category2" name="category" value="Clothing" formControleName="category"></p-radioButton>
           <label for="category2">Clothing</label>
         </div>
         <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category3" name="category" value="Electronics" >
+          <p-radioButton id="category3" name="category" value="Electronics" formControleName="category">
           </p-radioButton>
           <label for="category3">Electronics</label>
         </div>
         <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category4" name="category" value="Fitness" ></p-radioButton>
+          <p-radioButton id="category4" name="category" value="Fitness" formControleName="category"></p-radioButton>
           <label for="category4">Fitness</label>
         </div>
       </div>
