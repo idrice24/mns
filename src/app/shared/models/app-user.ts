@@ -11,6 +11,7 @@ export interface AppUser {
   isAdmin?: boolean; // Indicate Admin role
   avatar?: string; // Indicate Admin role if Photo missing
   token?: string; // For Token Based Authentication
+  description?: string; // For what? maek sens??
 }
 
 // API Reference
