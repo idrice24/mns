@@ -8127,7 +8127,10 @@ export class InMemoryDataService implements InMemoryDbService {
       title: 'Les Infractions qui portent atteinte à la paix et troublent l’ordre public',
       updatedDate: '2020-03-02T16:41:45Z',
       summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
-      rating: 3
+      rating: 3,
+      comment: 'this is my first comment here cool na!!',
+      like: 9,
+      unlike: 1
     }, {
       category: 'CARE For the Women',
       content: 'hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
@@ -8138,7 +8141,10 @@ export class InMemoryDataService implements InMemoryDbService {
       title: 'third topic',
       updatedDate: '2020-03-02T16:41:45Z',
       summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
-      rating: 1
+      rating: 1,
+      comment: 'this is my first comment here cool na!!',
+      like: 9,
+      unlkie: 1
     },
     {
       category: 'Wahter is Life',
@@ -8149,7 +8155,10 @@ export class InMemoryDataService implements InMemoryDbService {
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'Les sanctions relatives à la Carte Nationale d’Identité',
       updatedDate: '2020-03-02T16:41:45Z',
-      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
+      comment: 'this is my first comment here cool na!!',
+      like: 48,
+      unlike: 15
     },
     {
       content: 'hi... this is the fouth blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
@@ -8159,7 +8168,10 @@ export class InMemoryDataService implements InMemoryDbService {
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'Production des passeports',
       updatedDate: '2020-03-02T16:41:45Z',
-      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
+      comment: 'this is my first comment here cool na!!',
+      like: 100,
+      unlkie: 10
     },
     {
       content: 'hi... this is the third blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
@@ -8169,7 +8181,10 @@ export class InMemoryDataService implements InMemoryDbService {
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'topic A',
       updatedDate: '2020-03-02T16:41:45Z',
-      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
+      comment: 'this is my first comment here cool na!!',
+      like: 500,
+      unlike: 10
     },
     {
       content: 'hi... this is the fouth blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
@@ -8179,7 +8194,10 @@ export class InMemoryDataService implements InMemoryDbService {
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'Topic B',
       updatedDate: '2020-03-02T16:41:45Z',
-      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
+      comment: 'this is my first comment here cool na!!',
+      like: 500,
+      unlike: 12
     }];
 
     const products = [{
