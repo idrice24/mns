@@ -16,9 +16,20 @@ export class BlogService {
     httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-
+  private comments: Topic[];
   constructor(private httpClient: HttpClient, private logService: LogService) { }
 
+  // create comment here
+  // please can you hel me
+  // when i click on th e button to excute this function i got error `can not read the properties ´push´ is undefine`
+  createComment(comments: Topic){
+  this.comments.push(comments);
+  }
+
+  // get the comment
+  getComments(): Topic[]{
+  return this.comments;
+  }
 
   // TODO@Idrice find out best way to  call  standard httpClient
   getTopicList(): Observable<Topic[]> {
