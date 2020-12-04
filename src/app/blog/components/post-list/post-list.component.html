@@ -57,6 +57,7 @@
                   [class]="isPositiveChange ? 'negative' : 'positive'">{{blog.unlike}}&nbsp;<i
                     class="pi pi-thumbs-down"></i></button>&nbsp;
                 <button pButton type="button" label="Public" class="p-button-rounded"><i
+
                     class="pi pi-globe"></i></button>&nbsp;
                 <button (click)="changeBlogComment()" pButton type="button" label="comment" class="p-button-rounded"><i
                     class="pi pi-comments"></i></button>
@@ -93,7 +94,6 @@
                 <span><i class="pi pi-thumbs-up"></i>Like </span>&nbsp;
                 <span><i class="pi pi-thumbs-down"></i>Unlike </span>&nbsp;
                 <span><i class="pi pi-globe"></i>Public </span>&nbsp;
-                <span><i class="pi pi-comments"></i>comment </span>
                 <br>
                 <p-rating [ngModel]="blog.rating" [readonly]="true" [cancel]="false"></p-rating>
                 <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."

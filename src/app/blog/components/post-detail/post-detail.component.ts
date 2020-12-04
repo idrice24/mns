@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Topic } from 'src/app/shared/models/topic';
 import { BlogService } from 'src/app/shared/services/blog.service';
-import { FormControl, FormGroup, Validators, FormBuilder, FormArray } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-post-detail',
@@ -19,9 +20,12 @@ export class PostDetailComponent implements OnInit {
   public comments: Topic[];
   public message: string = null;
 
+
   public selectedTopic: Topic;
   blogs: Topic[];
   blog: Topic;
+  appCommentList: Topic[];
+  public appCommentLists: Topic;
 
   // @Irice why should i use ActivatedRoute  in this Component?
   constructor(
@@ -32,6 +36,7 @@ export class PostDetailComponent implements OnInit {
   ngOnInit(): void {
 
     this.getCurrentTopic();
+
     // default data binding for comment
     this.comments = this.blogService.getComments();
 
@@ -63,7 +68,6 @@ export class PostDetailComponent implements OnInit {
         if (params.id !== undefined) {
           this.blogService.getTopicById(params.id)
             .subscribe(data => {
-
               if ((data !== null) && (data !== undefined)) {
                 this.header = data.title;
                 this.selectedTopic = data;

@@ -8127,6 +8127,7 @@ export class InMemoryDataService implements InMemoryDbService {
       title: 'Les Infractions qui portent atteinte à la paix et troublent l’ordre public',
       updatedDate: '2020-03-02T16:41:45Z',
       summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
+
       rating: 3,
       comment: 'this is my first comment here cool na!!',
       like: 9,
@@ -8142,6 +8143,7 @@ export class InMemoryDataService implements InMemoryDbService {
       updatedDate: '2020-03-02T16:41:45Z',
       summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
       rating: 1,
+
       comment: 'this is my first comment here cool na!!',
       like: 9,
       unlkie: 1
@@ -8156,6 +8158,7 @@ export class InMemoryDataService implements InMemoryDbService {
       title: 'Les sanctions relatives à la Carte Nationale d’Identité',
       updatedDate: '2020-03-02T16:41:45Z',
       summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
+
       comment: 'this is my first comment here cool na!!',
       like: 48,
       unlike: 15

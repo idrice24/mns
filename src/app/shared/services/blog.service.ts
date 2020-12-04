@@ -10,6 +10,7 @@ import { LogService } from './log.service';
   providedIn: 'root'
 })
 export class BlogService {
+  private comments: Comment[];
 
   // private baseUrl = '/assets/data/blogs.json';
   private blogUrl = 'api/blog';
@@ -45,6 +46,16 @@ export class BlogService {
     );
   }
 
+
+  /** POST: add a new Like to the server */
+  addLike(blog: Topic): Observable<Topic> {
+    return this.httpClient.post<Topic>(this.blogUrl, blog, this.httpOptions).pipe(
+      tap((newLike: Topic) => this.log(`added`)),
+      catchError(this.handleError<Topic>('addLike'))
+    );
+  }
+
+
   /** GET Blogs from the server */
   getBlog(): Observable<Topic[]> {
     return this.httpClient.get<Topic[]>(this.blogUrl).pipe(
@@ -70,6 +81,23 @@ deleteAppBlog(blog: Topic | number): Observable<Topic> {
       catchError(this.handleError<Topic>('deleteBlog'))
     );
   }
+
+  /** GETTER: get the comment */
+  getAppComment(): Observable<Topic[]> {
+    return this.httpClient.get<Topic[]>(this.blogUrl).pipe(
+      tap((commentList: Topic[]) => this.logService.log(commentList)),
+      catchError(this.handleError<Topic[]>('getAppComment', []))
+    );
+  }
+
+  /** CREATE: create a comment */
+  addAppComment(blog: Topic): Observable<Topic> {
+    return this.httpClient.post<Topic>(this.blogUrl, blog, this.httpOptions).pipe(
+      tap((newComment: Topic) => this.logService.log(`added Comment`)),
+      catchError(this.handleError<Topic>('addComment'))
+    );
+  }
+
 
   /**
    * Handle Http operation that failed.

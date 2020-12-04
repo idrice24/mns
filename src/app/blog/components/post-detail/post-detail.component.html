@@ -9,8 +9,9 @@
     <p-fieldset *ngIf="selectedTopic" [legend]="header" [toggleable]="true">
 
         {{selectedTopic.content}}
-    </p-fieldset>
-    <article>
+    </p-fieldset><br>
+    <div class="content">
+        {{ appCommentLists.comment }}
         <hr>
         <h2>Comment is here..</h2>
          <p *ngFor="let comment of comment">
