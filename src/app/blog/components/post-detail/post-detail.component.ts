@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Topic } from 'src/app/shared/models/topic';
-import { Comment } from 'src/app/shared/models/app-comment';
 import { BlogService } from 'src/app/shared/services/blog.service';
 import { FormControl, FormGroup, Validators, FormBuilder, FormArray } from '@angular/forms';
 
@@ -15,9 +14,10 @@ export class PostDetailComponent implements OnInit {
 
 
   public header: any;
-  private comment: Comment;
+  public comment: Topic;
   public commentForm: FormGroup;
-  private comments: Comment[];
+  public comments: Topic[];
+  public message: string = null;
 
   public selectedTopic: Topic;
   blogs: Topic[];
@@ -27,65 +27,34 @@ export class PostDetailComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private blogService: BlogService,
-    private fb: FormBuilder) {
-    this.createForm(); }
-
-      // this is to create a form for user in order to comment in groups
-    createForm(){
-    this.commentForm = this.fb.group({
-    name: [null, Validators.required],
-    code: [null, [Validators.required, Validators.minLength(2)]],
-    comment: [null, [Validators.required, Validators.minLength(20)]],
-    notablePeople: this.fb.array([])
-    });
-    }
-    get notablePeople(): FormArray {
-    return this.commentForm.get('notablePeople') as FormArray;
-    }
-// add people
-    addNotablePerson(){
-    this.notablePeople.push(this.fb.group({
-    name: ['', Validators.required],
-    title: ['', Validators.required],
-    email: ['', Validators.required]
-    }));
-    }
-removeNotablePerson(index: number){
-  this.notablePeople.removeAt(index);
-}
-
-resetForm(){
-  this.commentForm.reset();
-}
-
-onSubmit(){
-  this.comment = Object.assign({}, this.commentForm.value);
-  console.log('Saving comment', this.comment);
-}
+    private blogService: BlogService) { }
 
   ngOnInit(): void {
 
     this.getCurrentTopic();
     // default data binding for comment
-    this.comments = [
-    new Comment('idrice', 0, 2,  2,  'idrice.tsafouet@yahoo.com', 'this is my first comment', '')];
+    this.comments = this.blogService.getComments();
 
-    this.getComment();
+    this.commentForm = new FormGroup({
+    comment: new FormControl()
+    });
 
   }
 
-  getComment(): Comment[] {
+  getComment(): Topic[] {
   return this.comments;
   }
+
 // creating a comment by pushing it
-  createComment(comment: Comment){
-  const foundComment = this.comments.find(each => each.code === this.blog.id);
-  if (foundComment){
-  return false;
-  }
-  this.comments.push(comment);
-  return true;
+  createComment(commentForm){
+      if (commentForm.valid){
+      this.blogService.createComment(this.comment);
+      this.message = ' submited';
+            }else{
+      this.message = ' not submit';
+      }
+          // reset the form
+      this.commentForm.reset();
   }
 
   private getCurrentTopic(): void {

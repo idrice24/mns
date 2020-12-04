@@ -15,6 +15,7 @@ import { BlogService } from 'src/app/shared/services/blog.service';
 export class PostListComponent implements OnInit {
   blogs: Topic[];
   blog: Topic;
+  id: Topic;
   recentPosts: Topic[];
   sortOptions: SelectItem[];
   sortKey: SelectItem;
@@ -26,8 +27,9 @@ export class PostListComponent implements OnInit {
   sortField: string;
 
 
-  message: string;
+  public message = 0;
   like = 0; unlike = 0;
+
 
 
   constructor(
@@ -79,14 +81,22 @@ export class PostListComponent implements OnInit {
 
   }
   changeBlogComment() { }
-  changeBlogLike() {
-    this.like += 1;
+
+  changeBlogLike(index: number) {
+    this.blog.like += 1;
   }
 
-  changeBlogUnlike() {
-    this.unlike += 1;
+  changeBlogUnlike(index: number) {
+    this.blog.unlike += 1;
   }
-  shareBlog() { }
+  // shareBlog(index: number) {
+  // if(index == 2){
+  // this.message += 1;
+  // }else{
+  // this.message +=10;
+  // }
+  //
+  // }
 
   isPositiveChange(): boolean {
     return this.like >= this.unlike;
