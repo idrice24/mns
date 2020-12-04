@@ -13,39 +13,18 @@
     <article>
         <hr>
         <h2>Comment is here..</h2>
-        <!-- <p *ngFor="let comment of comments" [comment]="comment">
-            {{comment}}
-        </p> -->
-        <form [formGroup]="commentForm" (ngSubmit)="onSubmit">
+         <p *ngFor="let comment of comment">
+            {{comments}}
+        </p>
+        <hr>
+        <form [formGroup]="commentForm" (ngSubmit)="createComment(commentForm)">
             <div class="form-group">
                 <textarea id="comment" name="comment" formControlName="comment"></textarea><br><br>
-                <div formArrayName="notablePeople">
-                    <div *ngFor="let person of notablePeople.controls; let i = index" [formGroupName]="i" class="notable-people">
-                        <div>
-                            Comment {{ i + 1 }}
-                        </div>
-                        <div>
-                            <input type="text" placeholder="Person Name" formControlName="name">
-                        </div>
-                        <div>
-                            <input type="text" placeholder="title" formControlName="title">
-                        </div>
-                        <div>
-                            <input type="email" placeholder="Enter your Email" fromControlName="email">
-                        </div>
-                        <button type="buuton" (click)="removeNotablePerson(i)">Remove Person</button>
-                    </div>
-                </div>
-                <button type="button" (click)="addNotablePerson()">Add Person</button>
-                <button type="submit" (click)="resetForm()">comment</button>
+                <button pButton type="submit" label="Envoyer"></button>
             </div>
 
         </form>
-        <p>this is the comment {{ commentForm.value}}</p>
-
-        <p>Form Control value: {{ commentForm.value | json }}</p>
-        <p>Form Control status: {{ commentForm.status | json }}</p>
-        <!--<p>Stock Value: {{comment | json}}</p>-->
+        <aside>this is {{message}}</aside>
     </article>
 
 </section>
