@@ -12,7 +12,11 @@ describe('PostListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [PostListComponent],
-      imports: [HttpClientTestingModule, FormsModule, RouterTestingModule, ReactiveFormsModule],
+      imports: [
+        HttpClientTestingModule,
+        FormsModule,
+        RouterTestingModule,
+        ReactiveFormsModule],
     })
       .compileComponents();
   });

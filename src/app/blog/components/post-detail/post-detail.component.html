@@ -1,22 +1,25 @@
 <!--TITLE-->
 <section>
-    <div class="row mb-5">
-        <div class="col-md-12 text-center">
-            <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">BLOG</h1>
-        </div>
+  <div class="row mb-5">
+    <div class="col-md-12 text-center">
+      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">BLOG</h1>
     </div>
+  </div>
 
-    <p-fieldset *ngIf="selectedTopic" [legend]="header" [toggleable]="true">
+  <p-fieldset *ngIf="selectedTopic" [legend]="header" [toggleable]="true">
 
-        {{selectedTopic.content}}
-    </p-fieldset><br>
-    <div class="content">
-        {{ appCommentLists.comment }}
-        <hr>
-        <form [formGroup]="commentForm" (ngSubmit)="doSubscription()">
-            <textarea name="comment" id="comment" formControlName="comment" [(ngModel)]="appCommentLists.comment" style="width: 250px; height: 50px;"></textarea>&nbsp;
-            <button pButton type="submit" label="Envoyer" class="p-button-rounded"></button>
-        </form>
-    </div>
+    {{selectedTopic.content}}
+  </p-fieldset><br>
+  <div class="content">
+
+    <hr>
+    <!--@Idrice: Form is already used in contact check that-->
+    <!-- By replacing message to comment: we gets the same (You are Terrible)-->
+    <form [formGroup]="commentForm" (ngSubmit)="doSubscription()">
+      <!--@Idrice: Textarea is already used in contact check that-->
+      <textarea name="comment" id="comment" formControlName="comment"></textarea>
+      <button pButton type="submit" label="Envoyer" class="p-button-rounded"></button>
+    </form>
+  </div>
 
 </section>

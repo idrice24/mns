@@ -13,17 +13,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./post-detail.component.scss']
 })
 export class PostDetailComponent implements OnInit {
-
-
-  public header: any;
-  public commentForm: FormGroup;
-
-
-  public selectedTopic: Topic;
-  blogs: Topic[];
-  blog: Topic;
-  appCommentList: Topic[];
-  public appCommentLists: Topic;
+  public header: any; // @Idrice to do what??
+  public commentForm: FormGroup; // this component uses this variable to get information from HTML form
+  public selectedTopic: Topic; // To store or get the selected topic
+  public blogs: Topic[]; // @Ghislain: to List a topics
+  public blog: Topic;
+  public appCommentList: Topic[]; // @Idrice for what??
+  public appCommentLists: Topic; // @Idrice for what??
 
   // @Irice why should i use ActivatedRoute  in this Component?
   constructor(
@@ -44,39 +40,45 @@ export class PostDetailComponent implements OnInit {
 
   }
 
-  // Save to data base this user information
+  // Save to data base this user information //@Idirce wrong comment
   /** CREATE: create a comment */
   doSubscription() {
 
+    console.log(this.comment);
+    // @Idrice why? --> you want to get appComment object for what? this should come from HTML
+    /*  const currentAppComment: Topic = {
+        comment: this.comment.value,
+        verified: false
+      };
 
-    const currentAppComment: Topic = {
-      comment: this.comment.value,
-      verified: false
-    };
-    this.blogService.addAppComment(currentAppComment).subscribe();
-    this.blogService.addAppComment(currentAppComment).subscribe(_ =>
-      // To Clean a formular
-      this.commentForm.reset());
+      // @idrice Why ?
+      this.blogService.addAppComment(currentAppComment).subscribe();
+      this.blogService.addAppComment(currentAppComment).subscribe(_ =>
+
+        // To Clean a form
+        this.commentForm.reset()); */
 
   }
 
-  // convenience getter for easy access to form fields
+  // @Idrice read: this comment and understand it
+  // Convenience getter for easy access to form fields
   get comment() { return this.commentForm.get('comment'); }
 
 
-  private getCurrentComment(): void{
-  this.activatedRoute.params.subscribe(params => {
-    if (params.id !== undefined ){
-      this.blogService.getTopicById(params.id).subscribe(data => {
-        if ((data !== null) && (data !== undefined)){
-          this.appCommentLists = data;
-            }else{
-              this.router.navigate(['/posts']);
-                  }
-            });
-         }
-  });
+  private getCurrentComment(): void {
+    this.activatedRoute.params.subscribe(params => {
+      if (params.id !== undefined) {
+        this.blogService.getTopicById(params.id).subscribe(data => {
+          if ((data !== null) && (data !== undefined)) {
+            this.appCommentLists = data;
+          } else {
+            this.router.navigate(['/posts']);
+          }
+        });
+      }
+    });
   }
+
 
   private getCurrentTopic(): void {
     this.activatedRoute.params

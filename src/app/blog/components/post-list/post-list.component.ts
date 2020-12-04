@@ -40,8 +40,10 @@ export class PostListComponent implements OnInit {
   ngOnInit(): void {
     this.listBlogs();
     this.loadRecentPosts();
+
+    /* @Idrice why do you add this?
     this.blog.like = 0;
-    this.blog.unlike = 0;
+    this.blog.unlike = 0; */
 
     this.sortOptions = [
       { label: 'Produits', value: '!price' },
@@ -83,7 +85,7 @@ export class PostListComponent implements OnInit {
   changeBlogComment() { }
 
   changeBlogLike() {
-  this.blog.like += 1;
+    this.blog.like += 1;
   }
 
   changeBlogUnlike() {
@@ -92,6 +94,6 @@ export class PostListComponent implements OnInit {
   shareBlog() { }
 
   get unlike() { return this.changeBlogUnlike(); }
-  get like(){ return this.changeBlogLike(); }
+  get like() { return this.changeBlogLike(); }
 
 }
