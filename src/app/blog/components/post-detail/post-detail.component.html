@@ -28,13 +28,16 @@
    1. Copy from Contact form
   2. Remove all Bindings with Component:ie [formGroup]="sendForm" to avoid error
   3. Only HTML elements should use here first: Design is finished
-  4. Arrage Layout And RUN my stuffs NO error -->
+  4. Arrage Layout And RUN my stuffs NO error
+  5. Check if the current Module imports all Needed PrimeNG Module-->
   <form>
     <div class="p-fluid p-grid">
 
-      <div class="p-col p-ai-stretch">
-        <div class="p-inputgroup">
-          <textarea pInputTextarea formControlName="msg" style="height:160px" placeholder="Message"></textarea>
+      <div class="p-col">
+        <div class="p-field p-grid">
+          <div class="p-inputgroup">
+            <textarea pInputTextarea formControlName="msg" style="height:160px" placeholder="Message"></textarea>
+          </div>
         </div>
       </div>
 
@@ -60,5 +63,4 @@
       </div>
     </div>
   </form>
-
 </section>
