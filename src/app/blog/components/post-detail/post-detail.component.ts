@@ -8,6 +8,7 @@ import { MessageService } from 'primeng/api';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 
 
+
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.component.html',
@@ -25,8 +26,6 @@ export class PostDetailComponent implements OnInit {
 
   postComment = []; // creating an empty array to store the list of comments
   comment = 'idrice comment'; // we declear the comment variable which will collect the user comment
-
-
 
   // @Irice why should i use ActivatedRoute  in this Component?
   constructor(

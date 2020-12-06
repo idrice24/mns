@@ -37,6 +37,9 @@ export class PostListComponent implements OnInit {
   comment = 'Comment-works!';
 
 
+  comment = 'Comment-works!';
+
+
   constructor(
     private blogService: BlogService,
     private route: ActivatedRoute,
@@ -85,7 +88,6 @@ export class PostListComponent implements OnInit {
     this.postComment.push(this.comment);
     this.comment = '';
   }
-
   changeBlogLike() {
     this.blog.like += 1;
   }
