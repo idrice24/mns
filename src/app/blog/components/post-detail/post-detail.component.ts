@@ -5,6 +5,7 @@ import { Topic } from 'src/app/shared/models/topic';
 import { BlogService } from 'src/app/shared/services/blog.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
+import { Content } from '@angular/compiler/src/render3/r3_ast';
 
 
 @Component({
@@ -53,14 +54,28 @@ export class PostDetailComponent implements OnInit {
     );
   }
 
+  // @Idrice you method is correct: Add Comment what happens inside
   post() {
+
+    // 1. Task: Hold current topic object  to get array for comment
+    const todoIDIRCIE = {
+      id: 1000,
+      content: this.comment,
+    };
+    this.selectedTopic.comments.push(todoIDIRCIE);
+
+
+    // Not correct -- removeid
     this.postComment.push(this.comment);
+
+    // Clean the Textarea in htmm
     this.comment = '';
+    this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute' });
   }
   // handler when user click on  Button
   postYourComment(topicObject: Topic) {
-    const sd = JSON.stringify(topicObject.comments, null, 2);
-    this.messageService.add({ severity: 'success', summary: 'Service Message', detail: sd });
+    const sd = topicObject.id;
+    this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute' });
   }
 
   // activatedRoute: Provide the topic id
