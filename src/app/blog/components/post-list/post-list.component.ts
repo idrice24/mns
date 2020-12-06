@@ -43,6 +43,7 @@ export class PostListComponent implements OnInit {
   ngOnInit(): void {
     this.listBlogs();
     this.loadRecentPosts();
+    this.listComments(); // this is to publish the older comment from the server to the UI
 
     this.sortOptions = [
       { label: 'Produits', value: '!price' },
@@ -84,9 +85,21 @@ export class PostListComponent implements OnInit {
 
   // this is to post comments
   createComment() {
+  // i want to get the id on the blog comment by the user inorder to store it in the respective place.
+  // i am still thinking about the logic
+
   this.postComment.push(this.comment);
-  this.comment = '';
-   }
+
+  this.comment = ''; // reset the form after subit
+  }
+
+
+  // get postComment
+  listComments() {
+    this.blogService.getCommentList().subscribe(data => {
+      this.postComment.push(data);
+    });
+  }
 
   changeBlogLike() {
     this.blog.like += 1;
