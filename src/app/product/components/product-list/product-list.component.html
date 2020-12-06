@@ -1,4 +1,4 @@
-<p-toast></p-toast>
+<p-toast [style]="{marginTop: '60px'}"></p-toast>
 <section id="product">
   <!--TITLE-->
   <div class="row mb-5">
@@ -40,8 +40,8 @@
               </div>
               <div class="product-list-action">
                 <span class="product-price">{{product.price}} <i>Fcfa</i></span>
-                <button pButton class="p-button-raised p-button-rounded" icon="pi pi-shopping-cart"
-                  label="Panier"></button>
+                <button pButton (click)="addToChart(product)" class="p-button-raised p-button-rounded"
+                  icon="pi pi-shopping-cart" label="Panier"></button>
               </div>
             </div>
           </div>

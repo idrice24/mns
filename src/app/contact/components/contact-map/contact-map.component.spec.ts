@@ -2,15 +2,17 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactMapComponent } from './contact-map.component';
 
+declare var google: any;
+
 describe('ContactMapComponent', () => {
   let component: ContactMapComponent;
   let fixture: ComponentFixture<ContactMapComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ContactMapComponent ]
+      declarations: [ContactMapComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
