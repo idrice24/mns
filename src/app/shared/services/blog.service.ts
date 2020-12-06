@@ -15,7 +15,7 @@ export class BlogService {
 
   // private baseUrl = '/assets/data/blogs.json';
   private blogUrl = 'api/blog';
-    httpOptions = {
+  httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
@@ -28,8 +28,18 @@ export class BlogService {
 
   }
 
-  getCommentList(): Observable<Topic[]>{
-  return this.httpClient.get<Topic[]>(this.blogUrl);
+  /** PUT: update the hero on the server */
+  updateTopic(topic: Topic): Observable<any> {
+    return this.httpClient.put(this.blogUrl, topic, this.httpOptions).pipe(
+      tap(_ => this.log(`updated topic id=${topic.id}`)),
+      catchError(this.handleError<any>('updateTopic'))
+    );
+  }
+
+
+  // TODO@Idrice do you need that?
+  getCommentList(): Observable<Topic[]> {
+    return this.httpClient.get<Topic[]>(this.blogUrl);
   }
 
   getTopicById(id: number | string) {
@@ -58,15 +68,15 @@ export class BlogService {
     );
   }
 
-    addBlog(blog: Topic): Observable<Topic> {
+  addBlog(blog: Topic): Observable<Topic> {
     return this.httpClient.post<Topic>(this.blogUrl, blog, this.httpOptions).pipe(
       tap((newBlog: Topic) => this.logService.log(`added Posts w/ id=${newBlog.id}`)),
       catchError(this.handleError<Topic>('addBlog'))
     );
   }
 
-/** DELETE: REMOVE  blog from DB */
-deleteAppBlog(blog: Topic | number): Observable<Topic> {
+  /** DELETE: REMOVE  blog from DB */
+  deleteAppBlog(blog: Topic | number): Observable<Topic> {
     const id = typeof blog === 'number' ? blog : blog.id;
     const url = `${this.blogUrl}/${id}`;
 

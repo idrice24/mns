@@ -31,7 +31,8 @@ export class PostDetailComponent implements OnInit {
     private router: Router,
     private messageService: MessageService, // Fun to use TOAST for  i.e. Comment
     private activatedRoute: ActivatedRoute,
-    private blogService: BlogService) { }
+    private blogService: BlogService
+  ) { }
 
   ngOnInit(): void {
 
@@ -58,12 +59,6 @@ export class PostDetailComponent implements OnInit {
   post() {
 
     // 1. Task: Hold current topic object  to get array for comment
-    const todoIDIRCIE = {
-      id: 1000,
-      content: this.comment,
-    };
-    this.selectedTopic.comments.push(todoIDIRCIE);
-
 
     // Not correct -- removeid
     this.postComment.push(this.comment);
@@ -72,10 +67,18 @@ export class PostDetailComponent implements OnInit {
     this.comment = '';
     this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute' });
   }
+
   // handler when user click on  Button
-  postYourComment(topicObject: Topic) {
-    const sd = topicObject.id;
-    this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute' });
+  postYourComment(theData) {
+    const msg = theData.msg;
+    const author = theData.name;
+
+    // Send it to server --> @Idrice check hero app from angular page : https://angular.io/tutorial/toh-pt6#update-heroes
+    // Copy it an replace Hero to Topic
+    // this.blogService.updateTopic();
+
+    this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute', detail: author + ' Says ' + msg });
+    this.commentForm.reset(); // Clean the Form
   }
 
   // activatedRoute: Provide the topic id
