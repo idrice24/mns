@@ -30,7 +30,7 @@
   3. Only HTML elements should use here first: Design is finished
   4. Arrage Layout And RUN my stuffs NO error
   5. Check if the current Module imports all Needed PrimeNG Module-->
-  <form>
+  <form [formGroup]="commentForm" (ngSubmit)="postYourComment(commentForm.value)">
     <div class="p-fluid p-grid">
 
       <div class="p-col">
@@ -45,7 +45,7 @@
         <div class="p-field p-grid">
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-            <input formControlName="name" pInputText type="text" placeholder="Nom">
+            <input formControlName="name" pInputText type="text" placeholder="Auteur">
           </div>
         </div>
 
@@ -57,7 +57,7 @@
         </div>
 
         <div class="p-field p-grid">
-          <button pButton pRipple [disabled]="true" type="submit" label="Post your Comments"
+          <button pButton pRipple [disabled]="false" type="submit" label="Post your Comments"
             class="p-button-rounded"></button>
         </div>
       </div>
