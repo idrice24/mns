@@ -23,6 +23,12 @@
     <button (click)="post()">Send</button>
   </div>
   <!--@Idirce END : can you explain-->
+
+  <!--My Tasks:
+   1. Copy from Contact form
+  2. Remove all Bindings with Component:ie [formGroup]="sendForm" to avoid error
+  3. Only HTML elements should use here first: Design is finished
+  4. Arrage Layout And RUN my stuffs NO error -->
   <form>
     <div class="p-fluid p-grid">
 
@@ -48,7 +54,8 @@
         </div>
 
         <div class="p-field p-grid">
-          <button pButton pRipple [disabled]="true" type="submit" label="Envoyer" class="p-button-rounded"></button>
+          <button pButton pRipple [disabled]="true" type="submit" label="Post your Comments"
+            class="p-button-rounded"></button>
         </div>
       </div>
     </div>
