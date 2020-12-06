@@ -8132,7 +8132,6 @@ export class InMemoryDataService implements InMemoryDbService {
         author: 'BLA BLAC Car',
         createdDate: '2013-03-02T16:41:45Z',
         content: 'STEPS %: Update database to use mock comments',
-
       }],
       like: 2,
       unlike: 1,

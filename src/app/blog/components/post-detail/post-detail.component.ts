@@ -55,27 +55,23 @@ export class PostDetailComponent implements OnInit {
     );
   }
 
-  // @Idrice you method is correct: Add Comment what happens inside
-  post() {
-
-    // 1. Task: Hold current topic object  to get array for comment
-
-    // Not correct -- removeid
-    this.postComment.push(this.comment);
-
-    // Clean the Textarea in htmm
-    this.comment = '';
-    this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute' });
-  }
-
-  // handler when user click on  Button
+  // handle when user click on  Button
   postYourComment(theData) {
     const msg = theData.msg;
     const author = theData.name;
 
+    const commentObject = {
+      id: 0,
+      author: '',
+      createdDate: '',
+      content: ' '
+    };
+    this.selectedTopic.comments.push(commentObject);
+
+
     // Send it to server --> @Idrice check hero app from angular page : https://angular.io/tutorial/toh-pt6#update-heroes
     // Copy it an replace Hero to Topic
-    // this.blogService.updateTopic();
+    this.blogService.updateTopic(this.selectedTopic);
 
     this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute', detail: author + ' Says ' + msg });
     this.commentForm.reset(); // Clean the Form
