@@ -17,9 +17,9 @@
     {{comment}}
   </p>
     <hr>
-    <textarea [(ngModel)]="comment"></textarea>
+    <textarea pInputTextarea [(ngModel)]="comment" style="border-radius: 20px; text-align: center;"></textarea>
     <br><br>
-    <button (click)="post()" >Send</button>
+    <button pButton pRipple type="button" (click)="post()" label="Envoyer" class="p-button-rounded"><i class="pi pi-comments"></i>&nbsp;</button>
   </div>
 
 </section>
