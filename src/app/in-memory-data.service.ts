@@ -8168,7 +8168,10 @@ export class InMemoryDataService implements InMemoryDbService {
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'Production des passeports',
       updatedDate: '2020-03-02T16:41:45Z',
-      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
+      comment: 'comment of comment',
+      like: 2,
+      unlike: 9
     },
     {
       content: 'hi... this is the third blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
@@ -8178,7 +8181,10 @@ export class InMemoryDataService implements InMemoryDbService {
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'topic A',
       updatedDate: '2020-03-02T16:41:45Z',
-      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
+      comment: 'good comment for us',
+      like: 9,
+      unlike: 17
     },
     {
       content: 'hi... this is the fouth blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
@@ -8188,7 +8194,10 @@ export class InMemoryDataService implements InMemoryDbService {
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'Topic B',
       updatedDate: '2020-03-02T16:41:45Z',
-      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
+      comment: 'you like and unlike this post',
+      like: 5,
+      unlike: 10
     }];
 
     const products = [{
