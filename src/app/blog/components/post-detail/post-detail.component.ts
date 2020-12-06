@@ -41,6 +41,8 @@ export class PostDetailComponent implements OnInit {
     this.comment = '';
   }
 
+  // activatedRoute: Provide the topic id
+  // blogService: Provide the topic object by given id, otherwise navigate to home
   private getCurrentTopic(): void {
     this.activatedRoute.params
       .subscribe(params => {
