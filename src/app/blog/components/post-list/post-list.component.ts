@@ -33,7 +33,7 @@ export class PostListComponent implements OnInit {
   message: string;
   public unique: boolean;
 
-  postComment = [];
+
   comment = 'Comment-works!';
 
 
@@ -80,11 +80,7 @@ export class PostListComponent implements OnInit {
 
   }
 
-  // this is to post comments
-  createComment() {
-    this.postComment.push(this.comment);
-    this.comment = '';
-  }
+
 
   changeBlogLike() {
     this.blog.like += 1;

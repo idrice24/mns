@@ -48,26 +48,14 @@
                 </div>
                 <div class="blog-description">{{blog.content}}</div>
                 <hr>
-                <!--- no form because i am submiting a single variable and it is easy with ngModel
-                 WE DONT NEED THAT : ONLY DETAILS TO LIST Comments
-                  <p *ngFor="let comment of postComment">
-                  {{comment}}
-                </p>
-                <hr> -->
+
 
                 <button (click)="changeBlogLike()" pButton type="button" label="Like" [(ngModel)]="blog.like"
                   class="p-button-rounded">{{blog.like}}&nbsp;<i class="pi pi-thumbs-up"></i></button>
                 <button (click)="changeBlogUnlike()" pButton type="button" label="Unlike"
                   class="p-button-rounded">{{blog.unlike}}&nbsp;<i class="pi pi-thumbs-down"></i></button>&nbsp;
                 <button (click)="shareBlog()" pButton type="button" label="Public" class="p-button-rounded"><i
-                    class="pi pi-globe"></i></button>&nbsp;
-
-                <!-- please do have any idea how to make insuch a way that it will comment only a single post not all at the same time
-                    WE DONT NEED THAT : ONLY DETAILS TO LIST Comments
-                      <textarea [(ngModel)]="comment"></textarea>
-                     <button (click)="createComment()" pButton type="button" label="comment" class="p-button-rounded"><i
-                    class="pi pi-comments"></i></button>
-                <br> -->
+                    class="pi pi-globe"></i></button>
 
 
                 <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
@@ -94,8 +82,6 @@
                 <div class="blog-description">
                   <article>{{blog.content}}</article>
                 </div>
-                <hr>
-
 
                 <span><i class="pi pi-thumbs-up"></i>Like </span>&nbsp;
                 <span><i class="pi pi-thumbs-down"></i>Unlike </span>&nbsp;

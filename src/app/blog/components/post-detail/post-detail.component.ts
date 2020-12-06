@@ -5,7 +5,7 @@ import { Topic } from 'src/app/shared/models/topic';
 import { BlogService } from 'src/app/shared/services/blog.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
-import { Content } from '@angular/compiler/src/render3/r3_ast';
+
 
 
 @Component({
@@ -58,22 +58,21 @@ export class PostDetailComponent implements OnInit {
   // handle when user click on  Button
   postYourComment(theData) {
     const msg = theData.msg;
-    const author = theData.name;
+    const au = theData.name;
 
     const commentObject = {
-      id: 0,
       author: '',
-      createdDate: '',
-      content: ' '
+      createdDate: theData.name,
+      content: msg
     };
     this.selectedTopic.comments.push(commentObject);
 
 
     // Send it to server --> @Idrice check hero app from angular page : https://angular.io/tutorial/toh-pt6#update-heroes
     // Copy it an replace Hero to Topic
-    this.blogService.updateTopic(this.selectedTopic);
+    this.blogService.updateTopic(this.selectedTopic).subscribe();
 
-    this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute', detail: author + ' Says ' + msg });
+    this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute', detail: au + ' Says ' + msg });
     this.commentForm.reset(); // Clean the Form
   }
 
