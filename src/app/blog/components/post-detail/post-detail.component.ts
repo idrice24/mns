@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { Topic } from 'src/app/shared/models/topic';
 import { BlogService } from 'src/app/shared/services/blog.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 
 
 @Component({
@@ -28,12 +29,29 @@ export class PostDetailComponent implements OnInit {
   // @Irice why should i use ActivatedRoute  in this Component?
   constructor(
     private router: Router,
+    private messageService: MessageService, // Fun to use TOAST for  i.e. Comment
     private activatedRoute: ActivatedRoute,
     private blogService: BlogService) { }
 
   ngOnInit(): void {
 
     this.getCurrentTopic();
+
+    this.commentForm = new FormGroup({
+      name: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4)
+      ]),
+      msg: new FormControl('', [
+        Validators.required,
+        Validators.minLength(5)
+      ])
+    }
+    );
   }
 
   post() {
@@ -41,8 +59,9 @@ export class PostDetailComponent implements OnInit {
     this.comment = '';
   }
   // handler when user click on  Button
-  postYourComment(topicObject) {
-
+  postYourComment(topicObject: Topic) {
+    const sd = JSON.stringify(topicObject.comments, null, 2);
+    this.messageService.add({ severity: 'success', summary: 'Service Message', detail: sd });
   }
 
   // activatedRoute: Provide the topic id

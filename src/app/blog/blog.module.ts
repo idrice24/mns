@@ -18,6 +18,8 @@ import { TabViewModule } from 'primeng/tabview';
 import { FieldsetModule } from 'primeng/fieldset';
 import { ListboxModule } from 'primeng/listbox';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 const routes: Routes = [
   { path: '', component: PostListComponent },
@@ -44,8 +46,10 @@ const routes: Routes = [
     ButtonModule,
     FieldsetModule, // For a fieldset toggeable
     ListboxModule,
+    ToastModule,//  Help to use toast in HTML file
     RouterModule.forChild(routes)
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [MessageService]
 })
 export class BlogModule { }

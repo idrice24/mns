@@ -1,4 +1,5 @@
 <!--TITLE-->
+<p-toast position="bottom-center"></p-toast>
 <section>
   <div class="row mb-5">
     <div class="col-md-12 text-center">
@@ -25,11 +26,14 @@
   <!--@Idirce END : can you explain-->
 
   <!--My Tasks:
-   1. Copy from Contact form
+  1. Copy from Contact form
   2. Remove all Bindings with Component:ie [formGroup]="sendForm" to avoid error
   3. Only HTML elements should use here first: Design is finished
   4. Arrage Layout And RUN my stuffs NO error
-  5. Check if the current Module imports all Needed PrimeNG Module-->
+  5. Check if the current Module imports all Needed PrimeNG Module
+  6. Added Binding Object(i.e. commentForm) / Methods(ie.postYourComment) to connect html file and component file
+   This is basic concept of angular
+  -->
   <form [formGroup]="commentForm" (ngSubmit)="postYourComment(commentForm.value)">
     <div class="p-fluid p-grid">
 
@@ -45,7 +49,7 @@
         <div class="p-field p-grid">
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-            <input formControlName="name" pInputText type="text" placeholder="Auteur">
+            <input pInputText formControlName="name" type="text" placeholder="Auteur">
           </div>
         </div>
 
@@ -56,6 +60,7 @@
           </div>
         </div>
 
+        <!--@Idrice: What does pRipple by Button? -->
         <div class="p-field p-grid">
           <button pButton pRipple [disabled]="false" type="submit" label="Post your Comments"
             class="p-button-rounded"></button>
