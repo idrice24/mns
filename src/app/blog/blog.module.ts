@@ -17,6 +17,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { TabViewModule } from 'primeng/tabview';
 import { FieldsetModule } from 'primeng/fieldset';
 import { ListboxModule } from 'primeng/listbox';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 const routes: Routes = [
   { path: '', component: PostListComponent },
@@ -38,6 +39,7 @@ const routes: Routes = [
     DropdownModule,
     TabViewModule,
     InputTextModule,
+    InputTextareaModule,
     RatingModule,
     ButtonModule,
     FieldsetModule, // For a fieldset toggeable

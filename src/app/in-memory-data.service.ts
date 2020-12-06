@@ -8127,7 +8127,13 @@ export class InMemoryDataService implements InMemoryDbService {
       title: 'Les Infractions qui portent atteinte à la paix et troublent l’ordre public',
       updatedDate: '2020-03-02T16:41:45Z',
       summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
-      comment: 'this is my first comment',
+      comments: [{
+        id: 3,
+        author: 'BLA BLAC Car',
+        createdDate: '2013-03-02T16:41:45Z',
+        content: 'STEPS %: Update database to use mock comments',
+
+      }],
       like: 2,
       unlike: 1,
       rating: 3
@@ -8135,14 +8141,14 @@ export class InMemoryDataService implements InMemoryDbService {
       category: 'CARE For the Women',
       content: 'hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
       createdDate: '2013-03-02T16:41:45Z',
-      id: 3,
+      id: 300,
       imageUrl: 'assets/img/aboutus.jpg',
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'third topic',
       updatedDate: '2020-03-02T16:41:45Z',
       summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
       rating: 1,
-      comment: 'this is my 2 comment ',
+      comments: [],
       like: 9,
       unlike: 3
     },
@@ -8150,28 +8156,26 @@ export class InMemoryDataService implements InMemoryDbService {
       category: 'Wahter is Life',
       content: 'hi... this is the third blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
       createdDate: '2013-03-02T16:41:45Z',
-      id: 3,
+      id: 4523,
       imageUrl: 'assets/img/CMR5.jpg',
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'Les sanctions relatives à la Carte Nationale d’Identité',
       updatedDate: '2020-03-02T16:41:45Z',
       summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
-      comment: 'i dont like react!!',
+      comments: [],
       like: 0,
       unlike: 1
     },
     {
       content: 'hi... this is the fouth blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
       createdDate: '2013-03-02T16:41:45Z',
-      id: 3,
+      id: 3000000,
       imageUrl: 'assets/img/CMR7.jpg',
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'Production des passeports',
+      comments: [],
       updatedDate: '2020-03-02T16:41:45Z',
-      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
-      comment: 'comment of comment',
-      like: 2,
-      unlike: 9
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
     },
     {
       content: 'hi... this is the third blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
@@ -8181,23 +8185,19 @@ export class InMemoryDataService implements InMemoryDbService {
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'topic A',
       updatedDate: '2020-03-02T16:41:45Z',
-      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
-      comment: 'good comment for us',
-      like: 9,
-      unlike: 17
+      comments: [],
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
     },
     {
       content: 'hi... this is the fouth blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
       createdDate: '2013-03-02T16:41:45Z',
-      id: 3,
+      id: 103,
       imageUrl: 'assets/img/CMR7.jpg',
       publishedDate: '2020-03-02T16:41:00Z',
       title: 'Topic B',
+      comments: [],
       updatedDate: '2020-03-02T16:41:45Z',
-      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
-      comment: 'you like and unlike this post',
-      like: 5,
-      unlike: 10
+      summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
     }];
 
     const products = [{

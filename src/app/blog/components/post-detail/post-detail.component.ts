@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Topic } from 'src/app/shared/models/topic';
-import { Comment } from 'src/app/shared/models/app-comment';
 import { BlogService } from 'src/app/shared/services/blog.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -34,11 +33,13 @@ export class PostDetailComponent implements OnInit {
     this.getCurrentTopic();
   }
 
-  post(){
-  this.postComment.push(this.comment);
-  this.comment = '';
+  post() {
+    this.postComment.push(this.comment);
+    this.comment = '';
   }
 
+  // activatedRoute: Provide the topic id
+  // blogService: Provide the topic object by given id, otherwise navigate to home
   private getCurrentTopic(): void {
     this.activatedRoute.params
       .subscribe(params => {

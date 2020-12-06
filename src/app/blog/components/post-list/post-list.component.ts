@@ -6,6 +6,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 
 import { Topic } from 'src/app/shared/models/topic';
 import { BlogService } from 'src/app/shared/services/blog.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-post-list',
@@ -13,7 +14,10 @@ import { BlogService } from 'src/app/shared/services/blog.service';
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-  blogs: Topic[];
+  // @Idrice: I saw this with Dollar Sign in your PDF see stocks$
+  topics$: Observable<Topic[]>; // Get or set list of topic coming from server
+
+  // @Idrice: Add a comments to each property
   blog: Topic;
   recentPosts: Topic[];
   sortOptions: SelectItem[];
@@ -38,12 +42,13 @@ export class PostListComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private formBuilder: FormBuilder
-  ) { }
+  ) {
+    this.topics$ = this.blogService.getTopicList();
+  }
 
   ngOnInit(): void {
-    this.listBlogs();
+
     this.loadRecentPosts();
-    this.listComments(); // this is to publish the older comment from the server to the UI
 
     this.sortOptions = [
       { label: 'Produits', value: '!price' },
@@ -66,39 +71,19 @@ export class PostListComponent implements OnInit {
     }
   }
 
-  private listBlogs() {
-    this.blogService.getTopicList().subscribe(data => {
 
-      this.recentPosts = data.slice(0, 3);
-      this.blogs = data;
-    });
-  }
-
+  // Take 4 topics as recent posts
   private loadRecentPosts() {
     this.blogService.getTopicList().subscribe(data => {
-
       this.recentPosts = data.slice(0, 4);
-
     });
 
   }
 
   // this is to post comments
   createComment() {
-  // i want to get the id on the blog comment by the user inorder to store it in the respective place.
-  // i am still thinking about the logic
-
-  this.postComment.push(this.comment);
-
-  this.comment = ''; // reset the form after subit
-  }
-
-
-  // get postComment
-  listComments() {
-    this.blogService.getCommentList().subscribe(data => {
-      this.postComment.push(data);
-    });
+    this.postComment.push(this.comment);
+    this.comment = '';
   }
 
   changeBlogLike() {
