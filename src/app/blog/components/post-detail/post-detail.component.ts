@@ -21,6 +21,11 @@ export class PostDetailComponent implements OnInit {
   public appCommentList: Topic[]; // @Idrice for what??
   public appCommentLists: Topic; // @Idrice for what??
 
+  postComment = []; // creating an empty array to store the list of comments
+
+  comment = 'idrice comment'; // we declear the comment variable which will collect the user comment
+
+
   // @Irice why should i use ActivatedRoute  in this Component?
   constructor(
     private router: Router,
@@ -30,55 +35,12 @@ export class PostDetailComponent implements OnInit {
   ngOnInit(): void {
 
     this.getCurrentTopic();
-    this.getCurrentComment();
-    this.commentForm = new FormGroup({
-      comment: new FormControl('', [
-        Validators.required,
-        Validators.minLength(20),
-      ]),
-    });
-
   }
 
-  // Save to data base this user information //@Idirce wrong comment
-  /** CREATE: create a comment */
-  doSubscription() {
-
-    console.log(this.comment);
-    // @Idrice why? --> you want to get appComment object for what? this should come from HTML
-    /*  const currentAppComment: Topic = {
-        comment: this.comment.value,
-        verified: false
-      };
-
-      // @idrice Why ?
-      this.blogService.addAppComment(currentAppComment).subscribe();
-      this.blogService.addAppComment(currentAppComment).subscribe(_ =>
-
-        // To Clean a form
-        this.commentForm.reset()); */
-
+  post(){
+  this.postComment.push(this.comment);
+  this.comment = '';
   }
-
-  // @Idrice read: this comment and understand it
-  // Convenience getter for easy access to form fields
-  get comment() { return this.commentForm.get('comment'); }
-
-
-  private getCurrentComment(): void {
-    this.activatedRoute.params.subscribe(params => {
-      if (params.id !== undefined) {
-        this.blogService.getTopicById(params.id).subscribe(data => {
-          if ((data !== null) && (data !== undefined)) {
-            this.appCommentLists = data;
-          } else {
-            this.router.navigate(['/posts']);
-          }
-        });
-      }
-    });
-  }
-
 
   private getCurrentTopic(): void {
     this.activatedRoute.params
