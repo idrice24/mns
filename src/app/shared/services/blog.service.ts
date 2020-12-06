@@ -11,6 +11,7 @@ import { LogService } from './log.service';
 })
 export class BlogService {
   private comments: Comment[];
+  blog: Topic;
 
   // private baseUrl = '/assets/data/blogs.json';
   private blogUrl = 'api/blog';
@@ -25,6 +26,10 @@ export class BlogService {
   getTopicList(): Observable<Topic[]> {
     return this.httpClient.get<Topic[]>(this.blogUrl);
 
+  }
+
+  getCommentList(): Observable<Topic[]>{
+  return this.httpClient.get<Topic[]>(this.blogUrl);
   }
 
   getTopicById(id: number | string) {

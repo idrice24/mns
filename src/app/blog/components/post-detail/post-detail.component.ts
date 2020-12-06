@@ -13,16 +13,15 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./post-detail.component.scss']
 })
 export class PostDetailComponent implements OnInit {
+
   public header: any; // @Idrice to do what?? // You can use topic object directly
+
   public commentForm: FormGroup; // this component uses this variable to get information from HTML form
   public selectedTopic: Topic; // To store or get the selected topic
   public blogs: Topic[]; // @Ghislain: to List a topics
   public blog: Topic;
-  public appCommentList: Topic[]; // @Idrice for what??
-  public appCommentLists: Topic; // @Idrice for what??
 
   postComment = []; // creating an empty array to store the list of comments
-
   comment = 'idrice comment'; // we declear the comment variable which will collect the user comment
 
 
