@@ -13,13 +13,13 @@
   <div class="content">
 
     <hr>
-    <!--@Idrice: Form is already used in contact check that-->
-    <!-- By replacing message to comment: we gets the same (You are Terrible)-->
-    <form [formGroup]="commentForm" (ngSubmit)="doSubscription()">
-      <!--@Idrice: Textarea is already used in contact check that-->
-      <textarea name="comment" id="comment" formControlName="comment"></textarea>
-      <button pButton type="submit" label="Envoyer" class="p-button-rounded"></button>
-    </form>
+    <p *ngFor="let comment of postComment">
+    {{comment}}
+  </p>
+    <hr>
+    <textarea [(ngModel)]="comment"></textarea>
+    <br><br>
+    <button (click)="post()" >Send</button>
   </div>
 
 </section>
