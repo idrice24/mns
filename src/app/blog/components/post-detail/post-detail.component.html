@@ -1,4 +1,5 @@
 <!--TITLE-->
+<p-toast position="bottom-center"></p-toast>
 <section>
   <div class="row mb-5">
     <div class="col-md-12 text-center">
@@ -10,16 +11,61 @@
 
     {{selectedTopic.content}}
   </p-fieldset><br>
+  <!--@Idrce can you explain-->
   <div class="content">
 
     <hr>
-    <!--@Idrice: Form is already used in contact check that-->
-    <!-- By replacing message to comment: we gets the same (You are Terrible)-->
-    <form [formGroup]="commentForm" (ngSubmit)="doSubscription()">
-      <!--@Idrice: Textarea is already used in contact check that-->
-      <textarea name="comment" id="comment" formControlName="comment"></textarea>
-      <button pButton type="submit" label="Envoyer" class="p-button-rounded"></button>
-    </form>
+    <p *ngFor="let comment of postComment">
+      {{comment}}
+    </p>
+    <hr>
+    <textarea [(ngModel)]="comment"></textarea>
+    <br><br>
+    <button (click)="post()">Send</button>
   </div>
+  <!--@Idirce END : can you explain-->
 
+  <!--My Tasks:
+  1. Copy from Contact form
+  2. Remove all Bindings with Component:ie [formGroup]="sendForm" to avoid error
+  3. Only HTML elements should use here first: Design is finished
+  4. Arrage Layout And RUN my stuffs NO error
+  5. Check if the current Module imports all Needed PrimeNG Module
+  6. Added Binding Object(i.e. commentForm) / Methods(ie.postYourComment) to connect html file and component file
+   This is basic concept of angular
+  -->
+  <form [formGroup]="commentForm" (ngSubmit)="postYourComment(commentForm.value)">
+    <div class="p-fluid p-grid">
+
+      <div class="p-col">
+        <div class="p-field p-grid">
+          <div class="p-inputgroup">
+            <textarea pInputTextarea formControlName="msg" style="height:160px" placeholder="Message"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-col">
+        <div class="p-field p-grid">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input pInputText formControlName="name" type="text" placeholder="Auteur">
+          </div>
+        </div>
+
+        <div class="p-field p-grid">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+            <input pInputText formControlName="email" type="text" placeholder="Email">
+          </div>
+        </div>
+
+        <!--@Idrice: What does pRipple by Button? -->
+        <div class="p-field p-grid">
+          <button pButton pRipple [disabled]="false" type="submit" label="Post your Comments"
+            class="p-button-rounded"></button>
+        </div>
+      </div>
+    </div>
+  </form>
 </section>

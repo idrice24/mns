@@ -6,6 +6,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 
 import { Topic } from 'src/app/shared/models/topic';
 import { BlogService } from 'src/app/shared/services/blog.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-post-list',
@@ -13,7 +14,10 @@ import { BlogService } from 'src/app/shared/services/blog.service';
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-  blogs: Topic[];
+  // @Idrice: I saw this with Dollar Sign in your PDF see stocks$
+  topics$: Observable<Topic[]>; // Get or set list of topic coming from server
+
+  // @Idrice: Add a comments to each property
   blog: Topic;
   recentPosts: Topic[];
   sortOptions: SelectItem[];
@@ -29,21 +33,22 @@ export class PostListComponent implements OnInit {
   message: string;
   public unique: boolean;
 
+  postComment = [];
+  comment = 'Comment-works!';
+
 
   constructor(
     private blogService: BlogService,
     private route: ActivatedRoute,
     private router: Router,
     private formBuilder: FormBuilder
-  ) { }
+  ) {
+    this.topics$ = this.blogService.getTopicList();
+  }
 
   ngOnInit(): void {
-    this.listBlogs();
-    this.loadRecentPosts();
 
-    /* @Idrice why do you add this?
-    this.blog.like = 0;
-    this.blog.unlike = 0; */
+    this.loadRecentPosts();
 
     this.sortOptions = [
       { label: 'Produits', value: '!price' },
@@ -66,23 +71,20 @@ export class PostListComponent implements OnInit {
     }
   }
 
-  private listBlogs() {
-    this.blogService.getTopicList().subscribe(data => {
 
-      this.recentPosts = data.slice(0, 3);
-      this.blogs = data;
-    });
-  }
-
+  // Take 4 topics as recent posts
   private loadRecentPosts() {
     this.blogService.getTopicList().subscribe(data => {
-
       this.recentPosts = data.slice(0, 4);
-
     });
 
   }
-  changeBlogComment() { }
+
+  // this is to post comments
+  createComment() {
+    this.postComment.push(this.comment);
+    this.comment = '';
+  }
 
   changeBlogLike() {
     this.blog.like += 1;

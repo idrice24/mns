@@ -2,9 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Topic } from 'src/app/shared/models/topic';
-import { Comment } from 'src/app/shared/models/app-comment';
 import { BlogService } from 'src/app/shared/services/blog.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
+import { Content } from '@angular/compiler/src/render3/r3_ast';
 
 
 @Component({
@@ -13,73 +14,75 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./post-detail.component.scss']
 })
 export class PostDetailComponent implements OnInit {
-  public header: any; // @Idrice to do what??
+
+  public header: any; // @Idrice to do what?? // You can use topic object directly
+
   public commentForm: FormGroup; // this component uses this variable to get information from HTML form
   public selectedTopic: Topic; // To store or get the selected topic
   public blogs: Topic[]; // @Ghislain: to List a topics
   public blog: Topic;
-  public appCommentList: Topic[]; // @Idrice for what??
-  public appCommentLists: Topic; // @Idrice for what??
+
+  postComment = []; // creating an empty array to store the list of comments
+  comment = 'idrice comment'; // we declear the comment variable which will collect the user comment
+
 
   // @Irice why should i use ActivatedRoute  in this Component?
   constructor(
     private router: Router,
+    private messageService: MessageService, // Fun to use TOAST for  i.e. Comment
     private activatedRoute: ActivatedRoute,
-    private blogService: BlogService) { }
+    private blogService: BlogService
+  ) { }
 
   ngOnInit(): void {
 
     this.getCurrentTopic();
-    this.getCurrentComment();
+
     this.commentForm = new FormGroup({
-      comment: new FormControl('', [
+      name: new FormControl('', [
         Validators.required,
-        Validators.minLength(20),
+        Validators.minLength(4),
       ]),
-    });
-
+      email: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4)
+      ]),
+      msg: new FormControl('', [
+        Validators.required,
+        Validators.minLength(5)
+      ])
+    }
+    );
   }
 
-  // Save to data base this user information //@Idirce wrong comment
-  /** CREATE: create a comment */
-  doSubscription() {
+  // @Idrice you method is correct: Add Comment what happens inside
+  post() {
 
-    console.log(this.comment);
-    // @Idrice why? --> you want to get appComment object for what? this should come from HTML
-    /*  const currentAppComment: Topic = {
-        comment: this.comment.value,
-        verified: false
-      };
+    // 1. Task: Hold current topic object  to get array for comment
 
-      // @idrice Why ?
-      this.blogService.addAppComment(currentAppComment).subscribe();
-      this.blogService.addAppComment(currentAppComment).subscribe(_ =>
+    // Not correct -- removeid
+    this.postComment.push(this.comment);
 
-        // To Clean a form
-        this.commentForm.reset()); */
-
+    // Clean the Textarea in htmm
+    this.comment = '';
+    this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute' });
   }
 
-  // @Idrice read: this comment and understand it
-  // Convenience getter for easy access to form fields
-  get comment() { return this.commentForm.get('comment'); }
+  // handler when user click on  Button
+  postYourComment(theData) {
+    const msg = theData.msg;
+    const author = theData.name;
 
+    // Send it to server --> @Idrice check hero app from angular page : https://angular.io/tutorial/toh-pt6#update-heroes
+    // Copy it an replace Hero to Topic
+    // this.blogService.updateTopic();
 
-  private getCurrentComment(): void {
-    this.activatedRoute.params.subscribe(params => {
-      if (params.id !== undefined) {
-        this.blogService.getTopicById(params.id).subscribe(data => {
-          if ((data !== null) && (data !== undefined)) {
-            this.appCommentLists = data;
-          } else {
-            this.router.navigate(['/posts']);
-          }
-        });
-      }
-    });
+    this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute', detail: author + ' Says ' + msg });
+    this.commentForm.reset(); // Clean the Form
   }
 
-
+  // activatedRoute: Provide the topic id
+  // blogService: Provide the topic object by given id, otherwise navigate to home
   private getCurrentTopic(): void {
     this.activatedRoute.params
       .subscribe(params => {
