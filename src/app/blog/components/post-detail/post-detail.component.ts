@@ -70,13 +70,14 @@ export class PostDetailComponent implements OnInit {
       content: msg
     };
 
-    this.selectedTopic.comments.push(commentObject);// here is to pust the comment int o the comments array
+    this.selectedTopic.comments.push(commentObject); // here is to pust the comment int o the comments array
 
     // Send it to server --> @Idrice check hero app from angular page : https://angular.io/tutorial/toh-pt6#update-heroes
     // Copy it an replace Hero to Topic
     // this.blogService.updateTopic();
 
-    this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute', detail: author + ' Says ' + msg }); // this is the pop message to confirm the comment send 
+    this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute',
+   detail: author + ' Says ' + msg }); // this is the pop message to confirm the comment send
     this.commentForm.reset(); // Clean the Form
   }
 

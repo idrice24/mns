@@ -8139,7 +8139,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '2020-03-02T17:72:45Z',
       content: 'STEPS %: Update database to use mok comments',
       }],
-      
+
       like: 2,
       unlike: 1,
       rating: 3
