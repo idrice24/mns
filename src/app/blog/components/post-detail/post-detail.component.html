@@ -11,19 +11,6 @@
 
     {{selectedTopic.content}}
   </p-fieldset><br>
-  <!--@Idrce can you explain-->
-  <div class="content">
-
-    <hr>
-    <p *ngFor="let comment of postComment">
-      {{comment}}
-    </p>
-    <hr>
-    <textarea [(ngModel)]="comment"></textarea>
-    <br><br>
-    <button (click)="post()">Send</button>
-  </div>
-  <!--@Idirce END : can you explain-->
 
   <!--My Tasks:
   1. Copy from Contact form
@@ -61,6 +48,7 @@
         </div>
 
         <!--@Idrice: What does pRipple by Button? -->
+        <!-- pRipple is likr hover it change the form of the button when i user point at it -->
         <div class="p-field p-grid">
           <button pButton pRipple [disabled]="false" type="submit" label="Post your Comments"
             class="p-button-rounded"></button>

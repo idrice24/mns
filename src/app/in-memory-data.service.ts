@@ -8133,7 +8133,13 @@ export class InMemoryDataService implements InMemoryDbService {
         createdDate: '2013-03-02T16:41:45Z',
         content: 'STEPS %: Update database to use mock comments',
 
+      }, {
+      id: 3 ,
+      author: 'DAS AUTO',
+      createdDate: '2020-03-02T17:72:45Z',
+      content: 'STEPS %: Update database to use mok comments',
       }],
+      
       like: 2,
       unlike: 1,
       rating: 3
