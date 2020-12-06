@@ -29,6 +29,9 @@ export class PostListComponent implements OnInit {
   message: string;
   public unique: boolean;
 
+  postComment = [];
+  comment = 'Comment-works!';
+
 
   constructor(
     private blogService: BlogService,
@@ -40,10 +43,6 @@ export class PostListComponent implements OnInit {
   ngOnInit(): void {
     this.listBlogs();
     this.loadRecentPosts();
-
-    /* @Idrice why do you add this?
-    this.blog.like = 0;
-    this.blog.unlike = 0; */
 
     this.sortOptions = [
       { label: 'Produits', value: '!price' },
@@ -82,7 +81,12 @@ export class PostListComponent implements OnInit {
     });
 
   }
-  changeBlogComment() { }
+
+  // this is to post comments
+  createComment() {
+  this.postComment.push(this.comment);
+  this.comment = '';
+   }
 
   changeBlogLike() {
     this.blog.like += 1;
