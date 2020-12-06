@@ -46,7 +46,7 @@ const routes: Routes = [
     ButtonModule,
     FieldsetModule, // For a fieldset toggeable
     ListboxModule,
-    ToastModule,//  Help to use toast in HTML file
+    ToastModule, //  Help to use toast in HTML file
     RouterModule.forChild(routes)
   ],
   exports: [RouterModule],
