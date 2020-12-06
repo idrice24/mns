@@ -1,3 +1,5 @@
+import { TopicComment } from './app-comment';
+
 export interface Topic {
   content?: string;
   createdDate?: string;
@@ -9,7 +11,7 @@ export interface Topic {
   imageUrl?: string;
   rating?: number;
   category?: string;
-  comment?: string;
+  comment?: TopicComment[]; // Comments for the topic
   like?: number;
   unlike?: number;
   verified?: boolean;
