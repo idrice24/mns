@@ -22,11 +22,12 @@
    This is basic concept of angular
   -->
 
-  <!-- here i display the comment posted -->
+  <!-- here i display the comment posted  ANs=OKAY -->
   <!-- but when i write this {{selectedTopic.comments.msg}} i am having an error-->
-  <!-- the error is that Cannot read property 'comments' of undefined-->
+  <!--  the error is that Cannot read property 'comments' of undefined-->
+  <!--@idrice: Comments is an array: you know how to retrieve array elemenst LOL-->
   <p-fieldset>
-    
+    <p *ngFor="let c of selectedTopic.comments">{{c.content}} </p>
   </p-fieldset>
   <hr>
   <form [formGroup]="commentForm" (ngSubmit)="postYourComment(commentForm.value)">
@@ -39,9 +40,10 @@
           </div>
         </div>
         <div *ngIf="msg.invalid && (msg.dirty || msg.touched)" class="p-col-12">
-              <small *ngIf="msg.errors.required" class="p-invalid">Le Commentaire est requir.</small>
-              <small *ngIf="msg.errors.minlength" class="p-invalid">Le Commentair doit etre de plus de 10 charactair </small>
-            </div>
+          <small *ngIf="msg.errors.required" class="p-invalid">Le Commentaire est requir.</small>
+          <small *ngIf="msg.errors.minlength" class="p-invalid">Le Commentair doit etre de plus de 10 charactair
+          </small>
+        </div>
       </div>
 
       <div class="p-col">
@@ -51,9 +53,9 @@
             <input pInputText formControlName="author" type="text" placeholder="Auteur">
           </div>
           <div *ngIf="author.invalid && (author.dirty || author.touched)" class="p-col-12">
-              <small *ngIf="author.errors.required" class="p-invalid">Le nom est required.</small>
-              <small *ngIf="author.errors.minlength" class="p-invalid">Le nom doit etre de plus de 4 charactere</small>
-            </div>
+            <small *ngIf="author.errors.required" class="p-invalid">Le nom est required.</small>
+            <small *ngIf="author.errors.minlength" class="p-invalid">Le nom doit etre de plus de 4 charactere</small>
+          </div>
         </div>
 
         <div class="p-field p-grid">
@@ -62,9 +64,9 @@
             <input pInputText formControlName="email" type="email" placeholder="Email">
           </div>
           <div *ngIf="email.invalid && (email.dirty || email.touched)" class="p-col-12">
-              <small *ngIf="email.errors.required" class="p-invalid">L'email est required.</small>
-              <small *ngIf="email.errors.minlength" class="p-invalid">L'email doit etre de plus de 4 charactere.</small>
-            </div>
+            <small *ngIf="email.errors.required" class="p-invalid">L'email est required.</small>
+            <small *ngIf="email.errors.minlength" class="p-invalid">L'email doit etre de plus de 4 charactere.</small>
+          </div>
         </div>
 
         <!--@Idrice: What does pRipple by Button? -->

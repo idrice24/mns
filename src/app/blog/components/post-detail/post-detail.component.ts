@@ -74,16 +74,19 @@ export class PostDetailComponent implements OnInit {
       msg: message
     };
 
-    this.selectedTopic.comments.push(commentObject); // here is to pust the comment into the comments array
+    // here is to pust the comment into the comments array
+    this.selectedTopic.comments.push(commentObject);
 
 
-    // Tell the serice to update the topic due to added Comments
-    this.blogService.updateTopic(this.selectedTopic);
+    // Tell the serice to update the topic in Server due to added Comments
+    // @Idrice: we have to call subscribe() here to fire the method
+    this.blogService.updateTopic(this.selectedTopic).subscribe();
 
     this.messageService.add({
       severity: 'success', summary: 'Commentaire ajoute',
       detail: author + ' Says ' + message
     }); // this is the pop message to confirm the comment send
+
     this.commentForm.reset(); // Clean the Form
   }
 
