@@ -6,6 +6,7 @@ import { BlogService } from 'src/app/shared/services/blog.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
+import { AppComment } from 'src/app/shared/models/app-comment';
 
 
 
@@ -63,23 +64,26 @@ export class PostDetailComponent implements OnInit {
   // handle when user click on  Button
   // the theDta is getting the commentForm values
   postYourComment(theData) {
-    const msg = theData.msg;
+    const message = theData.msg;
     const author = theData.name;
 
-    const commentObject = {
+    // @Idrice: this is how to create a object of type Comment
+    const commentObject: AppComment = {
       author: '',
       createdDate: theData.name,
-      comment: msg
+      msg: message
     };
 
     this.selectedTopic.comments.push(commentObject); // here is to pust the comment into the comments array
 
-    // Send it to server --> @Idrice check hero app from angular page : https://angular.io/tutorial/toh-pt6#update-heroes
-    // Copy it an replace Hero to Topic
-    // this.blogService.updateTopic();
 
-    this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute',
-   detail: author + ' Says ' + msg }); // this is the pop message to confirm the comment send
+    // Tell the serice to update the topic due to added Comments
+    this.blogService.updateTopic(this.selectedTopic);
+
+    this.messageService.add({
+      severity: 'success', summary: 'Commentaire ajoute',
+      detail: author + ' Says ' + message
+    }); // this is the pop message to confirm the comment send
     this.commentForm.reset(); // Clean the Form
   }
 
