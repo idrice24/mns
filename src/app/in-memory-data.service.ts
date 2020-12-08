@@ -8213,14 +8213,14 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '10/20/2020',
       publishedDate: '3/7/2020',
       title: '',
-      imageUrl: '/assets/img/edouard.jpg',
+      imageUrl: 'assets/img/edouard.jpg',
       updatedDate: '7/3/2020',
       content: 'Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.',
       summary: 'Optional homogeneous interface'
     },
     {
       id: 2,
-      name: 'Yogurt - French Vanilla',
+      name: 'French Vanilla',
       code: '56062-479',
       rating: '2',
       image: 'http://dummyimage.com/202x181.bmp/cc0000/ffffff',
@@ -8232,7 +8232,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '6/24/2020',
       publishedDate: '8/22/2020',
       title: '',
-      imageUrl: '/assets/img/prod1.jpg',
+      imageUrl: 'assets/img/prod1.jpg',
       updatedDate: '9/24/2020',
       content: 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.',
       summary: 'Switchable upward-trending model'
@@ -8289,7 +8289,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '8/2/2020',
       publishedDate: '12/3/2019',
       title: '',
-      imageUrl: '/assets/img/prod1 (4).jpg',
+      imageUrl: 'assets/img/prod1 (4).jpg',
       updatedDate: '6/11/2020',
       content: 'Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.',
       summary: 'Multi-channelled grid-enabled array'
@@ -8308,7 +8308,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '3/29/2020',
       publishedDate: '10/5/2020',
       title: '',
-      imageUrl: '/assets/img/prod1 (5).jpg',
+      imageUrl: 'assets/img/prod1 (5).jpg',
       updatedDate: '11/20/2019',
       content: 'In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.',
       summary: 'Right-sized grid-enabled artificial intelligence'
@@ -8327,7 +8327,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '8/28/2020',
       publishedDate: '1/18/2020',
       title: '',
-      imageUrl: '/assets/img/prod1 (6).jpg',
+      imageUrl: 'assets/img/prod1 (6).jpg',
       updatedDate: '3/17/2020',
       content: 'Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.',
       summary: 'Monitored impactful process improvement'
@@ -8346,7 +8346,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '9/24/2020',
       publishedDate: '9/26/2020',
       title: '',
-      imageUrl: '/assets/img/prod1 (7).jpg',
+      imageUrl: 'assets/img/prod1 (7).jpg',
       updatedDate: '11/5/2019',
       content: 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.',
       summary: 'Quality-focused context-sensitive superstructure'
@@ -8365,7 +8365,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '12/5/2019',
       publishedDate: '11/15/2019',
       title: '',
-      imageUrl: '/assets/img/prod1 (8).jpg',
+      imageUrl: 'assets/img/prod1 (8).jpg',
       updatedDate: '12/10/2019',
       content: 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.',
       summary: 'Ameliorated discrete forecast'
