@@ -10,3 +10,6 @@
 [1129/201439.415:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Lenovo\AppData\Local\Temp\karma-79176275\Crashpad\attachments\e5386bd2-2cc1-46af-a778-d7ba5bf42292: The system cannot find the path specified. (0x3)
 [1129/201444.640:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)
 [1129/202352.817:ERROR:exception_handler_server.cc(524)] ConnectNamedPipe: The pipe is being closed. (0xE8)
+[1208/093646.514:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1208/093914.188:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Lenovo\AppData\Local\Temp\karma-48393482\Crashpad\attachments\0f0ad064-ac6c-493b-a4a5-027df36229a2: The system cannot find the path specified. (0x3)
+[1208/093928.734:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)
