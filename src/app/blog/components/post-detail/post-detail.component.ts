@@ -71,6 +71,7 @@ export class PostDetailComponent implements OnInit {
     const commentObject: AppComment = {
       author: '',
       createdDate: theData.name,
+      id: this.selectedTopic.comments.length++,
       msg: message
     };
 

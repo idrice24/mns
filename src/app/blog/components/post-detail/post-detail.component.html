@@ -26,8 +26,9 @@
   <!-- but when i write this {{selectedTopic.comments.msg}} i am having an error-->
   <!--  the error is that Cannot read property 'comments' of undefined-->
   <!--@idrice: Comments is an array: you know how to retrieve array elemenst LOL-->
+  <!--@idrice: where Comments property comes from? -->
   <p-fieldset>
-    <p *ngFor="let c of selectedTopic.comments">{{c.content}} </p>
+    <p *ngFor="let c of selectedTopic.comments">{{c.id}} </p>
   </p-fieldset>
   <hr>
   <form [formGroup]="commentForm" (ngSubmit)="postYourComment(commentForm.value)">
@@ -68,8 +69,6 @@
             <small *ngIf="email.errors.minlength" class="p-invalid">L'email doit etre de plus de 4 charactere.</small>
           </div>
         </div>
-
-        <!--@Idrice: What does pRipple by Button? -->
 
         <!-- pRipple is like hover it change the form of the button when i user point at it -->
         <div class="p-field p-grid">
