@@ -32,8 +32,6 @@ export class PostListComponent implements OnInit {
 
   message: string;
 
-  postComment = [];
-  comment = 'Comment-works!';
 
 
   constructor(
@@ -79,11 +77,6 @@ export class PostListComponent implements OnInit {
 
   }
 
-  // this is to post comments
-  createComment() {
-    this.postComment.push(this.comment);
-    this.comment = '';
-  }
   changeBlogLike() {
     this.blog.like += 1;
   }
