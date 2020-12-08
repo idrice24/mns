@@ -24,9 +24,6 @@ export class PostDetailComponent implements OnInit {
   public blogs: Topic[]; // @Ghislain: to List a topics
   public blog: Topic;
 
-  postComment = []; // creating an empty array to store the list of comments
-  comment = 'idrice comment'; // we declear the comment variable which will collect the user comment
-
   // @Irice why should i use ActivatedRoute  in this Component?
   constructor(
     private router: Router,
@@ -35,12 +32,18 @@ export class PostDetailComponent implements OnInit {
     private blogService: BlogService
   ) { }
 
+  // convenience getter for easy access to form fields
+  get author() { return this.commentForm.get('author'); }
+  get msg() { return this.commentForm.get('msg'); }
+  get email() { return this.commentForm.get('email'); }
+
+
   ngOnInit(): void {
 
     this.getCurrentTopic();
 
     this.commentForm = new FormGroup({
-      name: new FormControl('', [
+      author: new FormControl('', [
         Validators.required,
         Validators.minLength(4),
       ]),
@@ -66,10 +69,10 @@ export class PostDetailComponent implements OnInit {
     const commentObject = {
       author: '',
       createdDate: theData.name,
-      content: msg
+      comment: msg
     };
 
-    this.selectedTopic.comments.push(commentObject); // here is to pust the comment int o the comments array
+    this.selectedTopic.comments.push(commentObject); // here is to pust the comment into the comments array
 
     // Send it to server --> @Idrice check hero app from angular page : https://angular.io/tutorial/toh-pt6#update-heroes
     // Copy it an replace Hero to Topic
