@@ -37,11 +37,6 @@ export class BlogService {
   }
 
 
-  // TODO@Idrice do you need that?
-  getCommentList(): Observable<Topic[]> {
-    return this.httpClient.get<Topic[]>(this.blogUrl);
-  }
-
   getTopicById(id: number | string) {
     return this.httpClient.get<Topic[]>(this.blogUrl).pipe(
       // (+) before `id` turns the string into a number
