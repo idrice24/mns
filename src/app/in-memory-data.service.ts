@@ -8251,7 +8251,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '8/9/2020',
       publishedDate: '3/5/2020',
       title: '',
-      imageUrl: '/assets/img/prod1 (2).jpg',
+      imageUrl: 'assets/img/prod1 (2).jpg',
       updatedDate: '6/25/2020',
       content: 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.',
       summary: 'Fully-configurable fault-tolerant instruction set'
@@ -8270,7 +8270,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '9/25/2020',
       publishedDate: '4/23/2020',
       title: '',
-      imageUrl: '/assets/img/prod1 (3).jpg',
+      imageUrl: 'assets/img/prod1 (3).jpg',
       updatedDate: '1/24/2020',
       content: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.',
       summary: 'Distributed analyzing functionalities'
