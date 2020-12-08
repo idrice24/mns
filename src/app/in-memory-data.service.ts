@@ -8204,7 +8204,7 @@ export class InMemoryDataService implements InMemoryDbService {
       name: 'Shrimp - 150 - 250',
       code: '61957-9401',
       rating: '3',
-      image: 'http://dummyimage.com/244x163.jpg/cc0000/ffffff',
+      image: 'TODO',
       description: 'Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.',
       price: 923,
       quantity: 1,
@@ -8213,7 +8213,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '10/20/2020',
       publishedDate: '3/7/2020',
       title: '',
-      imageUrl: 'http://dummyimage.com/242x117.bmp/ff4444/ffffff',
+      imageUrl: '/assets/img/edouard.jpg',
       updatedDate: '7/3/2020',
       content: 'Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.',
       summary: 'Optional homogeneous interface'
@@ -8232,7 +8232,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '6/24/2020',
       publishedDate: '8/22/2020',
       title: '',
-      imageUrl: 'http://dummyimage.com/204x205.jpg/ff4444/ffffff',
+      imageUrl: '/assets/img/prod1.jpg',
       updatedDate: '9/24/2020',
       content: 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.',
       summary: 'Switchable upward-trending model'
@@ -8251,7 +8251,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '8/9/2020',
       publishedDate: '3/5/2020',
       title: '',
-      imageUrl: 'http://dummyimage.com/209x152.bmp/dddddd/000000',
+      imageUrl: '/assets/img/prod1 (2).jpg',
       updatedDate: '6/25/2020',
       content: 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.',
       summary: 'Fully-configurable fault-tolerant instruction set'
@@ -8270,7 +8270,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '9/25/2020',
       publishedDate: '4/23/2020',
       title: '',
-      imageUrl: 'http://dummyimage.com/200x163.jpg/dddddd/000000',
+      imageUrl: '/assets/img/prod1 (3).jpg',
       updatedDate: '1/24/2020',
       content: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.',
       summary: 'Distributed analyzing functionalities'
@@ -8289,7 +8289,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '8/2/2020',
       publishedDate: '12/3/2019',
       title: '',
-      imageUrl: 'http://dummyimage.com/234x126.png/cc0000/ffffff',
+      imageUrl: '/assets/img/prod1 (4).jpg',
       updatedDate: '6/11/2020',
       content: 'Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.',
       summary: 'Multi-channelled grid-enabled array'
@@ -8308,7 +8308,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '3/29/2020',
       publishedDate: '10/5/2020',
       title: '',
-      imageUrl: 'http://dummyimage.com/113x198.png/5fa2dd/ffffff',
+      imageUrl: '/assets/img/prod1 (5).jpg',
       updatedDate: '11/20/2019',
       content: 'In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.',
       summary: 'Right-sized grid-enabled artificial intelligence'
@@ -8327,7 +8327,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '8/28/2020',
       publishedDate: '1/18/2020',
       title: '',
-      imageUrl: 'http://dummyimage.com/108x114.bmp/dddddd/000000',
+      imageUrl: '/assets/img/prod1 (6).jpg',
       updatedDate: '3/17/2020',
       content: 'Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.',
       summary: 'Monitored impactful process improvement'
@@ -8346,7 +8346,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '9/24/2020',
       publishedDate: '9/26/2020',
       title: '',
-      imageUrl: 'http://dummyimage.com/232x167.jpg/ff4444/ffffff',
+      imageUrl: '/assets/img/prod1 (7).jpg',
       updatedDate: '11/5/2019',
       content: 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.',
       summary: 'Quality-focused context-sensitive superstructure'
@@ -8365,7 +8365,7 @@ export class InMemoryDataService implements InMemoryDbService {
       createdDate: '12/5/2019',
       publishedDate: '11/15/2019',
       title: '',
-      imageUrl: 'http://dummyimage.com/204x174.png/5fa2dd/ffffff',
+      imageUrl: '/assets/img/prod1 (8).jpg',
       updatedDate: '12/10/2019',
       content: 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.',
       summary: 'Ameliorated discrete forecast'
