@@ -17,6 +17,7 @@ import { AppComment } from 'src/app/shared/models/app-comment';
 })
 
 export class PostDetailComponent implements OnInit {
+  public now : Date = new Date();// declearing the constan now to set the time
 
   public header: any; // @Idrice to do what?? // You can use topic object directly
 
@@ -31,7 +32,13 @@ export class PostDetailComponent implements OnInit {
     private messageService: MessageService, // Fun to use TOAST for  i.e. Comment
     private activatedRoute: ActivatedRoute,
     private blogService: BlogService
-  ) { }
+  ) { 
+    // this is a method in the constructor to set the time at which a comment has being posted from the computer time/browser-->
+    setInterval(() => {
+          this.now = new Date();
+        }, 1);
+    }
+
 
   // convenience getter for easy access to form fields
   get author() { return this.commentForm.get('author'); }
@@ -66,12 +73,13 @@ export class PostDetailComponent implements OnInit {
   postYourComment(theData) {
     const message = theData.msg;
     const author = theData.name;
+    const createdDate = this.now; // here i am assigning the values of the new Date to createdDate -->
 
     // @Idrice: this is how to create a object of type Comment
     const commentObject: AppComment = {
-      author: '',
-      createdDate: theData.name,
-      id: this.selectedTopic.comments.length++,
+      author: theData.name,
+      createdDate: this.now, 
+      id: this.selectedTopic.comments.length,
       msg: message
     };
 
