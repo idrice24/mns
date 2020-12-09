@@ -12,7 +12,6 @@
     {{selectedTopic.content}}
   </p-fieldset><br>
 
-
   <!--My Tasks:
   1. Copy from Contact form
   2. Remove all Bindings with Component:ie [formGroup]="sendForm" to avoid error
@@ -22,6 +21,19 @@
   6. Added Binding Object(i.e. commentForm) / Methods(ie.postYourComment) to connect html file and component file
    This is basic concept of angular
   -->
+
+  <!-- here i display the comment posted  ANs=OKAY -->
+  <!-- but when i write this {{selectedTopic.comments.msg}} i am having an error-->
+  <!--  the error is that Cannot read property 'comments' of undefined-->
+  <!--@idrice: Comments is an array: you know how to retrieve array elemenst LOL-->
+  <!--@idrice: where Comments property comes from? -->
+  <p-fieldset *ngIf="selectedTopic">
+    <p *ngFor="let c of selectedTopic.comments">{{c.content}}
+      <span> {{c.id}} </span>
+      <span> {{c.msg}} </span>
+    </p>
+  </p-fieldset>
+  <hr>
   <form [formGroup]="commentForm" (ngSubmit)="postYourComment(commentForm.value)">
     <div class="p-fluid p-grid">
 
@@ -31,24 +43,37 @@
             <textarea pInputTextarea formControlName="msg" style="height:160px" placeholder="Message"></textarea>
           </div>
         </div>
+        <div *ngIf="msg.invalid && (msg.dirty || msg.touched)" class="p-col-12">
+          <small *ngIf="msg.errors.required" class="p-invalid">Le Commentaire est requir.</small>
+          <small *ngIf="msg.errors.minlength" class="p-invalid">Le Commentair doit etre de plus de 10 charactair
+          </small>
+        </div>
       </div>
 
       <div class="p-col">
         <div class="p-field p-grid">
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-            <input pInputText formControlName="name" type="text" placeholder="Auteur">
+            <input pInputText formControlName="author" type="text" placeholder="Auteur">
+          </div>
+          <div *ngIf="author.invalid && (author.dirty || author.touched)" class="p-col-12">
+            <small *ngIf="author.errors.required" class="p-invalid">Le nom est required.</small>
+            <small *ngIf="author.errors.minlength" class="p-invalid">Le nom doit etre de plus de 4 charactere</small>
           </div>
         </div>
 
         <div class="p-field p-grid">
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
-            <input pInputText formControlName="email" type="text" placeholder="Email">
+            <input pInputText formControlName="email" type="email" placeholder="Email">
+          </div>
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="p-col-12">
+            <small *ngIf="email.errors.required" class="p-invalid">L'email est required.</small>
+            <small *ngIf="email.errors.minlength" class="p-invalid">L'email doit etre de plus de 4 charactere.</small>
           </div>
         </div>
 
-        <!--@Idrice: What does pRipple by Button? -->
+        <!-- pRipple is like hover it change the form of the button when i user point at it -->
         <div class="p-field p-grid">
           <button pButton pRipple [disabled]="false" type="submit" label="Post your Comments"
             class="p-button-rounded"></button>

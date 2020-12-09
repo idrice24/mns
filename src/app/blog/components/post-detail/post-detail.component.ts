@@ -5,6 +5,8 @@ import { Topic } from 'src/app/shared/models/topic';
 import { BlogService } from 'src/app/shared/services/blog.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
+import { Content } from '@angular/compiler/src/render3/r3_ast';
+import { AppComment } from 'src/app/shared/models/app-comment';
 
 
 
@@ -13,6 +15,7 @@ import { MessageService } from 'primeng/api';
   templateUrl: './post-detail.component.html',
   styleUrls: ['./post-detail.component.scss']
 })
+
 export class PostDetailComponent implements OnInit {
 
   public header: any; // @Idrice to do what?? // You can use topic object directly
@@ -22,10 +25,6 @@ export class PostDetailComponent implements OnInit {
   public blogs: Topic[]; // @Ghislain: to List a topics
   public blog: Topic;
 
-  postComment = []; // creating an empty array to store the list of comments
-  comment = 'idrice comment'; // we declear the comment variable which will collect the user comment
-
-
   // @Irice why should i use ActivatedRoute  in this Component?
   constructor(
     private router: Router,
@@ -34,12 +33,18 @@ export class PostDetailComponent implements OnInit {
     private blogService: BlogService
   ) { }
 
+  // convenience getter for easy access to form fields
+  get author() { return this.commentForm.get('author'); }
+  get msg() { return this.commentForm.get('msg'); }
+  get email() { return this.commentForm.get('email'); }
+
+
   ngOnInit(): void {
 
     this.getCurrentTopic();
 
     this.commentForm = new FormGroup({
-      name: new FormControl('', [
+      author: new FormControl('', [
         Validators.required,
         Validators.minLength(4),
       ]),
@@ -55,24 +60,34 @@ export class PostDetailComponent implements OnInit {
     );
   }
 
-  // handle when user click on  Button
-  postYourComment(theData) {
-    const msg = theData.msg;
-    const au = theData.name;
 
-    const commentObject = {
+  // handle when user click on  Button
+  // the theDta is getting the commentForm values
+  postYourComment(theData) {
+    const message = theData.msg;
+    const author = theData.name;
+
+    // @Idrice: this is how to create a object of type Comment
+    const commentObject: AppComment = {
       author: '',
       createdDate: theData.name,
-      content: msg
+      id: this.selectedTopic.comments.length++,
+      msg: message
     };
+
+    // here is to pust the comment into the comments array
     this.selectedTopic.comments.push(commentObject);
 
 
-    // Send it to server --> @Idrice check hero app from angular page : https://angular.io/tutorial/toh-pt6#update-heroes
-    // Copy it an replace Hero to Topic
+    // Tell the serice to update the topic in Server due to added Comments
+    // @Idrice: we have to call subscribe() here to fire the method
     this.blogService.updateTopic(this.selectedTopic).subscribe();
 
-    this.messageService.add({ severity: 'success', summary: 'Commentaire ajoute', detail: au + ' Says ' + msg });
+    this.messageService.add({
+      severity: 'success', summary: 'Commentaire ajoute',
+      detail: author + ' Says ' + message
+    }); // this is the pop message to confirm the comment send
+
     this.commentForm.reset(); // Clean the Form
   }
 

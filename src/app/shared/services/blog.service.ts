@@ -28,7 +28,7 @@ export class BlogService {
 
   }
 
-  /** PUT: update the hero on the server */
+  /** PUT: update the topic on the server */
   updateTopic(topic: Topic): Observable<any> {
     return this.httpClient.put(this.blogUrl, topic, this.httpOptions).pipe(
       tap(_ => this.log(`updated topic id=${topic.id}`)),
@@ -36,11 +36,6 @@ export class BlogService {
     );
   }
 
-
-  // TODO@Idrice do you need that?
-  getCommentList(): Observable<Topic[]> {
-    return this.httpClient.get<Topic[]>(this.blogUrl);
-  }
 
   getTopicById(id: number | string) {
     return this.httpClient.get<Topic[]>(this.blogUrl).pipe(

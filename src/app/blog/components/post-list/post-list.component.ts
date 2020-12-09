@@ -18,10 +18,10 @@ export class PostListComponent implements OnInit {
   topics$: Observable<Topic[]>; // Get or set list of topic coming from server
 
   // @Idrice: Add a comments to each property
-  blog: Topic;
-  recentPosts: Topic[];
-  sortOptions: SelectItem[];
-  sortKey: SelectItem;
+  blog: Topic; // here we create an object of Topic
+  recentPosts: Topic[]; // here we create an arraz of Topic
+  sortOptions: SelectItem[]; // same here as above
+  sortKey: SelectItem; // we create an object to select items in the data base
   sortOrder: number;
   showMenu = '';
   showSubMenu = '';
@@ -31,10 +31,7 @@ export class PostListComponent implements OnInit {
   addlike = 1;
 
   message: string;
-  public unique: boolean;
 
-
-  comment = 'Comment-works!';
 
 
   constructor(
@@ -80,8 +77,6 @@ export class PostListComponent implements OnInit {
 
   }
 
-
-
   changeBlogLike() {
     this.blog.like += 1;
   }
@@ -90,8 +85,5 @@ export class PostListComponent implements OnInit {
     this.blog.unlike += 1;
   }
   shareBlog() { }
-
-  get unlike() { return this.changeBlogUnlike(); }
-  get like() { return this.changeBlogLike(); }
 
 }

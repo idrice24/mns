@@ -8131,7 +8131,13 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 3,
         author: 'BLA BLAC Car',
         createdDate: '2013-03-02T16:41:45Z',
-        content: 'STEPS %: Update database to use mock comments',
+        msg: 'STEPS %: Update database to use mock comments',
+
+      }, {
+        id: 200000,
+        author: 'DAS AUTO',
+        createdDate: '2020-03-02T17:72:45Z',
+        msg: 'STEPS %: Update database to use mok comments',
       }],
       like: 2,
       unlike: 1,
@@ -8147,7 +8153,13 @@ export class InMemoryDataService implements InMemoryDbService {
       updatedDate: '2020-03-02T16:41:45Z',
       summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
       rating: 1,
-      comments: [],
+      comments: [
+        {
+          id: 4,
+          author: 'idrice la paix',
+          createdDate: '2020-09-01T09:42:09Z',
+          msg: 'this is the best framework of java ( angular )',
+        }],
       like: 9,
       unlike: 3
     },

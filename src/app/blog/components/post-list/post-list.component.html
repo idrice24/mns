@@ -9,6 +9,7 @@
   <div class="p-grid">
 
     <!--COL1: RECENT POSTS-->
+    <!--Each time i try to modify this blog of code i got error -->
     <div class="p-col-4">
       <p-listbox filter="true" [options]="recentPosts" optionLabel="title">
         <ng-template pTemplate="header">
@@ -43,20 +44,17 @@
                 <div class="blog-name">{{blog.title}}</div>
                 <div class="blig-item">
                   <article>publishedDate: {{blog.publishedDate}}</article>
-                  <!--@Idrice: this should use Icon and Nummber of Comments-->
-                  <h3>Comments: {{blog.comments.length}}</h3>
+                  <h1 class="pi pi-comments">Comments: {{blog.comments.length}}</h1>
                 </div>
                 <div class="blog-description">{{blog.content}}</div>
                 <hr>
-
 
                 <button (click)="changeBlogLike()" pButton type="button" label="Like" [(ngModel)]="blog.like"
                   class="p-button-rounded">{{blog.like}}&nbsp;<i class="pi pi-thumbs-up"></i></button>
                 <button (click)="changeBlogUnlike()" pButton type="button" label="Unlike"
                   class="p-button-rounded">{{blog.unlike}}&nbsp;<i class="pi pi-thumbs-down"></i></button>&nbsp;
                 <button (click)="shareBlog()" pButton type="button" label="Public" class="p-button-rounded"><i
-                    class="pi pi-globe"></i></button>
-
+                    class="pi pi-globe"></i></button>&nbsp;
 
                 <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
                   class="p-m-2 p-button-raised-sm p-button-rounded"></button>
