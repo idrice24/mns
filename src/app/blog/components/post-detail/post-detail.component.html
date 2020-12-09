@@ -26,11 +26,10 @@
   <!-- but when i write this {{selectedTopic.comments.msg}} i am having an error-->
   <!--  the error is that Cannot read property 'comments' of undefined-->
   <!--@idrice: Comments is an array: you know how to retrieve array elemenst LOL-->
-  <!--@idrice: where Comments property comes from? -->
+  <!--@idrice: where Comments property comes from? --><!-- i am not understanding this question?-->
   <p-fieldset *ngIf="selectedTopic">
-    <p *ngFor="let c of selectedTopic.comments">{{c.content}}
-      <span> {{c.id}} </span>
-      <span> {{c.msg}} </span>
+    <p *ngFor="let c of selectedTopic.comments">
+      <span class="list-group-irem"> {{c.msg}} </span>&nbsp;&nbsp;&nbsp;:{{c.createdDate}}<!-- it is  to display the commentvs and the date and time at which it has bieng commented -->
     </p>
   </p-fieldset>
   <hr>
