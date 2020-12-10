@@ -46,12 +46,6 @@ export class PostDetailComponent implements OnInit {
   get email() { return this.commentForm.get('email'); }
 
 
-  // convenience getter for easy access to form fields
-  get author() { return this.commentForm.get('author'); }
-  get msg() { return this.commentForm.get('msg'); }
-  get email() { return this.commentForm.get('email'); }
-
-
   ngOnInit(): void {
 
     this.getCurrentTopic();
