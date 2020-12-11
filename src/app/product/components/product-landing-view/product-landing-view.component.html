@@ -2,14 +2,13 @@
  <section>
    <p-card class="p-shadow-24">
      <!--TITLE-->
-     <div class="row mb-5">
-       <div class="col-md-12 text-center">
-         <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Products</h1>
-       </div>
+
+     <div class="text-center">
+       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Products</h1>
      </div>
 
-     <p-carousel [value]="products" [circular]="true" indicatorsPosition="Top"
-       [containerStyle]="{'max-width': '640px','margin-top': '2em'}" autoplayInterval="3000" [numVisible]="3"
+
+     <p-carousel [value]="products" [circular]="true" indicatorsPosition="Top" autoplayInterval="3000" [numVisible]="3"
        [numScroll]="1" [responsiveOptions]="responsiveOptions">
        <ng-template let-product pTemplate="item">
          <div class="product-item">
