@@ -22,7 +22,7 @@ import { ToastModule } from 'primeng/toast';
 
 const routes: Routes = [
   { path: 'products', component: ProductListComponent },
-  //  { path: ':id', component: PostDetailComponent }
+  // { path: ':id', component: PostDetailComponent }
 ];
 
 @NgModule({
@@ -36,7 +36,7 @@ const routes: Routes = [
     DataViewModule,
     CardModule,
     PanelModule,
-    ToastModule,
+    ToastModule, // ToastToast is used to display messages in an overlay.
     DropdownModule,
     TabViewModule,
     InputTextModule,
