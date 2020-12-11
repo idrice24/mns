@@ -77,6 +77,10 @@
           </ul>
 
         </div>
+        <div *ngIf="loggingAvatar" class="text-right p-ml-10">
+          <img style="border-radius: 30%;" width="45" height="45" [src]="loggingAvatar" alt="appUser.avatar"
+            class="p-shadow-1" />
+        </div>
       </div>
     </nav>
   </header>

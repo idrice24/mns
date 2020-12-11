@@ -4,6 +4,7 @@ import { Router, NavigationExtras } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user.service';
 import { AppUser } from 'src/app/shared/models/app-user';
+import { MissionService } from 'src/app/shared/services/mission.service';
 // REF: https://angular.io/start/start-forms
 @Component({
   selector: 'app-login',
@@ -12,10 +13,13 @@ import { AppUser } from 'src/app/shared/models/app-user';
 })
 export class LoginComponent implements OnInit {
 
-  message: string;
+  message: ' ';
   loginForm: FormGroup;
   appUser: AppUser;
-  constructor(private formBuilder: FormBuilder, public authService: AuthService, public router: Router) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private missionService: MissionService, // To  Act subscription
+    public authService: AuthService, public router: Router) {
     this.appUser = {
       email: '',
       fName: '',
@@ -50,8 +54,7 @@ export class LoginComponent implements OnInit {
 
   login(userData) {
 
-    // TODO@Idrice logs this message better way
-    this.message = 'Trying to log in ...';
+
     // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
@@ -66,8 +69,12 @@ export class LoginComponent implements OnInit {
         // However to keep the example simple, we will always redirect to `/admin`.
         const redirectUrl = '/admin';
 
+
+        // Send to subscriber i.e. header.component.ts
+        this.missionService.confirmLogging(this.fName.value);
+
         // Set our navigation extras object
-        // TODO@Idrice I dont  understand this?!!
+        // TODO@Idrice I dont  understand this !!
         // that passes on our global query params and fragment
         const navigationExtras: NavigationExtras = {
           queryParamsHandling: 'preserve',
