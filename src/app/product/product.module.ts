@@ -21,7 +21,7 @@ import { ToastModule } from 'primeng/toast';
 
 
 const routes: Routes = [
-  { path: '', component: ProductListComponent },
+  { path: 'products', component: ProductListComponent },
   //  { path: ':id', component: PostDetailComponent }
 ];
 
