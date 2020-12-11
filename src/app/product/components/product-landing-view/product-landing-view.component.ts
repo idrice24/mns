@@ -30,7 +30,8 @@ export class ProductLandingViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(items => this.products = items);
+    this.productService.getProducts().subscribe(items =>
+      this.products = items.slice(0, 11));
   }
 
 }
