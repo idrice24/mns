@@ -17,6 +17,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { MessageService } from 'primeng/api';
 import { RippleModule } from 'primeng/ripple';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   {
@@ -32,7 +33,7 @@ const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     GMapModule,
-    ToastModule,
+    SharedModule,
     InputTextModule,
     CheckboxModule,
     DialogModule,
@@ -42,7 +43,7 @@ const routes: Routes = [
     InputTextareaModule,
     RouterModule.forChild(routes)
   ],
-  providers: [MessageService],
+
   exports: [ContactFormComponent]
 
 })

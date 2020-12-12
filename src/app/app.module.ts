@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InMemoryDataService } from './in-memory-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -41,10 +42,28 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 })
 export class AppModule {
   // Diagnostic only: inspect router configuration
-  constructor(router: Router) {
+  constructor(
+    private router: Router,
+    private messageService: MessageService) {
+
     // Use a custom replacer to display function names in the route configs
     const replacer = (key, value) => (typeof value === 'function') ? value.name : value;
 
-    console.log('Routes: ', JSON.stringify(router.config, replacer, 2));
+    console.log('Routes: ', JSON.stringify(this.router.config, replacer, 2));
+
+
+    // Just to test toast after configuration delay 3000
+    setTimeout(() => {
+      const testmgs = {
+        severity: 'success',
+        summary: 'Not for production',
+        detail: 'App Load successfuly'
+      };
+      this.messageService.add(testmgs);
+    }, 3000);
+
+
   }
+
+
 }

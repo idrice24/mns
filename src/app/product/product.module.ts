@@ -18,6 +18,7 @@ import { ProductLandingViewComponent } from './components/product-landing-view/p
 import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
+import { SharedModule } from '../shared/shared.module';
 
 
 const routes: Routes = [
@@ -36,7 +37,7 @@ const routes: Routes = [
     DataViewModule,
     CardModule,
     PanelModule,
-    ToastModule, // ToastToast is used to display messages in an overlay.
+
     DropdownModule,
     TabViewModule,
     InputTextModule,
@@ -44,6 +45,7 @@ const routes: Routes = [
     ButtonModule, // To use p-button in html file
     FieldsetModule,
     ListboxModule,
+    SharedModule, //  used common func i.e to display messages in an overlay.
     CarouselModule, // To use p-carousel in html file
     RouterModule.forChild(routes)
   ],

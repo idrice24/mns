@@ -10,6 +10,8 @@ import { SafePipe } from './pipes/safe.pipe';
 import { MenubarModule } from 'primeng/menubar';
 import { GallerySharedComponent } from './components/gallery-shared/gallery-shared.component';
 import { ButtonModule } from 'primeng/button';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -25,15 +27,19 @@ import { ButtonModule } from 'primeng/button';
     RouterModule,
     MenubarModule,
     ButtonModule,
+    ToastModule //  allows usage of toast in html file
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     GallerySharedComponent, // allows home to use it
     SafePipe,
+    ToastModule, //  allow others module to use toast i.e. app.Module
     ForbittenEmailValidatorDirective,
     ForbittenFnameValidatorDirective,
     ForbittenPasswordValidatorDirective],
-  providers: []
+  providers: [
+    MessageService // to provide all toast msg for all app module
+  ]
 })
 export class SharedModule { }

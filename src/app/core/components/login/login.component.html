@@ -1,123 +1,56 @@
-<section>
-  <!--  <div class="card-body">
-    <div class="col-md-12 text-center">
-      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'identifier</h1>
-    </div>
-
-    <div class="col-md-12 text-center">
-
-      <form class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
-
-        <div class="input-group input-group-lg mb-4">
-          <div class="input-group-prepend">
-            <span class="input-group-text icon-user bg-primary text-white"></span>
-          </div>
-          <input type="text" name="fName" class="form-control" formControlName="fName" placeholder="nom" required>
-          <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="alert alert-danger">
-
-            <div *ngIf="fName.errors.required">
-              Name is required.
-            </div>
-            <div *ngIf="fName.errors.minlength">
-              Name must be at least 4 characters long.
-            </div>
-
-          </div>
-        </div>
-
-        <div class="input-group input-group-lg mb-4">
-          <div class="input-group-prepend">
-            <span class="input-group-text icon-key bg-primary text-white"></span>
-          </div>
-          <input type="password" name="password" class="form-control" formControlName="password"
-            placeholder="Mot de passe" required>
-          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
-
-            <div *ngIf="password.errors.required">
-              Name is required.
-            </div>
-
-            <div *ngIf="password.errors.minlength">
-              Name must be at least 4 characters long.
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="p-field">
-          <h6>
-            <a routerLink="/registry" class="link">Create Account</a>
-          </h6>
-        </div>
-
-        <div class="p-filed">
-          <h6>
-            <a href="#pablo" class="link">Need Help?</a>
-          </h6>
-        </div>
-        <button [disabled]="loginForm.invalid" type="submit"
-          class="btn btn-outline-primary btn-lg btn-block btn-round">S'identifier
-        </button>
-      </form>
-
-    </div>
-    <div class="col-md-12 text-center">
-    </div>
-  </div>
--->
-  <p-card class="p-shadow-24">
-    <!--TITLE-->
-    <div class="row mb-5">
-      <div class="col-md-12 text-center">
-        <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'identifier</h1>
-      </div>
-    </div>
+ <section>
+   <p-card class="p-shadow-24">
+     <!--TITLE-->
+     <div class="row mb-5">
+       <div class="col-md-12 text-center">
+         <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">S'identifier</h1>
+       </div>
+     </div>
 
 
-    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
-      <div class="p-d-flex p-jc-center">
-        <div class="p-grid">
-          <!--USERNAME-->
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-              <input pInputText formControlName="fName" type="text" placeholder="Nom d'utilisateur">
-            </div>
-            <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
-              <small *ngIf="fName.errors.required" class="p-invalid">Name is required.</small>
-              <small *ngIf="fName.errors.minlength" class="p-invalid">Name must be at least 4 characters long.</small>
-            </div>
-          </div>
+     <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+       <div class="p-d-flex p-jc-center">
+         <div class="p-grid">
+           <!--USERNAME-->
+           <div class="p-col-12">
+             <div class="p-inputgroup">
+               <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+               <input pInputText formControlName="fName" type="text" placeholder="Nom d'utilisateur">
+             </div>
+             <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
+               <small *ngIf="fName.errors.required" class="p-invalid">Name is required.</small>
+               <small *ngIf="fName.errors.minlength" class="p-invalid">Name must be at least 4 characters long.</small>
+             </div>
+           </div>
 
 
-          <!--PASSWORD-->
-          <!---
+           <!--PASSWORD-->
+           <!---
             1. [feedback]="false" We don't want to show the strenght indicator to the user @Idrice
           -->
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
-              <input [feedback]="false" type="password" formControlName="password" placeholder="Entre le mot de passe"
-                pPassword />
-            </div>
-            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="p-col-12">
-              <small *ngIf="password.errors.required" class="p-invalid">Name is required.</small>
-              <small *ngIf="password.errors.minlength" class="p-invalid">Name must be at least 4 characters
-                long.</small>
-            </div>
-          </div>
+           <div class="p-col-12">
+             <div class="p-inputgroup">
+               <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+               <input [feedback]="false" type="password" formControlName="password" placeholder="Entre le mot de passe"
+                 pPassword />
+             </div>
+             <div *ngIf="password.invalid && (password.dirty || password.touched)" class="p-col-12">
+               <small *ngIf="password.errors.required" class="p-invalid">Name is required.</small>
+               <small *ngIf="password.errors.minlength" class="p-invalid">Name must be at least 4 characters
+                 long.</small>
+             </div>
+           </div>
 
-          <!--BUTTON-->
-          <div class="p-col-12">
-            <button pButton pRipple [disabled]="loginForm.invalid" type="submit" label="Envoyer"
-              class="p-button-rounded"></button>
-            <button pButton routerLink="/registry" type="button" label="Create Account" class="p-button-text"></button>
+           <!--BUTTON-->
+           <div class="p-col-12">
+             <button pButton pRipple [disabled]="loginForm.invalid" type="submit" label="Envoyer"
+               class="p-button-rounded"></button>
+             <button pButton routerLink="/registry" type="button" label="Create Account" class="p-button-text"></button>
 
-          </div>
-        </div>
-      </div>
-    </form>
+           </div>
+         </div>
+       </div>
+     </form>
 
-  </p-card>
-</section>
+   </p-card>
+ </section>
