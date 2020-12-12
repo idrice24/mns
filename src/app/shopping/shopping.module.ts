@@ -5,17 +5,25 @@ import { RouterModule, Routes } from '@angular/router';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { ShoppingListItemComponent } from './components/shopping-list-item/shopping-list-item.component';
 import { SharedModule } from 'primeng/api';
+import { ShoppingComponent } from './components/shopping/shopping.component';
 
 
 
 const routes: Routes =
   [
-    { path: '', component: ShoppingListComponent }
+    {
+      path: '', component: ShoppingComponent,
+      children: [
+        { path: '', component: ShoppingListComponent, data: { title: 'Shoppings' } },
+        { path: ':id', component: ShoppingListItemComponent, data: { title: 'ShoppingListItem' } }
+      ]
+    }
   ];
 @NgModule({
   declarations: [
-    ShoppingListComponent,
-    ShoppingListItemComponent
+    ShoppingListComponent, // To manage the list of  carts
+    ShoppingListItemComponent, // To display each element of the shopping list ie. name,  items
+    ShoppingComponent // Represents the parent Component of this module
   ],
   imports: [
     CommonModule,
