@@ -44,6 +44,10 @@ const routes: Routes = [
     path: 'products',
     loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
   },
+  {
+    path: 'shoppings',
+    loadChildren: () => import('./shopping/shopping.module').then(m => m.ShoppingModule)
+  },
   { path: 'login', component: LoginComponent },
   { path: 'registry', component: RegistryComponent },
   { path: '**', component: PageNotFoundComponent }
