@@ -10,6 +10,7 @@ export class ShoppingListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.warn('ShoppinList is da');
   }
 
 }

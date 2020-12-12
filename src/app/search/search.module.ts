@@ -14,7 +14,8 @@ const routes: Routes = [{ path: 'search', component: SearchResultComponent }];
 @NgModule({
   declarations: [
     SearchResultComponent,
-    SearchUiComponent],
+    SearchUiComponent]
+  ,
   imports: [
     CommonModule,
     BrowserAnimationsModule,

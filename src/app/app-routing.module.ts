@@ -48,8 +48,8 @@ const routes: Routes = [
     path: 'shoppings',
     loadChildren: () => import('./shopping/shopping.module').then(m => m.ShoppingModule)
   },
-  { path: 'login', component: LoginComponent },
-  { path: 'registry', component: RegistryComponent },
+  { path: 'login', component: LoginComponent }, // @Idrice: to move to authModule
+  { path: 'registry', component: RegistryComponent },  // @Idrice: to move to authModule
   { path: '**', component: PageNotFoundComponent }
 ];
 // configures NgModule imports and exports

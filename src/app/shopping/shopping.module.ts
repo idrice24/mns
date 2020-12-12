@@ -7,9 +7,10 @@ import { ShoppingListItemComponent } from './components/shopping-list-item/shopp
 import { SharedModule } from 'primeng/api';
 
 
+
 const routes: Routes =
   [
-    { path: 'shoppings', component: ShoppingListComponent }
+    { path: '', component: ShoppingListComponent }
   ];
 @NgModule({
   declarations: [
@@ -18,8 +19,12 @@ const routes: Routes =
   ],
   imports: [
     CommonModule,
-    SharedModule, // To use common functions accross the app
+
+    SharedModule, // To access to common functions accross the app
     RouterModule.forChild(routes)
+  ],
+  exports: [
+    RouterModule
   ]
 })
 export class ShoppingModule { }
