@@ -1,1 +1,13 @@
-<h2>Works!! Coming soon !!</h2>
+<marquee> Coming soon !!</marquee>
+<div *ngFor="let sh of (items$| async)">
+
+  <h3>
+    {{sh.id}} </h3>
+  <h4>
+    {{sh.name}} </h4>
+
+
+
+  <button pButton (click)="showDetails(sh)" type="button" label="Details"
+    class="p-button-raised p-button-rounded p-button-danger"></button>
+</div>

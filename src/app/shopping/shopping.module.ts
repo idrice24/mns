@@ -4,8 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { ShoppingListItemComponent } from './components/shopping-list-item/shopping-list-item.component';
-import { SharedModule } from 'primeng/api';
+
 import { ShoppingComponent } from './components/shopping/shopping.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -28,7 +29,7 @@ const routes: Routes =
   imports: [
     CommonModule,
 
-    SharedModule, // To access to common functions accross the app
+    SharedModule, // To access to common functions accross the app i.e. pButton
     RouterModule.forChild(routes)
   ],
   exports: [
