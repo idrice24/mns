@@ -27,6 +27,8 @@
 - And his [Demo](https://github.com/ganatan/angular10-app/tree/master/frontend)
 - mns237 [demo](https://idrice.web.app/home) FIREBASE HOSTING
 
+- [PrimeNG](https://github.com/leandcar/ng-sapphiredb-editor-nqt4ki) - Sample of template using Primeng
+
 # Coding
 ## Precondition
 1.  Angular CLI **version 10 or higher**

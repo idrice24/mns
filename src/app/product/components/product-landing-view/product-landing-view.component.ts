@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { ProductService } from 'src/app/shared/services/product.service';
 export class ProductLandingViewComponent implements OnInit {
   responsiveOptions;
   products: any;
-  constructor(private productService: ProductService) {
+  constructor(
+    private productService: ProductService,
+    private messageService: MessageService // To invoke toast message
+  ) {
     this.responsiveOptions = [
       {
         breakpoint: '1024px',
@@ -30,7 +34,14 @@ export class ProductLandingViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(items => this.products = items);
+    this.productService.getProducts().subscribe(items =>
+      this.products = items.slice(0, 11));
+  }
+
+  addToChart(product) {
+    console.log(product.id);
+    this.messageService.addAll([{ severity: 'success', summary: 'Service Message', detail: 'Via MessageService' },
+    { severity: 'info', summary: '@idrice Todo', detail: 'TODO' }]);
   }
 
 }
