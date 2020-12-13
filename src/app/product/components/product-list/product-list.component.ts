@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MessageService, SelectItem } from 'primeng/api';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/shared/models/product';
@@ -21,6 +23,7 @@ export class ProductListComponent implements OnInit {
   sortField: string;
 
   constructor(
+    private router: Router,
     private messageService: MessageService,
     private productService: ProductService) { }
 
@@ -52,6 +55,7 @@ export class ProductListComponent implements OnInit {
   addToChart(product: Product) {
     const msg = product.id;
 
+    this.router.navigate(['/shoppings']);
     // TODO@Idrice: Missing logic to add to Chart
     this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product add to chart ID=' + msg, life: 6000 });
 

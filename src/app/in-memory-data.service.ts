@@ -10321,8 +10321,17 @@ export class InMemoryDataService implements InMemoryDbService {
       summary: 'Adaptive object-oriented workforce'
     }
     ];
+
+    const shoppings = [
+      {
+        id: 1,
+        name: 'default',
+        description: 'Just for test shopping module',
+        client: []
+      }
+    ];
     // Important!! Name of array is the name of in api url --> api/users
-    return { users, blog, videos, products, photos, subscribers };
+    return { users, blog, videos, products, photos, subscribers, shoppings };
   }
 
 

@@ -35,6 +35,7 @@ import { ToastModule } from 'primeng/toast';
     GallerySharedComponent, // allows home to use it
     SafePipe,
     ToastModule, //  allow others module to use toast i.e. app.Module
+    ButtonModule, // to wrap access to other module .ie. shoppingModule
     ForbittenEmailValidatorDirective,
     ForbittenFnameValidatorDirective,
     ForbittenPasswordValidatorDirective],
