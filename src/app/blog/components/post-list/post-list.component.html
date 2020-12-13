@@ -80,10 +80,7 @@
                 <div class="blog-description">
                   <article>{{blog.content}}</article>
                 </div>
-
-                <span><i class="pi pi-thumbs-up"></i>Like </span>&nbsp;
-                <span><i class="pi pi-thumbs-down"></i>Unlike </span>&nbsp;
-                <span><i class="pi pi-globe"></i>Public </span>&nbsp;
+                <span><i class="pi pi-globe"></i>Share </span>&nbsp;
                 <br>
                 <p-rating [ngModel]="blog.rating" [readonly]="true" [cancel]="false"></p-rating>
                 <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
