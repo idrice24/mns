@@ -4,7 +4,7 @@
   <div class="row mb-5">
     <div class="col-md-12 text-center">
       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">BLOG</h1>
-      <img [src]="selectedTopic.imageUrl"/>
+      <img [src]="selectedTopic?.imageUrl" [alt]="selectedTopic?.imageUrl" *ngIf="selectedTopic?.imageUrl"/>
     </div>
   </div>
 
@@ -23,10 +23,6 @@
    This is basic concept of angular
   -->
 
-  <!-- here i display the comment posted  ANs=OKAY -->
-  <!-- but when i write this {{selectedTopic.comments.msg}} i am having an error-->
-  <!--  the error is that Cannot read property 'comments' of undefined-->
-  <!--@idrice: Comments is an array: you know how to retrieve array elemenst LOL-->
   <p-fieldset *ngIf="selectedTopic">
     <p *ngFor="let c of selectedTopic.comments">
       <span class="list-group-irem"> {{c.msg}} </span>&nbsp;&nbsp;&nbsp;:{{c.createdDate}}<!-- it is  to display the commentvs and the date and time at which it has bieng commented -->
