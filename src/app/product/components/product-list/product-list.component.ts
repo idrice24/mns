@@ -55,9 +55,9 @@ export class ProductListComponent implements OnInit {
   // Logic to add a product in Cart
   addToChart(product: Product) {
     const msg = product.id;
-    console.log("XXXXXXXXXXXXXXXXX");
+
     this.missionService.addingOrRemoving(true);
-    console.log("XXXXXXXXXXXXXXXXX22222222222");
+
 
     // this.router.navigate(['/shoppings']);
     // TODO@Idrice: Missing logic to add to Chart
