@@ -11,6 +11,16 @@ import { MenubarModule } from 'primeng/menubar';
 import { GallerySharedComponent } from './components/gallery-shared/gallery-shared.component';
 import { ButtonModule } from 'primeng/button';
 import { MessageService } from 'primeng/api';
+import { DataViewModule } from 'primeng/dataview';
+import { PanelModule } from 'primeng/panel';
+import { InputTextModule } from 'primeng/inputtext';
+import { RatingModule } from 'primeng/rating';
+import { DropdownModule } from 'primeng/dropdown';
+import { TabViewModule } from 'primeng/tabview';
+import { FieldsetModule } from 'primeng/fieldset';
+import { ListboxModule } from 'primeng/listbox';
+import { CarouselModule } from 'primeng/carousel';
+import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
 
 @NgModule({
@@ -26,7 +36,18 @@ import { ToastModule } from 'primeng/toast';
     CommonModule,
     RouterModule,
     MenubarModule,
+    DataViewModule,
+    CardModule,
+    PanelModule,
+    DropdownModule,
+    TabViewModule,
+    InputTextModule,
+    RatingModule,
+    ButtonModule, // To use p-button in html file
+    FieldsetModule,
+    ListboxModule,
     ButtonModule,
+    CarouselModule, // To use p-carousel in html file
     ToastModule //  allows usage of toast in html file
   ],
   exports: [
@@ -34,6 +55,17 @@ import { ToastModule } from 'primeng/toast';
     FooterComponent,
     GallerySharedComponent, // allows home to use it
     SafePipe,
+    CarouselModule,
+    MenubarModule,
+    DataViewModule,
+    CardModule,
+    PanelModule,
+    DropdownModule,
+    TabViewModule,
+    InputTextModule,
+    RatingModule,
+    FieldsetModule,
+    ListboxModule,
     ToastModule, //  allow others module to use toast i.e. app.Module
     ButtonModule, // to wrap access to other module .ie. shoppingModule
     ForbittenEmailValidatorDirective,
