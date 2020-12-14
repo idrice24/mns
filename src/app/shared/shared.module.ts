@@ -24,7 +24,7 @@ import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
 import { RippleModule } from 'primeng/ripple';
 import { MissionService } from './services/mission.service';
-
+import { TooltipModule } from 'primeng/tooltip';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -39,6 +39,7 @@ import { MissionService } from './services/mission.service';
     RouterModule,
     MenubarModule,
     DataViewModule,
+    TooltipModule, // Tooltip directive provides advisory information for a component
     CardModule,
     RippleModule,
     PanelModule,
@@ -59,6 +60,7 @@ import { MissionService } from './services/mission.service';
     GallerySharedComponent, // allows home to use it
     SafePipe,
     CarouselModule,
+    TooltipModule,
     MenubarModule,
     DataViewModule,
     CardModule,

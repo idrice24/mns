@@ -61,7 +61,7 @@ export class ProductListComponent implements OnInit {
 
     // this.router.navigate(['/shoppings']);
     // TODO@Idrice: Missing logic to add to Chart
-    this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product add to chart ID=' + msg, life: 6000 });
+    this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product added to cart ID=' + msg, life: 6000 });
 
   }
 
