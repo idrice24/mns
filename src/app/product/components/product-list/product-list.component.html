@@ -64,8 +64,17 @@
                </div>
                <div class="product-grid-item-bottom p-p-1">
                  <span class="product-price pr-2">{{product.price}} <i>Fcfa</i></span>
-                 <button (click)="addToChart(product)" pTooltip="To Cart" pButton icon="pi pi-shopping-cart"
-                   class="p-button-raised p-button-rounded"></button>
+
+                 <!--BUTTONS ON CARD-->
+                 <div>
+                   <button pButton pTooltip="To Notice" icon="pi pi-heart"
+                     class="p-button-raised p-button-rounded mr-1"></button>
+
+                   <button pButton (click)="addToChart(product)" pTooltip="To Cart" icon="pi pi-shopping-cart"
+                     [ngClass]="isAlreadyClicked ? 'p-button-raised p-button-rounded' : 'p-button-raised p-button-outlined p-button-rounded'">
+
+                   </button>
+                 </div>
                </div>
              </div>
            </div>

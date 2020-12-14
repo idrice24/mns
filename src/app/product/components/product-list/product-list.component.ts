@@ -22,6 +22,8 @@ export class ProductListComponent implements OnInit {
   sortOrder: number;
   sortField: string;
 
+  isAlreadyClicked = false;
+
   constructor(
     private router: Router,
     private missionService: MissionService, // Notify extern conponent i.e  header fot cart
@@ -58,7 +60,7 @@ export class ProductListComponent implements OnInit {
 
     this.missionService.addingOrRemoving(true);
 
-
+    this.isAlreadyClicked = !this.isAlreadyClicked;
     // this.router.navigate(['/shoppings']);
     // TODO@Idrice: Missing logic to add to Chart
     this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product added to cart ID=' + msg, life: 6000 });
