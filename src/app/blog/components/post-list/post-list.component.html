@@ -9,9 +9,9 @@
   <div class="p-grid">
 
     <!--COL1: RECENT POSTS-->
-    <!--Each time i try to modify this blog of code i got error -->
     <div class="p-col-4">
-      <p-listbox filter="true" [options]="recentPosts" optionLabel="title">
+      <p-listbox #theListPost filter="true" (onClick)="openRecentPost($event.value)" [options]="recentPosts"
+        optionLabel="title">
         <ng-template pTemplate="header">
           RECENT POSTS
         </ng-template>
