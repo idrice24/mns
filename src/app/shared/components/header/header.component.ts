@@ -13,13 +13,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // To store list of menu items
   menuItems: MenuItem[];
   subscription; // To act subscription
-
+  subcriptionShoppingCart;
   loggingAvatar: string;
+
+  numberOfShoppinItems: number; //  To store Items inside Cart
   constructor(
     private avatarService: AvatarService, // To Create  Avatar
     private missionService: MissionService // Provider Info from loggIn
   ) {
-
+    this.numberOfShoppinItems = 0;
   }
 
   ngOnInit(): void {
@@ -31,6 +33,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     });
 
+    // subcriptionShoppingCart
+    this.subcriptionShoppingCart = this.missionService.missionToCart$.subscribe(value => {
+      if (value) {
+        this.numberOfShoppinItems = this.numberOfShoppinItems++;
+      }
+      else {
+        this.numberOfShoppinItems = this.numberOfShoppinItems--;
+      }
+    });
   }
 
   private loadMenuItems() {
@@ -63,6 +74,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     // prevent memory leak when component destroyed
     this.subscription.unsubscribe();
+    this.subcriptionShoppingCart.unsubscribe();
   }
 }
 

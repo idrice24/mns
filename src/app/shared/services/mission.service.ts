@@ -12,13 +12,13 @@ import { AppUser } from '../models/app-user';
 export class MissionService {
 
   // Observable boolean sources
-  private missionAddedToChartSource = new Subject<boolean>();
+  private missionToCartSource = new Subject<boolean>();
   private missionAnnouncedSource = new Subject<string>();
   private missionConfirmedSource = new Subject<string>();
 
 
   // Observable boolean streams
-  missionAddedToChart$: Observable<boolean> = this.missionAddedToChartSource.asObservable();
+  missionToCart$: Observable<boolean> = this.missionToCartSource.asObservable();
   missionAnnounced$: Observable<string> = this.missionAnnouncedSource.asObservable();
   missionConfirmed$: Observable<string> = this.missionConfirmedSource.asObservable();
 
@@ -29,7 +29,10 @@ export class MissionService {
     this.missionConfirmedSource.next(name);
   }
 
+  /***
+   * @param indication : whether the item should add or remove from cart.
+   */
   addingOrRemoving(indication: boolean) {
-    this.missionAddedToChartSource.next(indication);
+    this.missionToCartSource.next(indication);
   }
 }

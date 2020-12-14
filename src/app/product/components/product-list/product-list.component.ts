@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MessageService, SelectItem } from 'primeng/api';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/shared/models/product';
+import { MissionService } from 'src/app/shared/services/mission.service';
 import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
@@ -24,6 +25,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private missionService: MissionService, // Notify extern conponent i.e  header fot cart
     private messageService: MessageService,
     private productService: ProductService) { }
 
@@ -54,8 +56,8 @@ export class ProductListComponent implements OnInit {
   // Logic to add a product in Chart
   addToChart(product: Product) {
     const msg = product.id;
-
-    this.router.navigate(['/shoppings']);
+    this.missionService.addingOrRemoving(true);
+    // this.router.navigate(['/shoppings']);
     // TODO@Idrice: Missing logic to add to Chart
     this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product add to chart ID=' + msg, life: 6000 });
 
