@@ -23,6 +23,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
 import { RippleModule } from 'primeng/ripple';
+import { MissionService } from './services/mission.service';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { RippleModule } from 'primeng/ripple';
     ForbittenFnameValidatorDirective,
     ForbittenPasswordValidatorDirective],
   providers: [
-    MessageService // to provide all toast msg for all app module
+    MessageService, // to provide all toast msg for all app module
+    MissionService // This alo to use  this service in any module in  app
   ]
 })
 export class SharedModule { }

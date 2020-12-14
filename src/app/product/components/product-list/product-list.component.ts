@@ -10,8 +10,7 @@ import { ProductService } from 'src/app/shared/services/product.service';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss'],
-  providers: [MessageService]
+  styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
   // To store products from DB
@@ -53,10 +52,13 @@ export class ProductListComponent implements OnInit {
     }
   }
 
-  // Logic to add a product in Chart
+  // Logic to add a product in Cart
   addToChart(product: Product) {
     const msg = product.id;
+    console.log("XXXXXXXXXXXXXXXXX");
     this.missionService.addingOrRemoving(true);
+    console.log("XXXXXXXXXXXXXXXXX22222222222");
+
     // this.router.navigate(['/shoppings']);
     // TODO@Idrice: Missing logic to add to Chart
     this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product add to chart ID=' + msg, life: 6000 });

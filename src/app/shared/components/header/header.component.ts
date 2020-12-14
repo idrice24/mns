@@ -35,12 +35,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     // subcriptionShoppingCart
     this.subcriptionShoppingCart = this.missionService.missionToCart$.subscribe(value => {
+
+
       if (value) {
-        this.numberOfShoppinItems = this.numberOfShoppinItems++;
+        console.log('SERVICELLLLLLLOWRKS ' + this.numberOfShoppinItems);
+        this.numberOfShoppinItems = this.numberOfShoppinItems + 1;
       }
       else {
         this.numberOfShoppinItems = this.numberOfShoppinItems--;
       }
+
+
     });
   }
 
