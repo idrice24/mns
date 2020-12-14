@@ -22,6 +22,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
+import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ToastModule } from 'primeng/toast';
     MenubarModule,
     DataViewModule,
     CardModule,
+    RippleModule,
     PanelModule,
     DropdownModule,
     TabViewModule,
@@ -60,6 +62,7 @@ import { ToastModule } from 'primeng/toast';
     DataViewModule,
     CardModule,
     PanelModule,
+    RippleModule, // use new concept to export extern module
     DropdownModule,
     TabViewModule,
     InputTextModule,
