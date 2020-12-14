@@ -121,70 +121,6 @@
   </ng-template>
 </p-dialog>
 
-<!-- <!-- add new blog 
-<p-dialog [(visible)]="appBlogDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true"
-  styleClass="p-fluid">
-  <form>
-  <ng-template pTemplate="content">
-
-    <!-- title 
-    <div class="p-field">
-      <label for="name">Title</label>
-      <input type="text" pInputText id="title" required autofocus />
-    </div>
-
-    <!-- Content 
-    <div class="p-field">
-      <label for="description">Content</label>
-      <textarea id="description" pInputTextarea required rows="3" cols="20"></textarea>
-    </div>
-
-    <!-- category 
-    <div class="p-field">
-      <label class="p-mb-3">Category</label>
-      <div class="p-formgrid p-grid">
-        <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category1" name="category" value="Accessories">
-          </p-radioButton>
-          <label for="category1">Accessories</label>
-        </div>
-        <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category2" name="category" value="Clothing"></p-radioButton>
-          <label for="category2">Clothing</label>
-        </div>
-        <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category3" name="category" value="Electronics">
-          </p-radioButton>
-          <label for="category3">Electronics</label>
-        </div>
-        <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category4" name="category" value="Fitness"></p-radioButton>
-          <label for="category4">Fitness</label>
-        </div>
-      </div>
-    </div>
-
-        <!-- Summary 
-    <div class="p-field">
-      <label for="name">Summary</label>
-      <input type="text" pInputText id="summary" required autofocus />
-    </div>
-
-        <!-- Image Url 
-    <div class="p-field">
-      <label for="name">Image</label>
-      <input type="file" pInputText id="imageUrl" required autofocus />
-    </div>
-
-  </ng-template>
-
-  <ng-template pTemplate="footer">
-    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveBlog()"></button>
-  </ng-template>
-</form>
-</p-dialog> -->
-
 <p-dialog  [(visible)]="appBlogDialog" [style]="{width: '450px'}" header="AppBlogs Details" [modal]="true">
   <form [formGroup]="blogForm" (ngSubmit)="doSubscription()">
     
@@ -202,7 +138,7 @@
           <div class="p-col-12">
             <div class="p-inputgroup">
               <label for="name">Content</label>
-              <textarea id="description"  pInputTextarea required rows="3" cols="20"></textarea>
+              <textarea id="description"  pInputTextarea required rows="3" cols="20" formControlName="title"></textarea>
             </div>
           </div>
           <!-- Categiry -->
@@ -211,7 +147,7 @@
               <label for="name">Category</label>
               <div class="p-formgrid p-grid">
         <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category1" name="category" value="Accessories" >
+          <p-radioButton id="category1" name="category" value="Accessories">
           </p-radioButton>
           <label for="category1">Accessories</label>
         </div>
@@ -220,12 +156,12 @@
           <label for="category2">Clothing</label>
         </div>
         <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category3" name="category" value="Electronics" >
+          <p-radioButton id="category3" name="category" value="Electronics">
           </p-radioButton>
           <label for="category3">Electronics</label>
         </div>
         <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category4" name="category" value="Fitness" ></p-radioButton>
+          <p-radioButton id="category4" name="category" value="Fitness"></p-radioButton>
           <label for="category4">Fitness</label>
         </div>
       </div>
