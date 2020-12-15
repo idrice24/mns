@@ -11,6 +11,8 @@ import { ProductService } from 'src/app/shared/services/product.service';
 export class ManageProductComponent implements OnInit {
   productDialog: boolean;
 
+  productPost: boolean; // this is to open the add product form
+
   products: Product[];
 
   product: Product = {};
@@ -34,7 +36,7 @@ export class ManageProductComponent implements OnInit {
   openNew() {
     this.product = {};
     this.submitted = false;
-    this.productDialog = true;
+    this.productPost = true;
     this.messageService.add({life: 1000});
   }
 
@@ -71,6 +73,7 @@ export class ManageProductComponent implements OnInit {
 
   hideDialog() {
     this.submitted = false;
+    this.productDialog = false;
   }
 
   saveProduct() {
