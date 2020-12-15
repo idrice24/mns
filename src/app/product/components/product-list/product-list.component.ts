@@ -4,13 +4,13 @@ import { Router } from '@angular/router';
 import { MessageService, SelectItem } from 'primeng/api';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/shared/models/product';
+import { MissionService } from 'src/app/shared/services/mission.service';
 import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss'],
-  providers: [MessageService]
+  styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
   // To store products from DB
@@ -22,8 +22,11 @@ export class ProductListComponent implements OnInit {
   sortOrder: number;
   sortField: string;
 
+  isAlreadyClicked = false;
+
   constructor(
     private router: Router,
+    private missionService: MissionService, // Notify extern conponent i.e  header fot cart
     private messageService: MessageService,
     private productService: ProductService) { }
 
@@ -51,13 +54,16 @@ export class ProductListComponent implements OnInit {
     }
   }
 
-  // Logic to add a product in Chart
+  // Logic to add a product in Cart
   addToChart(product: Product) {
     const msg = product.id;
 
-    this.router.navigate(['/shoppings']);
+    this.missionService.addingOrRemoving(true);
+
+    this.isAlreadyClicked = !this.isAlreadyClicked;
+    // this.router.navigate(['/shoppings']);
     // TODO@Idrice: Missing logic to add to Chart
-    this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product add to chart ID=' + msg, life: 6000 });
+    this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product added to cart ID=' + msg, life: 6000 });
 
   }
 
