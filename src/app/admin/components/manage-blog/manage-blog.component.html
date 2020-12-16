@@ -12,7 +12,7 @@
 
       <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2"
         (click)="openNew()"></button>
- 
+
       <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
               (click)="deleteSelectedTopics()" [disabled]="!selectedTopics || !selectedTopics.length"></button>
     </ng-template>
@@ -49,7 +49,7 @@
           <p-sortIcon field="content"></p-sortIcon>
         </th>
 
-        <th pSortableColumn="createdDate">Cretae Date
+        <th pSortableColumn="createdDate">Create Date
           <p-sortIcon field="createdDate"> </p-sortIcon>
         </th>
         <th pSortableColumn="category">Category
@@ -123,7 +123,7 @@
 
 <p-dialog  [(visible)]="appBlogDialog" [style]="{width: '450px'}" header="AppBlogs Details" [modal]="true">
   <form [formGroup]="blogForm" (ngSubmit)="doSubscription()">
-    
+
     <div class="p-d-flex p-jc-center">
         <div class="p-grid">
 
@@ -190,7 +190,7 @@
         <button pButton pRipple label="SAVE" icon="pi pi-check" type="submit" class="p-button-text"></button>
         <button pButton pRipple label="cancle" class="p-button-text" icon="pi pi-times" (click)="hideDialog()"></button>
       </div>
-      
+
 
   </form>
   </p-dialog>
@@ -199,4 +199,3 @@
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
 
 
- 
