@@ -151,13 +151,6 @@
   <form [formGroup]="productForm" (ngSubmit)="doSubscription()">
       <div class="p-d-flex p-jc-center">
         <div class="p-grid">
-          <!-- Name -->
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <label for="name">Name &nbsp;</label>
-              <input type="text" pInputText id="name" formControlName="name"/>
-            </div>
-          </div>
 
           <!-- Title -->
           <div class="p-col-12">
@@ -228,7 +221,7 @@
       </div>
 
       <div class="p-col-12">
-        <button pButton pRipple label="EnVoyer" icon="pi pi-check" type="submit" class="p-button-text"></button>
+        <button pButton pRipple label="Envoyer" icon="pi pi-check" (click)="doSubscription()" class="p-button-text"></button>
         <button pButton pRipple label="cancle" class="p-button-text" icon="pi pi-times" (click)="hideDialog()"></button>
       </div>
   </form>
