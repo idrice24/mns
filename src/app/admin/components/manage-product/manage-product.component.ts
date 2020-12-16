@@ -50,12 +50,12 @@ export class ManageProductComponent implements OnInit {
 
     this.productForm = new FormGroup({
       title: new FormControl('', [ Validators.required, ]),
-      content: new FormControl('', [Validators.required]),
-      price: new FormControl('', [Validators.required]),
-      category: new FormControl('', [Validators.required]),
-      inventoryStatus: new FormControl('', [Validators.required]),
-      description: new FormControl('', [Validators.required]),
-      image: new FormControl('', [Validators.required]),
+      content: new FormControl('', [Validators.required,]),
+      price: new FormControl('', [Validators.required, ]),
+      category: new FormControl('', [Validators.required, ]),
+      inventoryStatus: new FormControl('', [Validators.required, ]),
+      description: new FormControl('', [Validators.required, ]),
+      image: new FormControl('', [Validators.required, ]),
     });
   }
 
