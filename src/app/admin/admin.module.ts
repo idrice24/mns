@@ -31,7 +31,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputNumberModule } from 'primeng/inputnumber';
-import { RadioButtonModule } from 'primeng/radiobutton';
+
 import { RatingModule } from 'primeng/rating';
 import { ToastModule } from 'primeng/toast';
 import { SidebarModule } from 'primeng/sidebar';
@@ -82,7 +82,6 @@ const adminRoutes: Routes = [
     TableModule,
     RippleModule,
     DialogModule,
-    RadioButtonModule,
     RatingModule,
     ToastModule,
     ButtonModule,
@@ -101,11 +100,9 @@ const adminRoutes: Routes = [
     FileUploadModule,
     ToolbarModule,
     RatingModule,
-    RadioButtonModule,
     InputNumberModule,
     ConfirmDialogModule,
     InputTextareaModule,
-    // TableCheckboxModule,
     SidebarModule,
     FormsModule,
     ReactiveFormsModule,

@@ -25,6 +25,7 @@ import { ToastModule } from 'primeng/toast';
 import { RippleModule } from 'primeng/ripple';
 import { MissionService } from './services/mission.service';
 import { TooltipModule } from 'primeng/tooltip';
+import { RadioButtonModule } from 'primeng/radiobutton';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -51,6 +52,7 @@ import { TooltipModule } from 'primeng/tooltip';
     FieldsetModule,
     ListboxModule,
     ButtonModule,
+    RadioButtonModule, // to use p-ratiobutton
     CarouselModule, // To use p-carousel in html file
     ToastModule //  allows usage of toast in html file
   ],
@@ -70,6 +72,7 @@ import { TooltipModule } from 'primeng/tooltip';
     TabViewModule,
     InputTextModule,
     RatingModule,
+    RadioButtonModule,
     FieldsetModule,
     ListboxModule,
     ToastModule, //  allow others module to use toast i.e. app.Module

@@ -12,7 +12,10 @@ describe('ManageUserComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ManageUserComponent],
-      imports: [HttpClientTestingModule, FormsModule, RouterTestingModule],
+      imports: [
+        HttpClientTestingModule,
+        FormsModule,
+        RouterTestingModule],
 
     })
       .compileComponents();
