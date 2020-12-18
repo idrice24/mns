@@ -22,7 +22,7 @@ import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 
 const routes: Routes = [
-  { path: '', component: PostListComponent },
+  { path: '', component: PostListComponent, data: { animation: 'BlogPage' } },
   { path: ':id', component: PostDetailComponent }
 ];
 
