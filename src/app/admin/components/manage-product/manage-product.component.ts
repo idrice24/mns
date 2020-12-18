@@ -2,14 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Product } from 'src/app/shared/models/product';
 import { ProductService } from 'src/app/shared/services/product.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-manage-product',
   templateUrl: './manage-product.component.html',
-  styleUrls: ['./manage-product.component.scss']
+  styleUrls: ['./manage-product.component.scss'],
+  providers: [MessageService, ConfirmationService]
 })
 export class ManageProductComponent implements OnInit {
   productDialog: boolean;
+
+  productPost: boolean; // this is to open the add product form
 
   products: Product[];
 
@@ -19,23 +23,50 @@ export class ManageProductComponent implements OnInit {
 
   submitted: boolean;
 
+  productForm: FormGroup;
+
   constructor(
     private productService: ProductService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService) { }
+
+  // convenience getter for easy access to form fields
+  get code() { return this.productForm.get('code'); }
+  get price() { return this.productForm.get('price'); }
+  get category() { return this.productForm.get('category'); }
+  get content() { return this.productForm.get('content'); }
+  get inventoryStatus() { return this.productForm.get('inventoryStatus'); }
+  get description() { return this.productForm.get('description'); }
+  get title() { return this.productForm.get('title'); }
+  get summary() { return this.productForm.get('summary'); }
+  get image() { return this.productForm.get('image'); }
+  get name() { return this.productForm.get('name'); } // to get name of any product
 
   ngOnInit() {
     this.productService.getProducts().subscribe(data => {
       this.products = data;
       console.log(data[0].name);
     });
+
+
+    this.productForm = new FormGroup({
+      name: new FormControl('', [Validators.required]), // to check a name of any product in form
+      summary: new FormControl('', [Validators.required]), // to check summary field of any product in form
+      title: new FormControl('', [Validators.required]),
+      content: new FormControl('', [Validators.required]),
+      price: new FormControl('', [Validators.required]),
+      category: new FormControl('', [Validators.required]),
+      inventoryStatus: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required]),
+      image: new FormControl('', [Validators.required]),
+    });
   }
 
   openNew() {
     this.product = {};
     this.submitted = false;
-    this.productDialog = true;
-    this.messageService.add({life: 1000});
+    this.productPost = true;
+    this.messageService.add({ life: 1000 });
   }
 
   deleteSelectedProducts() {
@@ -71,6 +102,7 @@ export class ManageProductComponent implements OnInit {
 
   hideDialog() {
     this.submitted = false;
+    this.productDialog = false;
   }
 
   saveProduct() {
@@ -105,6 +137,23 @@ export class ManageProductComponent implements OnInit {
 
     return index;
   }
+  // Save to data base this user information
+  doSubscription() {
 
+    const currentAppProduct: Product = {
+      title: this.title.value,
+      content: this.content.value,
+      image: this.image.value,
+      summary: this.summary.value,
+      category: this.category.value,
+      description: this.description.value,
+      price: this.price.value
+    };
+
+    this.productService.addProduct(currentAppProduct).subscribe(_ =>
+      // To Clean a formular
+      this.productForm.reset());
+
+  }
 
 }

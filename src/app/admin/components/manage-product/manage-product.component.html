@@ -1,16 +1,12 @@
 <p-toast></p-toast>
 <div class="col-md-12 text-center">
-  <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Product ({{products ? products.length : 0 }})</h1>
- 
+  <h1 *ngIf="products" data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Product
+    {{product ? products.length : 0}}</h1>
 </div>
-
-
-
 <div class="card">
   <p-toolbar styleClass="p-mb-4">
     <ng-template pTemplate="left">
-      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2"
-        (click)="openNew()"></button>
+      <button pButton pRipple label="New" icon="pi p-plus" class="p-button-success p-mr-2" (click)="openNew()"></button>
       <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
         (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
     </ng-template>
@@ -22,13 +18,13 @@
     </ng-template>
   </p-toolbar>
 
-  <p-table #dt [value]="products" [rows]="10" [paginator]="true"
-    [globalFilterFields]="['name','country.name','representative.name','status', 'price']" [(selection)]="selectedProducts"
-    [rowHover]="true" dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-    [showCurrentPageReport]="true">
+  <p-table #dt [value]="products" [rows]="10" [paginator]="true" [globalFilterFields]="['id', 'status', 'price']"
+    [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
+    currentPageReportTemplate="Showing {first} to {first} of {totalRecords} entries" [showCurrentPageReport]="true">
+
+    <!-- search section -->
     <ng-template pTemplate="caption">
       <div class="p-d-flex p-ai-center p-jc-between">
-
         <span class="p-input-icon-left">
           <i class="pi pi-search"></i>
           <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
@@ -36,6 +32,7 @@
         </span>
       </div>
     </ng-template>
+
     <ng-template pTemplate="header">
       <tr>
         <th style="width: 3rem">
@@ -54,28 +51,33 @@
         <th></th>
       </tr>
     </ng-template>
+
     <ng-template pTemplate="body" let-product>
       <tr>
         <td>
           <p-tableCheckbox [value]="product"></p-tableCheckbox>
         </td>
+
         <td>{{product.name}}</td>
         <td>{{product.price | currency:'USD'}}</td>
         <td>{{product.category}}</td>
         <td>
           <p-rating [readonly]="true" [cancel]="false"></p-rating>
         </td>
-        <td><span
-            [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
-        </td>
         <td>
-          <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
+          <!--<span
+            [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>-->
+        </td>
+
+        <td>
+          <button pButton pRipple label="edit" class="p-button-rounded p-button-success p-mr-2"
             (click)="editProduct(product)"></button>
           <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
             (click)="deleteProduct(product)"></button>
         </td>
       </tr>
     </ng-template>
+
     <ng-template pTemplate="summary">
       <div class="p-d-flex p-ai-center p-jc-between">
         In total there are {{products ? products.length : 0 }} products.
@@ -84,19 +86,25 @@
   </p-table>
 </div>
 
+
 <p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true"
   styleClass="p-fluid">
   <ng-template pTemplate="content">
+
+    <!-- name of product -->
     <div class="p-field">
       <label for="name">Name</label>
       <input type="text" pInputText id="name" required autofocus />
       <small class="p-invalid" *ngIf="submitted && !product.name">Name is required.</small>
     </div>
+
+    <!-- Describtion of product -->
     <div class="p-field">
       <label for="description">Description</label>
       <textarea id="description" pInputTextarea required rows="3" cols="20"></textarea>
     </div>
 
+    <!-- Product Category -->
     <div class="p-field">
       <label class="p-mb-3">Category</label>
       <div class="p-formgrid p-grid">
@@ -121,6 +129,7 @@
       </div>
     </div>
 
+    <!-- Price -->
     <div class="p-formgrid p-grid">
       <div class="p-field p-col">
         <label for="price">Price</label>
@@ -140,4 +149,95 @@
   </ng-template>
 </p-dialog>
 
+
+<!-- open new form-->
+<p-dialog [(visible)]="productPost" [style]="{width: '450px'}" header="Add New Product" [modal]="true">
+  <form [formGroup]="productForm" (ngSubmit)="doSubscription()">
+    <div class="p-d-flex p-jc-center">
+      <div class="p-grid">
+        <!-- Name -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="name">Name</label>
+            <input type="text" pInputText id="name" formControlName="name" />
+          </div>
+        </div>
+
+        <!-- Title -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="name">Title</label>
+            <input type="text" pInputText id="title" formControlName="title" />
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="name">Content</label>
+            <textarea id="description" pInputTextarea required rows="3" cols="20"
+              formControlName="description"></textarea>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="name">Summary </label>
+            <input formControlName="summary" type="text" pInputText id="summary" />
+          </div>
+        </div>
+
+        <!-- Image Url-->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="name">Image</label>
+            <input formControlName="image" type="file" pInputText id="image" />
+          </div>
+        </div>
+
+        <!-- Product Category -->
+        <div class="p-field">
+          <label class="p-mb-3">Category</label>
+          <div class="p-formgrid p-grid">
+            <div class="p-field-radiobutton p-col-6">
+              <input type="ratio" id="category1" name="categoryGR" value="Accessories" formControlName="category" />
+
+              <label for="category1">Accessories</label>
+            </div>
+
+            <div class="p-field-radiobutton p-col-6">
+              <input type="ratio" id="category3" name="categoryGR" value="Electronics" formControlName="category" />
+
+              <label for="category3">Electronics</label>
+            </div>
+            <div class="p-field-radiobutton p-col-6">
+              <input type="ratio" id="category4" name="categoryGR" value="Fitness" formControlName="category" />
+
+              <label for="category4">Fitness</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Price-->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="priceg">Price</label>
+            <p-inputNumber ngDefaultControl formControlName="price" id="priceg" mode="currency" currency="USD"
+              locale="en-US">
+            </p-inputNumber>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="p-col-12">
+      <button pButton pRipple label="Envoyer" icon="pi pi-check" type="submit" class="p-button-text"></button>
+      <button pButton pRipple label="cancle" class="p-button-text" icon="pi pi-times" (click)="hideDialog()"></button>
+    </div>
+  </form>
+</p-dialog>
+
+<!--POP CONFIRMATION-->
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
