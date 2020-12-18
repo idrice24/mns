@@ -120,7 +120,7 @@
   </ng-template>
 </p-dialog>
 
-<p-dialog [(visible)]="appBlogDialog" [style]="{width: '450px'}" header="AppBlogs Details" [modal]="true">
+<p-dialog [(visible)]="appBlogDialog" [style]="{width: '750px'}" header="AppBlogs Details" [modal]="true">
   <form [formGroup]="blogForm" (ngSubmit)="doSubscription()">
 
     <div class="p-d-flex p-jc-center">
@@ -140,7 +140,7 @@
             <textarea id="description" pInputTextarea required rows="3" cols="20" formControlName="title"></textarea>
           </div>
         </div>
-        <!-- Categiry -->
+        <!-- Category: ONLy products and actu -->
         <div class="p-col-12">
           <div class="p-inputgroup">
             <label for="name">Category</label>
