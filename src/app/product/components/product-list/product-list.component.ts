@@ -53,7 +53,9 @@ export class ProductListComponent implements OnInit {
       this.sortField = value;
     }
   }
-
+  addHeart(product: Product) {
+    product.heart = !product.heart;
+  }
   // Logic to add a product in Cart
   addToChart(product: Product) {
     const msg = product.id;
