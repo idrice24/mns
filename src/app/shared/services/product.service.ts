@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LogService } from './log.service';
-import {catchError, map, tap} from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { Product } from '../models/product';
-import {Topic} from '../models/topic';
-import {Observable, of} from 'rxjs';
+import { Topic } from '../models/topic';
+import { Observable, of } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
+  // private productUrl = 'api/product';
   private productUrl = 'api/products';
   product: Product;
 
-  // private productUrl = 'api/product';
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -33,8 +33,8 @@ export class ProductService {
       catchError(this.handleError<Product>('addProduct'))
     );
   }
-/** GET: product by Id */
-getProductById(id: number | string) {
+  /** GET: product by Id */
+  getProductById(id: number | string) {
     return this.httpClient.get<Product[]>(this.productUrl).pipe(
       // (+) before `id` turns the string into a number
       map((products: Product[]) => products.find(product => product.id === +id))

@@ -19,7 +19,7 @@ export class ShoppingService {
 
 
   constructor(
-    private httpClient: HttpClient, // To interack with HTTP-protocol
+    private httpClient: HttpClient, // To interact with HTTP-protocol
     private logService: LogService // To log info. here
   ) {
 

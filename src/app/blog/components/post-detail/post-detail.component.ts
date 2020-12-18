@@ -21,10 +21,14 @@ export class PostDetailComponent implements OnInit {
 
   public header: any; // @Idrice to do what?? // You can use topic object directly
 
+
   public commentForm: FormGroup; // this component uses this variable to get information from HTML form
   public selectedTopic: Topic; // To store or get the selected topic
   public blogs: Topic[]; // @Ghislain: to List a topics
   public blog: Topic;
+
+  // Pattern to valid email adress
+  private emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
 
   // @Irice why should i use ActivatedRoute  in this Component?
   constructor(
@@ -35,9 +39,9 @@ export class PostDetailComponent implements OnInit {
   ) {
     // this is a method in the constructor to set the time at which a comment has being posted from the computer time/browser-->
     setInterval(() => {
-          this.now = new Date();
-        }, 1);
-    }
+      this.now = new Date();
+    }, 1);
+  }
 
 
   // convenience getter for easy access to form fields
@@ -55,13 +59,11 @@ export class PostDetailComponent implements OnInit {
         Validators.required,
         Validators.minLength(4),
       ]),
-      email: new FormControl('', [
-        Validators.required,
-        Validators.minLength(4)
-      ]),
+      email: new FormControl('', [Validators.pattern(this.emailPattern)]),
       msg: new FormControl('', [
         Validators.required,
-        Validators.minLength(5)
+        Validators.minLength(5),
+
       ])
     }
     );
