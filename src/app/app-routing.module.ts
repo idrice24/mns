@@ -12,7 +12,7 @@ import { RegistryComponent } from './core/components/registry/registry.component
 // sets up routes constant where you define your routes
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, data: { animation: 'HomePage' } },
   {
     path: 'association',
     loadChildren: () => import('./association/association.module').then(m => m.AssociationModule)
@@ -43,6 +43,7 @@ const routes: Routes = [
   {
     path: 'products',
     loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
+
   },
   {
     path: 'shoppings',

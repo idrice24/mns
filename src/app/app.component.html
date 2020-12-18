@@ -2,8 +2,8 @@
 
 <div *ngIf="!loading">
   <app-header></app-header>
-  <div class="container-fluid" style="background-color: #eee">
-    <router-outlet></router-outlet>
+  <div class="container-fluid" [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
   </div>
   <app-footer></app-footer>
 </div>

@@ -11,7 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 
 
 const routes: Routes = [
-  { path: 'products', component: ProductListComponent },
+  { path: 'products', component: ProductListComponent, data: { animation: 'ProductsPage' } },
   // { path: ':id', component: ProductDetailComponent }
 ];
 
