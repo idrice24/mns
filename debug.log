@@ -21,3 +21,6 @@
 [1213/213249.293:ERROR:crash_report_exception_handler.cc(99)] PrepareNewCrashReport failed
 [1216/163440.029:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
 [1217/143749.126:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1218/184855.122:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1218/192310.217:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Lenovo\AppData\Local\Temp\karma-49967559\Crashpad\attachments\3b75f5bb-ec98-4c00-b9e1-bfccfb86cb67: The system cannot find the path specified. (0x3)
+[1218/192316.988:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)
