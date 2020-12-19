@@ -25,7 +25,7 @@
 
   <p-fieldset *ngIf="selectedTopic">
     <p *ngFor="let c of selectedTopic.comments">
-      <span class="list-group-irem"> {{c.msg}} </span>:{{c.createdDate}}
+      <span class="list-group-irem"><i style="color: blue">{{c.author}}:</i>&nbsp; {{c.msg}} <i style="float: right">{{c.createdDate}}</i> </span>
       <!-- it is  to display the commentvs and the date and time at which it has bieng commented -->
     </p>
   </p-fieldset>

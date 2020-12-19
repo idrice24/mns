@@ -7,6 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { AppComment } from 'src/app/shared/models/app-comment';
+import { formatDate } from '@angular/common';
 
 
 
@@ -17,7 +18,7 @@ import { AppComment } from 'src/app/shared/models/app-comment';
 })
 
 export class PostDetailComponent implements OnInit {
-  public now: Date = new Date(); // declearing the constan now to set the time
+  public today: Date = new Date(); // declearing the constan now to set the time
 
   public header: any; // @Idrice to do what?? // You can use topic object directly
 
@@ -29,6 +30,8 @@ export class PostDetailComponent implements OnInit {
 
   // Pattern to valid email adress
   private emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
+  now = ''; // a string variable to display the time for comments!!
+
 
   // @Irice why should i use ActivatedRoute  in this Component?
   constructor(
@@ -38,9 +41,7 @@ export class PostDetailComponent implements OnInit {
     private blogService: BlogService
   ) {
     // this is a method in the constructor to set the time at which a comment has being posted from the computer time/browser-->
-    setInterval(() => {
-      this.now = new Date();
-    }, 1);
+      this.now = formatDate(this.today, 'dd-mm-yyy hh:mm:ss a', 'en-US', '+0530');
   }
 
 
@@ -74,13 +75,13 @@ export class PostDetailComponent implements OnInit {
   // the theDta is getting the commentForm values
   postYourComment(theData) {
     const message = theData.msg;
-    const author = theData.name;
+    const author = theData.author;
 
     const createdDate = this.now; // here i am assigning the values of the new Date to createdDate -->
 
     // @Idrice: this is how to create a object of type Comment
     const commentObject: AppComment = {
-      author: theData.name,
+      author: theData.author,
       createdDate: this.now,
       id: this.selectedTopic.comments.length,
       msg: message
