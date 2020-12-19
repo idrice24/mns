@@ -21,6 +21,9 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 
+import { MatTooltipModule } from '@angular/material/tooltip'; // import the tooltipModule 
+
+
 const routes: Routes = [
   { path: '', component: PostListComponent },
   { path: ':id', component: PostDetailComponent }
@@ -43,6 +46,7 @@ const routes: Routes = [
     InputTextModule,
     InputTextareaModule,
     RatingModule,
+    MatTooltipModule, // for tooltip
     ButtonModule,
     FieldsetModule, // For a fieldset toggeable
     ListboxModule,
