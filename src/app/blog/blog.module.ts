@@ -45,7 +45,7 @@ const routes: Routes = [
     InputTextModule,
     InputTextareaModule,
     RatingModule,
-    TooltipModule, // for tooltips 
+    TooltipModule, // for tooltips
     ButtonModule,
     FieldsetModule, // For a fieldset toggeable
     ListboxModule,
