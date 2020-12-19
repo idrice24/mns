@@ -40,11 +40,11 @@ export class ManageBlogComponent implements OnInit {
     this.getBlogs();
 
     this.blogForm = new FormGroup({
-      title: new FormControl('', [Validators.required,]),
-      content: new FormControl('', [Validators.required,]),
-      summary: new FormControl('', [Validators.required,]),
-      imageUrl: new FormControl('', [Validators.required,]),
-      category: new FormControl('', [Validators.required,]),
+      title: new FormControl('', [Validators.required]),
+      content: new FormControl('', [Validators.required]),
+      summary: new FormControl('', [Validators.required]),
+      imageUrl: new FormControl('', [Validators.required]),
+      category: new FormControl('', [Validators.required]),
     });
 
   }
