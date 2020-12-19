@@ -21,7 +21,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 
-import { TooltipModule } from 'primeng/tooltip'; // this is the tooltip module file
+import { TooltipModule } from 'primeng/tooltip';
 
 const routes: Routes = [
   { path: '', component: PostListComponent, data: { animation: 'BlogPage' } },
@@ -45,7 +45,7 @@ const routes: Routes = [
     InputTextModule,
     InputTextareaModule,
     RatingModule,
-    TooltipModule, // for tooltips
+    TooltipModule, // Help to use tooltips in HTML files to help users to easy understand the management of a page!!
     ButtonModule,
     FieldsetModule, // For a fieldset toggeable
     ListboxModule,
