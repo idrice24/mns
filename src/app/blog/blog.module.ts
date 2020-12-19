@@ -23,6 +23,8 @@ import { ToastModule } from 'primeng/toast';
 
 import { MatTooltipModule } from '@angular/material/tooltip'; // import the tooltipModule
 
+import { TooltipModule } from 'primeng/tooltip'; // import the tooltipModule
+
 
 const routes: Routes = [
   { path: '', component: PostListComponent },
