@@ -67,11 +67,11 @@
 
                  <!--BUTTONS ON CARD-->
                  <div>
-                   <button pButton pTooltip="To Notice" icon="pi pi-heart"
-                     class="p-button-raised p-button-rounded mr-1"></button>
+                   <button pButton pTooltip="To Notice" icon="pi pi-heart" (click)="addHeart(product)"
+                     [ngClass]="product.heart ? 'p-button-raised p-button-rounded' : 'p-button-raised p-button-outlined p-button-rounded'"></button>
 
                    <button pButton (click)="addToChart(product)" pTooltip="To Cart" icon="pi pi-shopping-cart"
-                     [ngClass]="isAlreadyClicked ? 'p-button-raised p-button-rounded' : 'p-button-raised p-button-outlined p-button-rounded'">
+                     class="p-button-raised p-button-rounded ml-1">
 
                    </button>
                  </div>

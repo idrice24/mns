@@ -14,14 +14,14 @@ import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TabViewModule } from 'primeng/tabview';
-import { MessageService } from 'primeng/api';
+
 import { RippleModule } from 'primeng/ripple';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   {
-    path: 'contact', component: ContactComponent
+    path: 'contact', component: ContactComponent, data: { animation: 'ContactPage' }
   }];
 
 @NgModule({

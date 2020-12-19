@@ -22,7 +22,7 @@ export class ManageBlogComponent implements OnInit {
   blogForm: FormGroup;
 
   // convenience getter for easy access to form fields
-  get code() {return this.blogForm.get('code'); }
+  get code() { return this.blogForm.get('code'); }
   get title() { return this.blogForm.get('title'); }
   get content() { return this.blogForm.get('content'); }
   get category() { return this.blogForm.get('category'); }
@@ -33,49 +33,44 @@ export class ManageBlogComponent implements OnInit {
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private blogService: BlogService
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.appBlog = { id: 0, summary: 'kok' };
     this.getBlogs();
 
-    this.blogForm = new FormGroup ({
-    // title
-    title: new FormControl('', [ Validators.required, ]),
-
-    content: new FormControl('', [ Validators.required, ]),
-
-    summary: new FormControl('', [ Validators.required, ]),
-
-    imageUrl: new FormControl('', [ Validators.required, ]),
-
-    category: new FormControl('', [ Validators.required, ]),
+    this.blogForm = new FormGroup({
+      title: new FormControl('', [Validators.required]),
+      content: new FormControl('', [Validators.required]),
+      summary: new FormControl('', [Validators.required]),
+      imageUrl: new FormControl('', [Validators.required]),
+      category: new FormControl('', [Validators.required]),
     });
 
   }
-   getBlogs(): void {
-      this.blogService.getTopicList()
-        .subscribe(blogs => {
-          this.appBlogs = blogs;
+  getBlogs(): void {
+    this.blogService.getTopicList()
+      .subscribe(blogs => {
+        this.appBlogs = blogs;
 
-        });
-    }
+      });
+  }
 
-    openNew() {
-      this.appBlog = { id: 0 };
-      this.appBlog = {};
-      this.submitted = false;
-      this.appBlogDialog = true;
+  openNew() {
+    this.appBlog = { id: 0 };
+    this.appBlog = {};
+    this.submitted = false;
+    this.appBlogDialog = true;
 
-    }
+  }
 
-    deleteSelectedTopics() {
+  deleteSelectedTopics() {
 
-    }
-
-      // REF: https://www.primefaces.org/primeng/showcase/#/table/crud
+  }
 
   saveBlog() {
+
+    // @Idrice why? what error durcing the process
     this.submitted = true;
 
     if (this.blog.title.trim()) {
@@ -91,7 +86,7 @@ export class ManageBlogComponent implements OnInit {
       }
 
       this.appBlogs = [...this.appBlogs];
-      this.appBlogDialog = false;
+      this.appBlogDialog = false; // hide the  html dialog
     }
   }
 
@@ -134,19 +129,26 @@ export class ManageBlogComponent implements OnInit {
     return index;
   }
 
-// Save to data base this user information
-  doSubscription(){
+  // @Idrice wrong comment?
+  // Save to data base this user information
+  doSubscription() {
 
-  const currentAppBlog: Topic = {
-    title: this.title.value,
-    content: this.content.value,
-    imageUrl: this.imageUrl.value,
-    summary: this.summary.value,
-    category: this.category.value,
-    verified: false
-  };
+    // @Idrice is that new one??  can you explain this line
+    const currentAppBlog: Topic = {
+      title: this.title.value,
+      content: this.content.value,
+      imageUrl: this.imageUrl.value,
+      summary: this.summary.value,
+      category: this.category.value,
+      verified: false,
+      createdDate: `${Date.now()}`, //  Set the createdDate value
+    };
 
-  this.blogService.addBlog(currentAppBlog).subscribe(_ =>
+
+
+    // Send data to server
+    this.blogService.addBlog(currentAppBlog).subscribe(_ =>
+
       // To Clean a formular
       this.blogForm.reset());
 

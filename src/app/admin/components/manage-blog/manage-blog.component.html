@@ -1,4 +1,3 @@
-<p-toast></p-toast>
 <div class="col-md-12 text-center">
   <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Blogs
     ({{appBlogs ? appBlogs.length : 0 }})</h1>
@@ -13,8 +12,8 @@
       <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2"
         (click)="openNew()"></button>
 
-      <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
-              (click)="deleteSelectedTopics()" [disabled]="!selectedTopics || !selectedTopics.length"></button>
+      <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedTopics()"
+        [disabled]="!selectedTopics || !selectedTopics.length"></button>
     </ng-template>
     <ng-template pTemplate="right">
 
@@ -24,15 +23,15 @@
 
   <!--TABLE-->
   <p-table #dt [value]="appBlogs" [rows]="10" [paginator]="true" styleClass="p-datatable-striped"
-           [globalFilterFields]="['content','createdDate','id','publishedDate', 'title','updatedDate','summary', 'imageUrl', 'rating','category']" [(selection)]="selectedTopics" [rowHover]="true"
-           dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-           [showCurrentPageReport]="true">
+    [globalFilterFields]="['content','createdDate','id','publishedDate', 'title','updatedDate','summary', 'imageUrl', 'rating','category']"
+    [(selection)]="selectedTopics" [rowHover]="true" dataKey="id"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
     <ng-template pTemplate="caption">
       <div class="p-d-flex p-ai-center p-jc-between">
         <span class="p-input-icon-left">
           <i class="pi pi-search"></i>
           <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
-                 placeholder="Recherche..." />
+            placeholder="Recherche..." />
         </span>
       </div>
     </ng-template>
@@ -71,7 +70,7 @@
         </td>
         <td>
           <img style="border-radius: 50%;" [src]="appBlog.imageUrl" [alt]="appBlog.imageUrl" width="50" Height="50"
-               class="p-shadow-4" />
+            class="p-shadow-4" />
         </td>
         <td>{{appBlog.title}}</td>
         <td>{{appBlog.content}}</td>
@@ -80,9 +79,9 @@
         <td>{{appBlog.summary}}</td>
         <td>
           <button pButton pRipple icon="pi pi-info-circle" class="p-button-rounded p-button-success p-mr-2"
-                  (click)="displayTopic(appBlog)"></button>
+            (click)="displayTopic(appBlog)"></button>
           <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
-                  (click)="deleteTopic(appBlog)"></button>
+            (click)="deleteTopic(appBlog)"></button>
         </td>
       </tr>
     </ng-template>
@@ -96,7 +95,7 @@
 
 <!--Blog DETAILS-->
 <p-dialog [(visible)]="appBlogDetailsDialog" [style]="{width: '450px'}" header="AppBlogs Details" [modal]="true"
-          styleClass="p-fluid">
+  styleClass="p-fluid">
   <ng-template pTemplate="content">
     <img [src]="appBlog.imageUrl" [alt]="appBlog.imageUrl" class="product-image" *ngIf="appBlog.imageUrl">
 
@@ -121,81 +120,79 @@
   </ng-template>
 </p-dialog>
 
-<p-dialog  [(visible)]="appBlogDialog" [style]="{width: '450px'}" header="AppBlogs Details" [modal]="true">
+<p-dialog [(visible)]="appBlogDialog" [style]="{width: '750px'}" header="AppBlogs Details" [modal]="true">
   <form [formGroup]="blogForm" (ngSubmit)="doSubscription()">
 
     <div class="p-d-flex p-jc-center">
-        <div class="p-grid">
+      <div class="p-grid">
 
-          <!-- Title -->
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <label for="name">Title</label>
-              <input formControlName="title" type="text"  pInputText id="title" required autofocus />
+        <!-- Title -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="name">Title</label>
+            <input formControlName="title" type="text" pInputText id="title" required autofocus />
+          </div>
+        </div>
+        <!-- content -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="name">Content</label>
+            <textarea id="description" pInputTextarea required rows="3" cols="20" formControlName="title"></textarea>
+          </div>
+        </div>
+        <!-- Category: ONLy products and actu -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="name">Category</label>
+            <div class="p-formgrid p-grid">
+              <div class="p-field-radiobutton p-col-6">
+                <p-radioButton id="category1" name="category" value="Accessories">
+                </p-radioButton>
+                <label for="category1">Accessories</label>
+              </div>
+              <div class="p-field-radiobutton p-col-6">
+                <p-radioButton id="category2" name="category" value="Clothing"></p-radioButton>
+                <label for="category2">Clothing</label>
+              </div>
+              <div class="p-field-radiobutton p-col-6">
+                <p-radioButton id="category3" name="category" value="Electronics">
+                </p-radioButton>
+                <label for="category3">Electronics</label>
+              </div>
+              <div class="p-field-radiobutton p-col-6">
+                <p-radioButton id="category4" name="category" value="Fitness"></p-radioButton>
+                <label for="category4">Fitness</label>
+              </div>
             </div>
           </div>
-          <!-- content -->
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <label for="name">Content</label>
-              <textarea id="description"  pInputTextarea required rows="3" cols="20" formControlName="title"></textarea>
-            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="name">Summary</label>
+            <input type="text" formControlName="summary" pInputText id="summary" required autofocus />
           </div>
-          <!-- Categiry -->
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <label for="name">Category</label>
-              <div class="p-formgrid p-grid">
-        <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category1" name="category" value="Accessories">
-          </p-radioButton>
-          <label for="category1">Accessories</label>
         </div>
-        <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category2" name="category" value="Clothing" ></p-radioButton>
-          <label for="category2">Clothing</label>
-        </div>
-        <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category3" name="category" value="Electronics">
-          </p-radioButton>
-          <label for="category3">Electronics</label>
-        </div>
-        <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category4" name="category" value="Fitness"></p-radioButton>
-          <label for="category4">Fitness</label>
+
+        <!-- Image Url -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="name">Image</label>
+            <input type="file" formControlName="imageUrl" pInputText id="imageUrl" required autofocus />
+          </div>
         </div>
       </div>
-            </div>
-          </div>
+    </div>
 
-          <!-- Summary -->
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <label for="name">Summary</label>
-              <input type="text" formControlName="summary" pInputText id="summary" required autofocus />
-            </div>
-          </div>
-
-          <!-- Image Url -->
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <label for="name">Image</label>
-              <input type="file" formControlName="imageUrl" pInputText id="imageUrl"  required autofocus />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="p-col-12">
-        <button pButton pRipple label="SAVE" icon="pi pi-check" type="submit" class="p-button-text"></button>
-        <button pButton pRipple label="cancle" class="p-button-text" icon="pi pi-times" (click)="hideDialog()"></button>
-      </div>
+    <div class="p-col-12">
+      <button pButton pRipple label="SAVE" icon="pi pi-check" type="submit" class="p-button-text"></button>
+      <button pButton pRipple label="cancle" class="p-button-text" icon="pi pi-times" (click)="hideDialog()"></button>
+    </div>
 
 
   </form>
-  </p-dialog>
+</p-dialog>
 
 <!--POP CONFIRMATION-->
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
-
-
