@@ -8,6 +8,8 @@ import { Topic } from 'src/app/shared/models/topic';
 import { BlogService } from 'src/app/shared/services/blog.service';
 import { Observable } from 'rxjs';
 
+import { MatTooltip } from '@angular/material/tooltip';
+
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
