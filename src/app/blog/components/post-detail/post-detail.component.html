@@ -50,7 +50,7 @@
         <div class="p-field p-grid">
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-            <input pInputText formControlName="author" type="text" placeholder="Auteur" required>
+            <input pInputText formControlName="author" type="text" placeholder="Auteur" tooltip="this is the number of comments for this post!!" required>
           </div>
           <div *ngIf="author.invalid && (author.dirty || author.touched)" class="p-col-12">
             <small *ngIf="author.errors.required" class="p-invalid">Le nom est required.</small>
