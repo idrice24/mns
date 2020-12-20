@@ -1,20 +1,38 @@
-<h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Nous contacter per Email</h1>
+<h1
+  data-aos="fade-in-up"
+  data-aos-offset="100"
+  class="text-primary"
+>Nous contacter per Email</h1>
 
 <!--GHIS: you passin Passing and accessing  in the event==> That is why $event-->
-<form [formGroup]="sendForm" (ngSubmit)="sendEmail($event)">
+<form
+  [formGroup]="sendForm"
+  (ngSubmit)="sendEmail($event)"
+>
   <div class="p-fluid p-grid">
 
     <div class="p-col p-ai-stretch">
       <div class="p-inputgroup">
-        <textarea pInputTextarea formControlName="msg" style="height:160px" placeholder="Message"></textarea>
+        <textarea
+          pInputTextarea
+          formControlName="msg"
+          style="height:160px"
+          placeholder="Message"
+        ></textarea>
       </div>
+
     </div>
 
     <div class="p-col">
       <div class="p-field p-grid">
         <div class="p-inputgroup">
           <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-          <input formControlName="name" pInputText type="text" placeholder="Nom">
+          <input
+            formControlName="name"
+            pInputText
+            type="text"
+            placeholder="Nom"
+          >
         </div>
       </div>
 
@@ -23,15 +41,31 @@
       <!--Attribut pInputText  due to primeng Lib -->
       <div class="p-field p-grid">
         <div class="p-inputgroup">
-          <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
-          <input #theEmail email pInputText pTooltip="Email" formControlName="email" type="text"
-            placeholder="Votre Email">
+          <span class="p-inputgroup-addon">
+            <i class="pi pi-envelope">
+            </i>
+          </span>
+          <input
+            #theEmail
+            email
+            pInputText
+            pTooltip="Email"
+            formControlName="email"
+            type="text"
+            placeholder="Votre Email"
+          >
         </div>
       </div>
 
       <div class="p-field p-grid">
-        <button pButton pRipple [disabled]="sendForm.invalid" type="submit" label="Envoyer"
-          class="p-button-rounded"></button>
+        <button
+          pButton
+          pRipple
+          [disabled]="sendForm.invalid"
+          type="submit"
+          label="Envoyer"
+          class="p-button-rounded"
+        ></button>
       </div>
     </div>
   </div>
