@@ -36,7 +36,7 @@
     "angular-in-memory-web-api": "^0.11.0",
     "aos": "^2.3.4",
     "bootstrap": "^4.5.2",
-    "emailjs": "^3.4.0",
+    "emailjs-com": "^2.6.4",
     "firebase": "^8.1.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
