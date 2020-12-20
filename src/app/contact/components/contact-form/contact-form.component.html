@@ -1,14 +1,12 @@
 <h1
   data-aos="fade-in-up"
   data-aos-offset="100"
-  class="text-primary"
->Nous contacter per Email</h1>
+  class="text-primary">Nous contacter per Email</h1>
 
 <!--GHIS: you passin Passing and accessing  in the event==> That is why $event-->
 <form
   [formGroup]="sendForm"
-  (ngSubmit)="sendEmail($event)"
->
+  (ngSubmit)="sendEmail($event)">
   <div class="p-fluid p-grid">
 
     <div class="p-col p-ai-stretch">
@@ -17,8 +15,7 @@
           pInputTextarea
           formControlName="msg"
           style="height:160px"
-          placeholder="Message"
-        ></textarea>
+          placeholder="Message"></textarea>
       </div>
 
     </div>
@@ -31,8 +28,7 @@
             formControlName="name"
             pInputText
             type="text"
-            placeholder="Nom"
-          >
+            placeholder="Nom">
         </div>
       </div>
 
@@ -52,8 +48,7 @@
             pTooltip="Email"
             formControlName="email"
             type="text"
-            placeholder="Votre Email"
-          >
+            placeholder="Votre Email">
         </div>
       </div>
 
@@ -64,8 +59,7 @@
           [disabled]="sendForm.invalid"
           type="submit"
           label="Envoyer"
-          class="p-button-rounded"
-        ></button>
+          class="p-button-rounded"></button>
       </div>
     </div>
   </div>
