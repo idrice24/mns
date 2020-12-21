@@ -142,7 +142,7 @@ import { Title } from '@angular/platform-browser';
     ButtonModule, // to wrap access to other module .ie. shoppingModule
   ],
   providers: [
-    Title, // Registry the angular title service
+    Title, // To Configure the angular title built-in-service
     MessageService, // to provide all toast msg for all app module
     MissionService // This alo to use  this service in any module in  app
   ]
