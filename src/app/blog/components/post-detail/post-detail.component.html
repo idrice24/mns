@@ -23,9 +23,9 @@
   -->
 
   <p-fieldset *ngIf="selectedTopic">
-    <h4>Laisser un commentaire<br>Votre adresse de messagerie ne sera pas publiee. Les Champs Obligatoires sont indicquees avec *</h4>
+    <h4>Laisser un commentaire<br>Votre adresse de messagerie ne sera pas publiee. Les Champs Obligatoires sont indicquees avec *</h4><hr>
     <p *ngFor="let c of selectedTopic.comments">
-      <span class="list-group-irem"> {{c.msg}} </span>:{{c.createdDate}}
+      <i style="color: blue">{{c.author}}</i> : <span class="list-group-irem"> {{c.msg}} </span><i style="float: right;">{{c.createdDate}}</i>
       <!-- it is  to display the commentvs and the date and time at which it has bieng commented -->
     </p>
   </p-fieldset>
