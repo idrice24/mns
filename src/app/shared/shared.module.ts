@@ -38,6 +38,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -141,6 +142,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ButtonModule, // to wrap access to other module .ie. shoppingModule
   ],
   providers: [
+    Title, // Registry the angular title service
     MessageService, // to provide all toast msg for all app module
     MissionService // This alo to use  this service in any module in  app
   ]
