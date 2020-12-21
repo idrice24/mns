@@ -17,7 +17,7 @@ import { AppComment } from 'src/app/shared/models/app-comment';
 })
 
 export class PostDetailComponent implements OnInit {
-  public now: Date = new Date(); // declearing the constan now to set the time
+  public now: Date = new Date(); // declearing the constant now to set the time
 
   public header: any; // @Idrice to do what?? // You can use topic object directly
 
@@ -30,7 +30,7 @@ export class PostDetailComponent implements OnInit {
   // Pattern to valid email adress
   private emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
 
-  // @Irice why should i use ActivatedRoute  in this Component?
+  // @Irice why should i use ActivatedRoute  in this Component? @Ghislain this is load the information containing on the post DataBase
   constructor(
     private router: Router,
     private messageService: MessageService, // Fun to use TOAST for  i.e. Comment
@@ -74,13 +74,13 @@ export class PostDetailComponent implements OnInit {
   // the theDta is getting the commentForm values
   postYourComment(theData) {
     const message = theData.msg;
-    const author = theData.name;
+    const author = theData.author;
 
     const createdDate = this.now; // here i am assigning the values of the new Date to createdDate -->
 
     // @Idrice: this is how to create a object of type Comment
     const commentObject: AppComment = {
-      author: theData.name,
+      author: theData.author,
       createdDate: this.now,
       id: this.selectedTopic.comments.length,
       msg: message
