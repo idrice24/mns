@@ -8,8 +8,8 @@ export function forbittenFnameValidator(): ValidatorFn {
 
 
     // valid fName pattern
-    const emailPattern = '^[a-z0-9._%+-]';
-    const regExp = new RegExp(emailPattern);
+    const fNamePattern = '^[a-z0-9._%+-]';
+    const regExp = new RegExp(fNamePattern);
     // Execute Validation!! Cool
     const isOkay = regExp.test(control.value);
     console.log(' ISOkay = ' + isOkay);

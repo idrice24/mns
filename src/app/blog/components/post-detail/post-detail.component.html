@@ -12,19 +12,9 @@
     {{selectedTopic.content}}
   </p-fieldset><br>
 
-  <!--My Tasks:
-  1. Copy from Contact form
-  2. Remove all Bindings with Component:ie [formGroup]="sendForm" to avoid error
-  3. Only HTML elements should use here first: Design is finished
-  4. Arrage Layout And RUN my stuffs NO error
-  5. Check if the current Module imports all Needed PrimeNG Module
-  6. Added Binding Object(i.e. commentForm) / Methods(ie.postYourComment) to connect html file and component file
-   This is basic concept of angular
-  -->
-
   <p-fieldset *ngIf="selectedTopic">
     <p *ngFor="let c of selectedTopic.comments">
-      <span class="list-group-irem"> {{c.msg}} </span>:{{c.createdDate}}
+      <span class="list-group-irem"> {{c.msg}} </span>:{{c.createdDate | date:'fullDate' }}
       <!-- it is  to display the commentvs and the date and time at which it has bieng commented -->
     </p>
   </p-fieldset>
