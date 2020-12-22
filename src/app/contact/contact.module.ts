@@ -33,7 +33,7 @@ const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     GMapModule,
-    SharedModule,
+    SharedModule, // To use shared function .ie. Title
     InputTextModule,
     CheckboxModule,
     DialogModule,

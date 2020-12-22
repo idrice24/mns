@@ -12,19 +12,10 @@
     {{selectedTopic.content}}
   </p-fieldset><br>
 
-  <!--My Tasks:
-  1. Copy from Contact form
-  2. Remove all Bindings with Component:ie [formGroup]="sendForm" to avoid error
-  3. Only HTML elements should use here first: Design is finished
-  4. Arrage Layout And RUN my stuffs NO error
-  5. Check if the current Module imports all Needed PrimeNG Module
-  6. Added Binding Object(i.e. commentForm) / Methods(ie.postYourComment) to connect html file and component file
-   This is basic concept of angular
-  -->
-
   <p-fieldset *ngIf="selectedTopic">
     <h4>Laisser un commentaire<br>Votre adresse de messagerie ne sera pas publiee. Les Champs Obligatoires sont indicquees avec *</h4><hr>
     <p *ngFor="let c of selectedTopic.comments">
+
       <i style="color: blue">{{c.author}}</i> : <span class="list-group-irem"> {{c.msg}} </span><i style="float: right;">{{c.createdDate | date: 'h:s'}}</i><!-- @Ghislain please can you help with how to display dynamic time in angular-->
       <!-- it is  to display the commentvs and the date and time at which it has bieng commented -->
     </p>

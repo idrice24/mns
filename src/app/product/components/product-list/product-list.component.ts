@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { MessageService, SelectItem } from 'primeng/api';
 import { Observable } from 'rxjs';
@@ -26,6 +27,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private titleService: Title, // provide function to update document title on brownser
     private missionService: MissionService, // Notify extern conponent i.e  header fot cart
     private messageService: MessageService,
     private productService: ProductService) { }
@@ -39,6 +41,7 @@ export class ProductListComponent implements OnInit {
       { label: 'Products', value: 'price' }
     ];
     this.sortKey = this.sortOptions[0];
+    this.titleService.setTitle('MNS237 - Products');
   }
 
   onSortChange(event) {
