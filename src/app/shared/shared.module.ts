@@ -37,7 +37,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ProgressBarModule } from 'primeng/progressbar';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 @NgModule({
   declarations: [
@@ -51,6 +51,7 @@ import { Title } from '@angular/platform-browser';
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule, // If we removed that Dropdownmodule DOES NOT Works!! Attention
     ReactiveFormsModule,
 
     // All externe Module (PrimenNG)
