@@ -34,7 +34,8 @@ export class FooterComponent implements OnInit {
 
     this.language = this.selectedAppLanguage;
 
-    // TODO: set language
+    // TODO: @Idrice How to set language @MeNo idea
+    window.location.href = 'home/fr/';
   }
 
 
