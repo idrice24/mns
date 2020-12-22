@@ -7,8 +7,14 @@ export class LogService {
 
   constructor() { }
 
-  log(objecToLog: any) {
-    const msg = JSON.stringify(objecToLog);
-    console.log(msg);
+  /**
+   * Stringify and Log the given information to  web console.
+   * @param  params  Message to log.
+   */
+  log(params: any) {
+    const msgStringify = JSON.stringify(params);
+    console.log(msgStringify);
   }
+
+
 }
