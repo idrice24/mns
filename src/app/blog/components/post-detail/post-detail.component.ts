@@ -76,8 +76,6 @@ export class PostDetailComponent implements OnInit {
     const message = theData.msg;
     const author = theData.author;
 
-    const createdDate = this.now; // here i am assigning the values of the new Date to createdDate -->
-
     // @Idrice: this is how to create a object of type Comment
     const commentObject: AppComment = {
       author: theData.author,
