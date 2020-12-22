@@ -4,6 +4,6 @@
 
 export interface AppLanguage {
   localeIdentifier?: string;
-  countryName?: string;
+  name?: string;
 
 }

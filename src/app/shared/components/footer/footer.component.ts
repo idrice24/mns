@@ -11,15 +11,32 @@ import { AppLanguageService } from '../../services/app-language.service';
 export class FooterComponent implements OnInit {
 
   appLanguages$: Observable<AppLanguage[]>; // to store all language models
-
-  selectedAppLanguage; // to store all language models
+  selectedAppLanguage: AppLanguage;
+  private language: AppLanguage; // to store all language models
 
   constructor(private appLanguageService: AppLanguageService) {
     this.appLanguages$ = this.appLanguageService.getAll();
   }
 
   ngOnInit(): void {
-    this.appLanguages$.subscribe(lan => this.selectedAppLanguage = lan[0]);
+    this.appLanguages$.subscribe(lan => this.language = lan[0]);
   }
+
+
+
+  /***
+   * Handle  when dropdown is closedor  hide
+   */
+  public onHide() {
+    if (this.selectedAppLanguage === this.language) {
+      return; // Do nothing if same language selected
+    }
+
+    this.language = this.selectedAppLanguage;
+
+    // TODO: set language
+  }
+
+
 
 }

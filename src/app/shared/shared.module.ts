@@ -51,7 +51,7 @@ import { Title } from '@angular/platform-browser';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule, // If we removed that Dropdownmodule DOES NOT Works!! Attention
+    FormsModule, // <-- NgModel lives here
     ReactiveFormsModule,
 
     // All externe Module (PrimenNG)

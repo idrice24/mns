@@ -24,9 +24,10 @@
         <div>
           <!--LANGUAGES-->
           <span class="pull-right">Language: </span>
-          <p-dropdown [options]="appLanguages$ | async"
+          <p-dropdown #pd [options]="appLanguages$ | async"
             [(ngModel)]="selectedAppLanguage"
-            optionLabel="countryName"
+            optionLabel="name"
+            (onHide)="onHide()"
             class="p-component"
             optionDisabled="inactive">
           </p-dropdown>

@@ -3,8 +3,8 @@ import { Observable, of } from 'rxjs';
 import { AppLanguage } from '../models/app-language';
 
 const APPLANGUAGES: AppLanguage[] = [
-  { localeIdentifier: 'en-US', countryName: 'Dr Nice' },
-  { localeIdentifier: 'fr-FR', countryName: 'Narco' },
+  { localeIdentifier: 'en-US', name: 'English(United of america)' },
+  { localeIdentifier: 'fr-FR', name: 'French' },
 ];
 
 @Injectable({
