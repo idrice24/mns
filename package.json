@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve   --open --allowedHosts --poll",
+    "start:fr": "ng serve  --configuration=fr --open --allowedHosts --poll",
+    "start": "ng serve    --open --allowedHosts --poll",
     "startv": "ng serve --verbose --open --allowedHosts --poll",
     "build": "ng build",
     "test2": "npm run test --  --no-watch --no-progress",
