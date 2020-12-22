@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Location } from '@angular/common';
 import { AppLanguage } from '../../models/app-language';
 import { AppLanguageService } from '../../services/app-language.service';
+
 
 @Component({
   selector: 'app-footer',
@@ -14,7 +16,11 @@ export class FooterComponent implements OnInit {
   selectedAppLanguage: AppLanguage;
   private language: AppLanguage; // to store all language models
 
-  constructor(private appLanguageService: AppLanguageService) {
+  constructor(
+    private appLanguageService: AppLanguageService,
+    private location: Location // Use to interact with a browser's URL.
+  ) {
+
     this.appLanguages$ = this.appLanguageService.getAll();
   }
 
@@ -33,9 +39,11 @@ export class FooterComponent implements OnInit {
     }
 
     this.language = this.selectedAppLanguage;
+    window.location.href = this.location.path() + '/' + this.selectedAppLanguage.code;
 
     // TODO: @Idrice How to set language @MeNo idea
-    window.location.href = 'home/fr/';
+    // this.location. = 'home/fr/';
+
   }
 
 

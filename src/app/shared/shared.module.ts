@@ -145,7 +145,8 @@ import { Title } from '@angular/platform-browser';
   providers: [
     Title, // To Configure the angular title built-in-service
     MessageService, // to provide all toast msg for all app module
-    MissionService // This alo to use  this service in any module in  app
+    MissionService, // This alo to use  this service in any module in  app
+    Location, // Beauce Angular team not set the  ProvideIn flag
   ]
 })
 export class SharedModule { }
