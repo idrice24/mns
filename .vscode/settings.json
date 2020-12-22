@@ -15,5 +15,6 @@
         "formgrid",
         "formular",
         "toggleable"
-    ]
+    ],
+    "html.format.wrapAttributes": "preserve"
 }

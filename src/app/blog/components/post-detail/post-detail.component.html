@@ -13,8 +13,14 @@
   </p-fieldset><br>
 
   <p-fieldset *ngIf="selectedTopic">
+    <h4>Laisser un commentaire<br>Votre adresse de messagerie ne sera pas publiee. Les Champs Obligatoires sont indicquees avec *</h4><hr>
     <p *ngFor="let c of selectedTopic.comments">
+<<<<<<< HEAD
       <span class="list-group-irem"> {{c.msg}} </span>:{{c.createdDate | date:'fullDate' }}
+=======
+
+      <i style="color: blue">{{c.author}}</i> : <span class="list-group-irem"> {{c.msg}} </span><i style="float: right;">{{c.createdDate | date: 'h:s'}}</i><!-- @Ghislain please can you help with how to display dynamic time in angular-->
+>>>>>>> 745f61bced9d4e87a162e80077fe57c697fded91
       <!-- it is  to display the commentvs and the date and time at which it has bieng commented -->
     </p>
   </p-fieldset>
@@ -25,7 +31,7 @@
       <div class="p-col">
         <div class="p-field p-grid">
           <div class="p-inputgroup">
-            <textarea pInputTextarea formControlName="msg" style="height:160px" placeholder="Message"></textarea>
+            <textarea pInputTextarea formControlName="msg" style="height:160px" placeholder="Message *"></textarea>
           </div>
         </div>
         <div *ngIf="msg.invalid && (msg.dirty || msg.touched)" class="p-col-12">
@@ -33,13 +39,13 @@
           <small *ngIf="msg.errors.minlength" class="p-invalid">Le Commentair doit etre de plus de 10 charactair
           </small>
         </div>
-      </div>
+      </div>&nbsp;&nbsp;
 
       <div class="p-col">
         <div class="p-field p-grid">
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-            <input pInputText formControlName="author" type="text" placeholder="Auteur">
+            <input pInputText formControlName="author" type="text" placeholder="Auteur *">
           </div>
           <div *ngIf="author.invalid && (author.dirty || author.touched)" class="p-col-12">
             <small *ngIf="author.errors.required" class="p-invalid">Le nom est required.</small>
@@ -51,7 +57,7 @@
         <div class="p-field p-grid">
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
-            <input pInputText formControlName="email" type="email" placeholder="Email">
+            <input pInputText formControlName="email" type="email" placeholder="Email *">
           </div>
           <div *ngIf="email.invalid && (email.dirty || email.touched)" class="p-col-12">
             <small *ngIf="email.errors.required" class="p-invalid">L'email est required.</small>
@@ -61,10 +67,11 @@
 
         <!-- pRipple is like hover it change the form of the button when i user point at it -->
         <div class="p-field p-grid">
-          <button pButton pRipple [disabled]="!commentForm.valid" type="submit" label="Post your Comments"
+          <button pButton pRipple [disabled]="!commentForm.valid" type="submit" label="Publier un Commentaire >>"
             class="p-button-rounded"></button>
         </div>
       </div>
     </div>
   </form>
+  <a class="nav-link smooth" routerLinkActive="active" routerLink="/posts"><i class="pi pi-angle-right 2"></i>back to post list</a>
 </section>
