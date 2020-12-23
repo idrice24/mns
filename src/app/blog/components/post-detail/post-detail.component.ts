@@ -59,7 +59,7 @@ export class PostDetailComponent implements OnInit {
         Validators.required,
         Validators.minLength(4),
       ]),
-      email: new FormControl('', [Validators.pattern(this.emailPattern)]),
+      email: new FormControl(''), // We don t need anymore --> Angular provide built-in validator
       msg: new FormControl('', [
         Validators.required,
         Validators.minLength(5),

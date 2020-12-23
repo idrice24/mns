@@ -58,11 +58,15 @@
         <div class="p-field p-grid">
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
-            <input pInputText formControlName="email" type="email" placeholder="Email *">
+            <!-- email attribut to use built in Angular concept for email validation -->
+            <!-- pInputText attribut to use built in PRIMENG concept for InputText -->
+            <!-- type attribut  with value email to indicate the text should be an email -->
+            <input email pInputText formControlName="email" type="email" placeholder="Email *">
           </div>
           <div *ngIf="email.invalid && (email.dirty || email.touched)" class="p-col-12">
             <small *ngIf="email.errors.required" class="p-invalid">L'email est required.</small>
             <small *ngIf="email.errors.minlength" class="p-invalid">L'email doit etre de plus de 4 charactere.</small>
+            <small *ngIf="email.errors" class="p-invalid">L'email n'est pas valid!</small>
           </div>
         </div>
 
