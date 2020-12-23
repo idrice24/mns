@@ -5,10 +5,19 @@
   "projects": {
     "mns": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": { },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "fr":  {
+            "translation": "src/locale/messages.fr.xlf",
+            "baseHref": ""
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -19,6 +28,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "localize": false,
             "assets": [
               "src/assets"
             ],
@@ -63,6 +73,11 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "fr": {
+              "localize": [
+                "fr"
+              ]
             }
           }
         },
@@ -74,11 +89,17 @@
           "configurations": {
             "production": {
               "browserTarget": "mns:build:production"
-            }
+            }     ,
+          "fr": {
+            "browserTarget": "mns:build:fr"
           }
+        }
         },
         "extract-i18n": {
-       
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular.io-example:build"
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",

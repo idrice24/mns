@@ -37,7 +37,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ProgressBarModule } from 'primeng/progressbar';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 @NgModule({
   declarations: [
@@ -51,6 +51,7 @@ import { Title } from '@angular/platform-browser';
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule, // <-- NgModel lives here
     ReactiveFormsModule,
 
     // All externe Module (PrimenNG)
@@ -144,7 +145,8 @@ import { Title } from '@angular/platform-browser';
   providers: [
     Title, // To Configure the angular title built-in-service
     MessageService, // to provide all toast msg for all app module
-    MissionService // This alo to use  this service in any module in  app
+    MissionService, // This alo to use  this service in any module in  app
+    Location, // Beauce Angular team not set the  ProvideIn flag
   ]
 })
 export class SharedModule { }
