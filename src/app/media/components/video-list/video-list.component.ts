@@ -18,7 +18,7 @@ export class VideoListComponent implements OnInit {
   selectedYear;
 
   constructor(private videoService: VideoService,
-    private titleService: Title // Inject to set document title on  browser
+              private titleService: Title // Inject to set document title on  browser
     ) { }
 
 

@@ -12,7 +12,9 @@ export class AdminDashboardComponent implements OnInit {
 
   numberOfAppUsers: number;
   items;
-  constructor(private logService: LogService, private userService: UserService,
+  constructor(
+    private logService: LogService,
+    private userService: UserService,
     private titleService: Title // Inject to set document title on  browser
     ) { }
 

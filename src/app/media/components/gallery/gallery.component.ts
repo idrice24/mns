@@ -30,7 +30,7 @@ items;
   ];
 
   constructor(private photoService: PhotoService,
-    private titleService: Title // Inject to set document title on  browser
+              private titleService: Title // Inject to set document title on  browser
     ) { }
 
   ngOnInit(): void {
@@ -38,7 +38,4 @@ items;
   this.titleService.setTitle('MNS237 - Gallery'); // Adding the title Home to the MNS237  main Title
   }
   myUploader(event){ }
-  
-
-
 }

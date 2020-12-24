@@ -84,7 +84,7 @@ export class RegistryComponent implements OnInit {
       });
 
     this.getNumberOfUsers();
-     this.titleService.setTitle('MNS237 - Cree Un conte'); // Adding the title Home to the MNS237  main Title
+    this.titleService.setTitle('MNS237 - Cree Un conte'); // Adding the title Home to the MNS237  main Title
 
   }
 

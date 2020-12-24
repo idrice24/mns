@@ -9,8 +9,9 @@ import { Title } from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private primengConfig: PrimeNGConfig,
-    private titleService: Title// Inject to set document title on  browser
+  constructor(
+    private primengConfig: PrimeNGConfig,
+    private titleService: Title // Inject to set document title on  browser
     ) { }
 
   ngOnInit(): void {

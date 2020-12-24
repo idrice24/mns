@@ -26,7 +26,7 @@ export class NewsletterComponent implements OnInit {
 
 
   constructor(private appSubscriberService: AppSubscriberService,
-    private titleService: Title // Inject to set document title on  browser
+              private titleService: Title // Inject to set document title on  browser
     ) { }
 
   ngOnInit(): void {

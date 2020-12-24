@@ -13,7 +13,7 @@ export class SearchUiComponent implements OnInit {
   disabled: boolean;
 
   constructor(private activatedRoute: ActivatedRoute,
-    private titleService: Title // Inject to set document title on  browser
+              private titleService: Title // Inject to set document title on  browser
     ) {
 
   }

@@ -17,7 +17,7 @@ export class AdminComponent implements OnInit {
 
 
   constructor(private router: Router, private route: ActivatedRoute,
-    private titleService: Title // Inject to set document title on  browser
+              private titleService: Title // Inject to set document title on  browser
     ) {  }
 
 

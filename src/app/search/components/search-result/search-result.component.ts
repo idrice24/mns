@@ -16,7 +16,7 @@ export class SearchResultComponent implements OnInit {
   users$;
   found: any;
   constructor(private searchService: SearchService, private activatedRoute: ActivatedRoute,
-    private titleService: Title // Inject to set document title on  browser
+              private titleService: Title // Inject to set document title on  browser
     ) { }
 
   ngOnInit(): void {

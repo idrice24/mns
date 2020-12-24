@@ -30,7 +30,7 @@ export class MediaDashboardComponent implements OnInit {
   ];
 
   constructor(private photoService: PhotoService,
-    private titleService: Title // Inject to set document title on  browser
+              private titleService: Title // Inject to set document title on  browser
     ) { }
 
   ngOnInit(): void {
