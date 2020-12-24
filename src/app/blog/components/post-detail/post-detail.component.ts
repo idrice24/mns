@@ -100,7 +100,7 @@ export class PostDetailComponent implements OnInit {
 
     this.commentForm.reset(); // Clean the Form
   }
-
+// here are function to link the next and previous pages of blogs
   nextFunction(num: number){
     this.counter = num + 1;
     this.router.navigate(['/posts/' + this.counter]);
