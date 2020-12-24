@@ -19,7 +19,7 @@
     <p *ngFor="let c of selectedTopic.comments">
 
       <i style="color: blue">{{c.author}}</i> : <span class="list-group-irem"> {{c.msg}} </span><i
-        style="float: right;">{{c.createdDate | date: 'h:s'}}</i>
+        style="float: right;">{{c.createdDate | date: 'h:m:s'}}</i>
       <!-- @Ghislain please can you help with how to display dynamic time in angular-->
 
       <!-- it is  to display the commentvs and the date and time at which it has bieng commented -->
@@ -78,6 +78,7 @@
       </div>
     </div>
   </form>
-  <a class="nav-link smooth" routerLinkActive="active" routerLink="/posts"><i class="pi pi-angle-right 2"></i>back to
-    post list</a>
+  <a class="nav-link smooth" routerLinkActive="active" routerLink="/posts"><i class="pi pi-angle-right 2"></i>back to post list</a>
+  <a class="nav-link smooth" routerLinkActive="active" routerLink="/posts/{{counter}}" (click)="priviousFunction(selectedTopic.id)"><< previous</a>
+  <a class="nav-link smooth" routerLinkActive="active" routerLink="/posts/{{counter}}" (click)="nextFunction(selectedTopic.id)">next >></a>
 </section>
