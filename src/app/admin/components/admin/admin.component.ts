@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -15,7 +16,9 @@ export class AdminComponent implements OnInit {
   items: any;
 
 
-  constructor(private router: Router, private route: ActivatedRoute) {  }
+  constructor(private router: Router, private route: ActivatedRoute,
+    private titleService: Title // Inject to set document title on  browser
+    ) {  }
 
 
   ngOnInit() {
@@ -80,6 +83,7 @@ export class AdminComponent implements OnInit {
           }
         ]
       }];
+    this.titleService.setTitle('MNS237 - Media'); // Adding the title Home to the MNS237  main Title
   }
 
 }

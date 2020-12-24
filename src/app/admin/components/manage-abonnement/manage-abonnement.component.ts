@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AppSubscriber } from 'src/app/shared/models/app-subscriber';
 import { AppSubscriberService } from 'src/app/shared/services/app-subscriber.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-manage-abonnement',
@@ -24,13 +25,16 @@ export class ManageAbonnementComponent implements OnInit {
   constructor(
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
-    private appSubscriberService: AppSubscriberService) {
+    private appSubscriberService: AppSubscriberService,
+    private titleService: Title // Inject to set document title on  browser
+    ) {
     this.numberOfRowPerPage = 10;
   }
 
 
   ngOnInit(): void {
     this.appSubscriberService.getAppSubscriber().subscribe(i => this.appSubscriberList = i);
+    this.titleService.setTitle('MNS237 - Manage-abonnement'); // Adding the title Home to the MNS237  main Title
   }
 
   deleteSelectedAppSubscriberList() {

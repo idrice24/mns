@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Image } from 'src/app/shared/models/image';
 import { PhotoService } from 'src/app/shared/services/photo.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-gallery',
@@ -28,12 +29,16 @@ items;
     }
   ];
 
-  constructor(private photoService: PhotoService) { }
+  constructor(private photoService: PhotoService,
+    private titleService: Title // Inject to set document title on  browser
+    ) { }
 
   ngOnInit(): void {
   this.photoService.getImages().subscribe(photos => this.images = photos);
+  this.titleService.setTitle('MNS237 - Gallery'); // Adding the title Home to the MNS237  main Title
   }
   myUploader(event){ }
+  
 
 
 }

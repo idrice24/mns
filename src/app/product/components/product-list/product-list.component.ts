@@ -8,6 +8,7 @@ import { Product } from 'src/app/shared/models/product';
 import { MissionService } from 'src/app/shared/services/mission.service';
 import { ProductService } from 'src/app/shared/services/product.service';
 
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -30,7 +31,8 @@ export class ProductListComponent implements OnInit {
     private titleService: Title, // provide function to update document title on brownser
     private missionService: MissionService, // Notify extern conponent i.e  header fot cart
     private messageService: MessageService,
-    private productService: ProductService) { }
+    private productService: ProductService
+    ) { }
 
   ngOnInit(): void {
     // Get a list of products from DB

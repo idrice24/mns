@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { ProductService } from 'src/app/shared/services/product.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product-landing-view',
@@ -12,7 +13,8 @@ export class ProductLandingViewComponent implements OnInit {
   products: any;
   constructor(
     private productService: ProductService,
-    private messageService: MessageService // To invoke toast message
+    private messageService: MessageService, // To invoke toast message
+    private titleService: Title // Inject to set document title on  browser
   ) {
     this.responsiveOptions = [
       {
@@ -36,6 +38,7 @@ export class ProductLandingViewComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getProducts().subscribe(items =>
       this.products = items.slice(0, 11));
+    this.titleService.setTitle('MNS237 - Product-landing-view'); // Adding the title Home to the MNS237  main Title
   }
 
   addToChart(product) {

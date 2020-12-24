@@ -7,6 +7,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { Topic } from 'src/app/shared/models/topic';
 import { BlogService } from 'src/app/shared/services/blog.service';
 import { Observable } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post-list',
@@ -38,7 +39,8 @@ export class PostListComponent implements OnInit {
     private blogService: BlogService,
     private route: ActivatedRoute,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private titleService: Title // Inject to set document title on  browser
   ) {
     this.topics$ = this.blogService.getTopicList();
   }
@@ -46,6 +48,7 @@ export class PostListComponent implements OnInit {
   ngOnInit(): void {
 
     this.loadRecentPosts();
+    this.titleService.setTitle('MNS237 - Post-list'); // Adding the title Home to the MNS237  main Title
 
     this.sortOptions = [
       { label: 'Produits', value: '!price' },

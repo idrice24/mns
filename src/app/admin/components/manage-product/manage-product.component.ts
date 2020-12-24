@@ -3,6 +3,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { Product } from 'src/app/shared/models/product';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-manage-product',
@@ -28,7 +29,9 @@ export class ManageProductComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private messageService: MessageService,
-    private confirmationService: ConfirmationService) { }
+    private confirmationService: ConfirmationService,
+    private titleService: Title // Inject to set document title on  browser
+    ) { }
 
   // convenience getter for easy access to form fields
   get code() { return this.productForm.get('code'); }
@@ -47,6 +50,8 @@ export class ManageProductComponent implements OnInit {
       this.products = data;
       console.log(data[0].name);
     });
+
+    this.titleService.setTitle('MNS237 - Manage-product'); // Adding the title Home to the MNS237  main Title
 
 
     this.productForm = new FormGroup({
