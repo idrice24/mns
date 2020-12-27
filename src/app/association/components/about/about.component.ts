@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title // Inject to set document title on  browser
+   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('MNS237 - About-Us'); // Adding the title Home to the MNS237  main Title
   }
 
 }

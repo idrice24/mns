@@ -21,6 +21,7 @@ export class PostDetailComponent implements OnInit {
 
   public header: any; // @Idrice to do what?? // You can use topic object directly
 
+  public counter: number;
 
   public commentForm: FormGroup; // this component uses this variable to get information from HTML form
   public selectedTopic: Topic; // To store or get the selected topic
@@ -98,6 +99,16 @@ export class PostDetailComponent implements OnInit {
     }); // this is the pop message to confirm the comment send
 
     this.commentForm.reset(); // Clean the Form
+  }
+// here are function to link the next and previous pages of blogs
+  nextFunction(num: number){
+    this.counter = num + 1;
+    this.router.navigate(['/posts/' + this.counter]);
+  }
+
+  priviousFunction(num: number){
+    this.counter = num - 1;
+    this.router.navigate(['/posts/' + this.counter]);
   }
 
   // activatedRoute: Provide the topic id

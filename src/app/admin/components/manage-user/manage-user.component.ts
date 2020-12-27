@@ -3,6 +3,7 @@ import { UserService } from 'src/app/shared/services/user.service';
 import { AppUser } from 'src/app/shared/models/app-user';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-manage-user',
@@ -22,11 +23,14 @@ export class ManageUserComponent implements OnInit {
   constructor(
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
-    private userService: UserService) { }
+    private userService: UserService,
+    private titleService: Title // Inject to set document title on  browser
+    ) { }
 
   ngOnInit(): void {
     this.appUser = { id: 0, description: 'kok' };
     this.getUsers();
+    this.titleService.setTitle('MNS237 - Manage-user'); // Adding the title Home to the MNS237  main Title
   }
 
 

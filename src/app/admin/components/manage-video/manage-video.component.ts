@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppVideo, AppVideoItem } from 'src/app/shared/models/app-video';
 import { VideoService } from 'src/app/shared/services/video.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-manage-video',
@@ -9,7 +10,10 @@ import { VideoService } from 'src/app/shared/services/video.service';
 })
 export class ManageVideoComponent implements OnInit {
 
-  constructor(private videoService: VideoService) { }
+  constructor(
+    private videoService: VideoService,
+    private titleService: Title // Inject to set document title on  browser
+    ) { }
 
   appVideos: AppVideo[];
   selectedVideo;
@@ -20,6 +24,7 @@ export class ManageVideoComponent implements OnInit {
     this.selectedYear = 2020;
     this.videoService.getVideos().subscribe(i => this.appVideos = i);
     this.videoService.getVideoByYear(this.selectedYear).subscribe(i => this.appVideoItems = i.items);
+    this.titleService.setTitle('MNS237 - Manage-video'); // Adding the title Home to the MNS237  main Title
   }
 
   select(video) {

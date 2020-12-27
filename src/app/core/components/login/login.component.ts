@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { UserService } from 'src/app/shared/services/user.service';
 import { AppUser } from 'src/app/shared/models/app-user';
 import { MissionService } from 'src/app/shared/services/mission.service';
+import { Title } from '@angular/platform-browser';
 // REF: https://angular.io/start/start-forms
 @Component({
   selector: 'app-login',
@@ -19,7 +20,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private missionService: MissionService, // To  Act subscription
-    public authService: AuthService, public router: Router) {
+    public authService: AuthService, public router: Router,
+    private titleService: Title // Inject to set document title on  browser
+    ) {
     this.appUser = {
       email: '',
       fName: '',
@@ -45,6 +48,7 @@ export class LoginComponent implements OnInit {
       ])
     }
     );
+    this.titleService.setTitle('MNS237 - Login'); // Adding the title Home to the MNS237  main Title
   }
   // convenience getter for easy access to form fields
   get fName() { return this.loginForm.get('fName'); }

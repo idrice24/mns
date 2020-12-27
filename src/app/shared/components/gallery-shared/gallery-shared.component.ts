@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-gallery-shared',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GallerySharedComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private titleService: Title // Inject to set document title on  browser
+   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('MNS237 - gallery-shared'); // Adding the title Home to the MNS237  main Title
   }
 
 }

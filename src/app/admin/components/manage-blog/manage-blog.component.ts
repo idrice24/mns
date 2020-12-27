@@ -4,6 +4,7 @@ import { Topic } from 'src/app/shared/models/topic';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-manage-blog',
@@ -32,10 +33,12 @@ export class ManageBlogComponent implements OnInit {
   constructor(
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
-    private blogService: BlogService
+    private blogService: BlogService,
+    private titleService: Title // Inject to set document title on  browser
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('MNS237 - Manage-blog'); // Adding the title Home to the MNS237  main Title
     this.appBlog = { id: 0, summary: 'kok' };
     this.getBlogs();
 

@@ -3,7 +3,7 @@ import { DialogService } from 'src/app/shared/services/dialog.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppSubscriberService } from 'src/app/shared/services/app-subscriber.service';
 import { AppSubscriber } from 'src/app/shared/models/app-subscriber';
-
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -25,9 +25,12 @@ export class NewsletterComponent implements OnInit {
   get email() { return this.newsletterForm.get('email'); }
 
 
-  constructor(private appSubscriberService: AppSubscriberService) { }
+  constructor(private appSubscriberService: AppSubscriberService,
+              private titleService: Title // Inject to set document title on  browser
+    ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('MNS237 - Newsletter'); // Adding the title Home to the MNS237  main Title
     this.newsletterForm = new FormGroup({
 
       // fname

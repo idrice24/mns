@@ -7,6 +7,7 @@ import { UserService } from 'src/app/shared/services/user.service';
 import { forbittenEmailValidator } from 'src/app/shared/directives/forbitten-email-validator.directive';
 import { forbittenFnameValidator } from 'src/app/shared/directives/forbitten-fName-validator.directive';
 import { forbittenPasswordValidator } from 'src/app/shared/directives/forbitten-password-validator.directive';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -27,7 +28,9 @@ export class RegistryComponent implements OnInit {
     private router: Router,
     private userService: UserService,
     private formBuilder: FormBuilder,
-    public dialogService: DialogService) {
+    public dialogService: DialogService,
+    private titleService: Title // Inject to set document title on  browser
+    ) {
 
     this.appUser = {
       fName: '',
@@ -81,6 +84,7 @@ export class RegistryComponent implements OnInit {
       });
 
     this.getNumberOfUsers();
+    this.titleService.setTitle('MNS237 - Cree Un conte'); // Adding the title Home to the MNS237  main Title
 
   }
 

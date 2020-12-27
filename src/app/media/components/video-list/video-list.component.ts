@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppVideo, AppVideoItem } from 'src/app/shared/models/app-video';
 import { VideoService } from 'src/app/shared/services/video.service';
 import { TableModule, Table } from 'primeng/table';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-video-list',
@@ -16,7 +17,9 @@ export class VideoListComponent implements OnInit {
   cols: any[];
   selectedYear;
 
-  constructor(private videoService: VideoService) { }
+  constructor(private videoService: VideoService,
+              private titleService: Title // Inject to set document title on  browser
+    ) { }
 
 
   ngOnInit(): void {
@@ -25,8 +28,8 @@ export class VideoListComponent implements OnInit {
     // TODO@Idrice : name in french
     this.cols = [
       { field: 'top', header: 'Top' },
-      { field: 'name', header: 'Name' },
-      { field: 'publishedDate', header: 'Published Date' },
+      { field: 'name', header: 'Nom' },
+      { field: 'publishedDate', header: 'Date De Publication' },
       { field: 'subtitle', header: 'Subtitle' },
       { field: 'title', header: 'Title' }
 
@@ -37,6 +40,7 @@ export class VideoListComponent implements OnInit {
       this.appVideoItems = i.items;
       this.selectedVideo = this.appVideoItems[0];
     });
+    this.titleService.setTitle('MNS237 - Videos'); // Adding the title Home to the MNS237  main Title
   }
 
   select(video) {
