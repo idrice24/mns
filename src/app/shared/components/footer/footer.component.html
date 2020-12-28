@@ -27,7 +27,7 @@
           <p-dropdown #pd [options]="appLanguages$ | async"
             [(ngModel)]="selectedAppLanguage"
             optionLabel="name"
-            (onHide)="onHide()"
+            (onChange)="onChange()"
             class="p-component"
             optionDisabled="inactive">
           </p-dropdown>
