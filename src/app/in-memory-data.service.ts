@@ -8127,18 +8127,27 @@ export class InMemoryDataService implements InMemoryDbService {
       title: 'Les Infractions qui portent atteinte à la paix et troublent l’ordre public',
       updatedDate: '2020-03-02T16:41:45Z',
       summary: 'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
-      comments: [{
-        id: 3,
-        author: 'BLA BLAC Car',
-        createdDate: '2013-03-02T16:41:45Z',
-        msg: 'STEPS %: Update database to use mock comments',
+      comments: [
 
-      }, {
-        id: 200000,
-        author: 'DAS AUTO',
-        createdDate: '2020-03-02T17:72:45Z',
-        msg: 'STEPS %: Update database to use mok comments',
-      }],
+        {
+          id: 300,
+          author: 'Idrice',
+          createdDate: '2013-03-02T16:41:45Z',
+          msg: 'Can you add more comments in database and remove non-sense commenst from eugenie and ornela ',
+
+        },
+        {
+          id: 3,
+          author: 'Eugenie',
+          createdDate: '2013-03-02T16:41:45Z',
+          msg: 'STEPS %: Update database to use mock comments',
+
+        }, {
+          id: 200000,
+          author: 'Ornela',
+          createdDate: '2020-03-02T17:72:45Z',
+          msg: 'STEPS %: Update database to use mok comments',
+        }],
       like: 2,
       unlike: 1,
       rating: 3
