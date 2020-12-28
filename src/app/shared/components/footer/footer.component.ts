@@ -33,8 +33,6 @@ export class FooterComponent implements OnInit {
     const browserLang = this.translateService.getBrowserLang();
     // const test = this.translateService.getLangs();
     this.messageService.add({ severity: 'error', summary: browserLang, detail: 'TODO', life: 2000 });
-
-
   }
 
 
@@ -46,7 +44,7 @@ export class FooterComponent implements OnInit {
 
     this.translateService.use(this.selectedAppLanguage.code);
     this.translateService.get('primeng').subscribe(res => {
-      this.messageService.add({ severity: 'info', summary: this.selectedAppLanguage.localeIdentifier, detail: 'TODO', life: 2000 });
+      this.messageService.add({ severity: 'error', summary: this.selectedAppLanguage.localeIdentifier, detail: 'TODO', life: 2000 });
 
       this.config.setTranslation(res);
     });
