@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { Location } from '@angular/common';
 import { Topic } from 'src/app/shared/models/topic';
 import { BlogService } from 'src/app/shared/services/blog.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
-import { Content } from '@angular/compiler/src/render3/r3_ast';
+
 import { AppComment } from 'src/app/shared/models/app-comment';
 
 
@@ -31,11 +31,13 @@ export class PostDetailComponent implements OnInit {
   // Pattern to valid email adress
   private emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
 
-  // @Irice why should i use ActivatedRoute  in this Component? @Ghislain this is load the information containing on the post DataBase
+  // @Irice why should i use ActivatedRoute  in this Component?
+  // @Ghislain this is load the information containing on the post DataBase
   constructor(
     private router: Router,
     private messageService: MessageService, // Fun to use TOAST for  i.e. Comment
-    private activatedRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute, // @Idrice Comments this?
+    private location: Location, // A service that applications can use to interact with a browser's URL
     private blogService: BlogService
   ) {
     // this is a method in the constructor to set the time at which a comment has being posted from the computer time/browser-->
@@ -63,9 +65,7 @@ export class PostDetailComponent implements OnInit {
       email: new FormControl(''), // We don t need anymore --> Angular provide built-in validator
       msg: new FormControl('', [
         Validators.required,
-        Validators.minLength(5),
-
-      ])
+        Validators.minLength(5)])
     }
     );
   }
@@ -100,18 +100,26 @@ export class PostDetailComponent implements OnInit {
 
     this.commentForm.reset(); // Clean the Form
   }
-// here are function to link the next and previous pages of blogs
-// here the function works as if the post id does not exit it will return to the home pages
-// @Ghislain any other idea to navigate on posted blogs??
-  nextFunction(num: number){
+  // here are function to link the next and previous pages of blogs
+  // here the function works as if the post id does not exit it will return to the home pages
+  // @Idrice any other idea to navigate on posted blogs??
+  nextFunction(num: number) {
+    // @Idrice: You can find the next id from  given num!
+    // @Idrice: You can use BlogService to find next id
+    // @Idrice if id not exist, disable button
     this.counter = num + 1;
     this.router.navigate(['/posts/' + this.counter]);
   }
 
-  priviousFunction(num: number){
+  priviousFunction(num: number) {
+    // @Idrice: You can find the previous id from  given num!
+    // @Idrice: You can use BlogService to find next id
+    // @Idrice if id not exist, disable button
     this.counter = num - 1;
     this.router.navigate(['/posts/' + this.counter]);
   }
+
+
 
   // activatedRoute: Provide the topic id
   // blogService: Provide the topic object by given id, otherwise navigate to home
