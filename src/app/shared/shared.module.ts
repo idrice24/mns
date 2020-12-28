@@ -40,6 +40,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { ScrollTopModule } from 'primeng/scrolltop';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -57,6 +58,7 @@ import { Title } from '@angular/platform-browser';
 
     // All externe Module (PrimenNG)
     DividerModule,
+    ScrollTopModule, // to use p-scrollTop in html file
     TableModule,
     DialogModule,
     FileUploadModule,
@@ -101,6 +103,7 @@ import { Title } from '@angular/platform-browser';
     ReactiveFormsModule,
     // All externe Module (PrimenNG)
     DividerModule,
+    ScrollTopModule,
     TableModule,
     DialogModule,
     FileUploadModule,
