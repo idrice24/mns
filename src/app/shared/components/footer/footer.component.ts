@@ -42,6 +42,7 @@ export class FooterComponent implements OnInit {
     window.location.href = this.location.path() + '/' + this.selectedAppLanguage.code;
 
     // TODO: @Idrice How to set language @MeNo idea
+    // Even me no idea!!
     // this.location. = 'home/fr/';
 
   }
