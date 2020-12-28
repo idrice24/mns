@@ -101,6 +101,8 @@ export class PostDetailComponent implements OnInit {
     this.commentForm.reset(); // Clean the Form
   }
 // here are function to link the next and previous pages of blogs
+// here the function works as if the post id does not exit it will return to the home pages
+// @Ghislain any other idea to navigate on posted blogs??
   nextFunction(num: number){
     this.counter = num + 1;
     this.router.navigate(['/posts/' + this.counter]);

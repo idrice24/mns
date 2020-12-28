@@ -78,9 +78,11 @@
       </div>
     </div>
   </form>
-  <a class="nav-link smooth" routerLinkActive="active" routerLink="/posts"><i class="pi pi-angle-right 2"></i>back to post list</a>
-  <!-- links to switchs between postes -->
-  <a class="nav-link smooth" routerLinkActive="active" routerLink="/posts/{{counter}}" (click)="priviousFunction(selectedTopic.id)"><< previous</a>
 
-  <a class="nav-link smooth" routerLinkActive="active" routerLink="/posts/{{counter}}" (click)="nextFunction(selectedTopic.id)">next >></a>
+  <!-- @Gislain if it is not well designed please let me know -->
+  <button pButton type="button" routerLinkActive="active" routerLink="/posts" label="back to post list" class="p-button-rounded"></button>&nbsp;
+  <!-- links to switchs between postes -->
+  <button pButton type="button" label="previous" routerLinkActive="active" routerLink="/posts/{{counter}}" (click)="priviousFunction(selectedTopic.id)" class="p-button-rounded"></button>&nbsp;
+
+  <button pButton pRipple routerLinkActive="active" routerLink="/posts/{{counter}}" (click)="nextFunction(selectedTopic.id)" label="next" class="p-button-rounded"></button>
 </section>
