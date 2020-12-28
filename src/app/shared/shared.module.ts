@@ -20,6 +20,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { DividerModule } from 'primeng/divider';
 import { PanelModule } from 'primeng/panel';
 import { InputTextModule } from 'primeng/inputtext';
 import { RatingModule } from 'primeng/rating';
@@ -55,6 +56,7 @@ import { Title } from '@angular/platform-browser';
     ReactiveFormsModule,
 
     // All externe Module (PrimenNG)
+    DividerModule,
     TableModule,
     DialogModule,
     FileUploadModule,
@@ -98,6 +100,7 @@ import { Title } from '@angular/platform-browser';
     RouterModule,
     ReactiveFormsModule,
     // All externe Module (PrimenNG)
+    DividerModule,
     TableModule,
     DialogModule,
     FileUploadModule,
