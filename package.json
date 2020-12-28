@@ -35,6 +35,7 @@
     "@angular/router": "11.0.5",
     "@compodoc/compodoc": "^1.1.11",
     "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "@types/googlemaps": "^3.40.3",
     "angular-in-memory-web-api": "^0.11.0",
     "aos": "^2.3.4",

@@ -41,6 +41,17 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { ScrollTopModule } from 'primeng/scrolltop';
+
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient);
+}
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -55,6 +66,13 @@ import { ScrollTopModule } from 'primeng/scrolltop';
     RouterModule,
     FormsModule, // <-- NgModel lives here
     ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
 
     // All externe Module (PrimenNG)
     DividerModule,
@@ -101,6 +119,8 @@ import { ScrollTopModule } from 'primeng/scrolltop';
     ForbittenPasswordValidatorDirective,
     RouterModule,
     ReactiveFormsModule,
+    TranslateModule, //  for translation
+
     // All externe Module (PrimenNG)
     DividerModule,
     ScrollTopModule,
@@ -153,6 +173,7 @@ import { ScrollTopModule } from 'primeng/scrolltop';
     MessageService, // to provide all toast msg for all app module
     MissionService, // This alo to use  this service in any module in  app
     Location, // Beauce Angular team not set the  ProvideIn flag
+    TranslateService
   ]
 })
 export class SharedModule { }
