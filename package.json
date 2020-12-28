@@ -43,7 +43,7 @@
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "primeflex": "^2.0.0",
-    "primeicons": "^4.0.0",
+    "primeicons": "^4.1.0",
     "primeng": "^11.1.0-rc.1",
     "rxjs": "^6.6.3",
     "simple-line-icons": "^2.5.5",
