@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { AppLanguage } from '../models/app-language';
 
 const APPLANGUAGES: AppLanguage[] = [
-  { localeIdentifier: 'en-US', name: 'English(United of america)', },
+  { localeIdentifier: 'en-US', name: 'English(United of america)', code: 'en' },
   { localeIdentifier: 'fr-FR', name: 'French', code: 'fr' },
 ];
 
