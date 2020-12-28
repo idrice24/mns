@@ -1,5 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NewsletterComponent } from './newsletter.component';
@@ -8,7 +8,7 @@ describe('NewsletterComponent', () => {
   let component: NewsletterComponent;
   let fixture: ComponentFixture<NewsletterComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [NewsletterComponent],
       imports: [HttpClientTestingModule, FormsModule, RouterTestingModule, ReactiveFormsModule]
