@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import * as AOS from 'aos';
+import { PrimeNGConfig } from 'primeng/api';
 import { timer } from 'rxjs';
 import { slideInAnimation } from './shared/animations/animation';
 
@@ -15,7 +16,10 @@ export class AppComponent implements OnInit {
   location: Location;
   loading: boolean;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private config: PrimeNGConfig
+  ) {
     // window.location.href.replace('http', 'https');
     this.loading = true;
     AOS.init();

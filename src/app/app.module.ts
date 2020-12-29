@@ -50,20 +50,5 @@ export class AppModule {
     const replacer = (key, value) => (typeof value === 'function') ? value.name : value;
 
     console.log('Routes: ', JSON.stringify(this.router.config, replacer, 2));
-
-
-    // Just to test toast after configuration delay 3000
-    setTimeout(() => {
-      const testmgs = {
-        severity: 'success',
-        summary: 'Not for production',
-        detail: 'App Load successfuly'
-      };
-      this.messageService.add(testmgs);
-    }, 3000);
-
-
   }
-
-
 }

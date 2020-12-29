@@ -20,6 +20,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { DividerModule } from 'primeng/divider';
 import { PanelModule } from 'primeng/panel';
 import { InputTextModule } from 'primeng/inputtext';
 import { RatingModule } from 'primeng/rating';
@@ -39,6 +40,18 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { ScrollTopModule } from 'primeng/scrolltop';
+
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient);
+}
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -53,8 +66,17 @@ import { Title } from '@angular/platform-browser';
     RouterModule,
     FormsModule, // <-- NgModel lives here
     ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
 
     // All externe Module (PrimenNG)
+    DividerModule,
+    ScrollTopModule, // to use p-scrollTop in html file
     TableModule,
     DialogModule,
     FileUploadModule,
@@ -97,7 +119,11 @@ import { Title } from '@angular/platform-browser';
     ForbittenPasswordValidatorDirective,
     RouterModule,
     ReactiveFormsModule,
+    TranslateModule, //  for translation
+
     // All externe Module (PrimenNG)
+    DividerModule,
+    ScrollTopModule,
     TableModule,
     DialogModule,
     FileUploadModule,
@@ -147,6 +173,7 @@ import { Title } from '@angular/platform-browser';
     MessageService, // to provide all toast msg for all app module
     MissionService, // This alo to use  this service in any module in  app
     Location, // Beauce Angular team not set the  ProvideIn flag
+    TranslateService
   ]
 })
 export class SharedModule { }
