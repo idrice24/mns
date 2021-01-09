@@ -41,3 +41,33 @@
 1. This will display the list of different manage activities of the website
 1. Chose what you want to do.
 
+# How to change the Web App Language
+1. website is display on the browser
+1. Go to the Footer
+1. click on the dropdown button
+1. Select your language from the list propose
+1. This will automatically change the Web site language  
+
+# How to Commment A Blog
+1. web site is display on the browser
+1. Go to ACTUALITES
+1. choose your post from the list post
+1. click on the lire plus button 
+1. new windows come on 
+1. scrole down to view all past comment and 
+1. At the end write your own comment
+1. click on Publier un Commentaire
+
+# How to add a New Blog Post
+1. web site is display on the browser
+1. Go to CMS
+1. Login in with your Admin identification
+1. A dashboard Open, click on Show Menu
+1. select Blog from the nav list
+1. click on '+ New' button 
+1. A POP up comes on and then fill the form
+1. And then click on Submite
+1. Go back to Actualites to see your post!!
+`Repeat this steps to add a Product, Gallery`
+
+#
