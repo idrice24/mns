@@ -7,7 +7,7 @@ import { AppComment } from './app-comment';
 
 export interface Topic {
   content?: string;
-  createdDate?: string;
+  createdDate?: Date;
   id?: number;
   publishedDate?: string;
   title?: string;
