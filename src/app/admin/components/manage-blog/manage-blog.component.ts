@@ -133,7 +133,6 @@ export class ManageBlogComponent implements OnInit {
     return index;
   }
 
-  
   // Save to data base this user information
   doSubscription() {
 
