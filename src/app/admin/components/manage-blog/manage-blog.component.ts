@@ -21,6 +21,7 @@ export class ManageBlogComponent implements OnInit {
   submitted: boolean;
   appBlogDialog: boolean;
   blogForm: FormGroup;
+  public now: Date = new Date();
 
   // convenience getter for easy access to form fields
   get code() { return this.blogForm.get('code'); }
@@ -132,11 +133,10 @@ export class ManageBlogComponent implements OnInit {
     return index;
   }
 
-  // @Idrice wrong comment?
+  
   // Save to data base this user information
   doSubscription() {
 
-    // @Idrice is that new one??  can you explain this line
     const currentAppBlog: Topic = {
       title: this.title.value,
       content: this.content.value,
@@ -144,7 +144,7 @@ export class ManageBlogComponent implements OnInit {
       summary: this.summary.value,
       category: this.category.value,
       verified: false,
-      createdDate: `${Date.now()}`, //  Set the createdDate value
+      createdDate: this.now, //  Set the createdDate value
     };
 
 
