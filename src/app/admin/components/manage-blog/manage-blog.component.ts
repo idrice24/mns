@@ -144,6 +144,7 @@ export class ManageBlogComponent implements OnInit {
       category: this.category.value,
       verified: false,
       createdDate: this.now, //  Set the createdDate value
+      publishedDate: this.now,
     };
 
 
