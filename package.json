@@ -15,7 +15,6 @@
     "e2e": "ng e2e",
     "e2e-deploy": "ng e2e -- --protractor-config=e2e/protractor-ci.conf.js",
     "deploy": "ng lint && ng build --prod --output-path docs --base-href /mns/ && git status",
-
     "deploy-test": "ng lint && ng build --prod --output-path docs --base-href /mns/ && git status && git config --global user.email 'gzeleu@gmx.de' &&  git config --global user.name 'Ghislain' && git add * -f && git commit -m 'UPDATED GITHUB DOCS FOLDER' && git push ",
     "compodoc": "npx compodoc -p tsconfig.json -o -s",
     "dev": "npm run deploy && ng serve --open",
@@ -45,6 +44,9 @@
     "emailjs-com": "^2.6.4",
     "firebase": "^8.1.1",
     "jquery": "^3.5.1",
+    "moment": "^2.29.1",
+    "ngx": "^2.4.0",
+    "ngx-moment": "^5.0.0",
     "popper.js": "^1.16.1",
     "primeflex": "^2.0.0",
     "primeicons": "^4.1.0",
