@@ -40,7 +40,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
-    MomentModule.forRoot({ relativeTimeThresholdOptions:{ 'm':59 }}), // this makes all the ngx-moment pipes available for use
+    MomentModule.forRoot({ relativeTimeThresholdOptions: { m : 59 }}), // this makes all the ngx-moment pipes available for use
     DataViewModule,
     PanelModule,
     DropdownModule,

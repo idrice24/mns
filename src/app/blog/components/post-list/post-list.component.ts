@@ -29,7 +29,7 @@ export class PostListComponent implements OnInit {
 
   sortField: string;
 
-  message: string
+  message: string;
   public now: Date = new Date();
 
 
