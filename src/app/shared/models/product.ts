@@ -10,11 +10,11 @@ export interface Product {
   image?: string;
   rating?: number;
   createdDate?: Date;
-  publishedDate?: string;
+  publishedDate?: Date;
   title?: string;
   imageUrl?: string;
   heart?: boolean;
   content?: string;
-  updatedDate?: string;
+  updatedDate?: Date;
   summary?: string;
 }

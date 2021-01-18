@@ -9,7 +9,7 @@ export interface Topic {
   content?: string;
   createdDate?: Date;
   id?: number;
-  publishedDate?: string;
+  publishedDate?: Date;
   title?: string;
   updatedDate?: string;
   summary?: string;
