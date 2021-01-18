@@ -15,6 +15,6 @@ export interface Product {
   imageUrl?: string;
   heart?: boolean;
   content?: string;
-  updatedDate?: Date;
+  updatedDate?: string;
   summary?: string;
 }
