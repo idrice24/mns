@@ -43,11 +43,12 @@
               <div class="blog-list-detail">
                 <div class="blog-name">{{blog.title}}</div>
                 <div class="blig-item">
-                  <article>published Date: {{blog.publishedDate}}</article>
+                  <article>published Date: {{blog.publishedDate | date:'fullDate' }}</article>
                   <!-- here is to display the tooltip message on top of the page -->
 
                   <h4>
-                    <i class="pi pi-comments" pTooltip="Number of Comments" tooltipPosition="top"></i> {{blog.comments.length}}</h4>
+                    <i class="pi pi-comments" pTooltip="Number of Comments" tooltipPosition="top"></i>
+                    {{blog.comments.length}}</h4>
 
                 </div>
                 <div class="blog-description">{{blog.content}}</div>
