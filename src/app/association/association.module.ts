@@ -5,12 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { AboutComponent } from './components/about/about.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { InputTextModule } from 'primeng/inputtext';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
-import { RippleModule } from 'primeng/ripple';
-import { DialogModule } from 'primeng/dialog';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   {
@@ -25,12 +20,7 @@ const routes: Routes = [
     NewsletterComponent],
   imports: [
     CommonModule,
-    CardModule,
-    InputTextModule,
-    ButtonModule,
-    RippleModule,
-    FormsModule,
-    DialogModule,
+    SharedModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
