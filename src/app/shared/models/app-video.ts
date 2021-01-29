@@ -1,4 +1,5 @@
 
+import { AppComment } from './app-comment';
 
 export interface AppVideo {
   id: number;
@@ -18,5 +19,6 @@ export interface AppVideoItem {
   link: string;
   subtitle: string;
   top: number;
+  comments: AppComment[];
 }
 

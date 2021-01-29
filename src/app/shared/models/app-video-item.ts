@@ -6,4 +6,5 @@ export interface AppVideoItem {
   link: string;
   subtitle: string;
   top: number;
+  comments: string;
 }
