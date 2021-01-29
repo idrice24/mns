@@ -36,7 +36,7 @@ get msg() { return this.commentForm.get('msg'); }
   ngOnInit(): void {
     this.getVideos();
 
-    
+
     this.cols = [
       { field: 'top', header: 'Top' },
       { field: 'name', header: 'Nom' },
@@ -91,12 +91,12 @@ get msg() { return this.commentForm.get('msg'); }
     };
 
     // here is to pust the comment into the comments array
-     this.selectedVideo.comments.push(commentObject);
+    this.selectedVideo.comments.push(commentObject);
 
 
     // Tell the serice to update the topic in Server due to added Comments
     // @Idrice: we have to call subscribe() here to fire the method
-     this.videoService.updateTopic(this.selectedVideo).subscribe();
+    this.videoService.updateTopic(this.selectedVideo).subscribe();
 
     this.commentForm.reset(); // Clean the Form
   }
