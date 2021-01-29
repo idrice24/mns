@@ -42,6 +42,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { ScrollTopModule } from 'primeng/scrolltop';
 
+import { GMapModule } from 'primeng/gmap';
+import { PasswordModule } from 'primeng/password';
+import { CheckboxModule } from 'primeng/checkbox';
+
+
+
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
@@ -81,10 +87,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     DialogModule,
     FileUploadModule,
     TableModule,
+    PasswordModule,
     DialogModule,
     ProgressBarModule,
     FileUploadModule,
     ToolbarModule,
+    CheckboxModule,
     InputNumberModule,
     ConfirmDialogModule,
     InputTextareaModule,
@@ -104,6 +112,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     FieldsetModule,
     ListboxModule,
     MenuModule,
+    GMapModule,
     ButtonModule,
     RadioButtonModule, // to use p-ratiobutton
     CarouselModule, // To use p-carousel in html file
@@ -125,6 +134,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     DividerModule,
     ScrollTopModule,
     TableModule,
+    CheckboxModule,
+    PasswordModule,
     DialogModule,
     FileUploadModule,
     TableModule,

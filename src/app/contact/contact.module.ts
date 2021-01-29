@@ -7,17 +7,10 @@ import { ContactComponent } from './components/contact/contact.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContactMapComponent } from './components/contact-map/contact-map.component';
-import { GMapModule } from 'primeng/gmap';
-import { ToastModule } from 'primeng/toast';
-import { CheckboxModule } from 'primeng/checkbox';
-import { DialogModule } from 'primeng/dialog';
-import { InputTextModule } from 'primeng/inputtext';
-import { ButtonModule } from 'primeng/button';
-import { TabViewModule } from 'primeng/tabview';
 
-import { RippleModule } from 'primeng/ripple';
-import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SharedModule } from '../shared/shared.module';
+
+import { GMapModule } from 'primeng/gmap';
 
 const routes: Routes = [
   {
@@ -34,13 +27,6 @@ const routes: Routes = [
     ReactiveFormsModule,
     GMapModule,
     SharedModule, // To use shared function .ie. Title
-    InputTextModule,
-    CheckboxModule,
-    DialogModule,
-    ButtonModule,
-    RippleModule,
-    TabViewModule,
-    InputTextareaModule,
     RouterModule.forChild(routes)
   ],
 

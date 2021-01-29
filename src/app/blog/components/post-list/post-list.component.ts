@@ -51,9 +51,9 @@ export class PostListComponent implements OnInit {
     this.titleService.setTitle('MNS237 - Post-list'); // Adding the title Home to the MNS237  main Title
 
     this.sortOptions = [
-      { label: 'Produits', value: '!price' },
+      { label: 'Produits', value: '!title' },
 
-      { label: 'Blogs', value: 'price' }
+      { label: 'Blogs', value: 'title' }
     ];
     this.sortKey = this.sortOptions[0];
   }
