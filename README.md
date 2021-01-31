@@ -125,3 +125,4 @@ The following channels are available for discussions, feedback, and support requ
       [karma-mocha-reporter](https://github.com/litixsoft/karma-mocha-reporter) and
       [ng-mocks](https://github.com/ike18t/ng-mocks)
 1.  [] End-to-end tests with Protractor,
+1.  [] Hallo
