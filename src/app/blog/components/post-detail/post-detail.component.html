@@ -6,7 +6,7 @@
       <img [src]="selectedTopic?.imageUrl" [alt]="selectedTopic?.imageUrl" *ngIf="selectedTopic?.imageUrl" />
     </div>
   </div>
-
+<!--@Ghislain all comment is showing on my own if the problem is still there let me have the id of the blog-->
   <p-fieldset *ngIf="selectedTopic" [legend]="header" [toggleable]="true">
 
     {{selectedTopic.content}}
