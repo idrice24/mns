@@ -1,4 +1,4 @@
-
+import { AppComment } from './app-comment';
 
 export interface AppVideo {
   id: number;
@@ -7,6 +7,7 @@ export interface AppVideo {
   title: string;
   publishedDate: string;
   items: AppVideoItem[];
+  comments?: AppComment[]; // To store all comments for unique video
   name: string;
 }
 // @Idrice: His own file  should be created
@@ -18,5 +19,6 @@ export interface AppVideoItem {
   link: string;
   subtitle: string;
   top: number;
+  comments: AppComment[];
 }
 
