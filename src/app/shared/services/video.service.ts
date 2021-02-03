@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 
 import { tap, catchError, filter, map } from 'rxjs/operators';
 import { AppUser } from '../models/app-user';
+import { LogService } from './log.service';
 
 
 @Injectable({
@@ -13,15 +14,13 @@ import { AppUser } from '../models/app-user';
 export class VideoService {
 
 
-
-
   private videosUrl = 'api/videos'; // URL to web api
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 
   };
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private logService: LogService) { }
 
   /** GET: Videos from server */
   getVideos(): Observable<AppVideo[]> {
@@ -36,6 +35,32 @@ export class VideoService {
     return this.getVideos().pipe(
       map((vs: AppVideo[]) => vs.find(v => v.year === +selectedYear)));
 
+  }
+
+  /** PUT: update the topic on the server */
+  updateVideo(video: AppVideo): Observable<any> {
+    return this.httpClient.put(this.videosUrl, video, this.httpOptions).pipe(
+      tap(_ => this.log(`updated video id=${video.id}`)),
+      catchError(this.handleError<any>('updateVideo'))
+    );
+  }
+
+  /** Getter: get the comment */
+getAppComment(): Observable<AppVideo[]> {
+    return this.httpClient.get<AppVideo[]>(this.videosUrl).pipe(
+      tap((commentList: AppVideo[]) => this.logService.log(commentList)),
+      catchError(this.handleError<AppVideo[]>('getAppComment', []))
+    );
+  }
+
+
+
+  /** CREATE : create the comment */
+addAppComment(blog: AppVideo): Observable<AppVideo> {
+    return this.httpClient.post<AppVideo>(this.videosUrl, blog, this.httpOptions).pipe(
+      tap((newComment: AppVideo) => this.logService.log(`added Comment`)),
+      catchError(this.handleError<AppVideo>('addComment'))
+    );
   }
 
 
