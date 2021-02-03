@@ -30,11 +30,65 @@
        </div>
 
        <div>
+<hr>
+<div class="p-text-center">
+    <i> Votre adresse de messagerie ne sera pas publiee. Les Champs Obligatoires sont indiques avec
+      *</i>
+  </div>
+  <form [formGroup]="commentForm" (ngSubmit)="postYourComment(commentForm.value)">
+    <div class="p-fluid p-grid">
 
-         <marquee class="text-danger">
-           <h1> --- COMING SOON @Idrice: Comment on vidoes --> SEE YOUTUBE for design </h1>
-           <!-- i should design it as that of YOUTUBR??-->
-         </marquee>
+      <div class="p-col">
+        <div class="p-field p-grid">
+          <div class="p-inputgroup">
+            <textarea pInputTextarea formControlName="msg" style="height:160px" placeholder="Message *"></textarea>
+          </div>
+        </div>
+        <div *ngIf="msg.invalid && (msg.dirty || msg.touched)" class="p-col-12">
+          <small *ngIf="msg.errors.required" class="p-invalid">Le Commentaire est requir.</small>
+          <small *ngIf="msg.errors.minlength" class="p-invalid">Le Commentair doit etre de plus de 10 charactair
+          </small>
+        </div>
+      </div>&nbsp;&nbsp;
+
+      <div class="p-col">
+        <div class="p-field p-grid">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input pInputText formControlName="author" type="text" placeholder="Auteur *">
+          </div>
+          <div *ngIf="author.invalid && (author.dirty || author.touched)" class="p-col-12">
+            <small *ngIf="author.errors.required" class="p-invalid">Le nom est required.</small>
+            <small *ngIf="author.errors.minlength" class="p-invalid">Le nom doit etre de plus de 4 charactere</small>
+          </div>
+        </div>
+
+        <!-- pRipple is like hover it change the form of the button when i user point at it -->
+        <div class="p-field p-grid">
+          <button pButton pRipple [disabled]="!commentForm.valid" type="submit" label="Publier un Commentaire >>"
+            class="p-button-rounded"></button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <hr>
+  <p-fieldset *ngIf="selectedVideo">
+    <p *ngFor="let c of selectedVideo.comments">
+      <p-divider align="right" type="dashed">
+        <div class="p-d-inline-flex p-ai-center">
+          <i class="pi pi-user p-mr-2"></i>
+          <b>{{c.author}}</b>
+        </div>
+      </p-divider>
+
+      <span class="list-group-irem"> {{c.msg}} </span><i
+        style="float: right;">{{c.createdDate | date:'fullDate'}}</i>
+      <!-- @Ghislain please can you help with how to display dynamic time in angular-->
+      <!-- @idrice what do you mean dynamic time? createdDate is date not a time when someone adds a comments-->
+      <!-- it is  to display the commentvs and the date and time at which it has bieng commented -->
+    </p>
+  </p-fieldset>
+
        </div>
      </div>
 
@@ -54,7 +108,7 @@
            <!--ENDE SELECTION -->
          </ng-template>
          <ng-template let-video pTemplate="item">
-           <p>{{ video|json }}</p><!-- why is it that the when want print the names and it is not visible but it there -->
+           <p>{{ video.name }}</p><!-- why is it that the when want print the names and it is not visible but it there -->
            <p>{{ video.title }}</p>
          </ng-template>
          <ng-template pTemplate="footer">
