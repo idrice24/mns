@@ -13,7 +13,7 @@ export class GallerySharedComponent implements OnInit {
    ) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('MNS237 - gallery-shared'); // Adding the title Home to the MNS237  main Title
+    this.titleService.setTitle('MNS237 - home'); // Adding the title Home to the MNS237  main Title
   }
 
 }
