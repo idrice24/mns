@@ -79,13 +79,13 @@
           <i class="pi pi-user p-mr-2"></i>
           <b>{{c.author}}</b>
         </div>
+        <br>
+        <div class="p-d-inline-flex p-ai-center">
+        {{c.createdDate | date:'fullDate'}}
+      </div>
       </p-divider>
 
-      <span class="list-group-irem"> {{c.msg}} </span><i
-        style="float: right;">{{c.createdDate | date:'fullDate'}}</i>
-      <!-- @Ghislain please can you help with how to display dynamic time in angular-->
-      <!-- @idrice what do you mean dynamic time? createdDate is date not a time when someone adds a comments-->
-      <!-- it is  to display the commentvs and the date and time at which it has bieng commented -->
+      <span class="list-group-irem"> {{c.msg}} </span>
     </p>
   </p-fieldset>
 
