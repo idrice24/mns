@@ -27,7 +27,7 @@ export class VideoListComponent implements OnInit {
 
   constructor(
         private videoService: VideoService,
-        private messageService: MessageService, // Fun to use TOAST for  i.e. Comment
+    //  private messageService: MessageService, // Fun to use TOAST for  i.e. Comment
         private titleService: Title // Inject to set document title on  browser
     ) {
     setInterval(() => {
@@ -110,11 +110,11 @@ export class VideoListComponent implements OnInit {
     // Tell the serice to update the topic in Server due to added Comments
     // @Idrice: we have to call subscribe() here to fire the method
     // this.videoService.updateVideo(this.selectedVideo).subscribe();
-
+/*
     this.messageService.add({
       severity: 'success', summary: 'Commentaire ajoute',
       detail: author + ' Says ' + message
-    }); // this is the pop message to confirm the comment send
+    }); // this is the pop message to confirm the comment send*/
 
     this.commentForm.reset(); // Clean the Form
   }
