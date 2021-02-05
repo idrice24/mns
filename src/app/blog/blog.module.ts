@@ -8,6 +8,7 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
 
+<<<<<<< HEAD
 import { DataViewModule } from 'primeng/dataview';
 import { PanelModule } from 'primeng/panel';
 import { InputTextModule } from 'primeng/inputtext';
@@ -25,6 +26,8 @@ import { TooltipModule } from 'primeng/tooltip';
 
 import { MomentModule } from 'ngx-moment';
 
+=======
+>>>>>>> master
 const routes: Routes = [
   { path: '', component: PostListComponent, data: { animation: 'BlogPage' } },
   { path: ':id', component: PostDetailComponent }
@@ -40,6 +43,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
+<<<<<<< HEAD
     MomentModule.forRoot({ relativeTimeThresholdOptions: { m : 59 }}), // this makes all the ngx-moment pipes available for use
     DataViewModule,
     PanelModule,
@@ -53,9 +57,11 @@ const routes: Routes = [
     FieldsetModule, // For a fieldset toggeable
     ListboxModule,
     ToastModule, //  Help to use toast in HTML file
+=======
+>>>>>>> master
     RouterModule.forChild(routes)
   ],
   exports: [RouterModule],
-  providers: [MessageService]
+  providers: []
 })
 export class BlogModule { }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AppVideo } from '../models/app-video';
+import { AppVideo, AppVideoItem } from '../models/app-video';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
@@ -94,6 +94,14 @@ addAppComment(blog: AppVideo): Observable<AppVideo> {
   private log(message: string) {
     // this.messageService.add(`UserService: ${message}`);
     console.warn(`UserService: ${message}`);
+  }
+
+  /** PUT: update the video on the server */
+  updateTopic(video: AppVideoItem): Observable<any> {
+    return this.httpClient.put(this.videosUrl, video, this.httpOptions).pipe(
+      tap(_ => this.log(`updated video id=${video.id}`)),
+      catchError(this.handleError<any>('updateVideo'))
+    );
   }
 
 }

@@ -1,5 +1,4 @@
-<p-card class="p-shadow-24">
-
+<section id="newsletter">
   <!--TITLE-->
   <div class="row mb-5">
     <div class="col-md-12 text-center">
@@ -7,77 +6,79 @@
     </div>
   </div>
 
-  <div class="row mb-5">
-    <div class="col-md-12 text-center">
-      <p data-aos="fade-in-down" data-aos-offset="500" class="text-primary">Abonnez-vous à notre newsletter et recevez
-        toujours les dernières informations</p>
+  <p-card class="p-shadow-24">
+    <div class="row mb-5">
+      <div class="col-md-12 text-center">
+        <p data-aos="fade-in-down" data-aos-offset="500" class="text-primary">Abonnez-vous à notre newsletter et recevez
+          toujours les dernières informations</p>
+      </div>
     </div>
-  </div>
 
 
-  <!-- START MODAL here -->
-  <p-dialog header="Abonnement!" [(visible)]="display" style="display: center">
-    <form [formGroup]="newsletterForm" (ngSubmit)="doSubscription()">
-      <div class="p-d-flex p-jc-center">
-        <div class="p-grid">
-          <!--USERNAME-->
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-              <input pInputText formControlName="fName" type="text" placeholder="Nom d'utilisateur" required>
+    <!-- START MODAL here -->
+    <p-dialog header="Abonnement!" [(visible)]="display" style="display: center">
+      <form [formGroup]="newsletterForm" (ngSubmit)="doSubscription()">
+        <div class="p-d-flex p-jc-center">
+          <div class="p-grid">
+            <!--USERNAME-->
+            <div class="p-col-12">
+              <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                <input pInputText formControlName="fName" type="text" placeholder="Nom d'utilisateur" required>
+              </div>
+              <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
+                <small *ngIf="fName.errors.required" class="p-invalid">le nom est requis</small>
+                <small *ngIf="fName.errors.minlength" class="p-invalid">le nom doit etre au moins 4 chiffres de
+                  long.</small>
+              </div>
             </div>
-            <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
-              <small *ngIf="fName.errors.required" class="p-invalid">le nom est requis</small>
-              <small *ngIf="fName.errors.minlength" class="p-invalid">le nom doit etre au moins 4 chiffres de
-                long.</small>
+            <!--Last Name-->
+            <div class="p-col-12">
+              <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-user-edit"></i></span>
+                <input pInputText formControlName="lName" type="text" placeholder="Prenom d'utilisateur" required>
+              </div>
+              <div *ngIf="lName.invalid && (lName.dirty || lName.touched)" class="p-col-12">
+                <small *ngIf="lName.errors.required" class="p-invalid">le prenom es requis.</small>
+                <small *ngIf="lName.errors.minlength" class="p-invalid">le prenom doit etre au moins 8 chiffres de long
+                  .</small>
+              </div>
             </div>
-          </div>
-          <!--Last Name-->
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon"><i class="pi pi-user-edit"></i></span>
-              <input pInputText formControlName="lName" type="text" placeholder="Prenom d'utilisateur" required>
+            <!--USER EMAIL-->
+            <p></p>
+            <div class="p-col-12">
+              <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-globe"></i></span>
+                <input pInputText formControlName="email" type="text" placeholder="L'email d'utilisateur" required>
+              </div>
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="p-col-12">
+                <small *ngIf="email.errors.required" class="p-invalid">l'email est requis.</small>
+                <small *ngIf="email.errors.minlength" class="p-invalid">l'email doit etre au moins 5 chiffres de
+                  long.</small>
+              </div>
             </div>
-            <div *ngIf="lName.invalid && (lName.dirty || lName.touched)" class="p-col-12">
-              <small *ngIf="lName.errors.required" class="p-invalid">le prenom es requis.</small>
-              <small *ngIf="lName.errors.minlength" class="p-invalid">le prenom doit etre au moins 8 chiffres de long
-                .</small>
-            </div>
-          </div>
-          <!--USER EMAIL-->
-          <p></p>
-          <div class="p-col-12">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon"><i class="pi pi-globe"></i></span>
-              <input pInputText formControlName="email" type="text" placeholder="L'email d'utilisateur" required>
-            </div>
-            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="p-col-12">
-              <small *ngIf="email.errors.required" class="p-invalid">l'email est requis.</small>
-              <small *ngIf="email.errors.minlength" class="p-invalid">l'email doit etre au moins 5 chiffres de
-                long.</small>
+
+
+            <!--BUTTON-->
+            <div class="p-col-12">
+              <button pButton pRipple [disabled]="newsletterForm.invalid" type="submit" label="Envoyer"
+                class="p-button-rounded"></button>&nbsp;&nbsp;&nbsp;
+              <button pButton type="button" label="Quitter" class="p-button-rounded" data-dismiss="dialog"></button>
             </div>
           </div>
 
 
-          <!--BUTTON-->
-          <div class="p-col-12">
-            <button pButton pRipple [disabled]="newsletterForm.invalid" type="submit" label="Envoyer"
-              class="p-button-rounded"></button>&nbsp;&nbsp;&nbsp;
-            <button pButton type="button" label="Quitter" class="p-button-rounded" data-dismiss="dialog"></button>
-          </div>
         </div>
 
+      </form>
+    </p-dialog>
+    <!-- ENDE MODAL -->
 
-      </div>
+    <div class="text-center">
+      <button pButton pRipple class="p-button-rounded" type="button" (click)="showDialog()" icon="pi pi-wallet"
+        label="Abonnez-vous">
+      </button>
+    </div>
 
-    </form>
-  </p-dialog>
-  <!-- ENDE MODAL -->
-
-  <div class="text-center">
-    <button pButton pRipple class="p-button-rounded" type="button" (click)="showDialog()" icon="pi pi-wallet"
-      label="Abonnez-vous">
-    </button>
-  </div>
-
-</p-card>
+  </p-card>
+</section>

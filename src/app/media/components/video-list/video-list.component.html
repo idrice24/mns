@@ -29,6 +29,7 @@
          <p> {{ok.src }}</p>
        </div>
 
+<<<<<<< HEAD
        <div>
 <hr>
 <div class="p-text-center">
@@ -89,6 +90,84 @@
     </p>
   </p-fieldset>
 
+=======
+       <div class="card-body" *ngIf="selectedVideo">
+        <h4>{{ selectedVideo.title }}</h4>
+        <hr>
+
+
+        <div class="p-d-flex p-jc-right">
+          <div class="p-grid">
+
+        <h5>Vues( numbre de vues ici) &nbsp;&nbsp;{{ selectedVideo.publishedDate | date :'fullDate' }}</h5>
+
+          <div class="p-col p-fieldset-right">
+            <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+            <i class="pi pi-thumbs-up" pTooltip="like the video" tooltipPosition="top"></i>(like)</span>
+          </div>
+          </div>
+
+          <div class="p-col">
+            <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+          <i class="pi pi-thumbs-down" pTooltip="unlike the video" tooltipPosition="top"></i>(unlike)</span> 
+          </div>
+          </div>
+
+          <div class="p-col">
+            <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+            <i class="pi pi-share-alt" pTooltip="Partager sur Internet" tooltipPosition="top"></i>PARTAGER</span>
+          </div>
+          </div>
+
+          <div class="p-col">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+            <i class="pi pi-save" pTooltip="Save it" tooltipPosition="top"></i>SAVE VIDEO</span>
+          </div>
+          </div>
+        </div>
+        </div>
+        <hr>
+        <h2>View Info about the videos e.g who posted the video, the name of the video</h2>
+        <hr>
+        <div class="p-mx-auto"><i class="pi pi-comments" pTooltip="Number of Comments" tooltipPosition="top"></i>(here n° de commentaires)
+        <i class="pi pi-list"></i>Sort By</div>
+
+        <!-- form for comments -->
+        <div class="p-m-4">
+        <form [formGroup]="commentForm" (ngSubmit)="postYourComment(commentForm.value)">
+          <div class="p-d-flex p-jc-right">
+            <div class="p-grid">
+              <!--USER COMMENT -->
+              <div class="p-col">
+             <div class="p-inputgroup">
+               <span class="p-inputgroup-addon"><i class="pi pi-comment"></i></span>
+               <input pInputText formControlName="msg" type="text" placeholder="Ajouter un commentaires public">
+               <button pButton pRipple [disabled]="!commentForm.valid" type="submit" label="AJOUTER UN COMMENTAIRE" class="p-button-rounded"></button>
+             </div>
+           </div>
+         </div>
+       </div>
+        </form>
+      </div>
+
+
+        <p-fieldset *ngIf="selectedVideo">
+    <p *ngFor="let c of selectedVideo.comments">
+      <p-divider align="left" type="dashed">
+        <div class="p-d-inline-flex p-ai-center">
+          <b>Name</b>
+        </div>
+      </p-divider>
+
+      <span class="list-group-irem"> {{c.msg}} </span><i
+        style="float: right;">{{c.createdDate | date: 'fullDate'}}</i>
+    </p>
+  </p-fieldset>
+>>>>>>> master
        </div>
      </div>
 

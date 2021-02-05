@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 import { AppComment } from './app-comment';
 
 export interface AppVideo {

@@ -22,7 +22,11 @@
       </p-divider>
 
       <span class="list-group-irem"> {{c.msg}} </span><i
+<<<<<<< HEAD
         style="float: right;">{{c.createdDate | amTimeAgo:true}}</i>
+=======
+        style="float: right;">{{c.createdDate | date: 'fullDate'}}</i>
+>>>>>>> master
       <!-- @Ghislain please can you help with how to display dynamic time in angular-->
       <!-- @idrice what do you mean dynamic time? createdDate is date not a time when someone adds a comments-->
       <!-- it is  to display the commentvs and the date and time at which it has bieng commented -->
@@ -80,7 +84,7 @@
 
         <!-- pRipple is like hover it change the form of the button when i user point at it -->
         <div class="p-field p-grid">
-          <button pButton pRipple [disabled]="!commentForm.valid" type="submit" label="Publier un Commentaire >>"
+          <button pButton pRipple [disabled]="!commentForm.valid" type="submit" label="Publier un Commentaire ->>"
             class="p-button-rounded"></button>
         </div>
       </div>
