@@ -12,7 +12,6 @@ import { ListboxModule } from 'primeng/listbox';
 import { GalleriaModule } from 'primeng/galleria';
 import { CardModule } from 'primeng/card';
 import { FormsModule } from '@angular/forms';
-import { MessageService } from 'primeng/api';
 
 const mediasRoutes: Routes = [
   { path: 'gallery', component: GalleryComponent },
@@ -38,8 +37,7 @@ const mediasRoutes: Routes = [
     RouterModule.forChild(mediasRoutes)
   ],
   exports: [
-  RouterModule,
-  MessageService
+  RouterModule
   ]
 })
 export class MediaModule { }

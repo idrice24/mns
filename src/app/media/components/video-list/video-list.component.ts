@@ -3,7 +3,6 @@ import { AppVideo, AppVideoItem } from 'src/app/shared/models/app-video';
 import { VideoService } from 'src/app/shared/services/video.service';
 import { TableModule, Table } from 'primeng/table';
 import { Title } from '@angular/platform-browser';
-import { MessageService } from 'primeng/api';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
