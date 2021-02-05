@@ -15,7 +15,6 @@ import { Router } from '@angular/router';
 import { InMemoryDataService } from './in-memory-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageService } from 'primeng/api';
-import { MomentModule } from 'ngx-moment';
 
 @NgModule({
   declarations: [
