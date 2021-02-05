@@ -20,7 +20,7 @@ export class VideoListComponent implements OnInit {
   cols: any[];
   selectedYear;
   public commentForm: FormGroup;
-  public now: Date = new Date();// declearing the constant now to set the time
+  public now: Date = new Date(); // declearing the constant now to set the time
 
   constructor(
         private videoService: VideoService,
