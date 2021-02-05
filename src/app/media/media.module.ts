@@ -37,6 +37,9 @@ const mediasRoutes: Routes = [
     FileUploadModule,
     RouterModule.forChild(mediasRoutes)
   ],
-  exports: [RouterModule,MessageService]
+  exports: [
+  RouterModule,
+  MessageService
+  ]
 })
 export class MediaModule { }
