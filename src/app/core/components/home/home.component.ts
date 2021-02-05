@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.primengConfig.ripple = true;
-    this.titleService.setTitle('MNS237 - Home'); // Adding the title Home to the MNS237  main Title
+    // this.titleService.setTitle('MNS237 - Home'); // Adding the title Home to the MNS237  main Title
   }
 
   onNotify() {
