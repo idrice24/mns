@@ -37,7 +37,7 @@ export class VideoService {
 
   }
 
-  /** PUT: update the topic on the server */
+  /** PUT: update the Video on the server */
   updateVideo(video: AppVideo): Observable<any> {
     return this.httpClient.put(this.videosUrl, video, this.httpOptions).pipe(
       tap(_ => this.log(`updated video id=${video.id}`)),
@@ -56,8 +56,8 @@ getAppComment(): Observable<AppVideo[]> {
 
 
   /** CREATE : create the comment */
-addAppComment(blog: AppVideo): Observable<AppVideo> {
-    return this.httpClient.post<AppVideo>(this.videosUrl, blog, this.httpOptions).pipe(
+addAppComment(video: AppVideo): Observable<AppVideo> {
+    return this.httpClient.post<AppVideo>(this.videosUrl, video, this.httpOptions).pipe(
       tap((newComment: AppVideo) => this.logService.log(`added Comment`)),
       catchError(this.handleError<AppVideo>('addComment'))
     );
