@@ -46,6 +46,8 @@ import { GMapModule } from 'primeng/gmap';
 import { PasswordModule } from 'primeng/password';
 import { CheckboxModule } from 'primeng/checkbox';
 
+import { GalleriaModule } from 'primeng/galleria';
+
 
 
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
@@ -116,7 +118,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ButtonModule,
     RadioButtonModule, // to use p-ratiobutton
     CarouselModule, // To use p-carousel in html file
-    ToastModule //  allows usage of toast in html file
+    ToastModule, //  allows usage of toast in html file
+    GalleriaModule
   ],
   exports: [
     HeaderComponent,
@@ -178,6 +181,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ListboxModule,
     ToastModule, //  allow others module to use toast i.e. app.Module
     ButtonModule, // to wrap access to other module .ie. shoppingModule
+    GalleriaModule,
   ],
   providers: [
     Title, // To Configure the angular title built-in-service
