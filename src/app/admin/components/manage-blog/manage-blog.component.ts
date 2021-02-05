@@ -21,7 +21,7 @@ export class ManageBlogComponent implements OnInit {
   submitted: boolean;
   appBlogDialog: boolean;
   blogForm: FormGroup;
-  public now: Date = new Date();
+  now: Date = new Date();
 
   // convenience getter for easy access to form fields
   get code() { return this.blogForm.get('code'); }
@@ -143,7 +143,7 @@ export class ManageBlogComponent implements OnInit {
       summary: this.summary.value,
       category: this.category.value,
       verified: false,
-      createdDate: this.now, //  Set the createdDate value
+      createdDate: this.now, //  Set the current time value
       publishedDate: this.now,
     };
 
