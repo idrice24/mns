@@ -18,7 +18,6 @@ export class PostListComponent implements OnInit {
   // @Idrice: I saw this with Dollar Sign in your PDF see stocks$
   topics$: Observable<Topic[]>; // Get or set list of topic coming from server
 
-  // @Idrice: Add a comments to each property
   blog: Topic; // here we create an object of Topic
   recentPosts: Topic[]; // here we create an arraz of Topic
   sortOptions: SelectItem[]; // same here as above
@@ -29,10 +28,9 @@ export class PostListComponent implements OnInit {
   display: boolean;
 
   sortField: string;
-  addlike = 1;
 
   message: string;
-
+  public now: Date = new Date();
 
 
   constructor(
@@ -85,13 +83,6 @@ export class PostListComponent implements OnInit {
 
   }
 
-  changeBlogLike() {
-    this.blog.like += 1;
-  }
-
-  changeBlogUnlike() {
-    this.blog.unlike += 1;
-  }
   shareBlog() { }
 
 }

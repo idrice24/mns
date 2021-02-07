@@ -7,7 +7,6 @@ import { SharedModule } from '../shared/shared.module';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
-
 const routes: Routes = [
   { path: '', component: PostListComponent, data: { animation: 'BlogPage' } },
   { path: ':id', component: PostDetailComponent }

@@ -8,6 +8,7 @@ export interface AppVideo {
   title: string;
   publishedDate: string;
   items: AppVideoItem[];
+  comments?: AppComment[]; // To store all comments for unique video
   name: string;
 }
 // @Idrice: His own file  should be created

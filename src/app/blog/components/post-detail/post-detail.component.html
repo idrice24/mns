@@ -6,7 +6,6 @@
       <img [src]="selectedTopic?.imageUrl" [alt]="selectedTopic?.imageUrl" *ngIf="selectedTopic?.imageUrl" />
     </div>
   </div>
-
   <p-fieldset *ngIf="selectedTopic" [legend]="header" [toggleable]="true">
 
     {{selectedTopic.content}}
@@ -22,6 +21,7 @@
       </p-divider>
 
       <span class="list-group-irem"> {{c.msg}} </span><i
+
         style="float: right;">{{c.createdDate | date: 'fullDate'}}</i>
       <!-- @Ghislain please can you help with how to display dynamic time in angular-->
       <!-- @idrice what do you mean dynamic time? createdDate is date not a time when someone adds a comments-->

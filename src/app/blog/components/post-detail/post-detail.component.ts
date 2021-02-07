@@ -105,7 +105,7 @@ export class PostDetailComponent implements OnInit {
   // @Idrice any other idea to navigate on posted blogs??
   nextFunction(num: number) {
     // @Idrice: You can find the next id from  given num!
-    // @Idrice: You can use BlogService to find next id
+    // @Idrice: You can use BlogService to find next id // Gihslain OK
     // @Idrice if id not exist, disable button
     this.counter = num + 1;
     this.router.navigate(['/posts/' + this.counter]);

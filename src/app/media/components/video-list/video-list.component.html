@@ -29,82 +29,67 @@
          <p> {{ok.src }}</p>
        </div>
 
-       <div class="card-body" *ngIf="selectedVideo">
-        <h4>{{ selectedVideo.title }}</h4>
-        <hr>
+       <div>
+<hr>
+<div class="p-text-center">
+    <i> Votre adresse de messagerie ne sera pas publiee. Les Champs Obligatoires sont indiques avec
+      *</i>
+  </div>
+  <form [formGroup]="commentForm" (ngSubmit)="postYourComment(commentForm.value)">
+    <div class="p-fluid p-grid">
 
-
-        <div class="p-d-flex p-jc-right">
-          <div class="p-grid">
-
-        <h5>Vues( numbre de vues ici) &nbsp;&nbsp;{{ selectedVideo.publishedDate | date :'fullDate' }}</h5>
-
-          <div class="p-col p-fieldset-right">
-            <div class="p-inputgroup">
-            <span class="p-inputgroup-addon">
-            <i class="pi pi-thumbs-up" pTooltip="like the video" tooltipPosition="top"></i>(like)</span>
-          </div>
-          </div>
-
-          <div class="p-col">
-            <div class="p-inputgroup">
-            <span class="p-inputgroup-addon">
-          <i class="pi pi-thumbs-down" pTooltip="unlike the video" tooltipPosition="top"></i>(unlike)</span> 
-          </div>
-          </div>
-
-          <div class="p-col">
-            <div class="p-inputgroup">
-            <span class="p-inputgroup-addon">
-            <i class="pi pi-share-alt" pTooltip="Partager sur Internet" tooltipPosition="top"></i>PARTAGER</span>
-          </div>
-          </div>
-
-          <div class="p-col">
-            <div class="p-inputgroup">
-              <span class="p-inputgroup-addon">
-            <i class="pi pi-save" pTooltip="Save it" tooltipPosition="top"></i>SAVE VIDEO</span>
-          </div>
+      <div class="p-col">
+        <div class="p-field p-grid">
+          <div class="p-inputgroup">
+            <textarea pInputTextarea formControlName="msg" style="height:160px" placeholder="Message *"></textarea>
           </div>
         </div>
+        <div *ngIf="msg.invalid && (msg.dirty || msg.touched)" class="p-col-12">
+          <small *ngIf="msg.errors.required" class="p-invalid">Le Commentaire est requir.</small>
+          <small *ngIf="msg.errors.minlength" class="p-invalid">Le Commentair doit etre de plus de 10 charactair
+          </small>
         </div>
-        <hr>
-        <h2>View Info about the videos e.g who posted the video, the name of the video</h2>
-        <hr>
-        <div class="p-mx-auto"><i class="pi pi-comments" pTooltip="Number of Comments" tooltipPosition="top"></i>(here n° de commentaires)
-        <i class="pi pi-list"></i>Sort By</div>
+      </div>&nbsp;&nbsp;
 
-        <!-- form for comments -->
-        <div class="p-m-4">
-        <form [formGroup]="commentForm" (ngSubmit)="postYourComment(commentForm.value)">
-          <div class="p-d-flex p-jc-right">
-            <div class="p-grid">
-              <!--USER COMMENT -->
-              <div class="p-col">
-             <div class="p-inputgroup">
-               <span class="p-inputgroup-addon"><i class="pi pi-comment"></i></span>
-               <input pInputText formControlName="msg" type="text" placeholder="Ajouter un commentaires public">
-               <button pButton pRipple [disabled]="!commentForm.valid" type="submit" label="AJOUTER UN COMMENTAIRE" class="p-button-rounded"></button>
-             </div>
-           </div>
-         </div>
-       </div>
-        </form>
+      <div class="p-col">
+        <div class="p-field p-grid">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input pInputText formControlName="author" type="text" placeholder="Auteur *">
+          </div>
+          <div *ngIf="author.invalid && (author.dirty || author.touched)" class="p-col-12">
+            <small *ngIf="author.errors.required" class="p-invalid">Le nom est required.</small>
+            <small *ngIf="author.errors.minlength" class="p-invalid">Le nom doit etre de plus de 4 charactere</small>
+          </div>
+        </div>
+
+        <!-- pRipple is like hover it change the form of the button when i user point at it -->
+        <div class="p-field p-grid">
+          <button pButton pRipple [disabled]="!commentForm.valid" type="submit" label="Publier un Commentaire >>"
+            class="p-button-rounded"></button>
+        </div>
       </div>
-
-
-        <p-fieldset *ngIf="selectedVideo">
+    </div>
+  </form>
+  <hr>
+  <p-fieldset *ngIf="selectedVideo">
     <p *ngFor="let c of selectedVideo.comments">
-      <p-divider align="left" type="dashed">
+      <p-divider align="right" type="dashed">
         <div class="p-d-inline-flex p-ai-center">
-          <b>Name</b>
+          <i class="pi pi-user p-mr-2"></i>
+          <b>{{c.author}}</b>
         </div>
+        <br>
+        <div class="p-d-inline-flex p-ai-center">
+        {{c.createdDate | date:'fullDate'}}
+      </div>
       </p-divider>
 
-      <span class="list-group-irem"> {{c.msg}} </span><i
-        style="float: right;">{{c.createdDate | date: 'fullDate'}}</i>
+      <span class="list-group-irem"> {{c.msg}} </span>
     </p>
   </p-fieldset>
+
+
        </div>
      </div>
 
