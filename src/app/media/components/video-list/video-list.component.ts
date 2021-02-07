@@ -48,7 +48,7 @@ export class VideoListComponent implements OnInit {
 
     ];
 
-    this.selectedYear = 1999;
+    this.selectedYear = 2000;
 
     this.videoService.getVideoByYear(this.selectedYear).subscribe(i => {
       this.appVideoItems = i.items;
@@ -92,7 +92,6 @@ export class VideoListComponent implements OnInit {
     const message = theData.msg;
     const author = theData.author;
 
-    // @Idrice: this is how to create a object of type Comment
     const commentObject: AppComment = {
       author: theData.author,
       createdDate: this.now,
