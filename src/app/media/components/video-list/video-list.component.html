@@ -28,8 +28,40 @@
            [src]="('https://www.youtube.com/embed/' + selectedVideo.link) | safe" allowfullscreen> </iframe>
          <p> {{ok.src }}</p>
        </div>
-
+<div *ngIf="selectedVideo">
        <div>
+        <hr>
+        <b>NAme of the video</b>
+        <br>
+        <div class="p-col-12">
+          <div class="video-list-item">
+              <div class="video-items">
+                 <button pButton class="p-button-raised p-button-rounded"
+                   icon="pi pi-thumbs-up" label="{{selectedVideo.name}}"></button>
+               </div>
+               <div class="video-items">
+                 <button pButton class="p-button-raised p-button-rounded"
+                   icon="pi pi-thumbs-down" label="Unlike"></button>
+               </div>
+               <div class="video-items">
+                 <button pButton class="p-button-raised p-button-rounded"
+                   icon="pi pi-share-alt" label="Partager"></button>
+               </div>
+               <div class="video-items">
+                 <button pButton class="p-button-raised p-button-rounded"
+                   icon="pi pi-cloud-download" label="Enregistrer"></button>
+               </div>
+               <div class="video-items">
+                 <button pButton class="p-button-raised p-button-rounded"
+                   icon="pi pi-bookmark" label="Signaler"></button>
+               </div>
+             </div>
+           </div>
+      
+      
+<hr>
+<i class="pi pi-comments" pTooltip="Number of Comments" tooltipPosition="top"></i>
+                    {{selectedVideo.comments.length}}
 <hr>
 <div class="p-text-center">
     <i> Votre adresse de messagerie ne sera pas publiee. Les Champs Obligatoires sont indiques avec
@@ -92,6 +124,7 @@
 
        </div>
      </div>
+     </div>
 
      <!-- Second column -->
      <div class="p-col-3 p-sm-6 p-md-6 p-lg-3">
@@ -109,10 +142,17 @@
            <!--ENDE SELECTION -->
          </ng-template>
          <ng-template let-video pTemplate="item">
-           <p>{{ video.name }}</p><!-- why is it that the when want print the names and it is not visible but it there -->
+          
+          <iframe #oke [src]="('https://www.youtube.com/embed/' + selectedVideo.link) | safe" style="width: 100px; height: 100px; ">
+            {{oke.src}}
+          </iframe>
+        
+           <p>{{ video.name }}</p>
            <p>{{ video.title }}</p>
          </ng-template>
+
          <ng-template pTemplate="footer">
+          <i class="pi pi-spin pi spinner" style="font-size: 2rem"></i>
            Footer Content
          </ng-template>
        </p-listbox>
