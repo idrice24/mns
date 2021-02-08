@@ -48,7 +48,7 @@ export class VideoListComponent implements OnInit {
 
     ];
 
-    this.selectedYear = 1999;
+    this.selectedYear = 2000;
 
     this.videoService.getVideoByYear(this.selectedYear).subscribe(i => {
       this.appVideoItems = i.items;
