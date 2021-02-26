@@ -32,17 +32,23 @@
 <div *ngIf="selectedVideo">
        <div>
         <hr>
-        <b>NAme of the video</b>
+        <div class="col-md-12">
+          <div class="video-list-item">
+            <div class="video-items"><b>Name: {{selectedVideo.name}}</b></div>
+            <div class="video-items"><b>Published Date: {{selectedVideo.publishedDate}}</b></div>
+            <div class="video-items"><b>Title:  {{selectedVideo.title}}</b></div>
+          </div>
+        </div>
         <br>
-        <div class="p-col-12">
+        <div class="p-col-10">
           <div class="video-list-item">
               <div class="video-items">
                  <button pButton class="p-button-raised p-button-rounded"
-                   icon="pi pi-thumbs-up" label="{{selectedVideo.name}}"></button>
+                   icon="pi pi-thumbs-up" label="{{selectedVideo.likeButton }}" (click)=" like()"></button>
                </div>
                <div class="video-items">
                  <button pButton class="p-button-raised p-button-rounded"
-                   icon="pi pi-thumbs-down" label="Unlike"></button>
+                   icon="pi pi-thumbs-down" label="{{selectedVideo.unlikeButton }}" (click)=" unlike()"></button>
                </div>
                <div class="video-items">
                  <button pButton class="p-button-raised p-button-rounded"
