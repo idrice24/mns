@@ -21,6 +21,8 @@ export class VideoListComponent implements OnInit {
   selectedYear;
   public commentForm: FormGroup;
   public now: Date = new Date(); // declearing the constant now to set the time
+  public likeButtonClick = 0;
+  public unlikeButtonClick = 0;
 
   constructor(
         private videoService: VideoService,
@@ -115,6 +117,16 @@ export class VideoListComponent implements OnInit {
 
 
     this.commentForm.reset(); // Clean the Form
+  }
+
+  like(){
+    const currentLike = this.likeButtonClick + 1;
+    this.selectedVideo.likeButton = this.selectedVideo.likeButton + currentLike;
+  }
+
+  unlike(){
+    const currentDislike = this.unlikeButtonClick + 1;
+    this.selectedVideo.unlikeButton = this.selectedVideo.unlikeButton - currentDislike;
   }
 
 }
