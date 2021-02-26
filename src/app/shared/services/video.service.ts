@@ -63,6 +63,14 @@ addAppComment(video: AppVideo): Observable<AppVideo> {
     );
   }
 
+  /** CREATE : create the like */
+  addAppLike(like: number): Observable<AppVideo> {
+    return this.httpClient.post<AppVideo>(this.videosUrl, like, this.httpOptions).pipe(
+      tap((newLike: AppVideo) => this.logService.log(`added Like`)),
+      catchError(this.handleError<AppVideo>('addLike'))
+      );
+  }
+
 
 
   /** POST: add a new video to the server */
@@ -103,5 +111,4 @@ addAppComment(video: AppVideo): Observable<AppVideo> {
       catchError(this.handleError<any>('updateVideo'))
     );
   }
-
 }
