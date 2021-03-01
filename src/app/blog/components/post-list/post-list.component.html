@@ -83,7 +83,7 @@
                 <div class="blog-description">
                   <article>{{blog.content}}</article>
                 </div>
-                <span><i class="pi pi-globe"></i>Share </span>&nbsp;
+                <button class="p-m-1 p-button-raised-sm p-button-rounded" pButton type="button" label="Publish..."><i class="pi pi-globe"></i></button>
                 <br>
                 <p-rating [ngModel]="blog.rating" [readonly]="true" [cancel]="false"></p-rating>
                 <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
