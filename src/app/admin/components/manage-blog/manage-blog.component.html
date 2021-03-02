@@ -124,26 +124,31 @@
   <form [formGroup]="blogForm" (ngSubmit)="doSubscription()">
 
     <div class="p-d-flex p-jc-center">
-      <div class="p-grid">
+      <div class="p-field p-grid">
 
         <!-- Title -->
         <div class="p-col-12">
+          <div class="p-field p-grid">
           <div class="p-inputgroup">
-            <label for="name">Title</label>
+            <span class="p-inputgroup-addon"><label for="name">Title</label></span>
             <input formControlName="title" type="text" pInputText id="title" required autofocus />
           </div>
         </div>
+        </div>
         <!-- content -->
         <div class="p-col-12">
+          <div class="p-field p-grid">
           <div class="p-inputgroup">
-            <label for="name">Content</label>
-            <textarea id="description" pInputTextarea required rows="3" cols="20" formControlName="title"></textarea>
+            <span class="p-inputgroup-addon"><label for="name">Content</label></span>
+            <textarea id="description" pInputTextarea required rows="3" cols="20" formControlName="content"></textarea>
           </div>
+        </div>
         </div>
         <!-- Category: ONLy products and actu -->
         <div class="p-col-12">
+          <div class="p-field p-grid">
           <div class="p-inputgroup">
-            <label for="name">Category</label>
+            <span class="p-inputgroup-addon"><label for="name">Category</label></span>
             <div class="p-formgrid p-grid">
               <div class="p-field-radiobutton p-col-6">
                 <p-radioButton id="category1" name="category" value="Accessories">
@@ -166,23 +171,28 @@
             </div>
           </div>
         </div>
+        </div>
 
         <!-- Summary -->
         <div class="p-col-12">
+          <div class="p-field p-grid">
           <div class="p-inputgroup">
-            <label for="name">Summary</label>
+            <span class="p-inputgroup-addon"><label for="name">Summary</label></span>
             <input type="text" formControlName="summary" pInputText id="summary" required autofocus />
           </div>
+        </div>
         </div>
 
         <!-- Image Url -->
         <div class="p-col-12">
+          <div class="p-field p-grid">
           <div class="p-inputgroup">
-            <label for="name">Image</label>
+           <span class="p-inputgroup-addon"> <label for="name">Image</label></span>
             <input type="file" formControlName="imageUrl" pInputText id="imageUrl" required autofocus />
           </div>
         </div>
       </div>
+    </div>
     </div>
 
     <div class="p-col-12">
