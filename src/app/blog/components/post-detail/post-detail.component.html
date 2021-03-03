@@ -12,6 +12,7 @@
   </p-fieldset><br>
 
   <p-fieldset *ngIf="selectedTopic">
+    <h2>Vos Commentaire</h2>
     <p *ngFor="let c of selectedTopic.comments">
       <p-divider align="right" type="dashed">
         <div class="p-d-inline-flex p-ai-center">

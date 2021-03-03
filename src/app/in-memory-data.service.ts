@@ -8279,12 +8279,13 @@ export class InMemoryDataService implements InMemoryDbService {
     },  {
       category:  'CARE For the Women',
       content:  'hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
-      createdDate:  '2013-03-02: 41: 45',
+      createdDate:  '2013-03-02 16: 41: 45Z',
       id:  300,
       imageUrl:  'assets/img/aboutus.jpg',
-      publishedDate:  '2020-03-02 02: 41: 00',
+      publishedDate:  '2020-03-02 16: 41: 00Z',
+
       title:  'third topic',
-      updatedDate:  '2020-03-02T16: 41: 45Z',
+      updatedDate:  '2020-03-02 16: 41: 45Z',
       summary:  'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
       rating:  1,
       comments:  [
@@ -8298,6 +8299,7 @@ export class InMemoryDataService implements InMemoryDbService {
           id:  2,
           author:  'idrice la paix',
           createdDate:  '2020-09-01 00: 42: 09',
+
           msg:  'this is the best framework of java ( angular )',
         }],
       like:  9,
@@ -8306,18 +8308,20 @@ export class InMemoryDataService implements InMemoryDbService {
     {
       category:  'Wahter is Life',
       content:  'hi... this is the third blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... ..hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...',
-      createdDate:  '2013-03-02 00: 41: 45',
+      createdDate:  '2013-03-02 16: 41: 45',
       id:  4523,
       imageUrl:  'assets/img/CMR5.jpg',
-      publishedDate:  '2020-03-02 09: 41: 00',
+      publishedDate:  '2020-03-02 16: 41: 00',
       title:  'Les sanctions relatives à la Carte Nationale d’Identité',
-      updatedDate:  '2020-03-02 00: 41: 45',
+      updatedDate:  '2020-03-02 16: 41: 45',
+
       summary:  'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
       comments:  [
       {
           id:  1,
           author:  'idrice la paix',
-          createdDate:  '2020-09-01 01: 42: 09',
+          createdDate:  '2020-09-01 09: 42: 09',
+
           msg:  'this is the best framework of java ( angular )',
         },
         {id: 1, author: 'Stephenie', createdDate: '2020-10-19 12: 00: 21', msg: 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.'},
@@ -8470,7 +8474,7 @@ export class InMemoryDataService implements InMemoryDbService {
           createdDate:  '2020-09-01 09: 42: 09',
           msg:  'this is the best framework of java ( angular )',
         }],
-      updatedDate:  '2020-03-02T16: 41: 45Z',
+      updatedDate:  '2020-03-02 16: 41: 45',
       summary:  'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the'
     }];
 
