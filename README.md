@@ -20,13 +20,12 @@
   <a href="#more_info">More info</a>
 </p>
 
-# Table of contents
-- Client. Click here to see  [Live APP](https://idrice24.github.io/mns/)  
-- Web server api:Click here to see [Live RESTFul API](https://mns237-serverapi.herokuapp.com/api/)
-- [Reference](https://angular.ganatan.com/crud/cities)
-- And his [Demo](https://github.com/ganatan/angular10-app/tree/master/frontend)
-- mns237 [demo](https://idrice.web.app/home) FIREBASE HOSTING
-
+# Intro
+- [MNS237-Frontend -Live APP](https://idrice24.github.io/mns/)  
+- [MN237-Backend - Live RESTFul API](https://mns237-serverapi.herokuapp.com/api/)
+- [Live Demo Reference](https://angular.ganatan.com/crud/cities)
+- [Demo - Reference](https://github.com/ganatan/angular10-app/tree/master/frontend)
+- [MN237 using FIREBASE](https://idrice.web.app/home)  HOSTING
 - [PrimeNG](https://github.com/leandcar/ng-sapphiredb-editor-nqt4ki) - Sample of template using Primeng
 
 # Coding
