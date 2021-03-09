@@ -32,8 +32,8 @@
 # Coding
 ## Precondition
 1.  Angular CLI **version 10 or higher**
-1.  Understand scripting for Automation ?@Idrice ask question
-1.  Understand Markdown for documentation ?@Idrice ask question
+1.  Understand scripting for Automation 
+1.  Understand Markdown for documentation 
 
 ## Development process for client
 1. Create new branch or fork 
