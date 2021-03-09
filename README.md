@@ -55,7 +55,7 @@ Run the batch file **deploy.cmd** and Commit your change if **NO error**
 # What's included
 
 1.  [] CRUD: create, update and remove heroes with Firebase
-1.  [] Angular Universal (SSR)
+1.  [] Angular Universal (SSR) [here](https://angular.io/guide/universal)
 1.  [] Use of StateTransferModule to share state between browser and server
 1.  [] Security Headers using [helmet](https://helmetjs.github.io).
 1.  [] Internationalization with the official i18n. Separated builds for english and spanish.
