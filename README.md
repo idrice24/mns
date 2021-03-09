@@ -51,44 +51,8 @@
 Or
 
 Run the batch file **deploy.cmd** and Commit your change if **NO error**
-<hr/>
 
-# Sample
-Some sample has been listed [here](https://github.com/idrice24/mns/wiki/Samples) be free to add more..
-- [Ref1](https://www.truecodex.com/)
-# Howtos
-## Scripting
-## How to store and run script on angular project
-1. Open package.json file
-1. Go to node "script" and add your command e.g startME
-1. Open CMD Window and run npm run startME
-
-## liecensing
-## service-apis
-## support-and-feedback 
-The following channels are available for discussions, feedback, and support requests:
-|Type							| Channels 																|
-|-------------------------------|-----------------------------------------------------------------------|
-| **General Discussion** | <a href="https://github.com/idrice24/idrice/issues/new/choose" title="General Discussion"><img src="https://img.shields.io/badge/idrice24-issues-blue"></a></a> |
-| **Concept Feedback**	 | <a href="https://github.com/idrice24/idrice/issues/new/choose"><img src="https://img.shields.io/badge/idrice24-issues-blue"></a></a> |
-| **Backend Issue**		 | <a href="https://github.com/Ghislain1/mns237-server/issues"><img src="https://img.shields.io/github/issues-raw/ghislain1/mns237-server"></a></a> |
-| **Other Requests**	 | <a href="idrice.tsafouet@yahoo.com" title="Email IDRICE24 Team"><img src="https://img.shields.io/github/contributors/idrice24/mns"></a></a> |
-
-
-## how-to-contribute  
-  Contributors and feedback are encouraged and welcome. For more information about how to contribute, the project structure, as well as additional contribution information, see our [Contributors Guidelines](./CONTRIBUTING.md). By participating in this project, you agree to abide by its [Code of Conduct](./CODE:OF_CONDUCT.md) at all times.
-  
-## contributors
- - @Idrice24
- - @Gishlain1
-## repositories
-## liecensing
-
-## More_info
-
- [Back to top](#table-of-contents)
-
-## What's included
+# What's included
 
 1.  [] CRUD: create, update and remove heroes with Firebase
 1.  [] Angular Universal (SSR)
