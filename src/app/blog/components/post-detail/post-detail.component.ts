@@ -19,7 +19,7 @@ import { AppComment } from 'src/app/shared/models/app-comment';
 export class PostDetailComponent implements OnInit {
   public now: Date = new Date(); // declearing the constant now to set the time
 
-  public header: any; // @Idrice to do what?? // You can use topic object directly
+  public header: any;
 
   public counter: number;
 
