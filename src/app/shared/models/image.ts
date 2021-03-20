@@ -5,7 +5,7 @@ export interface Image {
   title?;
   publishedDate?: Date;
   id?: number;
-  summary?: String;
+  summary?: string;
 }
 export interface AppNews {
   nom?;

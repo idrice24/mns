@@ -11,9 +11,9 @@ import { MessageService, SelectItem } from 'primeng/api';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  
+
   items;
-  photo : Image; // create an object image ti access it
+  photo: Image; // create an object image ti access it
   images: Image[];
   pictures$: Observable<Image[]>; // Get or set list of topic coming from server
   sortOrder: number;
@@ -39,7 +39,7 @@ export class GalleryComponent implements OnInit {
       { label: 'Photos', value: '!title' },
       { label: 'ID', value: 'id' }
     ];
-    this.sortKey = this.sortOptions[0];
+  this.sortKey = this.sortOptions[0];
 
   }
 
