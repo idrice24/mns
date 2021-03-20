@@ -3,6 +3,9 @@ export interface Image {
   thumbnailImageSrc?;
   alt?;
   title?;
+  publishedDate?: Date;
+  id?: number;
+  summary?: String;
 }
 export interface AppNews {
   nom?;
