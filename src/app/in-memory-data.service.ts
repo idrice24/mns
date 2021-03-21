@@ -36,46 +36,67 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
     const photos = [
       {
+        id: 1,
         src:  'assets/img/CMR7.jpg',
         thumbnailImageSrc:  'assets/img/CMR5.jpg',
         alt:  'Description for Image 1',
-        title:  'Title 1'
+        title:  'Title 1',
+        publishedDate: '10/10/2012',
+        summary: 'demo image'
       },
       {
+        id: 2,
         src:  'assets/img/bg1.jpg',
         thumbnailImageSrc:  'assets/img/bg2.jpg',
         alt:  'Description for Image 2',
-        title:  'Title 2'
+        title:  'Title 2',
+        publishedDate: '10/10/2012',
+        summary: 'demo image'
       },
       {
+        id: 3,
         src:  'assets/img/bg3.jpg',
         thumbnailImageSrc:  'assets/img/CMR3.jpg',
         alt:  'Description for Image 3',
-        title:  'Title 3'
+        title:  'Title 3',
+        publishedDate: '10/10/2012',
+        summary: 'demo image'
       },
       {
+        id: 4,
         src:  'assets/img/bg11.jpg',
         thumbnailImageSrc:  'assets/img/bg9.jpg',
         alt:  'Description for Image 3',
-        title:  'Title 3'
+        title:  'Title 3',
+        publishedDate: '10/10/2012',
+        summary: 'demo image'
       },
       {
+        id: 5,
         src:  'assets/img/bg6.jpg',
         thumbnailImageSrc:  'assets/img/bg7.jpg',
         alt:  'Description for Image 3',
-        title:  'Title 3'
+        title:  'Title 3',
+        publishedDate: '10/10/2012',
+        summary: 'demo image'
       }
       ,  {
+        id: 6,
         src:  'assets/img/bg9.jpg',
         thumbnailImageSrc:  'assets/img/bg8.jpg',
         alt:  'Description for Image 3',
-        title:  'Title 3'
+        title:  'Title 3',
+        publishedDate: '10/10/2018',
+        summary: 'demo image'
       },
       {
+        id: 7,
         src:  'assets/img/bg10.jpg',
         thumbnailImageSrc:  'assets/img/bg11.jpg',
         alt:  'Description for Image 3',
-        title:  'Title 3'
+        title:  'Title 3',
+        publishedDate: '10/10/2012',
+        summary: 'demo image'
       }
     ];
 
@@ -8292,13 +8313,14 @@ export class InMemoryDataService implements InMemoryDbService {
         {
           id:  1,
           author:  'idrice la paix',
-          createdDate:  '2020-09-01 00: 42: 09',
+
+          createdDate:  '2020-09-01 09: 42: 09Z',
           msg:  'this is the best framework of java ( angular )',
         },
         {
           id:  2,
           author:  'idrice la paix',
-          createdDate:  '2020-09-01 00: 42: 09',
+          createdDate:  '2020-09-01 09: 42: 09',
 
           msg:  'this is the best framework of java ( angular )',
         }],
@@ -8314,7 +8336,6 @@ export class InMemoryDataService implements InMemoryDbService {
       publishedDate:  '2020-03-02 16: 41: 00',
       title:  'Les sanctions relatives à la Carte Nationale d’Identité',
       updatedDate:  '2020-03-02 16: 41: 45',
-
       summary:  'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the',
       comments:  [
       {

@@ -1,5 +1,6 @@
 
 <p></p><br>
+<p></p><br>
 <div class="contain" xmlns="">
   <p-fileUpload name="myfile[]" customUpload="true" multiple="multiple" (uploadHandler)="myUploader($event)" accept="image/jpeg">
     <ng-template pTemplate="toolbar">
@@ -9,42 +10,48 @@
       <div>Custom UI to Display a file</div>
     </ng-template>
     <ng-template pTemplate="content" left-file>
-      <div>Additional content</div>
+      <div>
+    <label>Title</label>
+    <input type="text" name="title">
+    <label>Summary</label>
+    <input type="text" name="summary">
+      </div>
     </ng-template>
   </p-fileUpload>
 </div>
 <div class="container-fluid mb-3">
 
 
+ <p-dataView #dv [value]="pictures$ | async" [paginator]="true" [rows]="6" filterBy="title" [sortField]="sortField"
+        [sortOrder]="sortOrder" layout="list">
+<ng-template pTemplate="listItem" let-photo>
+  <div class="p-col-12 p-md-4">
+    <div class="product-grid-item card">
+        <div class="product-grid-item-top">
+          
+            <div>
+                   <i class="pi pi-tag product-category-icon"></i>
+                   <div class="product-name">{{photo.title}}</div>
+                 </div>
+          </div>
+<div class="product-grid-item-content">
+    <img class="product-img" [src]="photo.src" [alt]="photo.alt" />
+      <div class="product-name">{{photo.publishedDate}}</div>
+  <div class="product-grid-item-bottom p-p-1">
+    <span class="product-price pr-2">Summary: {{photo.summary}}</span>
+
+  </div>
 
 
+</div>
+</div>
+</div>
+</ng-template>
+</p-dataView>
+</div>
 
-  <!---Copy from Idrcie project -->
 
-  <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [numVisible]="5" [circular]="true"
-   [autoPlay]="true" [transitionInterval]="2000">
-
-    <ng-template pTemplate="header">
-  <h1 class="text-primary">
-    <marquee> ENJOY OUR GALLERY.</marquee>
-  </h1>
-    </ng-template>
-    <ng-template pTemplate="item" let-item >
-      <img src="item.src" [alt]="item.alt" style="width: 80%;height: 60%; display: block;"/>
-    </ng-template>
-    <ng-template pTemplate="thumbnail" let-item >
-      <div class="p-justify-center">
-      <img src="item.thumbnailImageSrc" style="display: block; height: 100px;">
-    </div>
-    </ng-template>
-    <ng-template pTemplate="footer">
-  <h1 class="text-danger">
-    <marquee> ENJOY OUR GALLERY.</marquee>
-  </h1>
-    </ng-template>
-  </p-galleria>
-
-  <div class="img">
+  <!--<div class="img">
     <a target="_blank" href="CMR6.jpg">
       <img src="assets/img/CMR6.jpg" alt="Trolltunga Norway">
     </a>
@@ -192,9 +199,7 @@
   </div> 
 
 
-  <!---Copy from Idrcie project-->
+  -Copy from Idrcie project
   <h1  class="text-danger">
     <marquee> ENJOY OUR GALLERY.</marquee>
-  </h1>
-
-</div>
+  </h1>-->

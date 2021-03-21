@@ -68,6 +68,7 @@ export class PostListComponent implements OnInit {
       this.sortField = value;
     }
   }
+
   openRecentPost(recentP) {
     const postId = recentP.id;
     const urlPost = 'posts/' + postId;
