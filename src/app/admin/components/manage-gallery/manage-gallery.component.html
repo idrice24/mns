@@ -1,6 +1,167 @@
- <div class="container-fluid coming">
 
-   <h1>
-     <marquee>manage-gallery *******Coming Soon !!*******.</marquee>
-   </h1>
- </div>
+<div class="col-md-12 text-center">
+  <h1 *ngIf="pictures" data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Manage Gallery
+    {{picture ? pictures.length : 0}}</h1>
+</div>
+
+<div class="card">
+  <p-toolbar styleClass="p-mb-4">
+    <ng-template pTemplate="left">
+      <button pButton pRipple label="New" icon="pi p-plus" class="p-button-success p-mr-2" (click)="openNew()"></button>
+      <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
+        (click)="deleteSelectedPictures()" [disabled]="!selectedPictures || !selectedPictures.length"></button>
+    </ng-template>
+
+    <ng-template pTemplate="right">
+      <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import"
+        class="p-mr-2 p-d-inline-block"></p-fileUpload>
+      <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+    </ng-template>
+  </p-toolbar>
+
+  <p-table #dt [value]="pictures" [rows]="10" [paginator]="true" [globalFilterFields]="['id', 'src', 'title', 'summary','publishedDate']"
+    [(selection)]="selectedPictures" [rowHover]="true" dataKey="id"
+    currentPageReportTemplate="Showing {first} to {first} of {totalRecords} entries" [showCurrentPageReport]="true">
+
+    <!-- search section -->
+    <ng-template pTemplate="caption">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+            placeholder="Search..." />
+        </span>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 3rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th pSortableColumn="title">Name<p-sortIcon field="title"></p-sortIcon>
+        </th>
+        <th pSortableColumn="summary">Summary<p-sortIcon field="summary"></p-sortIcon>
+        </th>
+        <th pSortableColumn="src">Location <p-sortIcon field="src"></p-sortIcon>
+        </th>
+        <th pSortableColumn="publishedDate">Published Date <p-sortIcon field="publishedDate"></p-sortIcon>
+        </th>
+        <th pSortableColumn="">Status <p-sortIcon field=""></p-sortIcon>
+        </th>
+        <th></th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-picture>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="picture"></p-tableCheckbox>
+        </td>
+
+        <td>{{picture.title}}</td>
+        <td>{{picture.summary}}</td>
+        <td>{{picture.src}}</td>
+        <td>{{picture.publishedDate | date: 'fullDate'}}</td>
+        <td>
+          <!--<span
+            [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>-->
+        </td>
+
+        <td>
+          <button pButton pRipple label="edit" class="p-button-rounded p-button-success p-mr-2"
+            (click)="editPicture(picture)"></button>
+          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
+            (click)="deletePicture(picture)"></button>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="summary">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        In total there are {{ pictures ? pictures.length : 0}} pictures.
+      </div>
+    </ng-template>
+  </p-table>
+</div>
+
+
+<p-dialog [(visible)]="pictureDialog" [style]="{width: '450px'}" header="Pictures Details" [modal]="true"
+  styleClass="p-fluid">
+  <ng-template pTemplate="content">
+
+    <!-- name of product -->
+    <div class="p-field">
+      <label for="name">Name</label>
+      <input type="text" pInputText id="title" required autofocus />
+      <small class="p-invalid" *ngIf="submitted && !picture.title">title is required.</small>
+    </div>
+
+    <!-- Describtion of product -->
+    <div class="p-field">
+      <label for="summary">Description</label>
+      <textarea id="summary" pInputTextarea required rows="3" cols="20"></textarea>
+    </div>
+
+    <div class="p-field">
+      <label for="name">src</label>
+      <input type="text" pInputText id="src" required autofocus />
+      <small class="p-invalid" *ngIf="submitted && !picture.src">src is required.</small>
+    </div>
+
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="savePicture()"></button>
+  </ng-template>
+</p-dialog>
+
+
+<!-- open new form-->
+<p-dialog [(visible)]="picturePost" [style]="{width: '450px'}" header="Add New Picture" [modal]="true">
+  <form [formGroup]="pictureForm" (ngSubmit)="doSubscription()">
+    <div class="p-d-flex p-jc-center">
+      <div class="p-grid">
+        <!-- Name -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="name">Name</label>
+            <input type="text" pInputText id="title" formControlName="title" />
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="name">Summary</label>
+            <textarea id="summary" pInputTextarea required rows="3" cols="20"
+              formControlName="description"></textarea>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="p-col-12">
+          <div class="p-inputgroup">
+            <label for="name">Sources</label>
+            <input formControlName="src" type="file" pInputText id="src" />
+          </div>
+        </div>
+
+    <div class="p-field">
+      <label for="name">Published Date</label>
+      <input type="text" pInputText id="name" formControlName="publishedDate" />
+    </div>
+
+      </div>
+    </div>
+
+    <div class="p-col-12">
+      <button pButton pRipple label="Envoyer" icon="pi pi-check" type="submit" class="p-button-text"></button>
+      <button pButton pRipple label="cancle" class="p-button-text" icon="pi pi-times" (click)="hideDialog()"></button>
+    </div>
+  </form>
+</p-dialog>
+
+<!--POP CONFIRMATION-->
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
