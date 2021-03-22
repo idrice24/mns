@@ -23,8 +23,7 @@ httpOptions = {
     return this.httpClient.get<Image[]>(this.imageUrl).pipe(map(res => res));
   }
 
-  addPicture(picture: Image): Observable<Image>{
-  	return this.httpClient.post<Image>(this.imageUrl, picture, this.httpOptions).pipe(
+  addPicture(picture: Image): Observable<Image>{  	return this.httpClient.post<Image>(this.imageUrl, picture, this.httpOptions).pipe(
       tap((newPicture: Image) => this.logService.log(`added Pictures w/ id=${newPicture.id}`)),
       catchError(this.handleError<Image>('addPicture'))
     );

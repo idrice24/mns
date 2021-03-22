@@ -12,45 +12,42 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   providers: [MessageService, ConfirmationService]
 })
 export class ManageGalleryComponent implements OnInit {
-	pictureDialog: boolean;
-	picturePost: boolean;
+pictureDialog: boolean;
+picturePost: boolean;
+pictures: Image[];
+picture: Image = {};
+selectedPictures: Image[];
+submitted: boolean;
+pictureForm: FormGroup;
+now: Date = new Date();
 
-	pictures: Image[];
-	picture: Image = {};
-	selectedPictures: Image[];
-	submitted: boolean;
-
-  	pictureForm: FormGroup;
-  	now: Date = new Date();
-
-  constructor(
-  	private photoService: PhotoService,
-  	private messageService: MessageService,
-  	private confirmationService: ConfirmationService,
-    private titleService: Title // Inject to set document title on  browser
-   ) { }
+constructor(
+  private photoService: PhotoService,
+  private messageService: MessageService,
+  private confirmationService: ConfirmationService,
+  private titleService: Title // Inject to set document title on  browser
+) { }
 
   // convenience getter for easy access to form fields
   get code() { return this.pictureForm.get('code'); }
   get summary() { return this.pictureForm.get('summary'); }
-  get src() { return this.pictureForm.get('assets/img/'+'content'); }
+  get src() { return this.pictureForm.get('assets/img/' + 'content'); }
   get inventoryStatus() { return this.pictureForm.get('inventoryStatus'); }
   get title() { return this.pictureForm.get('title'); }
 
   ngOnInit(): void {
-  	this.photoService.getImages().subscribe(data => {
-      this.pictures = data;
-      console.log(data[0].title);
-    });
-    this.titleService.setTitle('MNS237 - Manage-gallery'); // Adding the title Home to the MNS237  main Title
-  
 
-this.pictureForm = new FormGroup({
+  this.photoService.getPhotos().subscribe(data => {
+          this.pictures = data;
+          console.log(data[0].title);
+        });
+
+  this.titleService.setTitle('MNS237 - Manage-gallery'); this.pictureForm = new FormGroup({
       title: new FormControl('', [Validators.required]), // to check a name of any picture in form
       summary: new FormControl('', [Validators.required]), // to check summary field of any picture in form
       src: new FormControl('', [Validators.required]),
       inventoryStatus: new FormControl('', [Validators.required]),
-    });
+  });
 }
 
 openNew() {
@@ -139,7 +136,7 @@ openNew() {
     };
 
     this.photoService.addPicture(currentAppImage).subscribe(_ =>
-      // To Clean a formular
+      // To Clean a formulary
       this.pictureForm.reset());
 
   }
