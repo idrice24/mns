@@ -52,7 +52,7 @@ import { GalleriaModule } from 'primeng/galleria';
 
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 // AoT requires an exported function for factories
@@ -74,6 +74,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     RouterModule,
     FormsModule, // <-- NgModel lives here
     ReactiveFormsModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
