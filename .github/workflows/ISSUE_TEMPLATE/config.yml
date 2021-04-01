@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+    - name: Ask a Question
+      url: https://github.com/idrice24/mns/wiki
+      about: Please ask and answer questions for mns here.
