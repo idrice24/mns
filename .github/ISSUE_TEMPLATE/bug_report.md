@@ -1,8 +1,10 @@
+
 ---
+
 name: Bug report
 about: Create a report to help us improve
-title: '@TODO Title'
-labels: '@TODO Labels'
+title: @TODO Title
+labels: '@TODO Labels
 assignees: @TODO assignees
 
 ---
