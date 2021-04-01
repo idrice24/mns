@@ -13,7 +13,7 @@
      <div class="card-body" *ngIf="selectedVideo">
        <h5 class="card-title text-primary">{{ selectedVideo.id }}</h5>
        <h6 class="card-title text-info">{{ selectedVideo.title }}</h6>
-       <h6 class="card-title text-secondary">{{ selectedVideo.publishedDate }}</h6>
+       <h6 class="card-title text-secondary">{{ selectedVideo.publishedDate | date: 'fullDate' }}</h6>
      </div>
    </div>
 
@@ -35,7 +35,7 @@
         <div class="col-md-12">
           <div class="video-list-item">
             <div class="video-items"><b>Name: {{selectedVideo.name}}</b></div>
-            <div class="video-items"><b>Published Date: {{selectedVideo.publishedDate}}</b></div>
+            <div class="video-items"><b>Published Date: {{selectedVideo.publishedDate | date: 'fullDate'}}</b></div>
             <div class="video-items"><b>Title:  {{selectedVideo.title}}</b></div>
           </div>
         </div>

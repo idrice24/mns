@@ -36,7 +36,7 @@
           </div>
 <div class="product-grid-item-content">
     <img class="product-img" [src]="photo.src" [alt]="photo.alt" />
-      <div class="product-name">{{photo.publishedDate}}</div>
+      <div class="product-name">{{photo.publishedDate | date: 'fullDate'}}</div>
   <div class="product-grid-item-bottom p-p-1">
     <span class="product-price pr-2">Summary: {{photo.summary}}</span>
 
