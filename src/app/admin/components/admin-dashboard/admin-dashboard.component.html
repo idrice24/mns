@@ -1,38 +1,38 @@
-   <!--TITLE-->
+<!--    <!--TITLE
    <div class="row mb-5">
      <div class="col-md-12 text-center">
-       <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Dashboard</h1>
+       <h1 data-aos="fade-in-up" data-aos-offset="150" class="text-primary">Dashboard</h1>
      </div>
    </div>
 
    <div class="p-grid">
      <div class="p-col">
-       <div [style]="{width: '250px', height: '250px'}" class="bg-success text-center p-shadow-5">
+       <div [style]="{width: '155px', height: '155px'}" class="bg-success text-center p-shadow-5">
          <i class="pi pi-video"></i>
          <h1> 23 Videos</h1>
        </div>
      </div>
      <div class="p-col">
-       <div [style]="{width: '250px', height: '250px'}" class="bg-danger text-center p-shadow-5">
+       <div [style]="{width: '155px', height: '155px'}" class="bg-danger text-center p-shadow-5">
          <i class="pi pi-user"></i>
          <h1> {{numberOfAppUsers}} Users</h1>
        </div>
      </div>
      <div class="p-col">
-       <div [style]="{width: '250px', height: '250px'}" class="bg-warning text-center p-shadow-5">
+       <div [style]="{width: '155px', height: '155px'}" class="bg-warning text-center p-shadow-5">
          <i class="pi pi-spin pi-spinner"></i>
          <h1> 23 Posts</h1>
        </div>
      </div>
      <div class="p-col">
-       <div [style]="{width: '250px', height: '250px'}" class="bg-secondary text-center p-shadow-5">
+       <div [style]="{width: '155px', height: '155px'}" class="bg-secondary text-center p-shadow-5">
          <i class="pi pi-play"></i>
          <h1> 50 Photos</h1>
        </div>
      </div>
 
      <div class="p-col">
-       <div [style]="{width: '250px', height: '250px'}" class="text-center p-shadow-5">
+       <div [style]="{width: '155px', height: '155px'}" class="text-center p-shadow-5">
          <i class="pi pi-bell"></i>
          <h1> ... Products</h1>
        </div>
@@ -43,8 +43,137 @@
      <div class="p-col-4" *ngFor="let box of items; index as i">
        <div [class]="box p-shadow-5">
          <p-progressSpinner strokeWidth="5" fill="#EEEEEE" animationDuration="1s"
-           [style]="{width: '150px', height: '150px'}">
+           [style]="{width: '155px', height: '155px'}">
            <p> sdsd <span class="p-badge">2 </span> </p>
          </p-progressSpinner>
        </div>
      </div> -->
+<div class="row mb-5">
+     <div class="col-md-12 text-center">
+       <h1 data-aos="fade-in-up" data-aos-offset="150" class="text-primary">Dashboard</h1><br>
+
+     </div>
+</div>
+     <div class="p-grid nested-grid">
+      <div class="p-col-4">
+        <div class="p-col-4 p-md-6 p-lg-3">
+      <div *ngIf="subscription" class="text-right p-ml-10">
+        <img style="border-radius: 10%;" width="15" height="15" [src]="subscription" alt="appUser.avatar"
+          class="p-shadow-1" />
+      </div>
+
+        </div>
+        <hr>
+        <div>
+          <h2>MENU</h2>
+          <div>Calendar</div>
+          <div>Tasks</div>
+          <div>Statestics</div>
+          <div>Folders</div>
+        </div>
+        <hr>
+        <div>Product category here..
+        </div>
+        <hr>
+        <div>
+          <i class="pi pi-cog"></i>
+          <span>setting</span>
+        </div>
+      </div>
+
+      <div class="p-col-4">
+        
+
+          <div class="p-col-6">
+            <h2>Statestics</h2>
+            <p>this is the place where the statestics of the web app will be place<br> an here all can be seen by the user-admin app</p>
+            <div class="p-grid">
+     <div class="p-col">
+       <div [style]="{width: '155px', height: '155px'}" class="bg-success text-center p-shadow-5">
+         <i class="pi pi-video"></i>
+         <h1> {{numberOfVideos}} Videos</h1>
+       </div>
+     </div>
+     <div class="p-col">
+       <div [style]="{width: '155px', height: '155px'}" class="bg-danger text-center p-shadow-5">
+         <i class="pi pi-user"></i>
+         <h1> {{numberOfAppUsers}} Users</h1>
+       </div>
+     </div>
+     <div class="p-col">
+       <div [style]="{width: '155px', height: '155px'}" class="bg-warning text-center p-shadow-5">
+         <i class="pi pi-spin pi-spinner"></i>
+         <h1> {{numberOfPosts}} Posts</h1>
+       </div>
+     </div>
+     <div class="p-col">
+       <div [style]="{width: '155px', height: '155px'}" class="bg-secondary text-center p-shadow-5">
+         <i class="pi pi-play"></i>
+         <h1> {{numberOfPhotos}} Photos</h1>
+       </div>
+     </div>
+
+     <div class="p-col">
+       <div [style]="{width: '155px', height: '155px'}" class="text-center p-shadow-5">
+         <i class="pi pi-bell"></i>
+         <h1> {{numberOfProducts}} Products</h1>
+       </div>
+     </div>
+
+   </div>
+
+          </div>
+
+      <div class="p-col-6"><!-- this will be an auto size increament-->
+       <h2>History</h2>
+       <div>Recent sell product</div>
+
+            
+  <div class="p-grid">
+
+    <!--COL1: RECENT POSTS-->
+    <div class="p-col">
+      <p-listbox #theListProduct filter="true" (onClick)="openRecentProduct($event.value)" [options]="recentProducts"
+        optionLabel="name">
+        <ng-template pTemplate="header">
+          RECENT PRODUCT
+        </ng-template>
+      </p-listbox>
+    </div>
+  </div>
+      </div>
+
+      </div>
+
+      <div class="p-col-4">
+
+        <div class="p-col-6">
+        <h2>Upcoming Product</h2>
+
+            <p>this is the place where the statestics of the web app will be place<br> an here all can be seen by the user-admin app</p>
+
+            <p>this is the place where the statestics of the web app will be place<br> an here all can be seen by the user-admin app</p>
+
+            <p>this is the place where the statestics of the web app will be place<br> an here all can be seen by the user-admin app</p>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-grid">
+      <div class="p-col">
+        <i class="pi pi-wallet"></i> Wallet</div>
+      <div class="p-col">This Month</div>
+      <div class="p-col">Last Month</div>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        TimeNote Point
+        <h2>{{now | date : 'fullDate'}}</h2>
+      </div>
+
+      <div class="p-col" >
+        <button pButton class="p-button-rounded" label="Update your Account" (click)="openuserDetails()">
+        </button>
+        
+      </div>
+   </div>
