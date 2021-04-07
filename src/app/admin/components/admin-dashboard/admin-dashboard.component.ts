@@ -75,13 +75,13 @@ export class AdminDashboardComponent implements OnInit {
 
     });
 
-    this.titleService.setTitle('MNS237 - Admin-dashboard'); // Adding the title Home to the MNS237  main Title
-    this.userService.getUsers().subscribe(appUsers => this.numberOfAppUsers = appUsers.length);
-    this.productService.getProducts().subscribe(appProducts => this.numberOfProducts = appProducts.length);
-    this.videoService.getVideos().subscribe(appVideos => this.numberOfVideos = appVideos.length);
-    this.blogService.getTopicList().subscribe(appPosts => this.numberOfPosts = appPosts.length);
-    this.photoService.getPhotos().subscribe(appPhotos => this.numberOfPhotos = appPhotos.length);
-    this.items = [
+      this.titleService.setTitle('MNS237 - Admin-dashboard'); // Adding the title Home to the MNS237  main Title
+      this.userService.getUsers().subscribe(appUsers => this.numberOfAppUsers = appUsers.length);
+      this.productService.getProducts().subscribe(appProducts => this.numberOfProducts = appProducts.length);
+      this.videoService.getVideos().subscribe(appVideos => this.numberOfVideos = appVideos.length);
+      this.blogService.getTopicList().subscribe(appPosts => this.numberOfPosts = appPosts.length);
+      this.photoService.getPhotos().subscribe(appPhotos => this.numberOfPhotos = appPhotos.length);
+      this.items = [
       {
         text1: 'oka',
         text2: 'oka',
@@ -101,7 +101,7 @@ export class AdminDashboardComponent implements OnInit {
         title: 'Admin Action 1'
       }
     ];
-    this.logService.log(this.items);
+      this.logService.log(this.items);
   }
 
   onSortChange(event) {
