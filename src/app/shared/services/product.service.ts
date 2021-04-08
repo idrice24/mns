@@ -26,6 +26,9 @@ export class ProductService {
   getProducts() {
     return this.httpClient.get<Product[]>(this.productUrl).pipe(map(res => res));
   }
+  getProductList(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.productUrl);
+  }
   // add a product
   addProduct(product: Product): Observable<Product> {
     return this.httpClient.post<Topic>(this.productUrl, product, this.httpOptions).pipe(
