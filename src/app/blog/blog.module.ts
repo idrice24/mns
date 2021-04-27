@@ -7,7 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
-const routes: Routes = [
+const routesBlog: Routes = [
   { path: '', component: PostListComponent, data: { animation: 'BlogPage' } },
   { path: ':id', component: PostDetailComponent }
 ];
@@ -22,7 +22,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routesBlog)
   ],
   exports: [RouterModule],
   providers: []
