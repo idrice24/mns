@@ -27,7 +27,7 @@ module.exports = function (config) {
     customLaunchers: {
       ChromeHeadlessCI: {
         base: 'ChromeHeadless',
-       flags: ['--no-sandbox', '--disable-gpu']
+       flags: [ '--disable-web-security','--no-sandbox', '--disable-gpu']
       }
     },
     reporters: ['progress', 'kjhtml'],
