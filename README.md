@@ -1,3 +1,4 @@
+[![build status](https://github.com/coryrylan/angular-github-actions/workflows/Build/badge.svg)](https://github.com/idrice24/mns/actions)
 # MNS
 <p align="center">
     <a href="https://github.com/idrice24/mns/issues/" title="Open Issues"><img src="https://img.shields.io/github/issues/idrice24/mns?style=flat-square "></a>

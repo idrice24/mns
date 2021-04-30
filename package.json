@@ -19,7 +19,8 @@
     "compodoc": "npx compodoc -p tsconfig.json -o -s",
     "dev": "npm run deploy && ng serve --open",
     "fire": "ng lint && ng build --prod --output-path public --verbose ",
-    "fire-deploy": "firebase login && npm run fire && firebase deploy"
+    "fire-deploy": "firebase login && npm run fire && firebase deploy",
+    "build:ci": "npm run clean && npm run test && npm run build:prod --verbose"
   },
   "private": true,
   "dependencies": {
