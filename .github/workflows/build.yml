@@ -1,21 +1,33 @@
-name: OSSAR
+name: Build
 on:
   push:
-  pull_request:
+    branches:
+      - master
+
 jobs:
-  OSSAR-Scan:
-    runs-on: windows-latest
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
     steps:
-      - name: Checkout repository (Step 1)
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v1
+
+      - name: Cache node modules
+        uses: actions/cache@v1
         with:
-          fetch-depth: 2
-      - run: git checkout HEAD^2
-        if: ${{ github.event_name == 'pull_request' }}
-      - name: Run OSSAR  (Step 2)
-        uses: github/ossar-action@v1
-        id: ossar
-      - name: Upload OSSAR results  (Step 3)
-        uses: github/codeql-action/upload-sarif@v1
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          sarif_file: ${{ steps.ossar.outputs.sarifFile }}
+          node-version: ${{ matrix.node-version }}
+
+      - name: npm ci and npm run build
+        run: |
+          npm ci
+          npm run build:ci
