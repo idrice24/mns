@@ -9,6 +9,7 @@
     "build": "ng build",
     "test2": "npm run test --  --no-watch --no-progress",
     "test": "ng test",
+     "clean": "rimraf ./dist",
     "test-deploy": "npm run test --  --no-watch --no-progress",
     "lint": "ng lint",
     "lint:fix": "ng lint   --fix",
@@ -20,7 +21,7 @@
     "dev": "npm run deploy && ng serve --open",
     "fire": "ng lint && ng build --prod --output-path public --verbose ",
     "fire-deploy": "firebase login && npm run fire && firebase deploy",
-    "build:ci": "npm run clean && npm run test && npm run build:prod --verbose"
+    "build:ci": "npm run clean && npm run test-deploy && npm run build:prod --verbose"
   },
   "private": true,
   "dependencies": {
