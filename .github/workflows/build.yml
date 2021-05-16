@@ -31,5 +31,5 @@ jobs:
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
-         artifacts: "dist/TODO_FOR_NEXT/*"
+         artifacts: "docs/*"
          token: ${{ secrets.GITHUB_TOKEN }} 
