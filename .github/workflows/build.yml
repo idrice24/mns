@@ -24,6 +24,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
       # https://github.com/mathieudutour/github-tag-action#readme
       - name: Bump Version and Push tag
         id: GhislainAndIdrice_Tag
@@ -31,10 +32,12 @@ jobs:
         with: # Passing parameter to action
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: npm install and npm run build
+        # No 'uses' keyword because we want to run script from package.json file
+      - name: Deployment in Action
         run: |
           npm i
           npm run deploy
+
       # https://github.com/ncipollo/release-action/blob/main/README.md
       - name: Generate File for Webpage # TODO What happen here ?
         uses: ncipollo/release-action@v1
