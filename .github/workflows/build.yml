@@ -24,9 +24,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      # https://github.com/mathieudutour/github-tag-action#readme
       - name: Bump Version and Push tag
         id: GhislainAndIdrice_Tag
-        uses: mathieudutour/github-tag-action@v5. # Calling specified Action mathieu..
+        uses: mathieudutour/github-tag-action@v5.5 # Calling specified Action mathieu..
         with: # Passing parameter to action
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
