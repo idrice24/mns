@@ -1,0 +1,15 @@
+version: 2.1
+
+# Define the jobs we want to run for this project
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run: echo "We don't need CircleCI  any more ..-- We USE GitHub Action script build.yml"
+
+# Orchestrate our job run sequence
+workflows:
+  build_and_test:
+    jobs:
+      - build

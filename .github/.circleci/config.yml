@@ -1,3 +1,0 @@
-- run:
-    name: "TODO - REmove CircleCi cause you are admin"
-    command: echo "We don't need CircleCI  any more ..-- We USE GitHub Action script build.yml "
