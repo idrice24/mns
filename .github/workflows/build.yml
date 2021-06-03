@@ -28,9 +28,10 @@ jobs:
         run: |
           npm i
           npm run deploy
+      # https://github.com/ncipollo/release-action/blob/main/README.md
       - name: Push Build to Releases # TODO What happen here ?
         uses: ncipollo/release-action@v1
         with:
-         artifacts: "docs/*"
-         token: ${{ secrets.GITHUB_TOKEN }} 
-
+          artifacts: "docs/*"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          replacesArtifacts: true
