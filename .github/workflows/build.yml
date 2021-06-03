@@ -20,6 +20,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      # Set up NodeJs Version to use in our project
       - name: Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
