@@ -6,7 +6,7 @@ jobs:
     machine: true
     steps:
       - run:
-          name: TODO- CircleCi Must be removed from project @Idrice
+          name: TODO- CircleCi Must be removed from project @Idrice - We USE GitHub Action script build.yml
           command: echo "We don't need CircleCI  any more ..-- We USE GitHub Action script build.yml"
 
 # Orchestrate our job run sequence
