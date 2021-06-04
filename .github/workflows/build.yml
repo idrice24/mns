@@ -40,10 +40,8 @@ jobs:
           npm run deploy
 
       # https://github.com/ncipollo/release-action/blob/main/README.md
-      - name: Generate File for Webpage # TODO What happen here ?
-        uses: ncipollo/release-action@v1
+      - name: Deploy static files (Github page) # TODO What happen here ?
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          artifacts: "docs/*"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{steps.GhislainAndIdrice_Tag.outputs.new_tag}} # using value of an action mathieu..
-          replacesArtifacts: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
