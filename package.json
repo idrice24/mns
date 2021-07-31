@@ -23,17 +23,17 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "12.0.0",
+    "@angular/animations": "12.1.4",
     "@angular/cdk": "^11.0.3",
-    "@angular/common": "12.0.0",
-    "@angular/compiler": "12.0.0",
-    "@angular/core": "12.0.0",
+    "@angular/common": "12.1.4",
+    "@angular/compiler": "12.1.4",
+    "@angular/core": "12.1.4",
     "@angular/fire": "^6.0.4",
-    "@angular/forms": "12.0.0",
-    "@angular/localize": "^12.0.0",
-    "@angular/platform-browser": "12.0.0",
-    "@angular/platform-browser-dynamic": "12.0.0",
-    "@angular/router": "12.0.0",
+    "@angular/forms": "12.1.4",
+    "@angular/localize": "^12.1.4",
+    "@angular/platform-browser": "12.1.4",
+    "@angular/platform-browser-dynamic": "12.1.4",
+    "@angular/router": "12.1.4",
     "@compodoc/compodoc": "^1.1.11",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
@@ -57,10 +57,10 @@
     "zone.js": "^0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^12.0.0",
-    "@angular/cli": "12.0.0",
-    "@angular/compiler-cli": "12.0.0",
-    "@angular/language-service": "12.0.0",
+    "@angular-devkit/build-angular": "^12.1.4",
+    "@angular/cli": "12.1.4",
+    "@angular/compiler-cli": "12.1.4",
+    "@angular/language-service": "12.1.4",
     "@types/googlemaps": "^3.40.3",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
@@ -68,7 +68,7 @@
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
-    "karma": "^6.3.2",
+    "karma": "^6.3.4",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~4.0.0",
@@ -76,6 +76,6 @@
     "protractor": "^7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "4.2.4"
+    "typescript": "4.3.5"
   }
 }
