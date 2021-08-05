@@ -38,5 +38,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }} # Only Idrice can set or see this token under setting of repository!!
           destination_dir: ./docs
           publish_dir: ./docs
-          publish_branch: master # Set Another GitHub Pages Branch, but we want under foder docs!!
+          #publish_branch: master # Set Another GitHub Pages Branch, but we want under foder docs!!
           commit_message: ${{ github.event.head_commit.message }} # Set custom commit message
+          force_orphan: true # allows you to make your publish branch with only the latest commit
