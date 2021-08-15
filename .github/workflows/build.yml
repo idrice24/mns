@@ -10,7 +10,10 @@ jobs:
         node-version: [12.x]
 
     steps:
-      - uses: actions/checkout@v1
+      # Checkout the repository
+      - name: Checkout the Repository
+        uses: actions/checkout@v1
+
       - name: Cache node modules
         uses: actions/cache@v1
         with:
