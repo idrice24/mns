@@ -32,8 +32,6 @@ import { MessageService } from 'primeng/api';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }),
     SharedModule,
-
-
     AppRoutingModule, // CLI adds AppRoutingModule to the AppModule's imports array
 
   ],

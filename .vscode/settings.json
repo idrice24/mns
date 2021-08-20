@@ -16,5 +16,8 @@
         "formular",
         "toggleable"
     ],
-    "html.format.wrapAttributes": "preserve"
+    "html.format.wrapAttributes": "preserve",
+    "yaml.schemas": {
+      "https://json.schemastore.org/github-workflow": "/.github/workflows/**/*.yml"
+    }
 }
