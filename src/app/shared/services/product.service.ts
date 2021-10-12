@@ -12,7 +12,7 @@ import { Observable, of } from 'rxjs';
 })
 export class ProductService {
   // private productUrl = 'api/product';
-  private productUrl = 'api/products';
+  private productUrl: string ; // I decleared the URL string variable 
   product: Product;
 
 
@@ -21,7 +21,8 @@ export class ProductService {
   };
 
 
-  constructor(private httpClient: HttpClient, private logService: LogService) { }
+  constructor(private httpClient: HttpClient, private logService: LogService) { 
+     this.productUrl = 'http://mns237--serverapi.herokuapp.com/admin/products'; // here i assigned the API part to the URL }
 
   getProducts() {
     return this.httpClient.get<Product[]>(this.productUrl).pipe(map(res => res));
