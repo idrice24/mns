@@ -57,7 +57,7 @@ export class ManageAbonnementComponent implements OnInit {
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
         this.appSubscriberList = this.appSubscriberList.filter(val => val.id !== appSubscriber.id);
-        this.appSubscriber= null;
+        this.appSubscriber = null;
         this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Unsubscription Done', life: 3000 });
       }
     });

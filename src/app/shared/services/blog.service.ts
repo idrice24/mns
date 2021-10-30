@@ -18,8 +18,9 @@ export class BlogService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor(private httpClient: HttpClient, private logService: LogService) { 
-    this.blogUrl='https://mns237-serverapi.herokuapp.com/api/blogs'; }
+  constructor(private httpClient: HttpClient, private logService: LogService) {
+    this.blogUrl = 'https://mns237-serverapi.herokuapp.com/api/blogs';
+     }
 
 
   // TODO@Idrice find out best way to  call  standard httpClient
