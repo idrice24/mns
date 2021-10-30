@@ -12,7 +12,10 @@ import { Observable, of } from 'rxjs';
 })
 export class ProductService {
   // private productUrl = 'api/product';
-  private productUrl = 'api/products';
+private productUrl: string ; // I decleared the URL string variable
+private addNewProduct: string;
+private editProduct: string;
+private deleteProduct: string;
   product: Product;
 
 
@@ -21,7 +24,12 @@ export class ProductService {
   };
 
 
-  constructor(private httpClient: HttpClient, private logService: LogService) { }
+  constructor(private httpClient: HttpClient, private logService: LogService) {
+  this.productUrl = 'https://mns237-serverapi.herokuapp.com/admin/products'; // here i assigned the API part to the URL
+  this.addNewProduct = 'https://mns237-serverapi.herokuapp.com/admin/products/add';
+  this.editProduct = 'https://mns237-serverapi.herokuapp.com/admin/products/update/{id}';
+  this.deleteProduct = 'https://mns237-serverapi.herokuapp.com/admin/products/delete/{id}';
+   }
 
   getProducts() {
     return this.httpClient.get<Product[]>(this.productUrl).pipe(map(res => res));
@@ -31,7 +39,7 @@ export class ProductService {
   }
   // add a product
   addProduct(product: Product): Observable<Product> {
-    return this.httpClient.post<Topic>(this.productUrl, product, this.httpOptions).pipe(
+    return this.httpClient.post<Topic>(this.addNewProduct, product, this.httpOptions).pipe(
       tap((newProduct: Product) => this.logService.log(`added Products w/ id=${newProduct.id}`)),
       catchError(this.handleError<Product>('addProduct'))
     );
@@ -50,6 +58,17 @@ export class ProductService {
     return this.httpClient.put(this.productUrl, product, this.httpOptions).pipe(
       tap(_ => this.log(`updated product id=${product.id}`)),
       catchError(this.handleError<any>('updateProduct'))
+    );
+  }
+
+  /** DELETE: delete the Product from the server */
+  deleteUser(product: Product | number): Observable<Product> {
+    const id = typeof product === 'number' ? product : product.id;
+    const url = `${this.deleteProduct}/${id}`;
+
+    return this.httpClient.delete<Product>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted Product id=${id}`)),
+      catchError(this.handleError<Product>('deleteUser'))
     );
   }
 
