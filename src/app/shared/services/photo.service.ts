@@ -11,9 +11,10 @@ import { LogService } from './log.service';
 })
 export class PhotoService {
 
-  private imageUrl = 'api/photos';
+  private imageUrl: string;
   photo: Image;
-  constructor(private httpClient: HttpClient, private logService: LogService) { }
+  constructor(private httpClient: HttpClient, private logService: LogService) { 
+    this.imageUrl = 'https://mns237-serverapi.herokuapp.com/admin/photos/';}
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
