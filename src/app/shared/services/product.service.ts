@@ -16,6 +16,7 @@ private productUrl: string ; // I decleared the URL string variable
 private addNewProduct: string;
 private editProduct: string;
 private deleteProduct: string;
+private deleteProductAll: string;
   product: Product;
 
 
