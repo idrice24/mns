@@ -12,12 +12,17 @@ import { AppSubscriber } from '../models/app-subscriber';
 })
 export class AppSubscriberService {
 
-  private appSubscribersUrl = 'api/subscribers';  // URL to web api, subscribers= Same name in InMemoryDataService class
+  private appSubscribersUrl: string ;  // URL to web api, subscribers= Same name in InMemoryDataService class
+  private addNewLetters: string;
+  private deleteNewLetters: string;
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor(private httpClient: HttpClient, private logService: LogService) { }
+  constructor(private httpClient: HttpClient, private logService: LogService) {
+  this.appSubscribersUrl = 'https://mns237-serverapi.herokuapp.com/admin/abonnement';
+  this.addNewLetters = 'https://mns237-serverapi.herokuapp.com//newsletter';
+  this.deleteNewLetters = 'https://mns237-serverapi.herokuapp.com/admin/abonnement/delete';  }
 
   /** GET Subscribers from the server */
   getAppSubscriber(): Observable<AppSubscriber[]> {
@@ -29,7 +34,7 @@ export class AppSubscriberService {
 
 
   addAppSubscriber(appSubscriber: AppSubscriber): Observable<AppSubscriber> {
-    return this.httpClient.post<AppSubscriber>(this.appSubscribersUrl, appSubscriber, this.httpOptions).pipe(
+    return this.httpClient.post<AppSubscriber>(this.addNewLetters, appSubscriber, this.httpOptions).pipe(
       tap((newUser: AppSubscriber) => this.logService.log(`added Subscriber w/ id=${newUser.id}`)),
       catchError(this.handleError<AppSubscriber>('addUser'))
     );
@@ -38,7 +43,7 @@ export class AppSubscriberService {
   /** DELETE: REMOVE  subscriber from DB */
   deleteAppSubscriber(appSubscriber: AppSubscriber | number): Observable<AppSubscriber> {
     const id = typeof appSubscriber === 'number' ? appSubscriber : appSubscriber.id;
-    const url = `${this.appSubscribersUrl}/${id}`;
+    const url = `${this.deleteNewLetters}/${id}`;
 
     return this.httpClient.delete<AppSubscriber>(url, this.httpOptions).pipe(
 

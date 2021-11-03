@@ -119,7 +119,7 @@ export class RegistryComponent implements OnInit {
 
 
   async delay(ms: number) {
-    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => {
+    await new Promise(resolve => setTimeout(() => resolve(1), ms)).then(() => {
       this.getNumberOfUsers();
       this.message = ' ';
     }
