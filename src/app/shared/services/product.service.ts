@@ -17,6 +17,7 @@ private addNewProduct: string;
 private editProduct: string;
 private deleteProduct: string;
 private deleteProductAll: string;
+
   product: Product;
 
 

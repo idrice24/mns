@@ -15,6 +15,7 @@ export class BlogService {
   // private baseUrl = '/assets/data/blogs.json';
   private blogUrl: string;
   private blogComment: string;
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -22,6 +23,7 @@ export class BlogService {
   constructor(private httpClient: HttpClient, private logService: LogService) {
     this.blogUrl = 'https://mns237-serverapi.herokuapp.com/api/blogs';
     this.blogComment = 'https://mns237-serverapi.herokuapp.com/api/comments';
+
      }
 
 
