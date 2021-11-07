@@ -14,12 +14,16 @@ export class BlogService {
 
   // private baseUrl = '/assets/data/blogs.json';
   private blogUrl: string;
+  private blogComment: string;
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
   constructor(private httpClient: HttpClient, private logService: LogService) {
     this.blogUrl = 'https://mns237-serverapi.herokuapp.com/api/blogs';
+    this.blogComment = 'https://mns237-serverapi.herokuapp.com/api/comments';
+
      }
 
 
@@ -84,7 +88,7 @@ export class BlogService {
 
   /** GETTER: get the comment */
   getAppComment(): Observable<Topic[]> {
-    return this.httpClient.get<Topic[]>(this.blogUrl).pipe(
+    return this.httpClient.get<Topic[]>(this.blogComment).pipe(
       tap((commentList: Topic[]) => this.logService.log(commentList)),
       catchError(this.handleError<Topic[]>('getAppComment', []))
     );
@@ -92,7 +96,7 @@ export class BlogService {
 
   /** CREATE: create a comment */
   addAppComment(blog: Topic): Observable<Topic> {
-    return this.httpClient.post<Topic>(this.blogUrl, blog, this.httpOptions).pipe(
+    return this.httpClient.post<Topic>(this.blogComment, blog, this.httpOptions).pipe(
       tap((newComment: Topic) => this.logService.log(`added Comment`)),
       catchError(this.handleError<Topic>('addComment'))
     );
