@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Topic } from '../models/topic';
+import { AppComment } from '../models/app-comment';
 import { Observable, of } from 'rxjs';
 import { tap, catchError, map } from 'rxjs/operators';
 import { LogService } from './log.service';
@@ -9,7 +10,7 @@ import { LogService } from './log.service';
   providedIn: 'root'
 })
 export class BlogService {
-  private comments: Comment[];
+  comments: Comment[];
   blog: Topic;
 
   // private baseUrl = '/assets/data/blogs.json';
