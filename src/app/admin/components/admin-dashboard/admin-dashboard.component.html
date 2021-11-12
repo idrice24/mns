@@ -47,7 +47,7 @@
            <p> sdsd <span class="p-badge">2 </span> </p>
          </p-progressSpinner>
        </div>
-     </div> -->
+     </div> 
 <div class="row mb-5">
      <div class="col-md-12 text-center">
        <h1 data-aos="fade-in-up" data-aos-offset="150" class="text-primary">Dashboard</h1><br>
@@ -124,14 +124,14 @@
 
           </div>
 
-      <div class="p-col-6"><!-- this will be an auto size increament-->
+      <div class="p-col-6"><!-- this will be an auto size increament
        <h2>History</h2>
        <div>Recent sell product</div>
 
             
   <div class="p-grid">
 
-    <!--COL1: RECENT POSTS-->
+    <!--COL1: RECENT POSTS
     <div class="p-col">
       <p-listbox #theListProduct filter="true" (onClick)="openRecentProduct($event.value)" [options]="recentProducts"
         optionLabel="name">
@@ -177,3 +177,40 @@
         
       </div>
    </div>
+ -->
+<div class="row mb-5">
+     <div class="col-md-12 text-center">
+       <h1 data-aos="fade-in-up" data-aos-offset="150" class="text-primary">Dashboard</h1><br>
+
+     </div>
+</div>
+
+<div class="p-grid p-d-flex p-flex-wrap">
+  <div class="p-col-4" >
+        here is the nav bar for admin board
+    </div>
+    <div class="p-col-8">
+        <div class="p-grid">
+            <div class="p-col-4 p-shadow-18 p-m-1 p-p-1 p-m-lg-3 p-b-lg-3">
+                <div class="card">
+                  <h5>Vertical this is for blog analysis</h5>
+                  <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+                </div>
+            </div>
+            
+            <div class="p-col-4 p-shadow-18 p-m-1 p-p-1 p-m-lg-3 p-b-lg-3">
+                6
+            </div>
+            <div class="p-col-4 p-shadow-18 p-m-1 p-p-1 p-m-lg-3 p-b-lg-3">
+                6
+            </div>
+            <div class="p-col-4 p-shadow-18 p-m-1 p-p-1 p-m-lg-3 p-b-lg-3">
+                6
+            </div>
+            <div class="p-col-8 p-shadow-18 p-m-1 p-p-1 p-m-lg-3 p-b-lg-3">
+                12
+            </div>
+        </div>
+    </div>
+    
+</div>
