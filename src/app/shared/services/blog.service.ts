@@ -6,15 +6,15 @@ import { tap, catchError, map } from 'rxjs/operators';
 import { LogService } from './log.service';
 import { environment } from 'src/environments/environment';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class BlogService {
+  // private baseUrl = '/assets/data/blogs.json';
+  private blogUrl = environment.herokuConfig.blogURL;
+
   private comments: Comment[];
   blog: Topic;
 
-  // private baseUrl = '/assets/data/blogs.json';
-  private blogUrl = environment.heroku.blogURL;
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
