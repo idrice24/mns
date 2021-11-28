@@ -16,7 +16,8 @@ export const environment = {
   },
   // Your heroku -Cloud Application Platform configuration
   herokuConfig: {
-    blogURL: 'api/blog'
+    blogURL: 'api/blog',
+    commentsURL: 'api/comments'
   }
 };
 

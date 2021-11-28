@@ -12,7 +12,7 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { InMemoryDataService } from './in-memory-data.service';
+// import { InMemoryDataService } from './in-memory-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageService } from 'primeng/api';
 
@@ -29,8 +29,8 @@ import { MessageService } from 'primeng/api';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }),
+  //  HttpClientInMemoryWebApiModule.forRoot(
+   //   InMemoryDataService, { dataEncapsulation: false }),
     SharedModule,
     AppRoutingModule, // CLI adds AppRoutingModule to the AppModule's imports array
 
