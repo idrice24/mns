@@ -5,27 +5,26 @@ import { AppComment } from '../models/app-comment';
 import { Observable, of } from 'rxjs';
 import { tap, catchError, map } from 'rxjs/operators';
 import { LogService } from './log.service';
+import { environment } from 'src/environments/environment';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class BlogService {
-  comments: Comment[];
-  blog: Topic;
 
   // private baseUrl = '/assets/data/blogs.json';
-  private blogUrl: string;
-  private blogComment: string;
+  private blogUrl = environment.herokuConfig.blogURL;
+  private blogCommentUrl = environment.herokuConfig.commentsURL;
+  private comments: Comment[];
+  blog: Topic;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
   constructor(private httpClient: HttpClient, private logService: LogService) {
-    this.blogUrl = 'https://mns237-serverapi.herokuapp.com/api/blogs';
-    this.blogComment = 'https://mns237-serverapi.herokuapp.com/api/comments';
 
-     }
+
+
+  }
 
 
   // TODO@Idrice find out best way to  call  standard httpClient
@@ -89,7 +88,7 @@ export class BlogService {
 
   /** GETTER: get the comment */
   getAppComment(): Observable<Topic[]> {
-    return this.httpClient.get<Topic[]>(this.blogComment).pipe(
+    return this.httpClient.get<Topic[]>(this.blogCommentUrl).pipe(
       tap((commentList: Topic[]) => this.logService.log(commentList)),
       catchError(this.handleError<Topic[]>('getAppComment', []))
     );
@@ -97,7 +96,7 @@ export class BlogService {
 
   /** CREATE: create a comment */
   addAppComment(blog: Topic): Observable<Topic> {
-    return this.httpClient.post<Topic>(this.blogComment, blog, this.httpOptions).pipe(
+    return this.httpClient.post<Topic>(this.blogCommentUrl, blog, this.httpOptions).pipe(
       tap((newComment: Topic) => this.logService.log(`added Comment`)),
       catchError(this.handleError<Topic>('addComment'))
     );
