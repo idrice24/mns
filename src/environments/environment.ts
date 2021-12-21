@@ -14,6 +14,11 @@ export const environment = {
     messagingSenderId: '556524170910',
     appId: '1:556524170910:web:ee975ca7d5cb115f91958f'
   },
+  // Your heroku -Cloud Application Platform configuration
+  herokuConfig: {
+    blogURL: 'api/blog',
+    commentsURL: 'api/comments'
+  }
 };
 
 /*
