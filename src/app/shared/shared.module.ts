@@ -47,7 +47,7 @@ import { PasswordModule } from 'primeng/password';
 import { CheckboxModule } from 'primeng/checkbox';
 
 import { GalleriaModule } from 'primeng/galleria';
-
+import { ChartModule } from 'primeng/chart';
 
 
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
@@ -85,6 +85,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
     // All externe Module (PrimenNG)
     DividerModule,
+    ChartModule, // <--- p-chart live there
     ScrollTopModule, // to use p-scrollTop in html file
     TableModule,
     DialogModule,
@@ -183,6 +184,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ToastModule, //  allow others module to use toast i.e. app.Module
     ButtonModule, // to wrap access to other module .ie. shoppingModule
     GalleriaModule,
+    ChartModule,
   ],
   providers: [
     Title, // To Configure the angular title built-in-service
