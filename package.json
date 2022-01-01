@@ -21,7 +21,7 @@
     "dev": "npm run deploy && ng serve --open",
     "fire-deploy": "firebase login && npm run fire && firebase deploy",
     "build:ci": "npm run clean && npm run test-deploy && npm run build:prod --verbose",
-    "update":"npm i -g npm-check-updates && ncu -u && npm install"
+    "update": "npm i -g npm-check-updates && ncu -u && npm install"
   },
   "private": true,
   "dependencies": {
@@ -47,7 +47,7 @@
     "firebase": "^9.6.1",
     "jquery": "^3.6.0",
     "moment": "^2.29.1",
-    "ngx": "^2.4.0",
+    "ngx": "^2.3.0",
     "ngx-moment": "^6.0.2",
     "popper.js": "^1.16.1",
     "primeflex": "^3.1.2",
