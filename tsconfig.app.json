@@ -13,6 +13,7 @@
   ],
     "compileerOptions":{
     "outDir": "./out-tsc/app",
+    "proxyConfig": "src/prooxy.conf.json",
     "types": ["googlemaps"]
   },
   "enableIvy" : false,
