@@ -22,6 +22,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "proxyConfig": "prooxy.conf.json",
             "assets": [
               "src/assets"
             ],
