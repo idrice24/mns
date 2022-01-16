@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AppUser } from '../models/app-user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+
 import { tap, catchError, map } from 'rxjs/operators';
 import { AvatarService } from './avatar.service';
 
@@ -22,7 +22,7 @@ export class UserService {
   getUser(id: number): Observable<AppUser> {
     const url = `${this.usersUrl}/${id}`;
     return this.httpClient.get<AppUser>(url).pipe(
-      tap(_ => this.log(`fetched User id=${id}`)),
+      tap((_: any) => this.log(`fetched User id=${id}`)),
       catchError(this.handleError<AppUser>(`getUser id=${id}`))
     );
   }
@@ -55,7 +55,7 @@ export class UserService {
   /** FIND: Find user by given username and password @Idrice this should be removed. backend should check it */
   findUser(username: string, password: string): Observable<AppUser> {
     return this.getUsers().pipe(
-      map(myArray => myArray.find(i => i.username === username && i.password === password)));
+      map((myArray: any[]) => myArray.find(i => i.username === username && i.password === password)));
   }
 
   /**
