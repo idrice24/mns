@@ -3,9 +3,12 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-starter": {
+    "mns": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
         "@schematics/angular:application": {
           "strict": true
         }
@@ -17,13 +20,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-starter",
+            "outputPath": "dist/mns",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-
+            "inlineStyleLanguage": "scss",
             "assets": [
+              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
@@ -33,7 +37,7 @@
               "node_modules/primeflex/primeflex.css",
               "src/styles.scss"
             ],
-            "scripts": [            
+            "scripts": [
               "node_modules/jquery/dist/jquery.js",
               "node_modules/popper.js/dist/popper.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -76,11 +80,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-starter:build:production",
-              "proxyConfig": "src/proxy.conf.json"
+              "browserTarget": "mns:build:production"
             },
             "development": {
-              "browserTarget": "angular-starter:build:development"
+              "browserTarget": "mns:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +91,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-starter:build"
+            "browserTarget": "mns:build"
           }
         },
         "test": {
@@ -98,11 +101,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
             "assets": [
+              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
