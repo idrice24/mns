@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
+    "build": "ng build --verbose",
+    "start": "ng serve --open --allowed-hosts",
+    "deploy": "npm run build --output-path docs --base-href /mns/",
+    "update": "npm i -g npm-check-updates && ncu -u && npm install",
+
     "watch": "ng build --watch --configuration development",
     "start:fr": "ng serve  --configuration=fr --open --allowedHosts --poll",
-    "start": "ng serve    --open --allowedHosts --poll",
     "startv": "ng serve --verbose --open --allowedHosts --poll",
-    "build": "ng build",
     "test2": "npm run test --  --no-watch --no-progress",
     "test": "ng test",
     "clean": "rimraf ./dist",
@@ -16,12 +19,11 @@
     "lint:fix": "ng lint   --fix",
     "e2e": "ng e2e",
     "e2e-deploy": "ng e2e -- --protractor-config=e2e/protractor-ci.conf.js",
-    "deploy": "ng build --output-path docs --base-href /mns/",
     "deploy-test": "ng lint && ng build --prod --output-path docs --base-href /mns/ && git status && git config --global user.email 'gzeleu@gmx.de' &&  git config --global user.name 'Ghislain' && git add * -f && git commit -m 'UPDATED GITHUB DOCS FOLDER' && git push ",
     "compodoc": "npx compodoc -p tsconfig.json -o -s",
     "dev": "npm run deploy && ng serve --open",
-    "build:ci": "npm run clean && npm run test-deploy && npm run build:prod --verbose",
-    "update": "npm i -g npm-check-updates && ncu -u && npm install"
+    "build:ci": "npm run clean && npm run test-deploy && npm run build:prod --verbose"
+
   },
   "private": true,
 "dependencies": {
