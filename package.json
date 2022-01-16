@@ -5,7 +5,7 @@
     "ng": "ng",
     "build": "ng build --verbose",
     "start": "ng serve --open --allowed-hosts",
-    "deploy": "npm run build --output-path docs --base-href /mns/",
+    "deploy": "ng build --verbose --output-path docs --base-href /mns/",
     "update": "npm i -g npm-check-updates && ncu -u && npm install",
 
     "watch": "ng build --watch --configuration development",
