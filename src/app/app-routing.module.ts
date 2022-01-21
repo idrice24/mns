@@ -12,7 +12,10 @@ import { RegistryComponent } from './core/components/registry/registry.component
 // sets up routes constant where you define your routes
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, data: { animation: 'HomePage' } },
+  {
+    path: 'home',
+    component: HomeComponent, data: { animation: 'HomePage' }
+  },
   {
     path: 'association',
     loadChildren: () => import('./association/association.module').then(m => m.AssociationModule)
@@ -21,7 +24,6 @@ const routes: Routes = [
   {
     path: 'posts',
     loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
-
   },
   {
     path: 'admin',

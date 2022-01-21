@@ -1,4 +1,4 @@
-import { ThrowStmt } from '@angular/compiler';
+
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
@@ -16,8 +16,8 @@ export class SearchResultComponent implements OnInit {
   users$;
   found: any;
   constructor(private searchService: SearchService, private activatedRoute: ActivatedRoute,
-              private titleService: Title // Inject to set document title on  browser
-    ) { }
+    private titleService: Title // Inject to set document title on  browser
+  ) { }
 
   ngOnInit(): void {
     /* this.users$ = this.activatedRoute.paramMap.pipe(
@@ -27,7 +27,7 @@ export class SearchResultComponent implements OnInit {
          console.log(this.searchString);
          return this.searchService.getDummy();
        }));*/
-       this.titleService.setTitle('MNS237 - Search-result'); // Adding the title Home to the MNS237  main Title
+    this.titleService.setTitle('MNS237 - Search-result'); // Adding the title Home to the MNS237  main Title
   }
 }
 

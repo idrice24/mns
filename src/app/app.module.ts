@@ -11,22 +11,19 @@ import { Router } from '@angular/router';
 // import { InMemoryDataService } from './in-memory-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageService } from 'primeng/api';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     CoreModule,
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    //  HttpClientInMemoryWebApiModule.forRoot(
-    //   InMemoryDataService, { dataEncapsulation: false }),
     SharedModule,
     AppRoutingModule, // CLI adds AppRoutingModule to the AppModule's imports array
 
@@ -41,7 +38,10 @@ export class AppModule {
     private messageService: MessageService) {
 
     // Use a custom replacer to display function names in the route configs
-    const replacer = (key, value) => (typeof value === 'function') ? value.name : value;
+    const replacer = (key: any, value: any) => {
+      console.log(key);
+      return (typeof value === 'function') ? value.name : value;
+    }
 
     console.log('Routes: ', JSON.stringify(this.router.config, replacer, 2));
   }

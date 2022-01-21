@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { ShoppingListItemComponent } from './components/shopping-list-item/shopping-list-item.component';
@@ -17,7 +16,6 @@ const routes: Routes =
   ];
 @NgModule({
   declarations: [
-    CommonModule,
     ShoppingListComponent, // To manage the list of  carts
     ShoppingListItemComponent, // To display each element of the shopping list ie. name,  items
     ShoppingComponent // Represents the parent Component of this module

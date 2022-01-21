@@ -1,4 +1,5 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
+/* To learn https://www.typescriptlang.org/tsconfig#noPropertyAccessFromIndexSignature */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -7,9 +8,11 @@
     "forceConsistentCasingInFileNames": true,
     "strict": false, // True will  throw an error  such as member in class is not initializied!!
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitAny": false,// to avoid error like==> Property 'XXX' has no initializer
+    "noPropertyAccessFromIndexSignature": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "strictPropertyInitialization": false,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
@@ -27,6 +30,7 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "strictDomEventTypes": false // to avoid error===>  Property 'value' does not exist on type 'EventTarget'.
   }
 }

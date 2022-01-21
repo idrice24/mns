@@ -6,7 +6,7 @@
    </div>
  </div>
 
- <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [numVisible]="5" [circular]="true"
+ <p-galleria [(ngModel)]="images" [responsiveOptions]="responsiveOptions" [numVisible]="5" [circular]="true"
    [autoPlay]="true" [transitionInterval]="2000">
    <ng-template pTemplate="item" let-item>
      <img [src]="item.src" style="width: 80%;height: 60%; display: block;" />

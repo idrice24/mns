@@ -20,6 +20,7 @@ export interface Topic {
   like?: number; // To get or set the number of like for unique Topic
   unlike?: number;
   verified?: boolean;
+  length?: number;
 
 }
 
