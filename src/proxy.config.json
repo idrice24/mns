@@ -1,6 +1,0 @@
-{
-  "/api": {
-    "target": "https://mns237-serverapi.herokuapp.com/", // put your actual domain
-    "secure": false // true or false depending on your needs.
-  }
-}
