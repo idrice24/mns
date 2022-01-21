@@ -29,10 +29,22 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       # No 'uses' keyword because we want to run script from package.json file
+      - name: Update dist directory
+        run: |
+          npm i
+          npm run watch
+
       - name: Deployment in Action
         run: |
           npm i
           npm run deploy
+
+      - name: Update resources
+        uses: test-room-7/action-update-file@v1
+        with:
+          file-path: dist/*.js
+          commit-msg: Update Docs Folder
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       # https://github.com/ncipollo/release-action/blob/main/README.md
       - name: Deploy static files (Github page) # TODO What happen here ?
