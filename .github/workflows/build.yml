@@ -37,13 +37,13 @@ jobs:
       - name: Deployment in Action
         run: |
           npm i
-          npm run deploy
+          npm run update
 
       - name: Update resources
         uses: test-room-7/action-update-file@v1
         with:
-          file-path: docs/*.js
-          commit-msg: Update Docs Folder
+          file-path: docs/
+          commit-msg: =====>  ${{ github.event.head_commit.message }} <====
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       # https://github.com/ncipollo/release-action/blob/main/README.md
