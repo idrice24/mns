@@ -32,7 +32,7 @@ jobs:
       - name: Update dist directory
         run: |
           npm i
-          npm run watch
+          npm run release
 
       - name: Deployment in Action
         run: |
@@ -42,7 +42,7 @@ jobs:
       - name: Update resources
         uses: test-room-7/action-update-file@v1
         with:
-          file-path: dist/*.js
+          file-path: docs/*.js
           commit-msg: Update Docs Folder
           github-token: ${{ secrets.GITHUB_TOKEN }}
 

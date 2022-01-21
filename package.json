@@ -8,7 +8,7 @@
     "deploy": "ng build --verbose --output-path docs --base-href /mns/",
     "update": "npm i -g npm-check-updates && ncu -u && npm install",
     "watch-dev": "ng build --watch --configuration development",
-    "watch": "ng build --watch",
+    "release": "ng build --configuration production",
     "start:fr": "ng serve  --configuration=fr --open --allowedHosts --poll",
     "startv": "ng serve --verbose --open --allowedHosts --poll",
     "test2": "npm run test --  --no-watch --no-progress",
