@@ -30,7 +30,7 @@ export function forbittenEmailValidator(): ValidatorFn {
 export class ForbittenEmailValidatorDirective implements Validator {
 
   // Defintion of Storage HTML property named appForbiddenEmail in forbiddenEmail
-  @Input('appForbittenEmail') forbittenEmail: string;
+  @Input('appForbittenEmail') forbittenEmail!: string;
 
   constructor() { }
 

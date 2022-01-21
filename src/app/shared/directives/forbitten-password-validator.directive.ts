@@ -1,12 +1,10 @@
 import { Directive, Input } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, Validator, ValidatorFn } from '@angular/forms';
-
+// REF: https://angular.io/guide/form-validation#defining-custom-validators
 
 export function forbittenPasswordValidator(): ValidatorFn {
 
   return (control: AbstractControl): { [key: string]: any } | null => {
-
-
     // valid password pattern
     const passwordPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
     const regExp = new RegExp(passwordPattern);
@@ -17,11 +15,6 @@ export function forbittenPasswordValidator(): ValidatorFn {
   };
 }
 
-
-// REF: https://angular.io/guide/form-validation#defining-custom-validators
-
-
-
 @Directive({
   selector: '[appForbittenPassword]',
   providers: [{ provide: NG_VALIDATORS, useExisting: ForbittenPasswordValidatorDirective, multi: true }]
@@ -29,7 +22,7 @@ export function forbittenPasswordValidator(): ValidatorFn {
 export class ForbittenPasswordValidatorDirective implements Validator {
 
   // Defintion of Storage HTML property named appForbiddenPassword in forbiddenPassword
-  @Input('appForbittenPassword') forbittenPassword: string;
+  @Input('appForbittenPassword') forbittenPassword!: string;
 
   constructor() { }
 

@@ -11,7 +11,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class ShoppingListComponent implements OnInit {
 
-  items$;
+  items$: any;
   constructor(
     private router: Router,
     private shoppingService: ShoppingService,

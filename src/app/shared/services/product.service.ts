@@ -12,26 +12,25 @@ import { Observable, of } from 'rxjs';
 })
 export class ProductService {
   // private productUrl = 'api/product';
-private productUrl: string ; // I decleared the URL string variable
-private addNewProduct: string;
-private editProduct: string;
-private deleteProduct: string;
-private deleteProductAll: string;
+  private productUrl: string; // I decleared the URL string variable
+  private addNewProduct: string;
+  private editProduct: string;
+  private deleteProduct: string;
 
-  product: Product;
+
+  product!: Product;
 
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-
   constructor(private httpClient: HttpClient, private logService: LogService) {
-  this.productUrl = 'https://mns237-serverapi.herokuapp.com/admin/products'; // here i assigned the API part to the URL
-  this.addNewProduct = 'https://mns237-serverapi.herokuapp.com/admin/products/add';
-  this.editProduct = 'https://mns237-serverapi.herokuapp.com/admin/products/update/{id}';
-  this.deleteProduct = 'https://mns237-serverapi.herokuapp.com/admin/products/delete/{id}';
-   }
+    this.productUrl = 'https://mns237-serverapi.herokuapp.com/admin/products'; // here i assigned the API part to the URL
+    this.addNewProduct = 'https://mns237-serverapi.herokuapp.com/admin/products/add';
+    this.editProduct = 'https://mns237-serverapi.herokuapp.com/admin/products/update/{id}';
+    this.deleteProduct = 'https://mns237-serverapi.herokuapp.com/admin/products/delete/{id}';
+  }
 
   getProducts() {
     return this.httpClient.get<Product[]>(this.productUrl).pipe(map(res => res));
@@ -39,6 +38,7 @@ private deleteProductAll: string;
   getProductList(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.productUrl);
   }
+
   // add a product
   addProduct(product: Product): Observable<Product> {
     return this.httpClient.post<Topic>(this.addNewProduct, product, this.httpOptions).pipe(
@@ -46,6 +46,7 @@ private deleteProductAll: string;
       catchError(this.handleError<Product>('addProduct'))
     );
   }
+
   /** GET: product by Id */
   getProductById(id: number | string) {
     return this.httpClient.get<Product[]>(this.productUrl).pipe(
@@ -89,7 +90,7 @@ private deleteProductAll: string;
   /** Log a BlogService message with the MessageService */
   private log(message: string) {
     // this.messageService.add(`BlogService: ${message}`);
-    console.warn(`BlogService: ${message}`);
+    console.warn(`ProductService: ${message}`);
   }
 
 }

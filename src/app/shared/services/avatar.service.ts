@@ -22,7 +22,7 @@ export class AvatarService {
     '#d84315'
   ];
   private avatarsUrl = 'https://dummyimage.com/60x60';  // URL to web dummy immage api
-  generateAvatar(firstName: string, lastName: string):string {
+  generateAvatar(firstName: string, lastName: string): string {
     const indexColor = Math.round(Math.random() * (this.colors.length - 1));
     const url = `${this.avatarsUrl}/${this.colors[indexColor].substr(1)}`;
     const resp = url + '/ffffff&text=' + firstName[0] + lastName[0];

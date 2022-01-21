@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { tap, catchError, map } from 'rxjs/operators';
 import { AvatarService } from './avatar.service';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,7 @@ export class UserService {
       catchError(this.handleError<AppUser[]>('getUsers', []))
     );
   }
+
   /** POST: add a new User to the server */
   addUser(appUser: AppUser): Observable<AppUser> {
     return this.httpClient.post<AppUser>(this.usersUrl, appUser, this.httpOptions).pipe(
@@ -41,6 +43,7 @@ export class UserService {
       catchError(this.handleError<AppUser>('addUser'))
     );
   }
+
   /** DELETE: delete the User from the server */
   deleteUser(user: AppUser | number): Observable<AppUser> {
     const id = typeof user === 'number' ? user : user.id;
@@ -83,17 +86,16 @@ export class UserService {
     // this.messageService.add(`UserService: ${message}`);
     console.warn(`UserService: ${message}`);
   }
-  // Set Avatar for Fun
 
+  // Set Avatar for Fun
   private addAvatar(userList: AppUser[]) {
-    // this.messageService.add(`UserService: ${message}`);
+
     if (userList === null) {
       return;
     }
     userList.forEach(user => {
-
       if (user.avatar === undefined) {
-        user.avatar = this.avatarService.generateAvatar(user.fName, user.lName);
+        user.avatar = this.avatarService.generateAvatar(user.fName as string, user.lName as string);
       }
 
     });

@@ -13,8 +13,8 @@ export class BlogService {
   // private baseUrl = '/assets/data/blogs.json';
   private blogUrl = environment.herokuConfig.blogURL;
   private blogCommentUrl = environment.herokuConfig.commentsURL;
-  private comments: Comment[];
-  blog: Topic;
+  private comments!: Comment[];
+  blog!: Topic;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

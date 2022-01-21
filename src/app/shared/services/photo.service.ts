@@ -12,7 +12,7 @@ import { LogService } from './log.service';
 export class PhotoService {
 
   private imageUrl: string;
-  photo: Image;
+  photo!: Image;
   constructor(private httpClient: HttpClient, private logService: LogService) {
     this.imageUrl = 'https://mns237-serverapi.herokuapp.com/admin/photos/';
   }

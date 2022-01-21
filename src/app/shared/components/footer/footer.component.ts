@@ -15,7 +15,7 @@ import { MessageService, PrimeNGConfig } from 'primeng/api';
 export class FooterComponent implements OnInit {
 
   appLanguages$: Observable<AppLanguage[]>; // to store all language models
-  selectedAppLanguage: AppLanguage;
+  selectedAppLanguage!: AppLanguage;
 
 
   constructor(
@@ -42,7 +42,7 @@ export class FooterComponent implements OnInit {
    */
   public onChange() {
 
-    this.translateService.use(this.selectedAppLanguage.code);
+    this.translateService.use(this.selectedAppLanguage.code as string);
     this.translateService.get('primeng').subscribe(res => {
       this.messageService.add({ severity: 'error', summary: this.selectedAppLanguage.localeIdentifier, detail: 'TODO', life: 2000 });
 

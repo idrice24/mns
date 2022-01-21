@@ -13,14 +13,14 @@ import { Title } from '@angular/platform-browser';
   providers: [MessageService, ConfirmationService]
 })
 export class ManageBlogComponent implements OnInit {
-  appBlogs: Topic[];
-  appBlog: Topic;
+  appBlogs: Topic[] = [];
+  appBlog: Topic = {};
   blog: Topic = {};
-  selectedTopics;
-  appBlogDetailsDialog: boolean;
-  submitted: boolean;
-  appBlogDialog: boolean;
-  blogForm: FormGroup;
+  selectedTopics: Topic = {};
+  appBlogDetailsDialog: boolean = false;
+  submitted: boolean = false;
+  appBlogDialog: boolean = false;
+  blogForm!: FormGroup; // With ! Just tell the compiler to rest assured that the member will be initialized.
   now: Date = new Date();
 
   // convenience getter for easy access to form fields
@@ -52,6 +52,7 @@ export class ManageBlogComponent implements OnInit {
     });
 
   }
+
   getBlogs(): void {
     this.blogService.getTopicList()
       .subscribe(blogs => {
@@ -77,7 +78,7 @@ export class ManageBlogComponent implements OnInit {
     // @Idrice why? what error durcing the process
     this.submitted = true;
 
-    if (this.blog.title.trim()) {
+    if (this.blog.title?.trim()) {
       if (this.blog.id) {
         this.appBlogs[this.findIndexById(this.blog.id)] = this.blog;
         this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Blog Updated', life: 1000 });
@@ -94,7 +95,7 @@ export class ManageBlogComponent implements OnInit {
     }
   }
 
-  deleteTopic(appBlog) {
+  deleteTopic(appBlog: Topic) {
     this.confirmationService.confirm({
       message: 'Are you sure you want to delete ' + appBlog.title + '?',
       header: 'Confirm',
@@ -109,7 +110,7 @@ export class ManageBlogComponent implements OnInit {
   }
 
 
-  displayTopic(appBlog): void {
+  displayTopic(appBlog: any): void {
 
     this.appBlog = { ...appBlog };
     this.appBlogDetailsDialog = true;
@@ -137,11 +138,11 @@ export class ManageBlogComponent implements OnInit {
   doSubscription() {
 
     const currentAppBlog: Topic = {
-      title: this.title.value,
-      content: this.content.value,
-      imageUrl: this.imageUrl.value,
-      summary: this.summary.value,
-      category: this.category.value,
+      title: this.title?.value,
+      content: this.content?.value,
+      imageUrl: this.imageUrl?.value,
+      summary: this.summary?.value,
+      category: this.category?.value,
       verified: false,
       createdDate: this.now, //  Set the current time value
       publishedDate: this.now,

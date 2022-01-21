@@ -13,7 +13,7 @@ import { slideInAnimation } from './shared/animations/animation';
 })
 export class AppComponent implements OnInit {
   title = 'mns237';
-  location: Location;
+  location!: Location;
   loading: boolean;
 
   constructor(

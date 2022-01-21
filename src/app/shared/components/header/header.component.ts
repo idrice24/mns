@@ -11,10 +11,10 @@ import { MissionService } from '../../services/mission.service';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   // To store list of menu items
-  menuItems: MenuItem[];
-  subscription; // To act subscription
-  subcriptionShoppingCart;
-  loggingAvatar: string;
+  menuItems!: MenuItem[];
+  subscription: any; // To act subscription
+  subcriptionShoppingCart: any;
+  loggingAvatar!: string;
 
   numberOfShoppinItems: number; //  To store Items inside Cart
   constructor(
