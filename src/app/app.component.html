@@ -1,16 +1,11 @@
 <p-toast position="bottom-center"></p-toast>
-
 <div *ngIf="!loading">
   <app-header></app-header>
   <div class="container-fluid" [@routeAnimations]="prepareRoute(outlet)">
     <router-outlet #outlet="outlet"></router-outlet>
   </div>
-
-
   <app-footer></app-footer>
 </div>
-
-
 <!---@Idrice should be moved to his own component file-->
 <div *ngIf="loading" class="d-flex justify-content-center loading-spinner">
   <div class="spinner-grow text-primary" role="status">
@@ -37,5 +32,4 @@
   <div class="spinner-grow text-dark" role="status">
     <span class="sr-only">Loading...</span>
   </div>
-
 </div>
