@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private missionService: MissionService, // To  Act subscription
-    public authService: AuthService, public router: Router,
+    public authService: AuthService, 
+    public router: Router,
     private titleService: Title // Inject to set document title on  browser
     ) {
     this.appUser = {
