@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './core/components/home/home.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
-
 import { LoginComponent } from './core/components/login/login.component';
 import { AuthGuard } from './auth/guards/auth.guard';
 import { RegistryComponent } from './core/components/registry/registry.component';
@@ -11,7 +10,9 @@ import { RegistryComponent } from './core/components/registry/registry.component
 
 // sets up routes constant where you define your routes
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: '', redirectTo: '/home', pathMatch: 'full'
+  },
   {
     path: 'home',
     component: HomeComponent, data: { animation: 'HomePage' }
@@ -19,7 +20,6 @@ const routes: Routes = [
   {
     path: 'association',
     loadChildren: () => import('./association/association.module').then(m => m.AssociationModule)
-
   },
   {
     path: 'posts',
@@ -55,10 +55,12 @@ const routes: Routes = [
   { path: 'registry', component: RegistryComponent },  // @Idrice: to move to authModule
   { path: '**', component: PageNotFoundComponent }
 ];
-// configures NgModule imports and exports
-// ,  { enableTracing: true } // <-- debugging purposes only
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled', relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes,
+    {
+      anchorScrolling: 'enabled', // <-- why?
+      relativeLinkResolution: 'legacy'   // <-- why?
+    })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
