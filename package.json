@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build --verbose",
-    "start": "ng serve --open --verbose",
+    "start": "ng serve --open",
     "deploy": "ng build --verbose --configuration production --output-path docs --base-href /mns/",
     "update-dev": "npm i -g npm-check-updates && ncu -u && npm install",
     "watch": "ng build --watch --configuration development",
