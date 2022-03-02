@@ -34,10 +34,28 @@ jobs:
           npm i
           npm run deploy
 
-      - name: Update Bundles (/docs directory)
+
+      - name: ===>NOT WORK<=== Update Bundles (/docs directory)
         if: ${{ github.ref == 'refs/heads/main' }} # Only main branch
         uses: test-room-7/action-update-file@v1
         with:
           file-path: docs/
           commit-msg: =====>  ${{ github.event.head_commit.message }} <====
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+
+      - name: Deploy static files (Github page - into docs folder)
+        uses: peaceiris/actions-gh-pages@v3.7.0-8
+        #  if: ${{ github.ref == 'refs/heads/main' }} # Only main branch
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}} # set automatically
+          keep_files: false # Keeping existing files
+          # destination_dir: ./docs # The Folder(from publish_dir ) Where gh-page point his html files
+          publish_dir: ./docs # Sources folder to get all html files
+          commit_message: ----> ${{github.event.head_commit.message}} <---- # Set custom commit message
+          force_orphan: true # allows you to make your publish branch with only the latest commit
+          publish_branch: gh-pages # Default=gh-pages. Set Another GitHub Pages Branch, but we want under foder docs!!
