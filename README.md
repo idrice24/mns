@@ -1,60 +1,29 @@
-[![build status](https://github.com/coryrylan/angular-github-actions/workflows/Build/badge.svg)](https://github.com/idrice24/mns/actions)
 # MNS
-<p align="center">
-    <a href="https://github.com/idrice24/mns/issues/" title="Open Issues"><img src="https://img.shields.io/github/issues/idrice24/mns?style=flat-square "></a>
+[![build status](https://github.com/coryrylan/angular-github-actions/workflows/Build/badge.svg)](https://github.com/idrice24/mns/actions) 
+    <a href="https://github.com/idrice24/mns/issues/" title="Open Issues"><img src="https://img.shields.io/github/issues/idrice24/mns?style=flat-square "></a>   
    <a href="https://github.com/idrice24/mns/" title="License"><img src="https://img.shields.io/github/license/idrice24/mns?style=flat-square"></a>
   <a href="https://github.com/idrice24/mns/" title="Languages"><img src="https://img.shields.io/github/languages/count/idrice24/mns?style=flat-square"></a>
   <a href="https://github.com/idrice24/mns/" title="Version"><img src="https://img.shields.io/github/package-json/v/idrice24/mns?style=flat-square"></a>
-  <img src="https://img.shields.io/github/last-commit/idrice24/mns/master">
-  
-</p>
-. 
-<p align="center">
-	<a href="#service-apis">Service APIs</a>.
-	<a href="#documentation">Documentation</a>.
-	<a href="#support-and-feedback">Support</a>.
-	<a href="#how-to-contribute">Contribute</a>.
-	<a href="#contributors">Contributors</a>.
-	<a href="#repositories">Repositories</a>.
-	<a href="#liecensing">Licensing</a>.
-  <a href="#more_info">More info</a>
+  <a href="https://github.com/idrice24/mns/" title="Version"> <img src="https://img.shields.io/github/last-commit/idrice24/mns/master"></a>
+  <p>
+	<a href="#service-apis">Service APIs</a>
+	<a href="#documentation">Documentation</a>
+	<a href="#coding">Support</a>
+	<a href="#how-to-contribute">Contribute</a>
+	<a href="#contributors">Contributors</a>
+	<a href="#repositories">Repositories</a>
+	<a href="#liecensing">Licensing</a>
+  <a href="#references">Inspiration</a>
 </p>
 
 # Intro
 - [MNS237-Frontend -Live APP](https://idrice24.github.io/mns/)  
-- [MN237-Backend - Live RESTFul API](https://mns237-serverapi.herokuapp.com/api/)
-- [Live Demo Reference](https://angular.ganatan.com/crud/cities)
-- [Demo - Reference](https://github.com/ganatan/angular10-app/tree/master/frontend)
-- [MN237 using FIREBASE](https://idrice.web.app/home)  HOSTING
-- [PrimeNG](https://github.com/leandcar/ng-sapphiredb-editor-nqt4ki) - Sample of template using Primeng
+- [MN237-Backend - Live RESTFul API](https://mns237-serverapi.herokuapp.com/api/blogs)
 
-# Coding
-## Precondition
-1.  Angular CLI **version 10 or higher**
-1.  Understand scripting for Automation 
-1.  Understand Markdown for documentation 
-
-## Development process for client
-1. Create new branch or fork 
-1. Clone the Code or pull all*
-1. Switch to your branch from 1.
-1. Run command --> **npm install** to install dependencies **if needed**
-1. Run script  start --> **npm run start** to start angular app No error?
-1. Make your change
-1. Run the script test --> **npm run test-deploy** all green?
-1. Run the script deploy--> **npm run deploy** to generate gh-page __No error?__
-1. Go to docs folder **copy&paste index.hml  and rename it to 404.html**
-1. Commit with Issue number (Create a new one if number not exists)
-1. Push it
-1. Merge only with review!
-
-Or
-
-Run the batch file **deploy.cmd** and Commit your change if **NO error**
 
 # What's included
 
-1.  [] CRUD: create, update and remove heroes with Firebase
+1.  [X] CRUD: create, update and remove data
 1.  [] Angular Universal (SSR) [here](https://angular.io/guide/universal)
 1.  [] Use of StateTransferModule to share state between browser and server
 1.  [] Security Headers using [helmet](https://helmetjs.github.io).
@@ -88,3 +57,19 @@ Run the batch file **deploy.cmd** and Commit your change if **NO error**
       [karma-mocha-reporter](https://github.com/litixsoft/karma-mocha-reporter) and
       [ng-mocks](https://github.com/ike18t/ng-mocks)
 1.  [] End-to-end tests with Protractor,
+
+# Coding
+## Precondition
+1.  Angular CLI **version 10 or higher**
+1.  Understand scripting for Automation 
+1.  Understand Markdown for documentation 
+
+## Development process for client
+1. Create new branch or fork 
+1. CI ( deploy is running)
+
+# References
+- [Live Demo Reference](https://angular.ganatan.com/crud/cities)
+- [Demo - Reference](https://github.com/ganatan/angular10-app/tree/master/frontend)
+- [MN237 using FIREBASE](https://idrice.web.app/home)  HOSTING
+- [PrimeNG](https://github.com/leandcar/ng-sapphiredb-editor-nqt4ki) - Sample of template using Primeng
