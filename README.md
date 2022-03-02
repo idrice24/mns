@@ -23,26 +23,27 @@
 
 # What's included
 
-1.  [X] CRUD: create, update and remove data
+1.  [X] CRUD: create, update and remove data [READ](https://angular.io/guide/http)
+1.  [] Security: XSRF protection
 1.  [] Angular Universal (SSR) [here](https://angular.io/guide/universal)
 1.  [] Use of StateTransferModule to share state between browser and server
 1.  [] Security Headers using [helmet](https://helmetjs.github.io).
 1.  [] Internationalization with the official i18n. Separated builds for english and spanish.
-1.  [] Lazy loading modules
+1.  [X] Lazy loading modules -- see appcomponent.ts [READ](https://angular.io/guide/lazy-loading-ngmodules)
 1.  [] Service Workers enabled!
-1.  [] More logical directory structure (from
+1.  [X] More logical directory structure (from
       [here](https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7))
 1.  [] Basic example library
 1.  [] Following the [best practices](https://angular.io/guide/styleguide)!
-1.  [] Search bar, to look for heroes
+1.  [] Search bar, to look for data
 1.  [] Custom loading page
-1.  [X] Example of Angular Resolver for Hero Detail
+1.  [] Example of Angular Resolver for data Detail
 1.  [] Lazy loading images with [ng-lazyload-image](https://github.com/tjoskar/ng-lazyload-image)
 1.  [] Modal and toasts (snakbar)!
 1.  [] Scroll restoration and anchor examples
 1.  [] Responsive layout (flex layout module)
 1.  [] SASS (most common used functions and mixins) and BEM styles
-1.  [X] Animations with [ng-animate](https://jiayihu.github.io/ng-animate/)
+1.  [] Animations using Angular Framework
 1.  [] Angular Pipes
 1.  [] Interceptors and Events (Progress bar active, if a request is pending)
 1.  [] Scroll to first invalid input in forms.
