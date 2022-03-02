@@ -26,7 +26,7 @@
   },
   "private": true,
   "dependencies": {
-   "@angular/cdk": "^13.2.4",
+    "@angular/cdk": "^13.2.4",
     "@angular/common": "13.2.4",
     "@angular/compiler": "13.2.4",
     "@angular/core": "13.2.4",
@@ -47,7 +47,7 @@
     "jquery": "3.6.0",
     "moment": "^2.29.1",
     "ng2-charts": "^3.0.8",
-    "ngx": "^2.4.0",
+    "ngx": "^2.3.0",
     "ngx-moment": "^6.0.2",
     "popper.js": "^1.16.1",
     "primeflex": "^3.1.3",
