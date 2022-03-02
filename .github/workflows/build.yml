@@ -34,7 +34,7 @@ jobs:
           npm i
           npm run deploy
 
-      - name: Update resources (Docs directory)
+      - name: Update Bundles (/docs directory)
         if: ${{ github.ref == 'refs/heads/main' }} # Only main branch
         uses: test-room-7/action-update-file@v1
         with:
