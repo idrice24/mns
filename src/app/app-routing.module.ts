@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './core/components/home/home.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
-import { LoginComponent } from './core/components/login/login.component';
+import { LoginComponent } from './auth/components/login/login.component';
 import { AuthGuard } from './auth/guards/auth.guard';
-import { RegistryComponent } from './core/components/registry/registry.component';
+import { RegistryComponent } from './auth/components/registry/registry.component';
 
 
 // sets up routes constant where you define your routes
@@ -31,6 +31,10 @@ const routes: Routes = [
     canLoad: [AuthGuard]
   },
   {
+    path: 'cms',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+  {
     path: 'media',
     loadChildren: () => import('./media/media.module').then(m => m.MediaModule)
   },
@@ -51,8 +55,7 @@ const routes: Routes = [
     path: 'shoppings',
     loadChildren: () => import('./shopping/shopping.module').then(m => m.ShoppingModule)
   },
-  { path: 'login', component: LoginComponent }, // @Idrice: to move to authModule
-  { path: 'registry', component: RegistryComponent },  // @Idrice: to move to authModule
+
   { path: '**', component: PageNotFoundComponent }
 ];
 @NgModule({

@@ -19,5 +19,6 @@
 "html.format.wrapAttributes": "auto",
     "yaml.schemas": {
       "https://json.schemastore.org/github-workflow": "/.github/workflows/**/*.yml"
-    }
+    },
+    "workbench.editor.languageDetection": false
 }

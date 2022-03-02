@@ -7,10 +7,18 @@ import { SharedModule } from '../shared/shared.module';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
-const routes: Routes = [
-  { path: '', component: PostListComponent, data: { animation: 'BlogPage' } },
-  { path: ':id', component: PostDetailComponent }
+const blogRoutes: Routes = [
+  {
+    path: '',
+    component: PostListComponent,
+    data: { animation: 'BlogPage' }
+  },
+  {
+    path: ':id',
+    component: PostDetailComponent
+  }
 ];
+
 
 @NgModule({
   declarations: [
@@ -22,9 +30,11 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(blogRoutes) // imports router def for this module
   ],
-  exports: [RouterModule],
+  exports: [
+    RouterModule
+  ],
   providers: []
 })
 export class BlogModule { }

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from '../auth/components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RegistryComponent } from './components/registry/registry.component';
+import { RegistryComponent } from '../auth/components/registry/registry.component';
 import { SearchModule } from '../search/search.module';
 import { SharedModule } from '../shared/shared.module';
 import { AssociationModule } from '../association/association.module';
@@ -15,10 +15,8 @@ import { ProductModule } from '../product/product.module';
 @NgModule({
   declarations: [
     HomeComponent,
-    LoginComponent,
     PageNotFoundComponent,
-    RegistryComponent],
-
+  ],
   imports: [
     CommonModule,
     RouterModule, // Links will not works important!!
@@ -33,10 +31,7 @@ import { ProductModule } from '../product/product.module';
   ],
   exports: [
     HomeComponent,
-    LoginComponent,
-    PageNotFoundComponent,
-    RegistryComponent
-
+    PageNotFoundComponent
   ]
 })
 export class CoreModule { }

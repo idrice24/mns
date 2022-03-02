@@ -70,7 +70,9 @@
 1. CI ( deploy is running)
 
 # References
-- [Live Demo Reference](https://angular.ganatan.com/crud/cities)
-- [Demo - Reference](https://github.com/ganatan/angular10-app/tree/master/frontend)
+- [Live Demo 1](https://angular.ganatan.com/crud/cities)
+- [Demo 1](https://github.com/ganatan/angular10-app/tree/master/frontend)
 - [MN237 using FIREBASE](https://idrice.web.app/home)  HOSTING
 - [PrimeNG](https://github.com/leandcar/ng-sapphiredb-editor-nqt4ki) - Sample of template using Primeng
+- [Live Demo 2](https://ismaestro.github.io/angular-example-app/) - Angular material, login, API
+- [Demo 2](https://github.com/Ismaestro/angular-example-app) - Angular material, login, API
