@@ -2,31 +2,35 @@
   <!--TITLE-->
   <div class="row mb-5">
     <div class="col-md-12 text-center">
-      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Nos Actualités</h1>
+      <h1 data-aos="fade-in-up" data-aos-offset="100" class="text-primary">Nos
+        Actualités
+      </h1>
     </div>
   </div>
 
   <div class="p-grid">
-
     <!--COL1: RECENT POSTS-->
     <div class="p-col-4">
-      <p-listbox #theListPost [filter]="true" (onClick)="openRecentPost($event.value)" [options]="recentPosts"
+      <p-listbox #theListPost [filter]="true"
+        (onClick)="openRecentPost($event.value)" [options]="recentPosts"
         optionLabel="title">
         <ng-template pTemplate="header">
           RECENT POSTS
         </ng-template>
       </p-listbox>
     </div>
-
     <!-- DATAVIEW-->
     <div class="p-col-8">
-      <p-dataView #dv [value]="topics$ | async" [paginator]="true" [rows]="5" filterBy="title" [sortField]="sortField"
-        [sortOrder]="sortOrder" layout="list">
+      <p-dataView #dv [value]="topics$ | async" [paginator]="true" [rows]="5"
+        filterBy="title" [sortField]="sortField" [sortOrder]="sortOrder"
+        layout="list">
         <!--HEADER-->
         <ng-template pTemplate="header">
           <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
-            <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sélectionner par catégorie"
-              (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown>
+            <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey"
+              placeholder="Sélectionner par catégorie"
+              (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0">
+            </p-dropdown>
             <span class="p-input-icon-left p-mb-2 p-mb-md-0">
               <i class="pi pi-search"></i>
               <input type="search" pInputText placeholder="Recherche par titre"
@@ -43,25 +47,28 @@
               <div class="blog-list-detail">
                 <div class="blog-name">{{blog.title}}</div>
                 <div class="blig-item">
-
-                  <article>published Date: {{blog.publishedDate | date:'fullDate' }}</article>
-
+                  <article>published Date:
+                    {{blog.publishedDate | date:'fullDate' }}</article>
                   <!-- here is to display the tooltip message on top of the page -->
-
                   <h4>
-                    <i class="pi pi-comments" pTooltip="Number of Comments" tooltipPosition="top"></i>
-                    {{blog.comments.length}}</h4>
-
+                    <i class="pi pi-comments" pTooltip="Number of Comments"
+                      tooltipPosition="top">
+                    </i>
+                    {{blog.title}}
+                  </h4>
                 </div>
                 <div class="blog-description">{{blog.content}}</div>
                 <hr>
 
-                <button (click)="shareBlog()" pButton type="button" label="Public"
+                <button (click)="shareBlog()" pButton type="button"
+                  label="Public"
                   class="p-m-2 p-button-raised-sm p-button-rounded">&nbsp;<i
                     class="pi pi-globe"></i>&nbsp;</button>&nbsp;
 
-                <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
-                  class="p-m-2 p-button-raised-sm p-button-rounded"><i class="pi pi-right"></i>&nbsp;</button>
+                <button routerLink="./{{blog.id}}" pButton type="button"
+                  label="Lire plus..."
+                  class="p-m-2 p-button-raised-sm p-button-rounded"><i
+                    class="pi pi-right"></i>&nbsp;</button>
 
               </div>
 
@@ -80,17 +87,21 @@
 
                 <div class="blig-item">
 
-                  <article>publishedDate: {{blog.publishedDate | date: 'fullDate'}}</article>
+                  <article>publishedDate:
+                    {{blog.publishedDate | date: 'fullDate'}}</article>
                 </div>
                 <div class="blog-description">
                   <article>{{blog.content}}</article>
                 </div>
-                <button class="p-m-1 p-button-raised-sm p-button-rounded" pButton type="button" label="Publish..."><i
+                <button class="p-m-1 p-button-raised-sm p-button-rounded"
+                  pButton type="button" label="Publish..."><i
                     class="pi pi-globe"></i></button>
 
                 <br>
-                <p-rating [ngModel]="blog.rating" [readonly]="true" [cancel]="false"></p-rating>
-                <button routerLink="./{{blog.id}}" pButton type="button" label="Lire plus..."
+                <p-rating [ngModel]="blog.rating" [readonly]="true"
+                  [cancel]="false"></p-rating>
+                <button routerLink="./{{blog.id}}" pButton type="button"
+                  label="Lire plus..."
                   class="p-m-1 p-button-raised-sm p-button-rounded"></button>
 
               </div>

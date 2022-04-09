@@ -44,13 +44,10 @@ export class PostListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.loadRecentPosts();
     this.titleService.setTitle('MNS237 - Post-list'); // Adding the title Home to the MNS237  main Title
-
     this.sortOptions = [
       { label: 'Produits', value: '!title' },
-
       { label: 'Blogs', value: 'title' }
     ];
     this.sortKey = this.sortOptions[0];
@@ -58,7 +55,6 @@ export class PostListComponent implements OnInit {
 
   onSortChange(event) {
     const value = event.value;
-
     if (value.indexOf('!') === 0) {
       this.sortOrder = -1;
       this.sortField = value.substring(1, value.length);

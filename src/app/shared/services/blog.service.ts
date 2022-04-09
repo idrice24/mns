@@ -29,7 +29,10 @@ export class BlogService {
 
   // TODO@Idrice find out best way to  call  standard httpClient
   getTopicList(): Observable<Topic[]> {
-    return this.httpClient.get<Topic[]>(this.blogUrl);
+    return this.httpClient.get<Topic[]>(this.blogUrl).pipe(
+      tap(_ => this.log(`Server Url=${this.blogUrl}`)),
+      catchError(this.handleError<any>('getTopicList'))
+    );
 
   }
 
@@ -79,9 +82,7 @@ export class BlogService {
   deleteAppBlog(blog: Topic | number): Observable<Topic> {
     const id = typeof blog === 'number' ? blog : blog.id;
     const url = `${this.blogUrl}/${id}`;
-
     return this.httpClient.delete<Topic>(url, this.httpOptions).pipe(
-
       catchError(this.handleError<Topic>('deleteBlog'))
     );
   }
@@ -123,7 +124,6 @@ export class BlogService {
 
   /** Log a BlogService message with the MessageService */
   private log(message: string) {
-    // this.messageService.add(`BlogService: ${message}`);
-    console.warn(`BlogService: ${message}`);
+    console.info(`BlogService: ${message}`);
   }
 }

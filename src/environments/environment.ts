@@ -6,8 +6,8 @@ export const environment = {
   production: false,
   // Your heroku -Cloud Application Platform configuration
   herokuConfig: {
-    blogURL: 'api/blog',
-    commentsURL: 'api/comments'
+    blogURL: 'http://127.0.0.1:8080/api/blogs',
+    commentsURL: 'api/comments' // TODO set the correct url
   }
 };
 
