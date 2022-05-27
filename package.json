@@ -71,7 +71,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.1",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "4.7.0"
+    "typescript": "4.6.3"
   },
   "description": "[![build status](https://github.com/coryrylan/angular-github-actions/workflows/Build/badge.svg)](https://github.com/idrice24/mns/actions)\r # MNS\r <p align=\"center\">\r     <a href=\"https://github.com/idrice24/mns/issues/\" title=\"Open Issues\"><img src=\"https://img.shields.io/github/issues/idrice24/mns?style=flat-square \"></a>\r    <a href=\"https://github.com/idrice24/mns/\" title=\"License\"><img src=\"https://img.shields.io/github/license/idrice24/mns?style=flat-square\"></a>\r   <a href=\"https://github.com/idrice24/mns/\" title=\"Languages\"><img src=\"https://img.shields.io/github/languages/count/idrice24/mns?style=flat-square\"></a>\r   <a href=\"https://github.com/idrice24/mns/\" title=\"Version\"><img src=\"https://img.shields.io/github/package-json/v/idrice24/mns?style=flat-square\"></a>\r   <img src=\"https://img.shields.io/github/last-commit/idrice24/mns/master\">",
   "main": "karma.conf.js",

@@ -36,7 +36,6 @@ export class AppModule {
   constructor(
     private router: Router,
     private messageService: MessageService) {
-
     // Use a custom replacer to display function names in the route configs
     const replacer = (key: any, value: any) => {
       console.log(key);

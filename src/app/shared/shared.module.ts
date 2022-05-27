@@ -132,7 +132,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     RouterModule,
     ReactiveFormsModule,
     TranslateModule, //  for translation
-
     // All externe Module (PrimenNG)
     DividerModule,
     ScrollTopModule,
