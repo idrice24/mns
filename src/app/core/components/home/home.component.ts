@@ -12,11 +12,11 @@ export class HomeComponent implements OnInit {
   constructor(
     private primengConfig: PrimeNGConfig,
     private titleService: Title // Inject to set document title on  browser
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.primengConfig.ripple = true;
-    // this.titleService.setTitle('MNS237 - Home'); // Adding the title Home to the MNS237  main Title
+    this.titleService.setTitle('MNS237 - Home'); // Adding the title Home to the MNS237  main Title
   }
 
   onNotify() {
