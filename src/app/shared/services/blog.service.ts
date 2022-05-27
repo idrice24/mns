@@ -19,14 +19,8 @@ export class BlogService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-
   constructor(private httpClient: HttpClient, private logService: LogService) {
-
-
-
   }
-
-
   // TODO@Idrice find out best way to  call  standard httpClient
   getTopicList(): Observable<Topic[]> {
     return this.httpClient.get<Topic[]>(this.blogUrl).pipe(
@@ -35,7 +29,6 @@ export class BlogService {
     );
 
   }
-
   /** PUT: update the topic on the server */
   updateTopic(topic: Topic): Observable<any> {
     return this.httpClient.put(this.blogUrl, topic, this.httpOptions).pipe(
@@ -43,8 +36,6 @@ export class BlogService {
       catchError(this.handleError<any>('updateTopic'))
     );
   }
-
-
   getTopicById(id: number | string) {
     return this.httpClient.get<Topic[]>(this.blogUrl).pipe(
       // (+) before `id` turns the string into a number
@@ -52,8 +43,6 @@ export class BlogService {
 
     );
   }
-
-
   /** POST: add a new Like to the server */
   addLike(blog: Topic): Observable<Topic> {
     return this.httpClient.post<Topic>(this.blogUrl, blog, this.httpOptions).pipe(
@@ -61,8 +50,6 @@ export class BlogService {
       catchError(this.handleError<Topic>('addLike'))
     );
   }
-
-
   /** GET Blogs from the server */
   getBlog(): Observable<Topic[]> {
     return this.httpClient.get<Topic[]>(this.blogUrl).pipe(
@@ -70,14 +57,12 @@ export class BlogService {
       catchError(this.handleError<Topic[]>('getBlog', []))
     );
   }
-
   addBlog(blog: Topic): Observable<Topic> {
     return this.httpClient.post<Topic>(this.blogUrl, blog, this.httpOptions).pipe(
       tap((newBlog: Topic) => this.logService.log(`added Posts w/ id=${newBlog.id}`)),
       catchError(this.handleError<Topic>('addBlog'))
     );
   }
-
   /** DELETE: REMOVE  blog from DB */
   deleteAppBlog(blog: Topic | number): Observable<Topic> {
     const id = typeof blog === 'number' ? blog : blog.id;
@@ -86,7 +71,6 @@ export class BlogService {
       catchError(this.handleError<Topic>('deleteBlog'))
     );
   }
-
   /** GETTER: get the comment */
   getAppComment(): Observable<Topic[]> {
     return this.httpClient.get<Topic[]>(this.blogCommentUrl).pipe(
@@ -94,7 +78,6 @@ export class BlogService {
       catchError(this.handleError<Topic[]>('getAppComment', []))
     );
   }
-
   /** CREATE: create a comment */
   addAppComment(blog: Topic): Observable<Topic> {
     return this.httpClient.post<Topic>(this.blogCommentUrl, blog, this.httpOptions).pipe(
@@ -102,8 +85,6 @@ export class BlogService {
       catchError(this.handleError<Topic>('addComment'))
     );
   }
-
-
   /**
    * Handle Http operation that failed.
    * Let the app continue.
