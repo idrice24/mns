@@ -11,15 +11,19 @@ import { UserService } from 'src/app/shared/services/user.service';
 export class AuthService {
 
   // store the URL so we can redirect after logging in
+  private registerUrl: string;
+  private loginUrl: string;
   redirectUrl: string;
   constructor(private userService: UserService, private httpClient: HttpClient) {
+    this.registerUrl = 'https://mns237-serverapi.herokuapp.com/api/register';
+    this.loginUrl = 'https://mns237-serverapi.herokuapp.com/api/admin/login';
 
   }
 
-  checkLogin(username, password): Observable<boolean | void> {
+  checkLogin(email, password): Observable<boolean | void> {
     // logic to check password
 
-    return this.userService.findUser(username, password).pipe(
+    return this.httpClient.post<any>(this.loginUrl, { email, password}).pipe(
       map(userFromBackend => {
         if (userFromBackend && userFromBackend.token) {
 
@@ -64,4 +68,12 @@ export class AuthService {
         return user;
       }));
   }
+  
+  // add a user to DB
+ /* addUser(user: User): Observable<Product> {
+    return this.httpClient.post<any>(this.registerUrl, user, this.httpOptions).pipe(
+      tap((newUser: Product) => this.logService.log(`added Users w/ id=${newUser.id}`)),
+      catchError(this.handleError<Product>('addUser'))
+    );
+  }*/
 }
