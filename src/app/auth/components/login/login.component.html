@@ -15,11 +15,10 @@
            <div class="p-col-12">
              <div class="p-inputgroup">
                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-               <input pInputText formControlName="fName" type="text" placeholder="Nom d'utilisateur">
+               <input pInputText formControlName="email" type="text" placeholder="Email d'utilisateur">
              </div>
-             <div *ngIf="fName.invalid && (fName.dirty || fName.touched)" class="p-col-12">
+             <div *ngIf="email.invalid && (fName.dirty || email.touched)" class="p-col-12">
                <small *ngIf="fName.errors.required" class="p-invalid">Name is required.</small>
-               <small *ngIf="fName.errors.minlength" class="p-invalid">Name must be at least 4 characters long.</small>
              </div>
            </div>
 
@@ -45,7 +44,7 @@
            <div class="p-col-12">
              <button pButton pRipple [disabled]="loginForm.invalid" type="submit" label="Envoyer"
                class="p-button-rounded"></button>
-             <button pButton routerLink="/registry" type="button" label="Create Account" class="p-button-text"></button>
+             <button pButton routerLink="/cms/registry" type="button" label="Create Account" class="p-button-text"></button>
 
            </div>
          </div>
