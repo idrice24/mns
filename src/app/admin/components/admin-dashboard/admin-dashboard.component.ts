@@ -53,6 +53,7 @@ export class AdminDashboardComponent implements OnInit {
   basicOptions: any;
   chartOptions: any;
 
+  data:any;
 
   constructor(
     private logService: LogService,
@@ -78,17 +79,17 @@ export class AdminDashboardComponent implements OnInit {
       this.logginUserId = this.userService.getUsers();
 
 
-      this.basicData = {
+      this.data = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [
                 {
-                    label: 'My First dataset',
-                    backgroundColor: '#42A5F5',
+                    label: "My First dataset",
+                    backgroundColor: ["#42A5F5","#FFA726","#36A2EB"],
                     data: [65, 59, 80, 81, 56, 55, 40]
                 },
                 {
-                    label: 'My Second dataset',
-                    backgroundColor: '#FFA726',
+                    label: "My Second dataset",
+                    backgroundColor:["#FFA726"],
                     data: [28, 48, 40, 19, 86, 27, 90]
                 }
             ]

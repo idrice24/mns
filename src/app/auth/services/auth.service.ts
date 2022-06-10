@@ -30,7 +30,7 @@ export class AuthService {
 
           return true;
         }
-        return false;
+        return true; // after change back to false
 
       }),
       delay(500)); // Delay just for fun !!!
@@ -47,7 +47,7 @@ export class AuthService {
       return true;
     }
     console.log(' isLoggedIn() ----> FALSE');
-    return false;
+    return true;// change after to false
   }
 
 
