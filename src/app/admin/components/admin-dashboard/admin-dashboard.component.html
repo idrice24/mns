@@ -5,32 +5,10 @@
   </div>
 </div>
 
-<div class="p-grid p-d-flex p-flex-wrap">
-  <div class="p-col-4">
-    here is the nav bar for admin board
-  </div>
-  <div class="p-col-8">
-    <div class="p-grid">
-      <div class="p-col-4 p-shadow-18 p-m-1 p-p-1 p-m-lg-3 p-b-lg-3">
-        <div class="card">
-          <h5>Vertical this is for blog analysis</h5>
-          <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
-        </div>
-      </div>
 
-      <div class="p-col-4 p-shadow-18 p-m-1 p-p-1 p-m-lg-3 p-b-lg-3">
-        6
-      </div>
-      <div class="p-col-4 p-shadow-18 p-m-1 p-p-1 p-m-lg-3 p-b-lg-3">
-        6
-      </div>
-      <div class="p-col-4 p-shadow-18 p-m-1 p-p-1 p-m-lg-3 p-b-lg-3">
-        6
-      </div>
-      <div class="p-col-8 p-shadow-18 p-m-1 p-p-1 p-m-lg-3 p-b-lg-3">
-        12
-      </div>
-    </div>
-  </div>
-
+<div class="card">
+  <h5>Vertical</h5>
+  <p-chart type="doughut" [data]="data" [options]="chartOptions" [style]="{
+  'with': '40%'}">
+</p-chart>
 </div>
