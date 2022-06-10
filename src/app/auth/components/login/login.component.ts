@@ -38,10 +38,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      fName: new FormControl(this.appUser.fName, [
+      email: new FormControl(this.appUser.email, [
         Validators.required,
-        Validators.minLength(4),
-        // forbiddenNameValidator(/bob/i)
       ]),
       password: new FormControl(this.appUser.password, [
         Validators.required,
@@ -52,7 +50,7 @@ export class LoginComponent implements OnInit {
     this.titleService.setTitle('MNS237 - Login'); // Adding the title Home to the MNS237  main Title
   }
   // convenience getter for easy access to form fields
-  get fName() { return this.loginForm.get('fName'); }
+  get email() { return this.loginForm.get('email'); }
   get password() { return this.loginForm.get('password'); }
 
 
@@ -66,7 +64,7 @@ export class LoginComponent implements OnInit {
     }
 
 
-    this.authService.checkLogin(this.fName.value, this.password.value).subscribe(isLoggedIn => {
+    this.authService.checkLogin(this.email.value, this.password.value).subscribe(isLoggedIn => {
 
       if (isLoggedIn) {
         console.log('LoggIn Successfully');
@@ -76,7 +74,7 @@ export class LoginComponent implements OnInit {
 
 
         // Send to subscriber i.e. header.component.ts
-        this.missionService.confirmLogging(this.fName.value);
+        this.missionService.confirmLogging(this.email.value);
 
         // Set our navigation extras object
         // TODO@Idrice I dont  understand this !!
