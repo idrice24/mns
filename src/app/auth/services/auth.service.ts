@@ -16,7 +16,7 @@ export class AuthService {
   redirectUrl: string;
   constructor(private userService: UserService, private httpClient: HttpClient) {
     this.registerUrl = 'https://mns237-server.herokuapp.com/api/register';
-    this.loginUrl = 'https://mns237-server.herokuapp.com/api/admin/login';
+    this.loginUrl = 'https://mns237-server.herokuapp.com/api/login';
 
   }
 
