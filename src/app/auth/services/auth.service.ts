@@ -17,7 +17,6 @@ export class AuthService {
   constructor(private userService: UserService, private httpClient: HttpClient) {
     this.registerUrl = 'https://mns237-server.herokuapp.com/api/register';
     this.loginUrl = 'https://mns237-server.herokuapp.com/api/login';
-
   }
 
   checkLogin(email, password): Observable<boolean | void> {
