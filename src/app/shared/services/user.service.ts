@@ -12,12 +12,14 @@ import { Observable, of } from 'rxjs';
 export class UserService {
 
   // private userUrl = 'localhost:8080/'
-  private usersUrl = 'api/users';  // URL to web api
+  private usersUrl: string ; // URL to web api
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor(private httpClient: HttpClient, private avatarService: AvatarService) { }
+  constructor(private httpClient: HttpClient, private avatarService: AvatarService) { 
+    this.usersUrl = 'https://mns237-server.herokuapp.com/api';
+  }
 
   /** GET User by id. Will 404 if id not found */
   getUser(id: number): Observable<AppUser> {
