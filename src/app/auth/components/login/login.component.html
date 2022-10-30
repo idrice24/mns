@@ -20,7 +20,7 @@
              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="p-col-12">
                <small *ngIf="email.errors.required" class="p-invalid">Email is required.</small>
              </div>
-           </div>
+           </div><br>
 
 
            <!--PASSWORD-->
@@ -38,13 +38,13 @@
                <small *ngIf="password.errors.minlength" class="p-invalid">Name must be at least 4 characters
                  long.</small>
              </div>
-           </div>
+           </div><br>
 
            <!--BUTTON-->
            <div class="p-col-12">
              <button pButton pRipple [disabled]="loginForm.invalid" type="submit" label="Envoyer"
                class="p-button-rounded"></button>
-             <button pButton routerLink="/registry" type="button" label="Create Account" class="p-button-text"></button>
+             <button pButton routerLink="/cms/registry" type="button" label="Create Account" class="p-button-text"></button>
 
            </div>
          </div>

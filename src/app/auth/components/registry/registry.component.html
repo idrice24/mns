@@ -20,7 +20,7 @@
             <small *ngIf="fName.errors.required" class="p-invalid">Name is required.</small>
             <small *ngIf="fName.errors.minlength" class="p-invalid">Name must be at least 4 characters long.</small>
           </div>
-        </div>
+        </div><br>
 
         <!-- Second name -->
         <div class="p-col-12">
@@ -28,7 +28,7 @@
             <span class="p-inputgroup-addon"><i class="pi pi-pin"></i></span>
             <input pInputText formControlName="lName" type="text" placeholder="Pre Nom">
           </div>
-        </div>
+        </div><br>
         <!-- Email -->
         <div class="p-col-12">
           <div class="p-inputgroup">
@@ -46,7 +46,7 @@
             </small>
 
           </div>
-        </div>
+        </div><br>
 
         <!-- Password 1 -->
         <div class="p-col-12">
@@ -54,12 +54,7 @@
             <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
             <input pInputText formControlName="password" type="password" placeholder="Mot de Passe">
           </div>
-          <!-- it is given an error that password does not exit on the type registryComponent. please help-->
-          <!--<div *ngIf="password.invalid && (password.dirty || password.touched)" class="p-col-12">
-            <small *ngIf="password.errors.required" class="p-invalid">Le Mot de Passe Es requis. </small>
-            <small *ngIf="password.errors.minlength" class="p-invalid">Le Mot De Passe Doit Comporter au moins 4 caracteres.</small>
-          </div>-->
-        </div>
+        </div><br>
 
         <!-- Password 2 -->
         <div class="p-col-12">
@@ -67,11 +62,7 @@
             <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
             <input pInputText formControlName="password" type="text" placeholder="Entre encore le mot de Passe">
           </div>
-          <!--<div *ngIf="password.invalid && (password.dirty || password.touched)" class="p-col-12">
-            <small *ngIf="password.errors.required" class="p-invalid">Name is required.</small>
-            <small *ngIf="password.errors.minlength" class="p-invalid">Le Mot De Passe Doit Comporter au moins 4 caracteres.</small>
-          </div>-->
-        </div>
+        </div><br>
 
 
         <!--BUTTON-->

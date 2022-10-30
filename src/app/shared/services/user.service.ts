@@ -13,17 +13,21 @@ export class UserService {
 
   // private userUrl = 'localhost:8080/'
   private usersUrl: string ; // URL to web api
+  private userUrl: string;
+  private userRegisterUrl: string;
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
   constructor(private httpClient: HttpClient, private avatarService: AvatarService) { 
     this.usersUrl = 'https://mns237-server.herokuapp.com/api';
+    this.userRegisterUrl = 'https://mns237-server.herokuapp.com/api/register';
+    this.userUrl = 'https://mns237-server.herokuapp.com/api/users';
   }
 
   /** GET User by id. Will 404 if id not found */
   getUser(id: number): Observable<AppUser> {
-    const url = `${this.usersUrl}/${id}`;
+    const url = `${this.userUrl}/${id}`;
     return this.httpClient.get<AppUser>(url).pipe(
       tap((_: any) => this.log(`fetched User id=${id}`)),
       catchError(this.handleError<AppUser>(`getUser id=${id}`))
@@ -32,7 +36,7 @@ export class UserService {
 
   /** GET Users from the server */
   getUsers(): Observable<AppUser[]> {
-    return this.httpClient.get<AppUser[]>(this.usersUrl).pipe(
+    return this.httpClient.get<AppUser[]>(this.userUrl).pipe(
       tap((userList: AppUser[]) => this.addAvatar(userList)),
       catchError(this.handleError<AppUser[]>('getUsers', []))
     );
@@ -40,7 +44,7 @@ export class UserService {
 
   /** POST: add a new User to the server */
   addUser(appUser: AppUser): Observable<AppUser> {
-    return this.httpClient.post<AppUser>(this.usersUrl, appUser, this.httpOptions).pipe(
+    return this.httpClient.post<AppUser>(this.userRegisterUrl, appUser, this.httpOptions).pipe(
       tap((newUser: AppUser) => this.log(`added User w/ id=${newUser.id}`)),
       catchError(this.handleError<AppUser>('addUser'))
     );
@@ -49,7 +53,7 @@ export class UserService {
   /** DELETE: delete the User from the server */
   deleteUser(user: AppUser | number): Observable<AppUser> {
     const id = typeof user === 'number' ? user : user.id;
-    const url = `${this.usersUrl}/${id}`;
+    const url = `${this.userUrl}/${id}`;
 
     return this.httpClient.delete<AppUser>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted User id=${id}`)),
