@@ -46,35 +46,27 @@ export class RegistryComponent implements OnInit {
     this.registryForm = new FormGroup({
 
       email: new FormControl(this.appUser.email, [
-        Validators.required,
-        Validators.minLength(4),
-        forbittenEmailValidator()
+        Validators.required
       ]),
 
       // For fName
       fName: new FormControl(this.appUser.fName, [
-        Validators.required,
-        Validators.minLength(4),
-        forbittenFnameValidator()
+        Validators.required
       ]),
 
       // For lName
       lName: new FormControl(this.appUser.lName, [
         Validators.required,
-        Validators.minLength(4)
       ]),
 
       // For password
       password: new FormControl(this.appUser.password, [
-        Validators.required,
-        Validators.minLength(4),
-        forbittenPasswordValidator()
+        Validators.required
       ]),
 
       // For pas2
       password2: new FormControl(this.appUser.password, [
-        Validators.required,
-        Validators.minLength(4)
+        Validators.required
       ]),
     });
 
