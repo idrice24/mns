@@ -15,11 +15,14 @@ export class AuthService {
   private loginUrl: string;
   redirectUrl: string;
   constructor(private userService: UserService, private httpClient: HttpClient) {
-    this.registerUrl = 'https://mns237-server.herokuapp.com/api/register';
-    this.loginUrl = 'https://mns237-server.herokuapp.com/api/login';
+    /*this.registerUrl = 'https://mns237-server.herokuapp.com/api/register';
+    this.loginUrl = 'https://mns237-server.herokuapp.com/api/login';*/
+
+    this.loginUrl = 'http://localhost:8080/api/cms/login';
+    this.registerUrl = 'http://localhost:8080/api/register';
   }
 
-  checkLogin(email, password): Observable<boolean | void> {
+  /*checkLogin(email, password): Observable<boolean | void> {
     // logic to check password
 
     return this.httpClient.post<any>(this.loginUrl, { email, password}).pipe(
@@ -33,11 +36,11 @@ export class AuthService {
 
           return true;
         }
-        return true; // after change back to false
+        return false;
 
       }),
       delay(500)); // Delay just for fun !!!
-  }
+  }*/
 
   getAuthorizationToken() {
     const currentUser = JSON.parse(localStorage.getItem('currentUserKey'));
@@ -47,10 +50,10 @@ export class AuthService {
   isLoggedIn() {
     if (localStorage.getItem('currentUserKey')) {
       console.log(' isLoggedIn() ----> TRUE');
-      return true;
+      return false;
     }
     console.log(' isLoggedIn() ----> FALSE');
-    return true;// change after to false
+    return true;
   }
 
 
@@ -59,20 +62,12 @@ export class AuthService {
   }
 
   // Todo@Idrice for later DO NOT REMOVE
-  login2(username, password) {
-    return this.httpClient.post<any>(`apiServer/users/authenticate`, { username, password })
+  checkLogin(email, password) {
+    return this.httpClient.post<any>(this.loginUrl, { email, password })
       .pipe(map(user => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('currentUserKey', JSON.stringify(user));
         return user;
       }));
   }
-  
-  // add a user to DB
- /* addUser(user: User): Observable<Product> {
-    return this.httpClient.post<any>(this.registerUrl, user, this.httpOptions).pipe(
-      tap((newUser: Product) => this.logService.log(`added Users w/ id=${newUser.id}`)),
-      catchError(this.handleError<Product>('addUser'))
-    );
-  }*/
 }

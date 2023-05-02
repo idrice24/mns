@@ -20,9 +20,9 @@ export class AppSubscriberService {
   };
 
   constructor(private httpClient: HttpClient, private logService: LogService) {
-  this.appSubscribersUrl = 'https://mns237-server.herokuapp.com/api/abonnement';
-  this.addNewLetters = 'https://mns237-serverapi.herokuapp.com/api/newsletter';
-  this.deleteNewLetters = 'https://mns237-server.herokuapp.com/api/abonnement/delete';  }
+  this.appSubscribersUrl = 'http://localhost:8080/api/list/abonnement';
+  this.addNewLetters = 'http://localhost:8080/api/newsletter';
+  this.deleteNewLetters = 'http://localhost:8080/api/abonnement/delete';  }
 
   /** GET Subscribers from the server */
   getAppSubscriber(): Observable<AppSubscriber[]> {

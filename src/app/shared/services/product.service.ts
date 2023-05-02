@@ -26,10 +26,12 @@ export class ProductService {
   };
 
   constructor(private httpClient: HttpClient, private logService: LogService) {
-    this.productUrl = 'https://mns237-server.herokuapp.com/api/products'; // here i assigned the API part to the URL
+    /*this.productUrl = 'https://mns237-server.herokuapp.com/api/products'; // here i assigned the API part to the URL
     this.addNewProduct = 'https://mns237-server.herokuapp.com/api/products/add';
     this.editProduct = 'https://mns237-server.herokuapp.com/api/products/update/{id}';
-    this.deleteProduct = 'https://mns237-server.herokuapp.com/api/products/delete/{id}';
+    this.deleteProduct = 'https://mns237-server.herokuapp.com/api/products/delete/{id}';*/
+
+    this.productUrl = 'http://localhost:8080/api/products';
   }
 
   getProducts() {
