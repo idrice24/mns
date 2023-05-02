@@ -1,0 +1,40 @@
+<div>
+	<h2>Products</h2> <h2>Manudacturers</h2>
+	<div>
+		<h4><span>For your Business</span></h4>
+		<p-card class="p-shadow-24">
+			<p-button label="All categories" styleClass="p-button-secondary p-button-raised pButton pRipple p-button-lg p-mr-2" icon="pi pi-microsoft"></p-button>
+
+			<p-button label="Request for Quotation" styleClass="p-button-primary p-button-raised p-button-rounded p-button-lg" icon="pi pi-check"></p-button>
+
+			<p-button label="Ready to Ship" styleClass="p-button-success p-button-raised p-button-rounded p-button-lg" icon="pi pi-check"></p-button>
+
+			<p-button label="Worldwide selection" styleClass="p-button-warning p-button-raised p-button-rounded p-button-lg" icon="pi pi-globe"></p-button>
+
+			<p-button label="Logistics Service" styleClass="p-button-help p-button-raised p-button-rounded p-button-lg" icon="pi pi-slack"></p-button>
+
+			<p-button label="Drop shipping" styleClass="p-button-danger p-button-raised p-button-rounded p-button-lg" icon="pi pi-file-import"></p-button>
+		</p-card>
+
+	</div>
+	<div>
+		<div>Top ranking</div>
+		<div class="p-shadow-4">
+			<p-card>
+				<ng-template let-product>
+				<p width="250" class="m-0">
+					<img [src]="product.imageUrl" [alt]="product.name">	
+				</p>
+			</ng-template>
+				<ng-template pTemplate="footer">
+					<div>most popular</div><br>
+					<div>Hd Lace From Wigs</div>
+				</ng-template>
+			</p-card>
+		</div>
+	</div>
+	<div>
+		<div>New Arrivals</div>
+		<p-card class="p-shadow-4"></p-card>
+	</div>
+</div>

@@ -6,19 +6,21 @@ import { FormsModule } from '@angular/forms';
 
 
 import { ProductLandingViewComponent } from './components/product-landing-view/product-landing-view.component';
+import { ProductCategoryComponent } from './components/product-category/product-category.component';
 
 import { SharedModule } from '../shared/shared.module';
 
 
 const routes: Routes = [
-  { path: 'products', component: ProductListComponent, data: { animation: 'ProductsPage' } },
-  // { path: ':id', component: ProductDetailComponent }
+  { path: 'products', component: ProductListComponent, data: { animation: 'ProductsPage' }   },
+
 ];
 
 @NgModule({
   declarations: [
     ProductListComponent,
-    ProductLandingViewComponent
+    ProductLandingViewComponent,
+    ProductCategoryComponent
   ],
   imports: [
     CommonModule,

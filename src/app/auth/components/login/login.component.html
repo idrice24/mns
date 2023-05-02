@@ -11,6 +11,7 @@
      <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
        <div class="p-d-flex p-jc-center">
          <div class="p-grid">
+          
            <!--USERNAME-->
            <div class="p-col-12">
              <div class="p-inputgroup">
@@ -24,9 +25,6 @@
 
 
            <!--PASSWORD-->
-           <!---
-            1. [feedback]="false" We don't want to show the strenght indicator to the user @Idrice
-          -->
            <div class="p-col-12">
              <div class="p-inputgroup">
                <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>

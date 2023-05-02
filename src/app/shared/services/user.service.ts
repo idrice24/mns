@@ -20,9 +20,13 @@ export class UserService {
   };
 
   constructor(private httpClient: HttpClient, private avatarService: AvatarService) { 
-    this.usersUrl = 'https://mns237-server.herokuapp.com/api';
+    /*this.usersUrl = 'https://mns237-server.herokuapp.com/api';
     this.userRegisterUrl = 'https://mns237-server.herokuapp.com/api/register';
-    this.userUrl = 'https://mns237-server.herokuapp.com/api/users';
+    this.userUrl = 'https://mns237-server.herokuapp.com/api/users';*/
+
+    this.userUrl = 'http://localhost:8080/api/totalUser';
+    this.userRegisterUrl = 'http://localhost:8080/api/register';
+    //this.userUrl = 'http://localhost:8080/api/totalUser';
   }
 
   /** GET User by id. Will 404 if id not found */
