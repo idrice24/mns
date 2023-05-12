@@ -1,0 +1,65 @@
+.floating-but {
+	float: left;
+	border-radius: 150px;
+	padding: 0;
+	margin: 10px;
+	text-shadow: 2px gray;
+	color: blue;
+}
+
+.after-but {
+	clear: left;
+}
+
+.modal-box {
+	padding: 45px;
+	border: none;
+	margin: 2px;
+	text: center;
+	text-shadow: 2px blue;
+	color:blue;
+	position: relative;
+}
+
+div {
+	margin: 2px;
+}
+
+.card-box{
+	margin: 10px;
+	position: relative;
+	padding: 0;
+	float: left;
+
+
+}
+
+.product-img{
+	width: 120px;
+	height: 150px;
+	float: left;
+	display: center;
+	text-align: center;
+	margin: 10px;
+	padding: 10px;
+	background-color: white;
+}
+
+
+.product-item {
+  .product-item-content {
+    border: 1px solid var(--surface-d);
+    border-radius: 3px;
+    margin: .3rem;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  background: white;
+
+  .product-image {
+    width: 50%;
+    height: 150px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  }
+}
