@@ -34,9 +34,16 @@ export class ProductService {
     this.productUrl = 'http://localhost:8080/api/products';
   }
 
+  // get all products.
   getProducts() {
     return this.httpClient.get<Product[]>(this.productUrl).pipe(map(res => res));
   }
+
+  // get product according to rating
+
+  // get product according to category
+
+  // get product list
   getProductList(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.productUrl);
   }
