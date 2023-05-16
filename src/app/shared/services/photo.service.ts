@@ -14,7 +14,7 @@ export class PhotoService {
   private imageUrl: string;
   photo!: Image;
   constructor(private httpClient: HttpClient, private logService: LogService) {
-    this.imageUrl = 'https://mns237-serverapi.herokuapp.com/admin/photos/';
+    this.imageUrl = 'localhost:8080/api/admin/photos/';
   }
 
   httpOptions = {

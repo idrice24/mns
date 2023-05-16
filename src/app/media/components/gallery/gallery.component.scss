@@ -148,3 +148,23 @@ div.desc {
     }
   }
 }
+
+.intro {
+  text-align : center;
+  font-family : Arial;
+}
+
+#image-gallery {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#current-image{
+  width: 100%;
+}
+
+#image-thumbs{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
