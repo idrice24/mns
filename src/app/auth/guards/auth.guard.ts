@@ -35,14 +35,14 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   checkLogin(url: string): boolean {
     if (this.authService.isLoggedIn()) {
-      return true;
+      return false;
     }
 
     this.authService.redirectUrl = url;
-    this.router.navigate(['/login'], { queryParams: { returnUrl: url } });
+    this.router.navigate(['/admin'], { queryParams: { returnUrl: url } });
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
-    return false;
+    return true;
 
 
   }

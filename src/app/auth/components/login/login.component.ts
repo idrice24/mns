@@ -60,6 +60,8 @@ export class LoginComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
+      // Clear input data in form
+        this.loginForm.reset();
       return ;
     }
 
@@ -81,7 +83,7 @@ export class LoginComponent implements OnInit {
         // that passes on our global query params and fragment
         const navigationExtras: NavigationExtras = {
           queryParamsHandling: 'preserve',
-          preserveFragment: true
+          preserveFragment: false
         };
 
         // Clear input data in form

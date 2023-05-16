@@ -18,11 +18,11 @@ export class AuthService {
     /*this.registerUrl = 'https://mns237-server.herokuapp.com/api/register';
     this.loginUrl = 'https://mns237-server.herokuapp.com/api/login';*/
 
-    this.loginUrl = 'http://localhost:8080/api/cms/login';
+   // this.loginUrl = 'http://localhost:8080/api/cms/login';
     this.registerUrl = 'http://localhost:8080/api/register';
   }
 
-  /*checkLogin(email, password): Observable<boolean | void> {
+  checkLogin(email, password): Observable<boolean | void> {
     // logic to check password
 
     return this.httpClient.post<any>(this.loginUrl, { email, password}).pipe(
@@ -40,7 +40,7 @@ export class AuthService {
 
       }),
       delay(500)); // Delay just for fun !!!
-  }*/
+  }
 
   getAuthorizationToken() {
     const currentUser = JSON.parse(localStorage.getItem('currentUserKey'));
@@ -62,12 +62,12 @@ export class AuthService {
   }
 
   // Todo@Idrice for later DO NOT REMOVE
-  checkLogin(email, password) {
+  /*checkLogin(email, password) {
     return this.httpClient.post<any>(this.loginUrl, { email, password })
       .pipe(map(user => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('currentUserKey', JSON.stringify(user));
         return user;
       }));
-  }
+  }*/
 }

@@ -21,7 +21,8 @@
 
 	
 	<div class="modal-box">
-		<h4>Top Ranking</h4>
+		<h4>Top Ranking <i class="pi pi-arrow-right" style="font-size: 1rem"></i></h4>
+		<a class="nav-link" routerLinkActive="active" routerLink="/products/top-ranking"><i class="pi pi-arrow-right" style="font-size: 2rem; float:right;"></i></a>
 		<p-card class="p-shadow-2">
 			<p-carousel #dv [value]="products$ | async" [value]="products" [circular]="true" indicatorsPosition="Top" [autoplayInterval]="3000"
        [numVisible]="4"
@@ -56,7 +57,8 @@
 	</div>
 
 	<div class="modal-box">
-		<h4>New Arrivals</h4>
+		<h4>New Arrivals <i class="pi pi-arrow-right" style="font-size: 1rem;"></i></h4>
+		<a class="nav-link" routerLinkActive="active" routerLink="/products/new-arrivals"><i class="pi pi-arrow-right" style="font-size: 2rem; float:right;"></i></a>
 		<p-card class="p-shadow-4">
 			<p-carousel #dv [value]="products$ | async" [value]="products" [circular]="true" indicatorsPosition="Top" [autoplayInterval]="3000"
        [numVisible]="3"

@@ -9,10 +9,12 @@ import { ProductLandingViewComponent } from './components/product-landing-view/p
 import { ProductCategoryComponent } from './components/product-category/product-category.component';
 
 import { SharedModule } from '../shared/shared.module';
+import { NewArrivalsComponent } from './components/new-arrivals/new-arrivals.component';
 
 
 const routes: Routes = [
-  { path: 'products', component: ProductListComponent, data: { animation: 'ProductsPage' }   },
+  { path: 'products', component: ProductListComponent, data: { animation: 'ProductsPage' } },
+  { path: 'products/new-arrivals', component: NewArrivalsComponent}
 
 ];
 
@@ -20,7 +22,8 @@ const routes: Routes = [
   declarations: [
     ProductListComponent,
     ProductLandingViewComponent,
-    ProductCategoryComponent
+    ProductCategoryComponent,
+    NewArrivalsComponent
   ],
   imports: [
     CommonModule,
