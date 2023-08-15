@@ -31,7 +31,7 @@ export class ProductService {
     this.editProduct = 'https://mns237-server.herokuapp.com/api/products/update/{id}';
     this.deleteProduct = 'https://mns237-server.herokuapp.com/api/products/delete/{id}';*/
 
-    this.productUrl = 'http://localhost:8080/api/products';
+    this.productUrl = 'http://localhost:8888/api/products';
   }
 
   // get all products.
